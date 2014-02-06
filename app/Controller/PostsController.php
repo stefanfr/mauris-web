@@ -2,9 +2,23 @@
 class PostsController extends AppController {
 	
     public $components = array('Session');
-
+    public $uses = array('ScheduleEntry', 'AssignmentScheduleMapping');
+    
     public function index() {
-        $this->set('posts', $this->Post->find('all'));
+		print_r($this->ScheduleEntry->find(
+			'all',
+			array(
+				'recursive' => 2,
+				'conditions' => array(
+					'WEEK(date, 3)' => '5'
+				),
+				'cache' => array(
+					'name' => 'other_cache',
+					'duration' => '+2 weeks'
+				)
+			)
+		));
+        //print_r($this->AssignmentScheduleMapping->find('all'));
     }
 
     public function view($id = null) {
