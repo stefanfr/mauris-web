@@ -34,12 +34,12 @@
 		<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 	</div>
 	<div class="col-md-4">
-		<h2><?=_('Available classrooms')?></h2>
+		<h2><?=__('Available classrooms')?></h2>
                 <p><?=__('Classrooms available at: %s', strftime('%X', $classrooms_available_timestamp))?></p>
                 <table class="table">
                     <tr>
-                        <th><?=_('Classroom')?></th>
-                        <th><?=_('Title')?></th>
+                        <th><?=__('Classroom')?></th>
+                        <th><?=__('Title')?></th>
                     </tr>
                     <? foreach ($classrooms_available as $classroom): ?>
                     <tr>

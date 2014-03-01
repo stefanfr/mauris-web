@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 16:27+0000\n"
+"POT-Creation-Date: 2014-03-01 18:42+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -144,6 +144,14 @@ msgstr ""
 msgid "Schedule"
 msgstr ""
 
+#: View/Layouts/default.ctp:129
+msgid "Username"
+msgstr ""
+
+#: View/Layouts/default.ctp:158
+msgid "Copyright %d-%d ©"
+msgstr ""
+
 #: View/Pages/home.ctp:10
 msgid "Latest news"
 msgstr ""
@@ -152,8 +160,20 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
+#: View/Pages/home.ctp:37
+msgid "Available classrooms"
+msgstr ""
+
 #: View/Pages/home.ctp:38
 msgid "Classrooms available at: %s"
+msgstr ""
+
+#: View/Pages/home.ctp:41
+msgid "Classroom"
+msgstr ""
+
+#: View/Pages/home.ctp:42
+msgid "Title"
 msgstr ""
 
 #: View/Posts/add.ctp:1
@@ -189,20 +209,20 @@ msgstr ""
 msgid "Registreren"
 msgstr ""
 
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field post_id;validation for field user_id;validation for field replyTo
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Post.php:validation for field scope;validation for field published
+#: Model/Comment.php:validation for field post_id;validation for field user_id;validation for field replyTo
+#: Model/Post.php:validation for field scope;validation for field published
 msgid "rule"
 msgstr ""
 
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field replyTo
+#: Model/Comment.php:validation for field replyTo
 msgid "required"
 msgstr ""
 
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field username
+#: Model/User.php:validation for field username
 msgid "A username is required"
 msgstr ""
 
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field password
+#: Model/User.php:validation for field password
 msgid "A password is required"
 msgstr ""
 

@@ -126,8 +126,8 @@
                                         )
                                     );
                                 ?>
-                                <?=$this->Form->input('username', array('placeholder' => 'Gebruikersnaam'))?>
-                                <?=$this->Form->input('password', array('placeholder' => 'Wachtwoord'))?>
+                                <?=$this->Form->input('username', array('placeholder' => __('Username')))?>
+                                <?=$this->Form->input('password', array('placeholder' => _('Password')))?>
                                 <? 
                                     echo $this->Form->end(array('div' => 'form-group', 'class' => 'btn btn-default'));
                                 ?>
@@ -155,7 +155,7 @@
 	
 		<hr>
 		<footer>
-			<span>Copyright 2013 - <?=date('Y'); ?> &copy; <?=$this->Html->link('CVO-Technologies', 'http://mms-projects.net/', array('target' => '_BLANK')); ?> & <?=$this->Html->link('Dev App ("0100Dev")', 'http://devapp.nl/', array('target' => '_BLANK')); ?></span>
+			<span><?=h(__('Copyright %d-%d ©', 2013, date('Y'))) . ' - '.  $this->Html->link('CVO-Technologies', 'http://mms-projects.net/', array('target' => '_BLANK')); ?> & <?=$this->Html->link('Dev App ("0100Dev")', 'http://devapp.nl/', array('target' => '_BLANK')); ?></span>
 			<span class="pull-right"><?=$this->get('school_name')?> (<?=$this->get('department_name')?>)</span>
 		</footer>
 	</div>
