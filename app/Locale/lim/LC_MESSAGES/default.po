@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 22:24+0000\n"
+"POT-Creation-Date: 2014-03-01 22:46+0000\n"
 "PO-Revision-Date: 2014-03-01 16:27+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -151,6 +151,10 @@ msgstr ""
 
 #: View/Layouts/default.ctp:101
 msgid "Schedule"
+msgstr ""
+
+#: View/Layouts/default.ctp:108
+msgid "Logged in as %s"
 msgstr ""
 
 #: View/Layouts/default.ctp:129

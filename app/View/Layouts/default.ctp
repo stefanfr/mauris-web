@@ -105,7 +105,7 @@
 				</ul>
 				<?=$this->startIfEmpty('rightMenu'); ?>
                                 <? if (AuthComponent::user('id')): ?>
-                                <p class="navbar-text navbar-right">Logged in as <?=$this->App->buildName(AuthComponent::user())?></p>
+                                <p class="navbar-text navbar-right"><?=h(__('Logged in as %s', $this->App->buildName(AuthComponent::user())))?></p>
                                 <? else: ?>
                                 <?
                                     echo $this->Form->create(
