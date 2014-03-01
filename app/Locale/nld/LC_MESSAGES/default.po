@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 16:27+0000\n"
+"POT-Creation-Date: 2014-03-01 21:36+0000\n"
 "PO-Revision-Date: 2014-03-01 17:51+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch <http://weblate.mms-projects.net/projects/ict-college"
-"/ict-college-website/nl/>\n"
+"Language-Team: Dutch <http://weblate.mms-projects.net/projects/ict-college/"
+"ict-college-website/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.9-dev\n"
@@ -37,13 +37,11 @@ msgstr "Kon je commentaar niet toevoegen."
 msgid "Invalid comment"
 msgstr ""
 
-#: Controller/CommentController.php:114
-#: Controller/PostsController.php:169
+#: Controller/CommentController.php:114 Controller/PostsController.php:169
 msgid "Your post has been updated."
 msgstr "Je post is aangepast."
 
-#: Controller/CommentController.php:122
-#: Controller/PostsController.php:177
+#: Controller/CommentController.php:122 Controller/PostsController.php:177
 msgid "Unable to update your post."
 msgstr "Je post kon niet worden aangepast."
 
@@ -126,8 +124,7 @@ msgstr ""
 msgid "Alert danger message testing..."
 msgstr ""
 
-#: Plugin/Manage/View/Layouts/default.ctp:94
-#: View/Layouts/default.ctp:103
+#: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
 msgid "Manage"
 msgstr "Beheer"
 
@@ -149,6 +146,14 @@ msgstr "Nieuws"
 msgid "Schedule"
 msgstr "Rooster"
 
+#: View/Layouts/default.ctp:129
+msgid "Username"
+msgstr ""
+
+#: View/Layouts/default.ctp:158
+msgid "Copyright %d-%d ©"
+msgstr ""
+
 #: View/Pages/home.ctp:10
 msgid "Latest news"
 msgstr "Laatste nieuws"
@@ -157,9 +162,21 @@ msgstr "Laatste nieuws"
 msgid "Read more"
 msgstr "Lees meer"
 
+#: View/Pages/home.ctp:37
+msgid "Available classrooms"
+msgstr ""
+
 #: View/Pages/home.ctp:38
 msgid "Classrooms available at: %s"
 msgstr "Lokalen beschikbaar om: %s"
+
+#: View/Pages/home.ctp:41
+msgid "Classroom"
+msgstr ""
+
+#: View/Pages/home.ctp:42
+msgid "Title"
+msgstr ""
 
 #: View/Posts/add.ctp:1
 msgid "Add post"
@@ -177,8 +194,7 @@ msgstr "Opties"
 msgid "Add User"
 msgstr "Gebruiker toevoegen"
 
-#: View/Users/add.ctp:12
-#: View/Users/register.ctp:9
+#: View/Users/add.ctp:12 View/Users/register.ctp:9
 msgid "Submit"
 msgstr "Versturen"
 
@@ -195,19 +211,5 @@ msgstr "Inloggen"
 msgid "Registreren"
 msgstr "Registreren"
 
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field post_id;validation for field user_id;validation for field replyTo
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Post.php:validation for field scope;validation for field published
-msgid "rule"
-msgstr ""
-
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field replyTo
-msgid "required"
-msgstr "Verplicht"
-
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field username
-msgid "A username is required"
-msgstr ""
-
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field password
-msgid "A password is required"
-msgstr ""
+#~ msgid "required"
+#~ msgstr "Verplicht"

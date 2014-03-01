@@ -4,15 +4,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 16:27+0000\n"
+"POT-Creation-Date: 2014-03-01 21:36+0000\n"
 "PO-Revision-Date: 2014-03-01 16:27+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: li_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Language: li_NL\n"
 
 #: Controller/CommentController.php:11
 msgid "Het commentaar waarop je wilt reageren bestaat niet"
@@ -141,6 +141,14 @@ msgstr ""
 msgid "Schedule"
 msgstr ""
 
+#: View/Layouts/default.ctp:129
+msgid "Username"
+msgstr ""
+
+#: View/Layouts/default.ctp:158
+msgid "Copyright %d-%d ©"
+msgstr ""
+
 #: View/Pages/home.ctp:10
 msgid "Latest news"
 msgstr ""
@@ -149,8 +157,20 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
+#: View/Pages/home.ctp:37
+msgid "Available classrooms"
+msgstr ""
+
 #: View/Pages/home.ctp:38
 msgid "Classrooms available at: %s"
+msgstr ""
+
+#: View/Pages/home.ctp:41
+msgid "Classroom"
+msgstr ""
+
+#: View/Pages/home.ctp:42
+msgid "Title"
 msgstr ""
 
 #: View/Posts/add.ctp:1
@@ -183,26 +203,4 @@ msgstr ""
 
 #: View/Users/register.ctp:4
 msgid "Registreren"
-msgstr ""
-
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation
-#: for field post_id;validation user_id;validation replyTo
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Post.php:validation
-#: scope;validation published
-msgid "rule"
-msgstr ""
-
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation
-#: for field replyTo
-msgid "required"
-msgstr ""
-
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation
-#: for field username
-msgid "A username is required"
-msgstr ""
-
-#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation
-#: for field password
-msgid "A password is required"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 18:42+0000\n"
+"POT-Creation-Date: 2014-03-01 21:38+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -207,22 +207,5 @@ msgstr ""
 
 #: View/Users/register.ctp:4
 msgid "Registreren"
-msgstr ""
-
-#: Model/Comment.php:validation for field post_id;validation for field user_id;validation for field replyTo
-#: Model/Post.php:validation for field scope;validation for field published
-msgid "rule"
-msgstr ""
-
-#: Model/Comment.php:validation for field replyTo
-msgid "required"
-msgstr ""
-
-#: Model/User.php:validation for field username
-msgid "A username is required"
-msgstr ""
-
-#: Model/User.php:validation for field password
-msgid "A password is required"
 msgstr ""
 
