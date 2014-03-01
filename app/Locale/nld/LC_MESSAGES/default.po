@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 22:24+0000\n"
-"PO-Revision-Date: 2014-03-01 22:41+0200\n"
+"POT-Creation-Date: 2014-03-01 22:01+0000\n"
+"PO-Revision-Date: 2014-03-01 23:34+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
+"/ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: Controller/CommentController.php:11
 msgid "The comment you want to reply on doesn't exist"
-msgstr ""
+msgstr "Het commentaar waarop je wou reageren bestaat niet"
 
 #: Controller/CommentController.php:29
 msgid "No such post"
-msgstr ""
+msgstr "De dergelijke post bestaat niet"
 
 #: Controller/CommentController.php:57
 msgid "Your comment has been added."
@@ -34,21 +34,19 @@ msgstr "Kon je commentaar niet toevoegen."
 
 #: Controller/CommentController.php:78;83
 msgid "Invalid comment"
-msgstr ""
+msgstr "Ongeldig commentaar"
 
 #: Controller/CommentController.php:114
-#, fuzzy
 msgid "Your comment has been updated."
-msgstr "Je commentaar is toegevoegt."
+msgstr "Je commentaar is toegevoegd."
 
 #: Controller/CommentController.php:122
-#, fuzzy
 msgid "Unable to update your comment."
-msgstr "Je post kon niet worden aangepast."
+msgstr "Commentaar kon niet worden aangepast."
 
 #: Controller/PostsController.php:71;78;157;162
 msgid "Invalid post"
-msgstr ""
+msgstr "Ongeldige post"
 
 #: Controller/PostsController.php:140
 msgid "Your post has been saved."
@@ -72,11 +70,11 @@ msgstr "Je post is verwijderd."
 
 #: Controller/TeacherController.php:11
 msgid "No such teacher"
-msgstr ""
+msgstr "De dergelijke docent bestaat niet"
 
 #: Controller/UsersController.php:19;53;74
 msgid "Invalid user"
-msgstr ""
+msgstr "Ongeldige gebruiker"
 
 #: Controller/UsersController.php:28;41;57
 msgid "The user has been saved"
@@ -85,18 +83,19 @@ msgstr "De gebruiker is opgeslagen"
 #: Controller/UsersController.php:32;45;61
 msgid "The user could not be saved. Please, try again."
 msgstr ""
+"De gebruiker kon niet worden opgeslagen. Probeer het alstublieft opnieuw."
 
 #: Controller/UsersController.php:77
 msgid "User deleted"
-msgstr ""
+msgstr "Gebruiker verwijderd"
 
 #: Controller/UsersController.php:80
 msgid "User was not deleted"
-msgstr ""
+msgstr "Gebruiker was niet verwijderd"
 
 #: Controller/UsersController.php:89
 msgid "Invalid username or password, try again"
-msgstr ""
+msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:18
 msgid "Debug setting does not allow access to this url."
@@ -138,18 +137,16 @@ msgid "Manage"
 msgstr "Beheer"
 
 #: View/Comment/add.ctp:8;13
-#, fuzzy
 msgid "Add comment"
-msgstr "Voeg post toe"
+msgstr "Commentaar toevoegen"
 
 #: View/Comment/edit.ctp:1
-#, fuzzy
 msgid "Update comment"
-msgstr "Plaats commentaar"
+msgstr "Commentaar aanpassen"
 
 #: View/Elements/reply.ctp:11
 msgid "Reply"
-msgstr ""
+msgstr "Reageer"
 
 #: View/Layouts/default.ctp:100
 msgid "News"
@@ -170,7 +167,7 @@ msgstr "Copyright %d-%d ©"
 #: View/Layouts/Emails/html/default.ctp:27
 #: View/Layouts/Emails/text/default.ctp:21
 msgid "This email was sent using the"
-msgstr ""
+msgstr "Deze email was verstuurd met het"
 
 #: View/Pages/home.ctp:10
 msgid "Latest news"
@@ -182,11 +179,11 @@ msgstr "Lees meer"
 
 #: View/Pages/home.ctp:27;32
 msgid "Heading"
-msgstr ""
+msgstr "Kop"
 
 #: View/Pages/home.ctp:29;34
 msgid "View details »"
-msgstr ""
+msgstr "Bekijk details »"
 
 #: View/Pages/home.ctp:37
 msgid "Available classrooms"
@@ -219,60 +216,57 @@ msgstr "Opties"
 
 #: View/Posts/add.ctp:36
 msgid "Scope"
-msgstr ""
+msgstr "Omvang"
 
 #: View/Posts/add.ctp:42
 msgid "Add"
-msgstr ""
+msgstr "Toevoegen"
 
 #: View/Posts/index.ctp:2
-#, fuzzy
 msgid "The latest news"
-msgstr "Laatste nieuws"
+msgstr "Het laatste nieuws"
 
 #: View/Posts/index.ctp:7 View/Posts/view.ctp:7
 msgid "Posted by:"
-msgstr ""
+msgstr "Geplaatst door:"
 
 #: View/Posts/view.ctp:13
 msgid "Comment"
-msgstr ""
+msgstr "Reageer"
 
 #: View/Profile/view.ctp:1 View/Teacher/view.ctp:8
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: View/Schedule/calendar.ctp:8 View/Schedule/simple.ctp:33
 #: View/Schedule/view.ctp:19
 msgid "Teacher"
-msgstr ""
+msgstr "Docent"
 
 #: View/Schedule/calendar.ctp:14 View/Schedule/simple.ctp:27
 #: View/Schedule/view.ctp:13
-#, fuzzy
 msgid "Class"
-msgstr "Klaslokaal"
+msgstr "Klas"
 
 #: View/Schedule/calendar.ctp:46
-#, fuzzy
 msgid "Simple schedule"
-msgstr "Rooster"
+msgstr "Simpel rooster"
 
 #: View/Schedule/simple.ctp:16
 msgid "Calendar schedule"
-msgstr ""
+msgstr "Kalender rooster"
 
 #: View/Schedule/simple.ctp:25 View/Schedule/view.ctp:11
 msgid "Period"
-msgstr ""
+msgstr "Lesuur"
 
 #: View/Schedule/view.ctp:33
 msgid "Assignments"
-msgstr ""
+msgstr "Opgaves"
 
 #: View/Teacher/view.ctp:9
 msgid "Account"
-msgstr ""
+msgstr "Account"
 
 #: View/Users/add.ctp:4
 msgid "Add User"
@@ -284,14 +278,13 @@ msgstr "Versturen"
 
 #: View/Users/login.ctp:6
 msgid "Please enter your username and password"
-msgstr ""
+msgstr "Vul alstublieft uw gebruikersnaam en wachtwoord in"
 
 #: View/Users/login.ctp:12
 msgid "Login"
 msgstr "Inloggen"
 
 #: View/Users/register.ctp:4;9
-#, fuzzy
 msgid "Register"
 msgstr "Registreren"
 
