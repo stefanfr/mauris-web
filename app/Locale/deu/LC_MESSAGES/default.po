@@ -1,0 +1,290 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright 2014 NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-03-01 22:46+0000\n"
+"PO-Revision-Date: 2014-03-01 22:46+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language: deu\n"
+
+#: Controller/CommentController.php:11
+msgid "The comment you want to reply on doesn't exist"
+msgstr ""
+
+#: Controller/CommentController.php:29
+msgid "No such post"
+msgstr ""
+
+#: Controller/CommentController.php:57
+msgid "Your comment has been added."
+msgstr ""
+
+#: Controller/CommentController.php:69
+msgid "Unable to add your comment."
+msgstr ""
+
+#: Controller/CommentController.php:78;83
+msgid "Invalid comment"
+msgstr ""
+
+#: Controller/CommentController.php:114
+msgid "Your comment has been updated."
+msgstr ""
+
+#: Controller/CommentController.php:122
+msgid "Unable to update your comment."
+msgstr ""
+
+#: Controller/PostsController.php:71;78;157;162
+msgid "Invalid post"
+msgstr ""
+
+#: Controller/PostsController.php:140
+msgid "Your post has been saved."
+msgstr ""
+
+#: Controller/PostsController.php:148
+msgid "Unable to add your post."
+msgstr ""
+
+#: Controller/PostsController.php:169
+msgid "Your post has been updated."
+msgstr ""
+
+#: Controller/PostsController.php:177
+msgid "Unable to update your post."
+msgstr ""
+
+#: Controller/PostsController.php:195
+msgid "Your post has been deleted."
+msgstr ""
+
+#: Controller/TeacherController.php:11
+msgid "No such teacher"
+msgstr ""
+
+#: Controller/UsersController.php:19;53;74
+msgid "Invalid user"
+msgstr ""
+
+#: Controller/UsersController.php:28;41;57
+msgid "The user has been saved"
+msgstr ""
+
+#: Controller/UsersController.php:32;45;61
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:77
+msgid "User deleted"
+msgstr ""
+
+#: Controller/UsersController.php:80
+msgid "User was not deleted"
+msgstr ""
+
+#: Controller/UsersController.php:89
+msgid "Invalid username or password, try again"
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:18
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:27
+#: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:6
+msgid "Alert notice message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:30;41
+#: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:10
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:6
+msgid "Alert success message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:34
+#: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:15
+msgid "Alert error message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:45
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:11
+msgid "Alert info message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:49
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:16
+msgid "Alert warning message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:53
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:21
+msgid "Alert danger message testing..."
+msgstr ""
+
+#: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
+msgid "Manage"
+msgstr ""
+
+#: View/Comment/add.ctp:8;13
+msgid "Add comment"
+msgstr ""
+
+#: View/Comment/edit.ctp:1
+msgid "Update comment"
+msgstr ""
+
+#: View/Elements/reply.ctp:11
+msgid "Reply"
+msgstr ""
+
+#: View/Layouts/default.ctp:100
+msgid "News"
+msgstr ""
+
+#: View/Layouts/default.ctp:101
+msgid "Schedule"
+msgstr ""
+
+#: View/Layouts/default.ctp:108
+msgid "Logged in as %s"
+msgstr ""
+
+#: View/Layouts/default.ctp:129
+msgid "Username"
+msgstr ""
+
+#: View/Layouts/default.ctp:158
+msgid "Copyright %d-%d ©"
+msgstr ""
+
+#: View/Layouts/Emails/html/default.ctp:27
+#: View/Layouts/Emails/text/default.ctp:21
+msgid "This email was sent using the"
+msgstr ""
+
+#: View/Pages/home.ctp:10
+msgid "Latest news"
+msgstr ""
+
+#: View/Pages/home.ctp:19 View/Posts/index.ctp:19
+msgid "Read more"
+msgstr ""
+
+#: View/Pages/home.ctp:27;32
+msgid "Heading"
+msgstr ""
+
+#: View/Pages/home.ctp:29;34
+msgid "View details »"
+msgstr ""
+
+#: View/Pages/home.ctp:37
+msgid "Available classrooms"
+msgstr ""
+
+#: View/Pages/home.ctp:38
+msgid "Classrooms available at: %s"
+msgstr ""
+
+#: View/Pages/home.ctp:41 View/Schedule/simple.ctp:40
+#: View/Schedule/view.ctp:26
+msgid "Classroom"
+msgstr ""
+
+#: View/Pages/home.ctp:42
+msgid "Title"
+msgstr ""
+
+#: View/Posts/add.ctp:1
+msgid "Add post"
+msgstr ""
+
+#: View/Posts/add.ctp:28
+msgid "Content"
+msgstr ""
+
+#: View/Posts/add.ctp:32
+msgid "Options"
+msgstr ""
+
+#: View/Posts/add.ctp:36
+msgid "Scope"
+msgstr ""
+
+#: View/Posts/add.ctp:42
+msgid "Add"
+msgstr ""
+
+#: View/Posts/index.ctp:2
+msgid "The latest news"
+msgstr ""
+
+#: View/Posts/index.ctp:7 View/Posts/view.ctp:7
+msgid "Posted by:"
+msgstr ""
+
+#: View/Posts/view.ctp:13
+msgid "Comment"
+msgstr ""
+
+#: View/Profile/view.ctp:1 View/Teacher/view.ctp:8
+msgid "Name"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:8 View/Schedule/simple.ctp:33
+#: View/Schedule/view.ctp:19
+msgid "Teacher"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:14 View/Schedule/simple.ctp:27
+#: View/Schedule/view.ctp:13
+msgid "Class"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:46
+msgid "Simple schedule"
+msgstr ""
+
+#: View/Schedule/simple.ctp:16
+msgid "Calendar schedule"
+msgstr ""
+
+#: View/Schedule/simple.ctp:25 View/Schedule/view.ctp:11
+msgid "Period"
+msgstr ""
+
+#: View/Schedule/view.ctp:33
+msgid "Assignments"
+msgstr ""
+
+#: View/Teacher/view.ctp:9
+msgid "Account"
+msgstr ""
+
+#: View/Users/add.ctp:4
+msgid "Add User"
+msgstr ""
+
+#: View/Users/add.ctp:12
+msgid "Submit"
+msgstr ""
+
+#: View/Users/login.ctp:6
+msgid "Please enter your username and password"
+msgstr ""
+
+#: View/Users/login.ctp:12
+msgid "Login"
+msgstr ""
+
+#: View/Users/register.ctp:4;9
+msgid "Register"
+msgstr ""
