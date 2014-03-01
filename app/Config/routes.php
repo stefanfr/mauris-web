@@ -19,12 +19,127 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
+if ($_SERVER['HTTP_HOST'] == 'api.ictcollege.eu') {
+	//Router::mapResources('plugin.schedule');
+	Router::parseExtensions();
+	//Router::connect('/api/:controller/:action/*', array('plugin' => 'api'));
+	//Router::connect('/api/:controller/*', array('plugin' => 'api', 'action' => 'index'));
+	//Router::connect('/api/*', array('plugin' => 'api', 'controller' => 'index', 'action' => 'index'));
+	Router::connect('/', array('plugin' => 'api', 'controller' => 'index', 'action' => 'index'));
+	Router::connect('/:controller', array('plugin' => 'api', 'action' => 'index'));
+	Router::connect('/:controller/:action/*', array('plugin' => 'api'));
+} else {    
+    
+Router::parseExtensions('xml'); 
+    
+//Router::connect('/api/:controller/:action/*', array('plugin' => 'api'));
+//Router::connect('/api/:controller/*', array('plugin' => 'api', 'action' => 'index'));
+//Router::connect('/api/*', array('plugin' => 'api', 'controller' => 'index', 'action' => 'index'));
+
+    Router::connect('/schedule/view/:id',
+                array('controller' => 'schedule', 'action' => 'view'),
+                array(
+                    'pass' => array('id'),
+                    'id' => '[0-9]+'
+                )
+        );
+    
+    /*Router::connect('/schedule/*',
+            array(
+                'controller' => 'schedule', 'action' => 'index',
+                'type' => 'calendar'
+            ),
+            array(
+                'named' => array(
+                    'teacher',
+                    'class',
+                    'classroom',
+                ),
+            )
+    );*/
+    
+    /*Router::connect('/schedule/:type',
+            array(
+                'controller' => 'schedule', 'action' => 'index',
+                'type' => 'calendar'
+            ),
+            array(
+                'named' => array(
+                    'teacher',
+                    'class',
+                    'classroom',
+                ),
+                'type' => '(calendar|simple)'
+            )
+    );*/
+    Router::connect('/schedule/*',
+            array(
+                'controller' => 'schedule', 'action' => 'index',
+                //'type' => 'calendar'
+            ),
+            array(
+                'named' => array(
+                    'teacher',
+                    'class',
+                    'classroom',
+                    'type',
+                    'page',
+                    'limit',
+                    'start',
+                    'end'
+                ),
+            )
+    );
+    /*Router::connect('/schedule/:action/:type/*',
+            array(
+                'controller' => 'schedule', 'action' => 'index',
+                'type' => 'calendar'
+            ),
+            array(
+                'named' => array(
+                    'teacher',
+                    'class',
+                    'classroom',
+                ),
+                'type' => '(calendar|simple)'
+            )
+    );
+    Router::connect('/schedule/:type/*',
+            array(
+                'controller' => 'schedule', 'action' => 'index',
+                'type' => 'calendar'
+            ),
+            array(
+                'named' => array(
+                    'teacher',
+                    'class',
+                    'classroom',
+                ),
+                'type' => '(calendar|simple)'
+            )
+    );*/
+    
+    /*Router::connect('/posts/*',
+            array(
+                'controller' => 'posts', 'action' => 'index',
+                //'type' => 'calendar'
+            ),
+            array(
+                'named' => array(
+                    'page',
+                    'limit',
+                ),
+            )
+    );*/
+    
 /**
  * Here, we are connecting '/' (base path) to controller called 'Pages',
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/home', array('controller' => 'pages', 'action' => 'display', 'home'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
@@ -41,3 +156,4 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
+}

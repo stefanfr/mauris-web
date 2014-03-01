@@ -1,15 +1,14 @@
 <?php
 class AssignmentScheduleMapping extends AppModel {
 
-	public $hasOne = array(
+	public $belongsTo = array(
 		'Assignment' => array(
 			'className' => 'Assignment',
-			'foreignKey' => 'id'
+			'foreignKey' => 'assignment_id'
 		),
 		'ScheduleEntry' => array(
 			'className' => 'ScheduleEntry',
-			'foreignKey' => 'id'
+			'foreignKey' => 'schedule_entry_id'
 		)
 	);
 }
-

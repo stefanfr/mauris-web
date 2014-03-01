@@ -5,11 +5,18 @@ class Assignment extends AppModel {
 	
 	public $displayField = 'title';
 	
-	public $belongsTo = array(
+	public $hasMany = array(
 		'MappingBelongingTo' => array(
 			'className' => 'AssignmentScheduleMapping',
 			'foreignKey' => 'assignment_id'
 		)
 	);
+        
+        public $belongsTo = array(
+            'GivenAtDeparment' => array(
+                'className' => 'Department',
+                'foreignKey' => 'department_id'
+            )
+        );
 
 }

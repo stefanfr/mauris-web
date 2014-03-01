@@ -3,16 +3,23 @@ class Subject extends AppModel {
 	
 	public $displayField = 'abbreviation';
 
-	public $hasMany = array(
+	public $hasOne = array(
 		/*'ScheduleEntry' => array(
 			'className' => 'ScheduleEntry',
 			'foreignKey' => 'subject_id'
 		),*/
-		'SubjectDetailsMapping' => array(
+		'MappingInformation' => array(
 			'className' => 'SubjectDetailsMapping',
 			'foreignKey' => 'subject_id'
 		)
 	);
+        
+        public $belongsTo = array(
+            'GivenAtDeparment' => array(
+                'className' => 'Department',
+                'foreignKey' => 'department_id'
+            )
+        );
 
 	protected function _readDataSource($type, $query) {
 		$cacheName = md5(json_encode($query));

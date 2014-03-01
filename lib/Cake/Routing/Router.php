@@ -509,7 +509,7 @@ class Router {
 		if (substr($prefix, -1) !== '/') {
 			$prefix .= '/';
 		}
-
+                
 		foreach ((array)$controller as $name) {
 			list($plugin, $name) = pluginSplit($name);
 			$urlName = Inflector::underscore($name);

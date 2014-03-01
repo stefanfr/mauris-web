@@ -33,11 +33,73 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	//public $components = array('DebugKit.Toolbar');
 	
-	public $helpers = array(
-		'Session',
-		'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
-		'Form' => array('className' => 'BoostCake.BoostCakeForm'),
-		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
-	);
+    public $uses = array('Department', 'School', 'Style');
+    
+    public $helpers = array(
+        'Session',
+        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
+        'Menu'
+    );
+    
+    public $components = array(
+        'DebugKit.Toolbar',
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array(
+                'controller' => 'profile',
+                'action' => 'view'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'pages',
+                'action' => 'display',
+                'home'
+            )
+        ),
+        'Acl'
+    );
+        
+    function beforeFilter() {
+        $this->Auth->allow('index', 'view', 'display');
+        $this->Auth->authenticate = array(
+            'Form' => array(
+                'userModel' => 'User',
+                'passwordHasher' => 'Blowfish'
+            )
+        );
+        
+        $department = $this->Department->findByHostname($_SERVER['HTTP_HOST']);
+        
+        if (!empty($department)) {
+            $this->Department->id = (int) $department['Department']['id'];
+            $this->School->id = (int) $department['BelongingToSchool']['id'];
+        
+            $this->set('department_name', $department['Department']['name']);
+            $this->set('school_name', $department['BelongingToSchool']['name']);
+            
+            $style = $this->Style->getStyle($department['UsesStyle']['id']);
+            
+            $this->set('header_background_color', $style['header_background_color']);
+            $this->set('header_text_color', $style['header_text_color']);
+            $this->set('header_link_color', $style['header_link_color']);
+            $this->set('header_brand_color', $style['header_brand_color']);
+            $this->set('header_border_color', $style['header_border_color']);
+            $this->set('header_active_background_color', $style['header_active_background_color']);
+            $this->set('header_active_link_color', $style['header_active_link_color']);
+            $this->set('text_color', $style['text_color']);
+            $this->set('link_color', $style['link_color']);
+        }
+        
+        if ($this->Auth->user()) {
+            $requester = 'user::' . $this->Auth->user('id');
+        } else {
+            $requester = 'role::anonymous';
+        }
+        $manageAllowedScopes = $this->Acl->check(
+            $requester, array('permission' => 'manage', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
+        );
+        $this->set('can_manage', (bool) $manageAllowedScopes);
+    }
 
 }

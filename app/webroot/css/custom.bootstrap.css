@@ -1,8 +1,21 @@
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.navbar-static-top {
+  margin-bottom: 19px;
 }
 
-.navbar {
-  margin-bottom: 20px;
+.assignment-state-make {
+    color: green;
+}
+
+.assignment-state-done {
+    color: #feb91d;
+}
+
+.assignment-state-check {
+    color: red;
+}
+
+.eventCancelled{
+    border-color: DarkGray !important;
+    background-color: LightGray !important;
+    color: red !important;
 }

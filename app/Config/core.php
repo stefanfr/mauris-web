@@ -31,7 +31,9 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 1);
+if (in_array($_SERVER['REMOTE_ADDR'], array('80.100.128.152', '85.150.42.221'))) {
+    Configure::write('debug', 2);
+}
 
 /**
  * Configure the Error handler used to handle errors for your application. By default
@@ -260,8 +262,8 @@
  * The class name and database used in CakePHP's
  * access control lists.
  */
-	Configure::write('Acl.classname', 'DbAcl');
-	Configure::write('Acl.database', 'default');
+	Configure::write('Acl.classname', 'ScheduleAcl');
+	//Configure::write('Acl.database', 'default');
 
 /**
  * Uncomment this line and correct your server timezone to fix

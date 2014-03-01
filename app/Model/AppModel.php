@@ -30,5 +30,45 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
+           
+    public $actsAs = array('Containable', 'Linkable.Linkable');
+        
+    final protected function _getByIds($model, $detailModel, array $ids) {
+        $dataCached = array();
+        foreach ($ids as $id) {
+            $hash = md5($id);
+            $key = 'details-' . $model . '-'  .$hash; 
+
+            $details = Cache::read($key);
+            if ($details !== false) {
+                $dataCached[$id] = $details;
+            }
+        }
+
+        // Calculate the difference between the keys that need to be requested
+        // and the keys that are cached. This will only return the keys
+        // that are not cached. And are supposed to be requested from the server
+        $idsNotCached = array_diff($ids, array_keys($dataCached));
+
+        $dataNotCached = array();
+        if (!empty($idsNotCached)) {
+            $dataNotCached = $this->find(
+                'all', array(
+                    'conditions' => array(
+                        $detailModel . '.id' => $idsNotCached
+                    )
+                )
+            );
+        }
+
+        foreach ($dataNotCached as $row) {
+            $hash = md5($row[$detailModel]['id']);
+            $key = 'details-' . $model . '-'  .$hash; 
+
+            Cache::write($key, $row);
+        }
+
+        return array_merge($dataCached, $dataNotCached);
+    }
 
 }

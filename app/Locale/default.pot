@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-02-04 14:59+0000\n"
+"POT-Creation-Date: 2014-03-01 16:27+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,32 +14,81 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/PostsController.php:12;17;44;49
-msgid "Invalid post"
+#: Controller/CommentController.php:11
+msgid "Het commentaar waarop je wilt reageren bestaat niet"
 msgstr ""
 
-#: Controller/PostsController.php:27
-msgid "Your post has been saved."
+#: Controller/CommentController.php:29
+msgid "No such post"
 msgstr ""
 
-#: Controller/PostsController.php:35
-msgid "Unable to add your post."
+#: Controller/CommentController.php:57
+msgid "Your comment has been added."
 msgstr ""
 
-#: Controller/PostsController.php:56
+#: Controller/CommentController.php:69
+msgid "Unable to add your comment."
+msgstr ""
+
+#: Controller/CommentController.php:78;83
+msgid "Invalid comment"
+msgstr ""
+
+#: Controller/CommentController.php:114
+#: Controller/PostsController.php:169
 msgid "Your post has been updated."
 msgstr ""
 
-#: Controller/PostsController.php:64
+#: Controller/CommentController.php:122
+#: Controller/PostsController.php:177
 msgid "Unable to update your post."
 msgstr ""
 
-#: Controller/PostsController.php:82
+#: Controller/PostsController.php:71;78;157;162
+msgid "Invalid post"
+msgstr ""
+
+#: Controller/PostsController.php:140
+msgid "Your post has been saved."
+msgstr ""
+
+#: Controller/PostsController.php:148
+msgid "Unable to add your post."
+msgstr ""
+
+#: Controller/PostsController.php:195
 msgid "Your post has been deleted."
 msgstr ""
 
+#: Controller/TeacherController.php:11
+msgid "No such teacher"
+msgstr ""
+
+#: Controller/UsersController.php:19;53;74
+msgid "Invalid user"
+msgstr ""
+
+#: Controller/UsersController.php:28;41;57
+msgid "The user has been saved"
+msgstr ""
+
+#: Controller/UsersController.php:32;45;61
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:77
+msgid "User deleted"
+msgstr ""
+
+#: Controller/UsersController.php:80
+msgid "User was not deleted"
+msgstr ""
+
+#: Controller/UsersController.php:89
+msgid "Invalid username or password, try again"
+msgstr ""
+
 #: Plugin/BoostCake/Controller/BoostCakeController.php:18
-#: webroot/test.php:93
 msgid "Debug setting does not allow access to this url."
 msgstr ""
 
@@ -74,293 +123,86 @@ msgstr ""
 msgid "Alert danger message testing..."
 msgstr ""
 
-#: View/Posts/index.ctp:7
-msgid "Title"
+#: Plugin/Manage/View/Layouts/default.ctp:94
+#: View/Layouts/default.ctp:103
+msgid "Manage"
 msgstr ""
 
-#: View/Posts/index.ctp:8
-msgid "Actions"
+#: View/Comment/add.ctp:8
+msgid "Voeg commentaar toe"
 msgstr ""
 
-#: View/Posts/index.ctp:9
-msgid "Created"
+#: View/Comment/add.ctp:13
+msgid "Plaats commentaar"
 msgstr ""
 
-#: View/Posts/index.ctp:15
-msgid "No posts found"
+#: View/Layouts/default.ctp:100
+msgid "News"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:41
-msgid "-> Testing :url"
+#: View/Layouts/default.ctp:101
+msgid "Schedule"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:67
-msgid "Total Requests made: :requests"
+#: View/Pages/home.ctp:10
+msgid "Latest news"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:68
-msgid "Total Time elapsed: :duration (seconds)"
+#: View/Pages/home.ctp:19
+msgid "Read more"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:72
-msgid "Requests/Second: :rps req/sec"
+#: View/Pages/home.ctp:38
+msgid "Classrooms available at: %s"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:76
-msgid "Average request time: :average-time seconds"
+#: View/Posts/add.ctp:1
+msgid "Add post"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:80
-msgid "Standard deviation of average request time: :std-dev"
+#: View/Posts/add.ctp:28
+msgid "Content"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:84
-msgid "Longest/shortest request: :longest sec/:shortest sec"
+#: View/Posts/add.ctp:32
+msgid "Options"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:134
-msgid "Allows you to obtain some rough benchmarking statisticsabout a fully qualified URL."
+#: View/Users/add.ctp:4
+msgid "Add User"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:139
-msgid "The URL to request."
+#: View/Users/add.ctp:12
+#: View/Users/register.ctp:9
+msgid "Submit"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:144
-msgid "Number of iterations to perform."
+#: View/Users/login.ctp:6
+msgid "Please enter your username and password"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:148
-msgid "Maximum total time for all iterations, in seconds.If a single iteration takes more than the timeout, only one request will be made"
+#: View/Users/login.ctp:12
+msgid "Login"
 msgstr ""
 
-#: Plugin/DebugKit/Console/Command/BenchmarkShell.php:152
-msgid "Example Use: `cake benchmark --n 10 --t 100 http://localhost/testsite`. <info>Note:</info> this benchmark does not include browser render times."
+#: View/Users/register.ctp:4
+msgid "Registreren"
 msgstr ""
 
-#: Plugin/DebugKit/Controller/Component/ToolbarComponent.php:159
-msgid "Component initialization"
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field post_id;validation for field user_id;validation for field replyTo
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Post.php:validation for field scope;validation for field published
+msgid "rule"
 msgstr ""
 
-#: Plugin/DebugKit/Controller/Component/ToolbarComponent.php:281
-msgid "Controller action"
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field replyTo
+msgid "required"
 msgstr ""
 
-#: Plugin/DebugKit/Controller/Component/ToolbarComponent.php:284
-msgid "Controller action start"
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field username
+msgid "A username is required"
 msgstr ""
 
-#: Plugin/DebugKit/Controller/Component/ToolbarComponent.php:304
-msgid "Processing toolbar state"
-msgstr ""
-
-#: Plugin/DebugKit/Controller/Component/ToolbarComponent.php:327
-msgid "Processing toolbar data"
-msgstr ""
-
-#: Plugin/DebugKit/Controller/Component/ToolbarComponent.php:362
-msgid "Controller render start"
-msgstr ""
-
-#: Plugin/DebugKit/Controller/Component/ToolbarComponent.php:446
-msgid "Could not load DebugToolbar panel %s"
-msgstr ""
-
-#: Plugin/DebugKit/Lib/DebugTimer.php:133
-msgid "Core Processing (Derived from $_SERVER[\"REQUEST_TIME\"])"
-msgstr ""
-
-#: Plugin/DebugKit/Lib/FireCake.php:315
-msgid "Headers already sent in %s on line %s. Cannot send log data to FirePHP."
-msgstr ""
-
-#: Plugin/DebugKit/Lib/FireCake.php:336
-msgid "Incorrect parameter count for FireCake::fb()"
-msgstr ""
-
-#: Plugin/DebugKit/Lib/FireCake.php:415
-msgid "Maximum number (99,999) of messages reached!"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/debug_toolbar.ctp:23
-msgid "There are no active panels. You must enable a panel to see its output."
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/environment_panel.ctp:20
-msgid "App Constants"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/environment_panel.ctp:36
-msgid "CakePHP Constants"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/environment_panel.ctp:52
-msgid "PHP Environment"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/environment_panel.ctp:70
-msgid "Hidef Environment"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/history_panel.ctp:19
-msgid "Request History"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/history_panel.ctp:21
-msgid "No previous requests logged."
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/history_panel.ctp:23
-msgid "previous requests available"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/history_panel.ctp:25
-msgid "Restore to current request"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/include_panel.ctp:19
-msgid "Included Files"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/log_panel.ctp:19
-msgid "Logs"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/log_panel.ctp:27
-msgid "Time"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/log_panel.ctp:27
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:42;66
-msgid "Message"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/log_panel.ctp:38
-msgid "There were no log entries made this request"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/request_panel.ctp:19
-msgid "Request"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/request_panel.ctp:27
-msgid "No post data."
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/request_panel.ctp:36
-msgid "No querystring data."
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/request_panel.ctp:49
-msgid "Current Route"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/session_panel.ctp:19
-msgid "Session"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/sql_log_panel.ctp:24
-msgid "Sql Logs"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/sql_log_panel.ctp:38
-msgid "Total Time: %s ms <br />Total Queries: %s queries"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/sql_log_panel.ctp:47
-msgid "Query Explain:"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/sql_log_panel.ctp:50
-msgid "Click an \"Explain\" link above, to see the query explanation."
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/sql_log_panel.ctp:55
-msgid "No active database connections"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:35
-msgid "Memory"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:38
-msgid "Peak Memory Use"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:42
-msgid "Memory use"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:55
-msgid "Timers"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:57
-msgid "%s (ms)"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:58
-msgid "Total Request Time:"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:67
-msgid "Time in ms"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/timer_panel.ctp:68
-msgid "Graph"
-msgstr ""
-
-#: Plugin/DebugKit/View/Elements/variables_panel.ctp:19
-msgid "View Variables"
-msgstr ""
-
-#: Plugin/DebugKit/View/Helper/DebugTimerHelper.php:45
-msgid "Rendering View"
-msgstr ""
-
-#: Plugin/DebugKit/View/Helper/DebugTimerHelper.php:60
-msgid "Rendering %s"
-msgstr ""
-
-#: Plugin/DebugKit/View/Helper/DebugTimerHelper.php:86
-msgid "View render complete"
-msgstr ""
-
-#: Plugin/DebugKit/View/Helper/HtmlToolbarHelper.php:226
-msgid "Explain"
-msgstr ""
-
-#: Plugin/DebugKit/View/Helper/SimpleGraphHelper.php:80
-msgid "Starting %sms into the request, taking %sms"
-msgstr ""
-
-#: Plugin/DebugKit/View/Helper/TidyHelper.php:99
-msgid "No markup errors found"
-msgstr ""
-
-#: Plugin/DebugKit/View/Helper/ToolbarHelper.php:189
-msgid "maybe slow"
-msgstr ""
-
-#: Plugin/DebugKit/Console/Command/WhitespaceShell.php:90
-msgid "Absolute path or relative to APP."
-msgstr ""
-
-#: View/Errors/error400.ctp:21
-#: View/Errors/error500.ctp:21
-msgid "Error"
-msgstr ""
-
-#: View/Errors/error400.ctp:23
-msgid "The requested address %s was not found on this server."
-msgstr ""
-
-#: View/Errors/error500.ctp:22
-msgid "An Internal Error Has Occurred."
-msgstr ""
-
-#: View/Layouts/error.ctp:19
-msgid "CakePHP: the rapid development php framework"
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field password
+msgid "A password is required"
 msgstr ""
 

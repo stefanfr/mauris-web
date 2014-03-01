@@ -30,4 +30,24 @@ App::uses('Helper', 'View');
  * @package       app.View.Helper
  */
 class AppHelper extends Helper {
+    
+    public function buildName($user) {
+        $fullname = implode(
+            ' ', array(
+                @$user['firstname'],
+                @$user['middlename'],
+                @$user['surname'],
+            )
+        );
+        $nickname = $user['nickname'];
+        
+        if (trim($fullname)) {
+            return $fullname . ((!empty($nickname)) ? ' (' . $nickname . ')' : '');
+        } elseif ($nickname) {
+            return $nickname;
+        } else {
+            return $user['username'];
+        }
+    }
+    
 }

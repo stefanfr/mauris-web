@@ -3,3 +3,9 @@
    RewriteRule    ^$ app/webroot/    [L]
    RewriteRule    (.*) app/webroot/$1 [L]
 </IfModule>
+
+SetEnvIf Origin "http(s)?://(.+\.)?(ictcollege\.eu)$" ORIGIN_DOMAIN=$0
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin %{ORIGIN_DOMAIN}e env=ORIGIN_DOMAIN
+  Header set Access-Control-Allow-Methods "POST,GET,OPTIONS"
+</IfModule>

@@ -1,50 +1,28 @@
-<h1>Blog posts</h1>
-<p><?php echo $this->Html->link('Add Post', array('action' => 'add')); ?></p>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>#</th>
-			<th><?php echo __('Title'); ?></th>
-			<th><?php echo __('Actions'); ?></th>
-			<th><?php echo __('Created'); ?></th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php if(empty($posts)): ?>
-			<tr>
-				<td colspan="4" align="center"><?php echo __('No posts found'); ?></td>
-			</tr>
-		<?php else: ?>
-			<?php foreach ($posts as $post): ?>
-			<tr>
-				<td><?php echo $post['Post']['id']; ?></td>
-				<td>
-					<?php
-						echo $this->Html->link(
-							$post['Post']['title'],
-							array('action' => 'view', $post['Post']['id'])
-						);
-					?>
-				</td>
-				<td>
-					<?php
-						echo $this->Form->postLink(
-							'Delete',
-							array('action' => 'delete', $post['Post']['id']),
-							array('confirm' => 'Are you sure?')
-						);
-					?>
-					<?php
-						echo $this->Html->link(
-							'Edit', array('action' => 'edit', $post['Post']['id'])
-						);
-					?>
-				</td>
-				<td>
-					<?php echo $post['Post']['created']; ?>
-				</td>
-			</tr>
-			<?php endforeach; ?>
-		<?php endif; ?>
-	</tbody>
-</table>
+<? $this->Html->addCrumb('Nieuws', array('controller' => 'posts', 'action' => 'index')); ?>
+<div class="page-header"><h1>Het laatste nieuws</h1></div>
+<? foreach ($posts as $post): ?>
+<div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <h2 class="blog-post-title" itemprop="name"><h2><?=h($post['Post']['title'])?></h2></span>
+  <p class="blog-post-meta" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+        Geplaatst door: <a itemprop="url" href="<?=Router::url(array('controller' => 'profile', 'action' => 'view', $post['PostedBy']['id']))?>">
+            <span itemprop="name"><?=h($this->App->buildName($post['PostedBy']))?></span>
+        </a>
+  </p>
+
+  <? if ($post['Post']['summary']): ?>
+    <?=h($post['Post']['summary'])?>
+  <? else: ?>
+    <?=$this->Text->truncate($post['Post']['body'], 500)?>
+  <? endif; ?>
+  <br><br>
+  <?=$this->Html->link(
+    'Lees meer',
+    array('controller' => 'posts', 'action' => 'view', $post['Post']['id']),
+    array('itemprop' => 'url')
+);?>
+</div>
+<? endforeach; ?>
+
+<ul class="pagination">
+<?=$this->Paginator->numbers(array('first' => 2, 'last' => 2, 'currentClass' => 'active', 'currentTag' => 'span'))?>
+</ul>
