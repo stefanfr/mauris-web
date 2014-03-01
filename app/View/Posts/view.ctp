@@ -1,16 +1,16 @@
 <?
-$this->Html->addCrumb('Nieuws', array('controller' => 'posts', 'action' => 'index'));
+$this->Html->addCrumb(__('News'), array('controller' => 'posts', 'action' => 'index'));
 $this->Html->addCrumb($post['Post']['title'], $this->here);
 ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
   <h2 class="blog-post-title" itemprop="name"><h2><?=h($post['Post']['title'])?></h2></span>
-  <p class="blog-post-meta">Gepost door: <span itemprop="author"><?=h($this->App->buildName($post['PostedBy']))?></span></p><br>
+  <p class="blog-post-meta"><?=h(__('Posted by:'))?> <span itemprop="author"><?=h($this->App->buildName($post['PostedBy']))?></span></p><br>
     <?=nl2br(h($post['Post']['body']))?>
 </div>
 
 <? if ($can_comment): ?>
 <?=$this->Html->link(
-    'Reageer',
+    __('Comment'),
     array('controller' => 'comment', 'action' => 'add', 'post' => $post['Post']['id'])
 );?>
 <? endif; ?>

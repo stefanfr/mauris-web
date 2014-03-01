@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 21:38+0000\n"
+"POT-Creation-Date: 2014-03-01 22:01+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -157,6 +157,7 @@ msgid "Latest news"
 msgstr ""
 
 #: View/Pages/home.ctp:19
+#: View/Posts/index.ctp:19
 msgid "Read more"
 msgstr ""
 
@@ -169,6 +170,8 @@ msgid "Classrooms available at: %s"
 msgstr ""
 
 #: View/Pages/home.ctp:41
+#: View/Schedule/simple.ctp:40
+#: View/Schedule/view.ctp:26
 msgid "Classroom"
 msgstr ""
 
@@ -188,12 +191,70 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
+#: View/Posts/add.ctp:36
+msgid "Scope"
+msgstr ""
+
+#: View/Posts/add.ctp:42
+msgid "Add"
+msgstr ""
+
+#: View/Posts/index.ctp:2
+msgid "The latest news"
+msgstr ""
+
+#: View/Posts/index.ctp:7
+#: View/Posts/view.ctp:7
+msgid "Posted by:"
+msgstr ""
+
+#: View/Posts/view.ctp:13
+msgid "Comment"
+msgstr ""
+
+#: View/Profile/view.ctp:1
+#: View/Teacher/view.ctp:8
+msgid "Name"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:8
+#: View/Schedule/simple.ctp:33
+#: View/Schedule/view.ctp:19
+msgid "Teacher"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:14
+#: View/Schedule/simple.ctp:27
+#: View/Schedule/view.ctp:13
+msgid "Class"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:46
+msgid "Simple schedule"
+msgstr ""
+
+#: View/Schedule/simple.ctp:16
+msgid "Calendar schedule"
+msgstr ""
+
+#: View/Schedule/simple.ctp:25
+#: View/Schedule/view.ctp:11
+msgid "Period"
+msgstr ""
+
+#: View/Schedule/view.ctp:33
+msgid "Assignments"
+msgstr ""
+
+#: View/Teacher/view.ctp:9
+msgid "Account"
+msgstr ""
+
 #: View/Users/add.ctp:4
 msgid "Add User"
 msgstr ""
 
 #: View/Users/add.ctp:12
-#: View/Users/register.ctp:9
 msgid "Submit"
 msgstr ""
 
@@ -205,7 +266,7 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: View/Users/register.ctp:4
-msgid "Registreren"
+#: View/Users/register.ctp:4;9
+msgid "Register"
 msgstr ""
 

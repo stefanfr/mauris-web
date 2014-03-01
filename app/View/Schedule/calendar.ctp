@@ -1,17 +1,17 @@
 <?
-$this->Html->addCrumb('Rooster', array('controller' => 'schedule', 'action' => 'index')); 
-$this->Html->addCrumb('Kalender', array('controller' => 'schedule', 'action' => 'index', 'type' => 'calendar'));
+$this->Html->addCrumb(__('Schedule'), array('controller' => 'schedule', 'action' => 'index')); 
+$this->Html->addCrumb(__('Calendar'), array('controller' => 'schedule', 'action' => 'index', 'type' => 'calendar'));
 ?>
 <?=$this->start('rightMenu'); ?>
 <form class="navbar-form navbar-right">
 	<select id="selector-teacher" class="form-control">
-			<option disabled><?=_('Docent'); ?></option>
+			<option disabled><?=__('Teacher'); ?></option>
 		<?php foreach ($this->get('teachers') as $teacher): ?>
 			<option value="<?=$teacher['id']?>"><?=($teacher['name']) ? $teacher['name'] : $teacher['abbreviation']?></option>
 		<?php endforeach; ?>
 	</select>
 	<select id="selector-class" class="form-control">
-			<option disabled><?=_('Klas'); ?></option>
+			<option disabled><?=__('Class'); ?></option>
 		<?php foreach ($this->get('classes') as $class): ?>
 			<option value="<?=$class['id']?>"><?=$class['name']?></option>
 		<?php endforeach; ?>
@@ -43,7 +43,7 @@ $targetData['start'] = (int) $this->get('target_start');
 $targetData['end'] = (int) $this->get('target_end');
 $targetData['departmentId'] = (int) $this->get('target_department_id');
 ?>
-<?=$this->Html->link('Simpel rooster', array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple'), $target))?>
+<?=$this->Html->link(__('Simple schedule'), array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple'), $target))?>
 <script>
 var targetData = <?=json_encode($targetData)?>;
 targetData.startDate = new Date(targetData.start * 1000);
