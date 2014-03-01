@@ -8,7 +8,7 @@ class CommentController extends AppController {
             $replyTo = $this->Comment->findById((int) $this->passedArgs['comment']);
             
             if (!$replyTo) {
-                throw new NotFoundException(__('Het commentaar waarop je wilt reageren bestaat niet'));
+                throw new NotFoundException(__('The comment you want to reply on doesn\'t exist'));
             }
             
             $this->Post->id = $replyTo['CommentedOn']['id'];
@@ -111,7 +111,7 @@ class CommentController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
             $this->Comment->id = $id;
             if ($this->Comment->save($this->request->data)) {
-                $this->Session->setFlash(__('Your post has been updated.'), 'alert', array(
+                $this->Session->setFlash(__('Your comment has been updated.'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
                 ));
@@ -119,7 +119,7 @@ class CommentController extends AppController {
                 return $this->redirect(array('controller' => 'posts', 'action' => 'view', $comment['Comment']['post_id']));
             }
 
-            $this->Session->setFlash(__('Unable to update your post.'), 'alert', array(
+            $this->Session->setFlash(__('Unable to update your comment.'), 'alert', array(
                 'plugin' => 'BoostCake',
                 'class' => 'alert-danger'
             ));
