@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 22:01+0000\n"
+"POT-Creation-Date: 2014-03-01 22:24+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: Controller/CommentController.php:11
-msgid "Het commentaar waarop je wilt reageren bestaat niet"
+msgid "The comment you want to reply on doesn't exist"
 msgstr ""
 
 #: Controller/CommentController.php:29
@@ -35,13 +35,11 @@ msgid "Invalid comment"
 msgstr ""
 
 #: Controller/CommentController.php:114
-#: Controller/PostsController.php:169
-msgid "Your post has been updated."
+msgid "Your comment has been updated."
 msgstr ""
 
 #: Controller/CommentController.php:122
-#: Controller/PostsController.php:177
-msgid "Unable to update your post."
+msgid "Unable to update your comment."
 msgstr ""
 
 #: Controller/PostsController.php:71;78;157;162
@@ -54,6 +52,14 @@ msgstr ""
 
 #: Controller/PostsController.php:148
 msgid "Unable to add your post."
+msgstr ""
+
+#: Controller/PostsController.php:169
+msgid "Your post has been updated."
+msgstr ""
+
+#: Controller/PostsController.php:177
+msgid "Unable to update your post."
 msgstr ""
 
 #: Controller/PostsController.php:195
@@ -128,12 +134,16 @@ msgstr ""
 msgid "Manage"
 msgstr ""
 
-#: View/Comment/add.ctp:8
-msgid "Voeg commentaar toe"
+#: View/Comment/add.ctp:8;13
+msgid "Add comment"
 msgstr ""
 
-#: View/Comment/add.ctp:13
-msgid "Plaats commentaar"
+#: View/Comment/edit.ctp:1
+msgid "Update comment"
+msgstr ""
+
+#: View/Elements/reply.ctp:11
+msgid "Reply"
 msgstr ""
 
 #: View/Layouts/default.ctp:100
@@ -152,6 +162,11 @@ msgstr ""
 msgid "Copyright %d-%d ©"
 msgstr ""
 
+#: View/Layouts/Emails/html/default.ctp:27
+#: View/Layouts/Emails/text/default.ctp:21
+msgid "This email was sent using the"
+msgstr ""
+
 #: View/Pages/home.ctp:10
 msgid "Latest news"
 msgstr ""
@@ -159,6 +174,14 @@ msgstr ""
 #: View/Pages/home.ctp:19
 #: View/Posts/index.ctp:19
 msgid "Read more"
+msgstr ""
+
+#: View/Pages/home.ctp:27;32
+msgid "Heading"
+msgstr ""
+
+#: View/Pages/home.ctp:29;34
+msgid "View details »"
 msgstr ""
 
 #: View/Pages/home.ctp:37

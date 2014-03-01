@@ -8,7 +8,7 @@
   <br>
   <? if ($can_comment): ?>
     <?=$this->Html->link(
-        'Reageer',
+        __('Reply'),
         array('controller' => 'comment', 'action' => 'add', 'comment' => $reply['Comment']['id'])
     );?>
     <? endif; ?>

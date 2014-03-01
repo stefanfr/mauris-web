@@ -1,4 +1,4 @@
-<h1>Pas commentaar aan</h1>
+<h1><?=h(__('Update comment'))?></h1>
 <?php
 echo $this->Form->create('Comment', array(
 	'inputDefaults' => array(
