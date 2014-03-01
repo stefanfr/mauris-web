@@ -1,0 +1,208 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-03-01 16:27+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/CommentController.php:11
+msgid "Het commentaar waarop je wilt reageren bestaat niet"
+msgstr ""
+
+#: Controller/CommentController.php:29
+msgid "No such post"
+msgstr ""
+
+#: Controller/CommentController.php:57
+msgid "Your comment has been added."
+msgstr ""
+
+#: Controller/CommentController.php:69
+msgid "Unable to add your comment."
+msgstr ""
+
+#: Controller/CommentController.php:78;83
+msgid "Invalid comment"
+msgstr ""
+
+#: Controller/CommentController.php:114
+#: Controller/PostsController.php:169
+msgid "Your post has been updated."
+msgstr ""
+
+#: Controller/CommentController.php:122
+#: Controller/PostsController.php:177
+msgid "Unable to update your post."
+msgstr ""
+
+#: Controller/PostsController.php:71;78;157;162
+msgid "Invalid post"
+msgstr ""
+
+#: Controller/PostsController.php:140
+msgid "Your post has been saved."
+msgstr ""
+
+#: Controller/PostsController.php:148
+msgid "Unable to add your post."
+msgstr ""
+
+#: Controller/PostsController.php:195
+msgid "Your post has been deleted."
+msgstr ""
+
+#: Controller/TeacherController.php:11
+msgid "No such teacher"
+msgstr ""
+
+#: Controller/UsersController.php:19;53;74
+msgid "Invalid user"
+msgstr ""
+
+#: Controller/UsersController.php:28;41;57
+msgid "The user has been saved"
+msgstr ""
+
+#: Controller/UsersController.php:32;45;61
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:77
+msgid "User deleted"
+msgstr ""
+
+#: Controller/UsersController.php:80
+msgid "User was not deleted"
+msgstr ""
+
+#: Controller/UsersController.php:89
+msgid "Invalid username or password, try again"
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:18
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:27
+#: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:6
+msgid "Alert notice message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:30;41
+#: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:10
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:6
+msgid "Alert success message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:34
+#: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:15
+msgid "Alert error message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:45
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:11
+msgid "Alert info message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:49
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:16
+msgid "Alert warning message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:53
+#: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:21
+msgid "Alert danger message testing..."
+msgstr ""
+
+#: Plugin/Manage/View/Layouts/default.ctp:94
+#: View/Layouts/default.ctp:103
+msgid "Manage"
+msgstr ""
+
+#: View/Comment/add.ctp:8
+msgid "Voeg commentaar toe"
+msgstr ""
+
+#: View/Comment/add.ctp:13
+msgid "Plaats commentaar"
+msgstr ""
+
+#: View/Layouts/default.ctp:100
+msgid "News"
+msgstr ""
+
+#: View/Layouts/default.ctp:101
+msgid "Schedule"
+msgstr ""
+
+#: View/Pages/home.ctp:10
+msgid "Latest news"
+msgstr ""
+
+#: View/Pages/home.ctp:19
+msgid "Read more"
+msgstr ""
+
+#: View/Pages/home.ctp:38
+msgid "Classrooms available at: %s"
+msgstr ""
+
+#: View/Posts/add.ctp:1
+msgid "Add post"
+msgstr ""
+
+#: View/Posts/add.ctp:28
+msgid "Content"
+msgstr ""
+
+#: View/Posts/add.ctp:32
+msgid "Options"
+msgstr ""
+
+#: View/Users/add.ctp:4
+msgid "Add User"
+msgstr ""
+
+#: View/Users/add.ctp:12
+#: View/Users/register.ctp:9
+msgid "Submit"
+msgstr ""
+
+#: View/Users/login.ctp:6
+msgid "Please enter your username and password"
+msgstr ""
+
+#: View/Users/login.ctp:12
+msgid "Login"
+msgstr ""
+
+#: View/Users/register.ctp:4
+msgid "Registreren"
+msgstr ""
+
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field post_id;validation for field user_id;validation for field replyTo
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Post.php:validation for field scope;validation for field published
+msgid "rule"
+msgstr ""
+
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/Comment.php:validation for field replyTo
+msgid "required"
+msgstr ""
+
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field username
+msgid "A username is required"
+msgstr ""
+
+#: /home/marlinc/Documents/Projects/School/ICT-College/website/app/Model/User.php:validation for field password
+msgid "A password is required"
+msgstr ""
+
