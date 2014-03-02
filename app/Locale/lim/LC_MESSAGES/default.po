@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-02 22:59+0000\n"
+"POT-Creation-Date: 2014-03-02 23:29+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -159,8 +159,16 @@ msgstr ""
 msgid "The absence report has been removed"
 msgstr ""
 
-#: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
+#: Plugin/Manage/View/Layouts/default.ctp:94;149 View/Layouts/default.ctp:103
 msgid "Manage"
+msgstr ""
+
+#: Plugin/Manage/View/Layouts/default.ctp:100
+msgid "Posts"
+msgstr ""
+
+#: Plugin/Manage/View/Layouts/default.ctp:101 View/Layouts/default.ctp:101
+msgid "Schedule"
 msgstr ""
 
 #: Plugin/Manage/View/Layouts/default.ctp:102
@@ -213,12 +221,8 @@ msgstr ""
 msgid "Update comment"
 msgstr ""
 
-#: View/Elements/reply.ctp:11
+#: View/Elements/reply.ctp:11 View/Posts/view.ctp:31
 msgid "Reply"
-msgstr ""
-
-#: View/Layouts/default.ctp:101
-msgid "Schedule"
 msgstr ""
 
 #: View/Layouts/default.ctp:108

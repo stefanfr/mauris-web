@@ -28,7 +28,7 @@ $this->Html->addCrumb($post['Post']['title'], $this->here);
               <br>
       <? if ($can_comment): ?>
         <?=$this->Html->link(
-            'Reageer',
+            __('Reply'),
             array('controller' => 'comment', 'action' => 'add', 'comment' => $comment['Comment']['id'])
         );?>
         <? endif; ?>

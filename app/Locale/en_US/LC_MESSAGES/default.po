@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-02 22:59+0000\n"
+"POT-Creation-Date: 2014-03-02 23:29+0000\n"
 "PO-Revision-Date: 2014-03-01 16:27+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -163,9 +163,17 @@ msgstr ""
 msgid "The absence report has been removed"
 msgstr "The user has been saved"
 
-#: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
+#: Plugin/Manage/View/Layouts/default.ctp:94;149 View/Layouts/default.ctp:103
 msgid "Manage"
 msgstr "Manage"
+
+#: Plugin/Manage/View/Layouts/default.ctp:100
+msgid "Posts"
+msgstr ""
+
+#: Plugin/Manage/View/Layouts/default.ctp:101 View/Layouts/default.ctp:101
+msgid "Schedule"
+msgstr "Schedule"
 
 #: Plugin/Manage/View/Layouts/default.ctp:102
 msgid "Teacher absence"
@@ -221,13 +229,9 @@ msgstr "Invalid comment"
 msgid "Update comment"
 msgstr "Plaats commentaar"
 
-#: View/Elements/reply.ctp:11
+#: View/Elements/reply.ctp:11 View/Posts/view.ctp:31
 msgid "Reply"
 msgstr ""
-
-#: View/Layouts/default.ctp:101
-msgid "Schedule"
-msgstr "Schedule"
 
 #: View/Layouts/default.ctp:108
 msgid "Logged in as %s"

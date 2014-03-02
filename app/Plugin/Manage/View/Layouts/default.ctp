@@ -97,8 +97,8 @@
 				<?=$this->fetch('leftMenu'); ?>
 				<ul class="nav navbar-nav">
 					<?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), array('plugin' => 'manage', 'controller' => 'manage'), array('escapeTitle' => false))); ?>
-                                        <?=$this->Menu->item($this->Html->link(_('Posts'), array('controller' => 'posts', 'action' => 'index'))); ?>
-					<?=$this->Menu->item($this->Html->link(_('Rooster'), array('controller' => 'schedule'))); ?>
+                                        <?=$this->Menu->item($this->Html->link(__('Posts'), array('controller' => 'posts', 'action' => 'index'))); ?>
+					<?=$this->Menu->item($this->Html->link(__('Schedule'), array('controller' => 'schedule'))); ?>
                                         <?=$this->Menu->item($this->Html->link(__('Teacher absence'), array('controller' => 'teacher_absence', 'action' => 'index'))); ?>
 				</ul>
 				<?=$this->startIfEmpty('rightMenu'); ?>
@@ -146,7 +146,7 @@
 	<?=$this->fetch('beforeContainer'); ?>
 	
 	<div class="container">		
-        <?=((isset($hideCrumb) && $hideCrumb) ? '' : $this->Html->getCrumbList(array('class' => 'breadcrumb', 'firstClass' => false, 'lastClass' => 'active'), _('Manage'))); ?>
+        <?=((isset($hideCrumb) && $hideCrumb) ? '' : $this->Html->getCrumbList(array('class' => 'breadcrumb', 'firstClass' => false, 'lastClass' => 'active'), __('Manage'))); ?>
         
 		<?=$this->Session->flash(); ?>	
 		
