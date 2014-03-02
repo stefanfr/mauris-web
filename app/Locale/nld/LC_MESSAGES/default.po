@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-02 22:59+0000\n"
-"PO-Revision-Date: 2014-03-02 18:37+0200\n"
+"PO-Revision-Date: 2014-03-03 00:06+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
+"/ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -137,47 +137,40 @@ msgid "Alert danger message testing..."
 msgstr ""
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:126
-#, fuzzy
 msgid "The absence has been reported"
-msgstr "De gebruiker is opgeslagen"
+msgstr "De afwezigheid is gemeld"
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:134
 msgid "Could not report the absence"
-msgstr ""
+msgstr "Kon de aanwezigheids melding aanmaken"
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:156;161
-#, fuzzy
 msgid "The absence report could not be found"
-msgstr "De gebruiker is opgeslagen"
+msgstr "De afwezigheids melding kon niet worden gevonden"
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:221
-#, fuzzy
 msgid "The absence report has been changed."
-msgstr "De gebruiker is opgeslagen"
+msgstr "De afwezigheids melding is aangepast."
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:229
-#, fuzzy
 msgid "Could not change the absence report"
-msgstr "%d melding van èèn afwezige docent"
+msgstr "Kon de aanwezigheids melding niet aanpassen"
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:296
-#, fuzzy
 msgid "The absence report has been removed"
-msgstr "De gebruiker is opgeslagen"
+msgstr "De aanwezigheids melding is verwijderd"
 
 #: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
 msgid "Manage"
 msgstr "Beheer"
 
 #: Plugin/Manage/View/Layouts/default.ctp:102
-#, fuzzy
 msgid "Teacher absence"
-msgstr "Docent"
+msgstr "Docent afwezigheid"
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:8
-#, fuzzy
 msgid "Add absence report"
-msgstr "%d melding van èèn afwezige docent"
+msgstr "Voeg afwezigheids melding toe"
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:29
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:29
@@ -194,9 +187,8 @@ msgid "Add"
 msgstr "Toevoegen"
 
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:8
-#, fuzzy
 msgid "Edit absence report"
-msgstr "%d melding van èèn afwezige docent"
+msgstr "Pas afwezigheids melding aan"
 
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:7 View/Pages/home.ctp:31
 msgid "Date"
@@ -204,16 +196,15 @@ msgstr "Datum"
 
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:9
 msgid "Change"
-msgstr ""
+msgstr "Verander"
 
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:10
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 #: Plugin/Manage/View/TeacherAbsence/remove.ctp:8
-#, fuzzy
 msgid "Remove absence report"
-msgstr "%d melding van èèn afwezige docent"
+msgstr "Verwijder afwezigheids melding"
 
 #: View/Comment/add.ctp:8;13
 msgid "Add comment"
