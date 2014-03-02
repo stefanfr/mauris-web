@@ -1,101 +1,98 @@
 # LANGUAGE translation of CakePHP Application
-# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Copyright 2014 NAME <EMAIL@ADDRESS>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-01 22:46+0000\n"
-"PO-Revision-Date: 2014-03-01 23:48+0200\n"
-"Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
-"/ict-college/ict-college-website/nld/>\n"
-"Language: nld\n"
+"PO-Revision-Date: 2014-03-01 22:46+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.9-dev\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language: deu\n"
 
 #: Controller/CommentController.php:11
 msgid "The comment you want to reply on doesn't exist"
-msgstr "Het commentaar waarop je wou reageren bestaat niet"
+msgstr ""
 
 #: Controller/CommentController.php:29
 msgid "No such post"
-msgstr "De dergelijke post bestaat niet"
+msgstr ""
 
 #: Controller/CommentController.php:57
 msgid "Your comment has been added."
-msgstr "Je commentaar is toegevoegt."
+msgstr ""
 
 #: Controller/CommentController.php:69
 msgid "Unable to add your comment."
-msgstr "Kon je commentaar niet toevoegen."
+msgstr ""
 
 #: Controller/CommentController.php:78;83
 msgid "Invalid comment"
-msgstr "Ongeldig commentaar"
+msgstr ""
 
 #: Controller/CommentController.php:114
 msgid "Your comment has been updated."
-msgstr "Je commentaar is toegevoegd."
+msgstr ""
 
 #: Controller/CommentController.php:122
 msgid "Unable to update your comment."
-msgstr "Commentaar kon niet worden aangepast."
+msgstr ""
 
 #: Controller/PostsController.php:71;78;157;162
 msgid "Invalid post"
-msgstr "Ongeldige post"
+msgstr ""
 
 #: Controller/PostsController.php:140
 msgid "Your post has been saved."
-msgstr "Je post is opgeslagen."
+msgstr ""
 
 #: Controller/PostsController.php:148
 msgid "Unable to add your post."
-msgstr "Je post kon niet worden toegevoegt."
+msgstr ""
 
 #: Controller/PostsController.php:169
 msgid "Your post has been updated."
-msgstr "Je post is aangepast."
+msgstr ""
 
 #: Controller/PostsController.php:177
 msgid "Unable to update your post."
-msgstr "Je post kon niet worden aangepast."
+msgstr ""
 
 #: Controller/PostsController.php:195
 msgid "Your post has been deleted."
-msgstr "Je post is verwijderd."
+msgstr ""
 
 #: Controller/TeacherController.php:11
 msgid "No such teacher"
-msgstr "De dergelijke docent bestaat niet"
+msgstr ""
 
 #: Controller/UsersController.php:19;53;74
 msgid "Invalid user"
-msgstr "Ongeldige gebruiker"
+msgstr ""
 
 #: Controller/UsersController.php:28;41;57
 msgid "The user has been saved"
-msgstr "De gebruiker is opgeslagen"
+msgstr ""
 
 #: Controller/UsersController.php:32;45;61
 msgid "The user could not be saved. Please, try again."
 msgstr ""
-"De gebruiker kon niet worden opgeslagen. Probeer het alstublieft opnieuw."
 
 #: Controller/UsersController.php:77
 msgid "User deleted"
-msgstr "Gebruiker verwijderd"
+msgstr ""
 
 #: Controller/UsersController.php:80
 msgid "User was not deleted"
-msgstr "Gebruiker was niet verwijderd"
+msgstr ""
 
 #: Controller/UsersController.php:89
 msgid "Invalid username or password, try again"
-msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
+msgstr ""
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:18
 msgid "Debug setting does not allow access to this url."
@@ -134,171 +131,160 @@ msgstr ""
 
 #: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
 msgid "Manage"
-msgstr "Beheer"
+msgstr ""
 
 #: View/Comment/add.ctp:8;13
 msgid "Add comment"
-msgstr "Commentaar toevoegen"
+msgstr ""
 
 #: View/Comment/edit.ctp:1
 msgid "Update comment"
-msgstr "Commentaar aanpassen"
+msgstr ""
 
 #: View/Elements/reply.ctp:11
 msgid "Reply"
-msgstr "Reageer"
+msgstr ""
 
 #: View/Layouts/default.ctp:100
 msgid "News"
-msgstr "Nieuws"
+msgstr ""
 
 #: View/Layouts/default.ctp:101
 msgid "Schedule"
-msgstr "Rooster"
+msgstr ""
 
 #: View/Layouts/default.ctp:108
 msgid "Logged in as %s"
-msgstr "Ingelogd als %s"
+msgstr ""
 
 #: View/Layouts/default.ctp:129
 msgid "Username"
-msgstr "Gebruikersnaam"
+msgstr ""
 
 #: View/Layouts/default.ctp:158
 msgid "Copyright %d-%d ©"
-msgstr "Copyright %d-%d ©"
+msgstr ""
 
 #: View/Layouts/Emails/html/default.ctp:27
 #: View/Layouts/Emails/text/default.ctp:21
 msgid "This email was sent using the"
-msgstr "Deze email was verstuurd met het"
+msgstr ""
 
 #: View/Pages/home.ctp:10
 msgid "Latest news"
-msgstr "Laatste nieuws"
+msgstr ""
 
 #: View/Pages/home.ctp:19 View/Posts/index.ctp:19
 msgid "Read more"
-msgstr "Lees meer"
+msgstr ""
 
 #: View/Pages/home.ctp:27;32
 msgid "Heading"
-msgstr "Kop"
+msgstr ""
 
 #: View/Pages/home.ctp:29;34
 msgid "View details »"
-msgstr "Bekijk details »"
+msgstr ""
 
 #: View/Pages/home.ctp:37
 msgid "Available classrooms"
-msgstr "Beschikbare klaslokalen"
+msgstr ""
 
 #: View/Pages/home.ctp:38
 msgid "Classrooms available at: %s"
-msgstr "Lokalen beschikbaar om: %s"
+msgstr ""
 
 #: View/Pages/home.ctp:41 View/Schedule/simple.ctp:40
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
-msgstr "Klaslokaal"
+msgstr ""
 
 #: View/Pages/home.ctp:42
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #: View/Posts/add.ctp:1
 msgid "Add post"
-msgstr "Voeg post toe"
+msgstr ""
 
 #: View/Posts/add.ctp:28
 msgid "Content"
-msgstr "Inhoud"
+msgstr ""
 
 #: View/Posts/add.ctp:32
 msgid "Options"
-msgstr "Opties"
+msgstr ""
 
 #: View/Posts/add.ctp:36
 msgid "Scope"
-msgstr "Omvang"
+msgstr ""
 
 #: View/Posts/add.ctp:42
 msgid "Add"
-msgstr "Toevoegen"
+msgstr ""
 
 #: View/Posts/index.ctp:2
 msgid "The latest news"
-msgstr "Het laatste nieuws"
+msgstr ""
 
 #: View/Posts/index.ctp:7 View/Posts/view.ctp:7
 msgid "Posted by:"
-msgstr "Geplaatst door:"
+msgstr ""
 
 #: View/Posts/view.ctp:13
 msgid "Comment"
-msgstr "Reageer"
+msgstr ""
 
 #: View/Profile/view.ctp:1 View/Teacher/view.ctp:8
 msgid "Name"
-msgstr "Naam"
+msgstr ""
 
 #: View/Schedule/calendar.ctp:8 View/Schedule/simple.ctp:33
 #: View/Schedule/view.ctp:19
 msgid "Teacher"
-msgstr "Docent"
+msgstr ""
 
 #: View/Schedule/calendar.ctp:14 View/Schedule/simple.ctp:27
 #: View/Schedule/view.ctp:13
 msgid "Class"
-msgstr "Klas"
+msgstr ""
 
 #: View/Schedule/calendar.ctp:46
 msgid "Simple schedule"
-msgstr "Simpel rooster"
+msgstr ""
 
 #: View/Schedule/simple.ctp:16
 msgid "Calendar schedule"
-msgstr "Kalender rooster"
+msgstr ""
 
 #: View/Schedule/simple.ctp:25 View/Schedule/view.ctp:11
 msgid "Period"
-msgstr "Lesuur"
+msgstr ""
 
 #: View/Schedule/view.ctp:33
 msgid "Assignments"
-msgstr "Opgaves"
+msgstr ""
 
 #: View/Teacher/view.ctp:9
 msgid "Account"
-msgstr "Account"
+msgstr ""
 
 #: View/Users/add.ctp:4
 msgid "Add User"
-msgstr "Gebruiker toevoegen"
+msgstr ""
 
 #: View/Users/add.ctp:12
 msgid "Submit"
-msgstr "Versturen"
+msgstr ""
 
 #: View/Users/login.ctp:6
 msgid "Please enter your username and password"
-msgstr "Vul alstublieft uw gebruikersnaam en wachtwoord in"
+msgstr ""
 
 #: View/Users/login.ctp:12
 msgid "Login"
-msgstr "Inloggen"
+msgstr ""
 
 #: View/Users/register.ctp:4;9
 msgid "Register"
-msgstr "Registreren"
-
-#, fuzzy
-#~ msgid "Het commentaar waarop je wilt reageren bestaat niet"
-#~ msgstr "Het commentaar waarop je wilt reageren bestaat niet"
-
-#, fuzzy
-#~ msgid "Voeg commentaar toe"
-#~ msgstr "Voeg commentaar toe"
-
-#~ msgid "required"
-#~ msgstr "Verplicht"
+msgstr ""
