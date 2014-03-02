@@ -104,6 +104,8 @@ class PostsController extends AppController {
         $this->set('can_view_comments', $this->Acl->check(
             $requester, array('scope' => $scope, 'permission' => 'comment', 'school_id' => $post['Post']['school_id'], 'department_id' => $post['Post']['department_id']), 'read'
         ));
+
+        $this->set('title_for_layout', $post['Post']['title']);
     }
 
     public function add() {
