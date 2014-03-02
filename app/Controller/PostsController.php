@@ -54,7 +54,18 @@ class PostsController extends AppController {
             );
         }
         if ((in_array('own', $allowedScopes)) && ($this->Auth->user())) {
-            $conditions['and']['or']['Post.user_id'] = $this->Auth->user('id');
+            $conditions['and']['or'][] = array(
+                'and' => array(
+                    'Post.user_id' => $this->Auth->user('id'),
+                    'Post.school_id' => $this->School->id,
+                    array(
+                        'or' => array(
+                            'Post.department_id' => $this->Department->id,
+                            'Post.department_id IS NULL'
+                        )
+                    )
+                )
+            );
         }
         
         $this->set(
