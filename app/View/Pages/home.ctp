@@ -24,9 +24,21 @@
 
 <div class="row">
 	<div class="col-md-4">
-		<h2><?=h(__('Heading'))?></h2>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-		<p><a class="btn btn-default" href="#" role="button"><?=h(__('View details »'))?></a></p>
+		<h2><?=__n('Absent teacher', 'Absent teachers', count($absent_teachers))?></h2>
+                <p><?=__('Absent teachers for the 7 following days')?></p>
+		<table class="table">
+                    <tr>
+                        <th><?=__('Date')?></th>
+                        <th><?=__('Teacher')?></th>
+                    </tr>
+                    <? foreach ($absent_teachers as $report): ?>
+                    <tr>
+                        <th><?=h(date('l', strtotime($report['TeacherAbsenceReport']['date'])))?></th>
+                        <th><?=$this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teacher', 'action' => 'view', $report['TeacherAbsenceReport']['teacher_id']))?></th>
+                    </tr>
+                    <? endforeach; ?>
+                </table>
+                <p><?=__n('%d absent teacher report', '%d absent teachers reports', count($absent_teachers), count($absent_teachers))?></p>
 	</div>
 	<div class="col-md-4">
 		<h2><?=h(__('Heading'))?></h2>

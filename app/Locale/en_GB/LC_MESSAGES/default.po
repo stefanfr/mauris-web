@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-02 15:12+0000\n"
+"POT-Creation-Date: 2014-03-02 17:32+0000\n"
 "PO-Revision-Date: 2014-03-02 16:02+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: English (United Kingdom) <http://weblate.mms-projects.net/"
@@ -180,30 +180,56 @@ msgstr "Latest news"
 msgid "Read more"
 msgstr "Read more"
 
-#: View/Pages/home.ctp:27;32
+#: View/Pages/home.ctp:28
+msgid "Absent teachers for the 7 following days"
+msgstr ""
+
+#: View/Pages/home.ctp:31
+msgid "Date"
+msgstr ""
+
+#: View/Pages/home.ctp:32 View/Schedule/calendar.ctp:8
+#: View/Schedule/simple.ctp:33 View/Schedule/view.ctp:19
+msgid "Teacher"
+msgstr ""
+
+#: View/Pages/home.ctp:44
 msgid "Heading"
 msgstr ""
 
-#: View/Pages/home.ctp:29;34
+#: View/Pages/home.ctp:46
 msgid "View details »"
 msgstr ""
 
-#: View/Pages/home.ctp:41 View/Schedule/simple.ctp:40
+#: View/Pages/home.ctp:53 View/Schedule/simple.ctp:40
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
 msgstr ""
 
-#: View/Pages/home.ctp:42
+#: View/Pages/home.ctp:54
 msgid "Title"
 msgstr ""
 
-#: View/Pages/home.ctp:37
+#: View/Pages/home.ctp:27
+#, fuzzy
+msgid "Absent teacher"
+msgid_plural "Absent teachers"
+msgstr[0] "No such teacher"
+msgstr[1] "No such teacher"
+
+#: View/Pages/home.ctp:41
+msgid "%d absent teacher report"
+msgid_plural "%d absent teachers reports"
+msgstr[0] ""
+msgstr[1] ""
+
+#: View/Pages/home.ctp:49
 msgid "Available classroom"
 msgid_plural "Available classrooms"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Pages/home.ctp:38
+#: View/Pages/home.ctp:50
 #, fuzzy
 msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
@@ -250,11 +276,6 @@ msgstr ""
 
 #: View/Profile/view.ctp:1 View/Teacher/view.ctp:8
 msgid "Name"
-msgstr ""
-
-#: View/Schedule/calendar.ctp:8 View/Schedule/simple.ctp:33
-#: View/Schedule/view.ctp:19
-msgid "Teacher"
 msgstr ""
 
 #: View/Schedule/calendar.ctp:14 View/Schedule/simple.ctp:27

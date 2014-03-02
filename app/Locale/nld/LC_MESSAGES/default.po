@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-02 15:12+0000\n"
+"POT-Creation-Date: 2014-03-02 17:32+0000\n"
 "PO-Revision-Date: 2014-03-02 16:18+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
-"/ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
+"ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -181,30 +181,56 @@ msgstr "Laatste nieuws"
 msgid "Read more"
 msgstr "Lees meer"
 
-#: View/Pages/home.ctp:27;32
+#: View/Pages/home.ctp:28
+msgid "Absent teachers for the 7 following days"
+msgstr ""
+
+#: View/Pages/home.ctp:31
+msgid "Date"
+msgstr ""
+
+#: View/Pages/home.ctp:32 View/Schedule/calendar.ctp:8
+#: View/Schedule/simple.ctp:33 View/Schedule/view.ctp:19
+msgid "Teacher"
+msgstr "Docent"
+
+#: View/Pages/home.ctp:44
 msgid "Heading"
 msgstr "Kop"
 
-#: View/Pages/home.ctp:29;34
+#: View/Pages/home.ctp:46
 msgid "View details »"
 msgstr "Bekijk details »"
 
-#: View/Pages/home.ctp:41 View/Schedule/simple.ctp:40
+#: View/Pages/home.ctp:53 View/Schedule/simple.ctp:40
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
 msgstr "Klaslokaal"
 
-#: View/Pages/home.ctp:42
+#: View/Pages/home.ctp:54
 msgid "Title"
 msgstr "Titel"
 
-#: View/Pages/home.ctp:37
+#: View/Pages/home.ctp:27
+#, fuzzy
+msgid "Absent teacher"
+msgid_plural "Absent teachers"
+msgstr[0] "De dergelijke docent bestaat niet"
+msgstr[1] "De dergelijke docent bestaat niet"
+
+#: View/Pages/home.ctp:41
+msgid "%d absent teacher report"
+msgid_plural "%d absent teachers reports"
+msgstr[0] ""
+msgstr[1] ""
+
+#: View/Pages/home.ctp:49
 msgid "Available classroom"
 msgid_plural "Available classrooms"
 msgstr[0] "Beschikbaar klaslokaal"
 msgstr[1] "Beschikbare klaslokalen"
 
-#: View/Pages/home.ctp:38
+#: View/Pages/home.ctp:50
 msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
 msgstr[0] "Lokaal beschikbaar om: %s"
@@ -251,11 +277,6 @@ msgstr "Reageer"
 #: View/Profile/view.ctp:1 View/Teacher/view.ctp:8
 msgid "Name"
 msgstr "Naam"
-
-#: View/Schedule/calendar.ctp:8 View/Schedule/simple.ctp:33
-#: View/Schedule/view.ctp:19
-msgid "Teacher"
-msgstr "Docent"
 
 #: View/Schedule/calendar.ctp:14 View/Schedule/simple.ctp:27
 #: View/Schedule/view.ctp:13

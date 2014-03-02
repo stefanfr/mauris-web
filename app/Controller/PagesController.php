@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Classroom', 'Post');
+	public $uses = array('Classroom', 'Post', 'TeacherAbsenceReport');
 
 /**
  * Displays a view
@@ -77,6 +77,7 @@ class PagesController extends AppController {
             $this->set('classrooms_available', $this->Classroom->getAvailableClassrooms($classroomsAvailableTimestamp, $this->Department->id));
             $this->set('classrooms_available', $this->Classroom->getAvailableClassrooms($classroomsAvailableTimestamp, $this->Department->id));
             $this->set('latest_post', $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id));
+            $this->set('absent_teachers', $this->TeacherAbsenceReport->getAbsentTeachers(time(), strtotime('+7 days', time()), $this->Department->id));
 
             try {
                 $this->render(implode('/', $path));
