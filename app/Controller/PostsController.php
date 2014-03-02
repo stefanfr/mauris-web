@@ -64,6 +64,8 @@ class PostsController extends AppController {
                 $conditions
             )
         );
+
+        $this->set('title_for_layout', __('News'));
     }
 
     public function view($id = null) {
