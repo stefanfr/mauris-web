@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-02 17:32+0000\n"
+"POT-Creation-Date: 2014-03-02 22:59+0000\n"
 "PO-Revision-Date: 2014-03-02 16:02+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: English (United Kingdom) <http://weblate.mms-projects.net/"
@@ -135,9 +135,81 @@ msgstr "Alert warning message testing..."
 msgid "Alert danger message testing..."
 msgstr "Alert danger message testing..."
 
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:126
+#, fuzzy
+msgid "The absence has been reported"
+msgstr "The user has been saved"
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:134
+msgid "Could not report the absence"
+msgstr ""
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:156;161
+#, fuzzy
+msgid "The absence report could not be found"
+msgstr "The user has been saved"
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:221
+#, fuzzy
+msgid "The absence report has been changed."
+msgstr "The user has been saved"
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:229
+msgid "Could not change the absence report"
+msgstr ""
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:296
+#, fuzzy
+msgid "The absence report has been removed"
+msgstr "The user has been saved"
+
 #: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
 msgid "Manage"
 msgstr "Manage"
+
+#: Plugin/Manage/View/Layouts/default.ctp:102
+msgid "Teacher absence"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/add.ctp:8
+msgid "Add absence report"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/add.ctp:29
+#: Plugin/Manage/View/TeacherAbsence/edit.ctp:29
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:8 View/Pages/home.ctp:32
+#: View/Schedule/calendar.ctp:8 View/Schedule/simple.ctp:33
+#: View/Schedule/view.ctp:19
+msgid "Teacher"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/add.ctp:33
+#: Plugin/Manage/View/TeacherAbsence/edit.ctp:33
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:2 View/Posts/add.ctp:42
+msgid "Add"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/edit.ctp:8
+#, fuzzy
+msgid "Edit absence report"
+msgstr "The user has been saved"
+
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:7 View/Pages/home.ctp:31
+msgid "Date"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:9
+msgid "Change"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:10
+msgid "Remove"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/remove.ctp:8
+#, fuzzy
+msgid "Remove absence report"
+msgstr "The user has been saved"
 
 #: View/Comment/add.ctp:8;13
 msgid "Add comment"
@@ -182,15 +254,6 @@ msgstr "Read more"
 
 #: View/Pages/home.ctp:28
 msgid "Absent teachers for the 7 following days"
-msgstr ""
-
-#: View/Pages/home.ctp:31
-msgid "Date"
-msgstr ""
-
-#: View/Pages/home.ctp:32 View/Schedule/calendar.ctp:8
-#: View/Schedule/simple.ctp:33 View/Schedule/view.ctp:19
-msgid "Teacher"
 msgstr ""
 
 #: View/Pages/home.ctp:44
@@ -250,10 +313,6 @@ msgstr "Options"
 
 #: View/Posts/add.ctp:36
 msgid "Scope"
-msgstr ""
-
-#: View/Posts/add.ctp:42
-msgid "Add"
 msgstr ""
 
 #: View/Posts/index.ctp:2

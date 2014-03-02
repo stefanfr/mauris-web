@@ -99,6 +99,7 @@
 					<?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), array('plugin' => 'manage', 'controller' => 'manage'), array('escapeTitle' => false))); ?>
                                         <?=$this->Menu->item($this->Html->link(_('Posts'), array('controller' => 'posts', 'action' => 'index'))); ?>
 					<?=$this->Menu->item($this->Html->link(_('Rooster'), array('controller' => 'schedule'))); ?>
+                                        <?=$this->Menu->item($this->Html->link(__('Teacher absence'), array('controller' => 'teacher_absence', 'action' => 'index'))); ?>
 				</ul>
 				<?=$this->startIfEmpty('rightMenu'); ?>
                                 <? if (AuthComponent::user('id')): ?>

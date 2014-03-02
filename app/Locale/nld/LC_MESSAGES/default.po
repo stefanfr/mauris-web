@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-02 17:32+0000\n"
+"POT-Creation-Date: 2014-03-02 22:59+0000\n"
 "PO-Revision-Date: 2014-03-02 18:37+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
-"/ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
+"ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,9 +136,84 @@ msgstr ""
 msgid "Alert danger message testing..."
 msgstr ""
 
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:126
+#, fuzzy
+msgid "The absence has been reported"
+msgstr "De gebruiker is opgeslagen"
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:134
+msgid "Could not report the absence"
+msgstr ""
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:156;161
+#, fuzzy
+msgid "The absence report could not be found"
+msgstr "De gebruiker is opgeslagen"
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:221
+#, fuzzy
+msgid "The absence report has been changed."
+msgstr "De gebruiker is opgeslagen"
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:229
+#, fuzzy
+msgid "Could not change the absence report"
+msgstr "%d melding van èèn afwezige docent"
+
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:296
+#, fuzzy
+msgid "The absence report has been removed"
+msgstr "De gebruiker is opgeslagen"
+
 #: Plugin/Manage/View/Layouts/default.ctp:94 View/Layouts/default.ctp:103
 msgid "Manage"
 msgstr "Beheer"
+
+#: Plugin/Manage/View/Layouts/default.ctp:102
+#, fuzzy
+msgid "Teacher absence"
+msgstr "Docent"
+
+#: Plugin/Manage/View/TeacherAbsence/add.ctp:8
+#, fuzzy
+msgid "Add absence report"
+msgstr "%d melding van èèn afwezige docent"
+
+#: Plugin/Manage/View/TeacherAbsence/add.ctp:29
+#: Plugin/Manage/View/TeacherAbsence/edit.ctp:29
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:8 View/Pages/home.ctp:32
+#: View/Schedule/calendar.ctp:8 View/Schedule/simple.ctp:33
+#: View/Schedule/view.ctp:19
+msgid "Teacher"
+msgstr "Docent"
+
+#: Plugin/Manage/View/TeacherAbsence/add.ctp:33
+#: Plugin/Manage/View/TeacherAbsence/edit.ctp:33
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:2 View/Posts/add.ctp:42
+msgid "Add"
+msgstr "Toevoegen"
+
+#: Plugin/Manage/View/TeacherAbsence/edit.ctp:8
+#, fuzzy
+msgid "Edit absence report"
+msgstr "%d melding van èèn afwezige docent"
+
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:7 View/Pages/home.ctp:31
+msgid "Date"
+msgstr "Datum"
+
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:9
+msgid "Change"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:10
+msgid "Remove"
+msgstr ""
+
+#: Plugin/Manage/View/TeacherAbsence/remove.ctp:8
+#, fuzzy
+msgid "Remove absence report"
+msgstr "%d melding van èèn afwezige docent"
 
 #: View/Comment/add.ctp:8;13
 msgid "Add comment"
@@ -184,15 +259,6 @@ msgstr "Lees meer"
 #: View/Pages/home.ctp:28
 msgid "Absent teachers for the 7 following days"
 msgstr "Afwezige docenten voor de komende 7 dagen"
-
-#: View/Pages/home.ctp:31
-msgid "Date"
-msgstr "Datum"
-
-#: View/Pages/home.ctp:32 View/Schedule/calendar.ctp:8
-#: View/Schedule/simple.ctp:33 View/Schedule/view.ctp:19
-msgid "Teacher"
-msgstr "Docent"
 
 #: View/Pages/home.ctp:44
 msgid "Heading"
@@ -250,10 +316,6 @@ msgstr "Opties"
 #: View/Posts/add.ctp:36
 msgid "Scope"
 msgstr "Omvang"
-
-#: View/Posts/add.ctp:42
-msgid "Add"
-msgstr "Toevoegen"
 
 #: View/Posts/index.ctp:2
 msgid "The latest news"
