@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 22:46+0000\n"
+"POT-Creation-Date: 2014-03-02 14:53+0000\n"
 "PO-Revision-Date: 2014-03-01 16:27+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -44,27 +44,31 @@ msgstr "Your comment has been added."
 msgid "Unable to update your comment."
 msgstr "Unable to update your post."
 
-#: Controller/PostsController.php:71;78;157;162
+#: Controller/PostsController.php:79 View/Layouts/default.ctp:100
+msgid "News"
+msgstr "News"
+
+#: Controller/PostsController.php:84;91;172;177
 msgid "Invalid post"
 msgstr "Invalid post"
 
-#: Controller/PostsController.php:140
+#: Controller/PostsController.php:155
 msgid "Your post has been saved."
 msgstr "Your post has been saved."
 
-#: Controller/PostsController.php:148
+#: Controller/PostsController.php:163
 msgid "Unable to add your post."
 msgstr "Unable to add your post."
 
-#: Controller/PostsController.php:169
+#: Controller/PostsController.php:184
 msgid "Your post has been updated."
 msgstr "Your post has been updated."
 
-#: Controller/PostsController.php:177
+#: Controller/PostsController.php:192
 msgid "Unable to update your post."
 msgstr "Unable to update your post."
 
-#: Controller/PostsController.php:195
+#: Controller/PostsController.php:210
 msgid "Your post has been deleted."
 msgstr "Your post has been deleted."
 
@@ -149,10 +153,6 @@ msgstr "Plaats commentaar"
 msgid "Reply"
 msgstr ""
 
-#: View/Layouts/default.ctp:100
-msgid "News"
-msgstr "News"
-
 #: View/Layouts/default.ctp:101
 msgid "Schedule"
 msgstr "Schedule"
@@ -178,7 +178,7 @@ msgstr ""
 msgid "Latest news"
 msgstr "Latest news"
 
-#: View/Pages/home.ctp:19 View/Posts/index.ctp:19
+#: View/Pages/home.ctp:19 View/Posts/index.ctp:22
 msgid "Read more"
 msgstr "Read more"
 
@@ -235,6 +235,13 @@ msgstr "Latest news"
 #: View/Posts/index.ctp:7 View/Posts/view.ctp:7
 msgid "Posted by:"
 msgstr ""
+
+#: View/Posts/index.ctp:19
+#, fuzzy
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "Invalid comment"
+msgstr[1] "Invalid comment"
 
 #: View/Posts/view.ctp:13
 msgid "Comment"

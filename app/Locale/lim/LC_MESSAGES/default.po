@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 22:46+0000\n"
+"POT-Creation-Date: 2014-03-02 14:53+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-"
-"projects.net/projects/ict-college/ict-college-website/lim/>\n"
+"Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
+"projects/ict-college/ict-college-website/lim/>\n"
 "Language: lim\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,27 +44,31 @@ msgstr ""
 msgid "Unable to update your comment."
 msgstr ""
 
-#: Controller/PostsController.php:71;78;157;162
+#: Controller/PostsController.php:79 View/Layouts/default.ctp:100
+msgid "News"
+msgstr "Nuujs"
+
+#: Controller/PostsController.php:84;91;172;177
 msgid "Invalid post"
 msgstr ""
 
-#: Controller/PostsController.php:140
+#: Controller/PostsController.php:155
 msgid "Your post has been saved."
 msgstr ""
 
-#: Controller/PostsController.php:148
+#: Controller/PostsController.php:163
 msgid "Unable to add your post."
 msgstr ""
 
-#: Controller/PostsController.php:169
+#: Controller/PostsController.php:184
 msgid "Your post has been updated."
 msgstr ""
 
-#: Controller/PostsController.php:177
+#: Controller/PostsController.php:192
 msgid "Unable to update your post."
 msgstr ""
 
-#: Controller/PostsController.php:195
+#: Controller/PostsController.php:210
 msgid "Your post has been deleted."
 msgstr ""
 
@@ -147,10 +151,6 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: View/Layouts/default.ctp:100
-msgid "News"
-msgstr "Nuujs"
-
 #: View/Layouts/default.ctp:101
 msgid "Schedule"
 msgstr ""
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Latest news"
 msgstr "Lètste nuujs"
 
-#: View/Pages/home.ctp:19 View/Posts/index.ctp:19
+#: View/Pages/home.ctp:19 View/Posts/index.ctp:22
 msgid "Read more"
 msgstr "Laes mier"
 
@@ -232,6 +232,12 @@ msgstr "'t lètste nuujs"
 #: View/Posts/index.ctp:7 View/Posts/view.ctp:7
 msgid "Posted by:"
 msgstr ""
+
+#: View/Posts/index.ctp:19
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] ""
+msgstr[1] ""
 
 #: View/Posts/view.ctp:13
 msgid "Comment"

@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-01 22:46+0000\n"
+"POT-Creation-Date: 2014-03-02 14:53+0000\n"
 "PO-Revision-Date: 2014-03-01 23:48+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
-"/ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
+"ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,27 +44,31 @@ msgstr "Je commentaar is toegevoegd."
 msgid "Unable to update your comment."
 msgstr "Commentaar kon niet worden aangepast."
 
-#: Controller/PostsController.php:71;78;157;162
+#: Controller/PostsController.php:79 View/Layouts/default.ctp:100
+msgid "News"
+msgstr "Nieuws"
+
+#: Controller/PostsController.php:84;91;172;177
 msgid "Invalid post"
 msgstr "Ongeldige post"
 
-#: Controller/PostsController.php:140
+#: Controller/PostsController.php:155
 msgid "Your post has been saved."
 msgstr "Je post is opgeslagen."
 
-#: Controller/PostsController.php:148
+#: Controller/PostsController.php:163
 msgid "Unable to add your post."
 msgstr "Je post kon niet worden toegevoegt."
 
-#: Controller/PostsController.php:169
+#: Controller/PostsController.php:184
 msgid "Your post has been updated."
 msgstr "Je post is aangepast."
 
-#: Controller/PostsController.php:177
+#: Controller/PostsController.php:192
 msgid "Unable to update your post."
 msgstr "Je post kon niet worden aangepast."
 
-#: Controller/PostsController.php:195
+#: Controller/PostsController.php:210
 msgid "Your post has been deleted."
 msgstr "Je post is verwijderd."
 
@@ -148,10 +152,6 @@ msgstr "Commentaar aanpassen"
 msgid "Reply"
 msgstr "Reageer"
 
-#: View/Layouts/default.ctp:100
-msgid "News"
-msgstr "Nieuws"
-
 #: View/Layouts/default.ctp:101
 msgid "Schedule"
 msgstr "Rooster"
@@ -177,7 +177,7 @@ msgstr "Deze email was verstuurd met het"
 msgid "Latest news"
 msgstr "Laatste nieuws"
 
-#: View/Pages/home.ctp:19 View/Posts/index.ctp:19
+#: View/Pages/home.ctp:19 View/Posts/index.ctp:22
 msgid "Read more"
 msgstr "Lees meer"
 
@@ -233,6 +233,13 @@ msgstr "Het laatste nieuws"
 #: View/Posts/index.ctp:7 View/Posts/view.ctp:7
 msgid "Posted by:"
 msgstr "Geplaatst door:"
+
+#: View/Posts/index.ctp:19
+#, fuzzy
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "Commentaar toevoegen"
+msgstr[1] "Commentaar toevoegen"
 
 #: View/Posts/view.ctp:13
 msgid "Comment"

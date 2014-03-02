@@ -15,6 +15,10 @@
     <?=$this->Text->truncate($post['Post']['body'], 500)?>
   <? endif; ?>
   <br><br>
+
+  <?=__n('%d comment', '%d comments', count($post['Comments']), count($post['Comments']))?>
+  <br><br>
+  <meta itemprop="interactionCount" content="UserComments:<?=count($post['Comments'])?>"/>
   <?=$this->Html->link(
     __('Read more'),
     array('controller' => 'posts', 'action' => 'view', $post['Post']['id']),
