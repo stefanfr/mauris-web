@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-01 22:46+0000\n"
-"PO-Revision-Date: 2014-03-02 14:58+0200\n"
+"PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/ict-college/ict-college-website/lim/>\n"
@@ -174,11 +174,11 @@ msgstr ""
 
 #: View/Pages/home.ctp:10
 msgid "Latest news"
-msgstr "Lètsten uujs"
+msgstr "Lètste nuujs"
 
 #: View/Pages/home.ctp:19 View/Posts/index.ctp:19
 msgid "Read more"
-msgstr ""
+msgstr "Laes mier"
 
 #: View/Pages/home.ctp:27;32
 msgid "Heading"
@@ -186,7 +186,7 @@ msgstr ""
 
 #: View/Pages/home.ctp:29;34
 msgid "View details »"
-msgstr ""
+msgstr "Bekiek detaj »"
 
 #: View/Pages/home.ctp:37
 msgid "Available classrooms"
