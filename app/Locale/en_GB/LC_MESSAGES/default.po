@@ -5,14 +5,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-02 14:53+0000\n"
-"PO-Revision-Date: 2014-03-01 16:27+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2014-03-02 16:02+0200\n"
+"Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
+"Language-Team: English (United Kingdom) <http://weblate.mms-"
+"projects.net/projects/ict-college/ict-college-website/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.9-dev\n"
 
 #: Controller/CommentController.php:11
 msgid "The comment you want to reply on doesn't exist"
@@ -35,14 +37,12 @@ msgid "Invalid comment"
 msgstr "Invalid comment"
 
 #: Controller/CommentController.php:114
-#, fuzzy
 msgid "Your comment has been updated."
-msgstr "Your comment has been added."
+msgstr "Your comment has been updated."
 
 #: Controller/CommentController.php:122
-#, fuzzy
 msgid "Unable to update your comment."
-msgstr "Unable to update your post."
+msgstr "Unable to update your comment."
 
 #: Controller/PostsController.php:79 View/Layouts/default.ctp:100
 msgid "News"
@@ -140,14 +140,12 @@ msgid "Manage"
 msgstr "Manage"
 
 #: View/Comment/add.ctp:8;13
-#, fuzzy
 msgid "Add comment"
-msgstr "Invalid comment"
+msgstr "Add comment"
 
 #: View/Comment/edit.ctp:1
-#, fuzzy
 msgid "Update comment"
-msgstr "Plaats commentaar"
+msgstr "Update comment"
 
 #: View/Elements/reply.ctp:11
 msgid "Reply"
@@ -228,20 +226,18 @@ msgid "Add"
 msgstr ""
 
 #: View/Posts/index.ctp:2
-#, fuzzy
 msgid "The latest news"
-msgstr "Latest news"
+msgstr "The latest news"
 
 #: View/Posts/index.ctp:7 View/Posts/view.ctp:7
 msgid "Posted by:"
 msgstr ""
 
 #: View/Posts/index.ctp:19
-#, fuzzy
 msgid "%d comment"
 msgid_plural "%d comments"
-msgstr[0] "Invalid comment"
-msgstr[1] "Invalid comment"
+msgstr[0] "%d comment"
+msgstr[1] "%d comments"
 
 #: View/Posts/view.ctp:13
 msgid "Comment"
@@ -262,9 +258,8 @@ msgid "Class"
 msgstr ""
 
 #: View/Schedule/calendar.ctp:46
-#, fuzzy
 msgid "Simple schedule"
-msgstr "Schedule"
+msgstr "Simple schedule"
 
 #: View/Schedule/simple.ctp:16
 msgid "Calendar schedule"
@@ -299,9 +294,8 @@ msgid "Login"
 msgstr "Login"
 
 #: View/Users/register.ctp:4;9
-#, fuzzy
 msgid "Register"
-msgstr "Registreren"
+msgstr "Register"
 
 #~ msgid "Het commentaar waarop je wilt reageren bestaat niet"
 #~ msgstr "Het commentaar waarop je wilt reageren bestaat niet"
