@@ -34,8 +34,8 @@
 		<p><a class="btn btn-default" href="#" role="button"><?=h(__('View details »'))?></a></p>
 	</div>
 	<div class="col-md-4">
-		<h2><?=__('Available classrooms')?></h2>
-                <p><?=__('Classrooms available at: %s', strftime('%X', $classrooms_available_timestamp))?></p>
+		<h2><?=__n('Available classroom', 'Available classrooms', count($classrooms_available))?></h2>
+                <p><?=__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), strftime('%X', $classrooms_available_timestamp))?></p>
                 <table class="table">
                     <tr>
                         <th><?=__('Classroom')?></th>

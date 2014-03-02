@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-02 14:53+0000\n"
+"POT-Creation-Date: 2014-03-02 15:12+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Latest news"
 msgstr "Lètste nuujs"
 
-#: View/Pages/home.ctp:19 View/Posts/index.ctp:22
+#: View/Pages/home.ctp:19 View/Posts/index.ctp:23
 msgid "Read more"
 msgstr "Laes mier"
 
@@ -188,14 +188,6 @@ msgstr ""
 msgid "View details »"
 msgstr "Bekiek detaj »"
 
-#: View/Pages/home.ctp:37
-msgid "Available classrooms"
-msgstr ""
-
-#: View/Pages/home.ctp:38
-msgid "Classrooms available at: %s"
-msgstr ""
-
 #: View/Pages/home.ctp:41 View/Schedule/simple.ctp:40
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
@@ -204,6 +196,18 @@ msgstr ""
 #: View/Pages/home.ctp:42
 msgid "Title"
 msgstr ""
+
+#: View/Pages/home.ctp:37
+msgid "Available classroom"
+msgid_plural "Available classrooms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: View/Pages/home.ctp:38
+msgid "Classroom available at: %s"
+msgid_plural "Classrooms available at: %s"
+msgstr[0] ""
+msgstr[1] ""
 
 #: View/Posts/add.ctp:1
 msgid "Add post"
