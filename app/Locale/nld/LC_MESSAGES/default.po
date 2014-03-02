@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-02 17:32+0000\n"
-"PO-Revision-Date: 2014-03-02 16:18+0200\n"
+"PO-Revision-Date: 2014-03-02 18:37+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
+"/ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: Controller/CommentController.php:11
 msgid "The comment you want to reply on doesn't exist"
-msgstr "Het commentaar waarop je wou reageren bestaat niet"
+msgstr "Het commentaar waarop je wilt reageren bestaat niet"
 
 #: Controller/CommentController.php:29
 msgid "No such post"
@@ -183,11 +183,11 @@ msgstr "Lees meer"
 
 #: View/Pages/home.ctp:28
 msgid "Absent teachers for the 7 following days"
-msgstr ""
+msgstr "Afwezige docenten voor de komende 7 dagen"
 
 #: View/Pages/home.ctp:31
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: View/Pages/home.ctp:32 View/Schedule/calendar.ctp:8
 #: View/Schedule/simple.ctp:33 View/Schedule/view.ctp:19
@@ -212,17 +212,16 @@ msgid "Title"
 msgstr "Titel"
 
 #: View/Pages/home.ctp:27
-#, fuzzy
 msgid "Absent teacher"
 msgid_plural "Absent teachers"
-msgstr[0] "De dergelijke docent bestaat niet"
-msgstr[1] "De dergelijke docent bestaat niet"
+msgstr[0] "Afwezige docent"
+msgstr[1] "Afwezige docenten"
 
 #: View/Pages/home.ctp:41
 msgid "%d absent teacher report"
 msgid_plural "%d absent teachers reports"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d melding van èèn afwezige docent"
+msgstr[1] "%d meldingen van afwezige docenten"
 
 #: View/Pages/home.ctp:49
 msgid "Available classroom"
