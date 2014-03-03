@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-03 22:42+0000\n"
-"PO-Revision-Date: 2014-03-03 00:30+0200\n"
+"PO-Revision-Date: 2014-03-03 23:51+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
+"/ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -235,7 +235,7 @@ msgstr "Reageer"
 
 #: View/Layouts/default.ctp:107 View/Pages/organization.ctp:2
 msgid "Organization"
-msgstr ""
+msgstr "Organisatie"
 
 #: View/Layouts/default.ctp:111
 msgid "Logged in as %s"
@@ -256,20 +256,19 @@ msgstr "Deze email was verstuurd met het"
 
 #: View/Pages/home.ctp:3
 msgid "Student information"
-msgstr ""
+msgstr "Studenten information"
 
 #: View/Pages/home.ctp:4;5
 msgid "Student information for %s"
-msgstr ""
+msgstr "Student informatie voor %s"
 
 #: View/Pages/home.ctp:6
-#, fuzzy
 msgid "Class schedule"
-msgstr "Kalender rooster"
+msgstr "Klassen rooster"
 
 #: View/Pages/home.ctp:9
 msgid "Teacher information"
-msgstr ""
+msgstr "Docent informatie"
 
 #: View/Pages/home.ctp:11 View/Schedule/view.ctp:33
 msgid "Assignments"
@@ -277,13 +276,14 @@ msgstr "Opgaves"
 
 #: View/Pages/home.ctp:12
 msgid "Homework"
-msgstr ""
+msgstr "Huiswerk"
 
 #: View/Pages/home.ctp:15
 msgid ""
 "%1$s school information for teachers, students and parents at the %2$s "
 "department"
 msgstr ""
+"%1$s school informatie voor docenten, studenten, ouders op afdeling %2$s"
 
 #: View/Pages/home.ctp:27
 msgid "Latest news"
@@ -344,15 +344,15 @@ msgstr "Voeg post toe"
 
 #: View/Posts/add.ctp:16
 msgid "System wide"
-msgstr ""
+msgstr "Systeem wijd"
 
 #: View/Posts/add.ctp:19
 msgid "School wide"
-msgstr ""
+msgstr "School wijd"
 
 #: View/Posts/add.ctp:22
 msgid "Department wide"
-msgstr ""
+msgstr "Afdeling wijd"
 
 #: View/Posts/add.ctp:28
 msgid "Content"
@@ -382,7 +382,7 @@ msgstr[1] "%d reacties"
 
 #: View/Posts/view.ctp:19
 msgid "%s profile"
-msgstr ""
+msgstr "%s profiel"
 
 #: View/Posts/view.ctp:23
 msgid "Comment"
@@ -393,9 +393,8 @@ msgid "Name"
 msgstr "Naam"
 
 #: View/Schedule/calendar.ctp:3
-#, fuzzy
 msgid "Calendar"
-msgstr "Kalender rooster"
+msgstr "Kalender"
 
 #: View/Schedule/calendar.ctp:14 View/Schedule/simple.ctp:27
 #: View/Schedule/view.ctp:13
@@ -408,7 +407,7 @@ msgstr "Simpel rooster"
 
 #: View/Schedule/simple.ctp:3
 msgid "Simple"
-msgstr ""
+msgstr "Simpel"
 
 #: View/Schedule/simple.ctp:16
 msgid "Calendar schedule"
@@ -420,14 +419,13 @@ msgstr "Lesuur"
 
 #: View/Schedule/view.ctp:39
 msgid "maken in de les"
-msgstr ""
+msgstr "maken in de les"
 
 #: View/Schedule/view.ctp:47
 msgid "wordt na gekeken"
-msgstr ""
+msgstr "wordt na gekeken"
 
 #: View/Teacher/view.ctp:2
-#, fuzzy
 msgid "Teachers"
 msgstr "Docent"
 
