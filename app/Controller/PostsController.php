@@ -79,7 +79,7 @@ class PostsController extends AppController {
         $this->set('title_for_layout', __('News'));
     }
 
-    public function view($id = null) {
+    public function view($id = null, $slug = null) {
         if (!$id) {
             throw new NotFoundException(__('Invalid post'));
         }
@@ -91,6 +91,10 @@ class PostsController extends AppController {
             throw new NotFoundException(__('Invalid post'));
         }
         
+        if (Inflector::slug($post['Post']['title']) != $slug) {
+            return $this->redirect(array($id, Inflector::slug($post['Post']['title'])), 301);
+        }
+
         $scope = null;
         //print_r($post);
         if ($post['PostedBy']['id'] == $this->Auth->user('id')) {

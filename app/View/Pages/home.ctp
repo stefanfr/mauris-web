@@ -33,7 +33,7 @@ $this->set('description_for_layout', __('%1$s school information for teachers, s
                 <?=$this->Text->truncate($latest_post['Post']['body'], 500)?>
                 <? endif; ?>
                 </p>
-                <p><?=$this->Html->link(__('Read more'), array('controller' => 'posts', 'action' => 'view', $latest_post['Post']['id']), array('class' => 'btn btn-primary btn-lg', 'role' => 'buttom'))?></p>
+                <p><?=$this->Html->link(__('Read more'), array('controller' => 'posts', 'action' => 'view', $latest_post['Post']['id'], Inflector::slug($latest_post['Post']['title'])), array('class' => 'btn btn-primary btn-lg', 'role' => 'buttom'))?></p>
 	</div>
 </div>
 <? endif; ?>

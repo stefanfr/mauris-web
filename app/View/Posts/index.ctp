@@ -21,7 +21,7 @@
   <meta itemprop="interactionCount" content="UserComments:<?=count($post['Comments'])?>"/>
   <?=$this->Html->link(
     __('Read more'),
-    array('controller' => 'posts', 'action' => 'view', $post['Post']['id']),
+    array('controller' => 'posts', 'action' => 'view', $post['Post']['id'], Inflector::slug($post['Post']['title'])),
     array('itemprop' => 'url')
 );?>
 </div>
