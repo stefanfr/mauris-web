@@ -78,6 +78,8 @@ class PagesController extends AppController {
             $this->set('classrooms_available', $this->Classroom->getAvailableClassrooms($classroomsAvailableTimestamp, $this->Department->id));
             $this->set('latest_post', $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id));
             $this->set('absent_teachers', $this->TeacherAbsenceReport->getAbsentTeachers(time(), strtotime('+7 days', time()), $this->Department->id));
+            $this->set('school', $this->School->read());
+            $this->set('department', $this->Department->read());
 
             try {
                 $this->render(implode('/', $path));
