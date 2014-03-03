@@ -1,4 +1,4 @@
-LANGUAGES=nld lim en_GB en_US
+LANGUAGES=nld lim deu
 PO_FILES=${foreach l, $(LANGUAGES), $l/LC_MESSAGES/default.po}
 MO_FILES=$(PO_FILES:.po=.mo)
 PO_TEMPLATE=default.pot
