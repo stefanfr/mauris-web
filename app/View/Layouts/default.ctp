@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
 	<?=$this->Html->charset(); ?>
-	<title><?=$this->get('school_name')?> - <?=$this->get('department_name')?> - <?=$title_for_layout; ?></title>
+	<title><?=$title_for_layout; ?> - <?=$this->get('school_name')?> - <?=$this->get('department_name')?></title>
   
 	<!--  meta info -->
-	<?php
-    echo $this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'));
-    echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'));
-    echo $this->Html->meta(array('name' => 'description', 'content' => 'this is the description'));
-    echo $this->Html->meta(array('name' => 'author', 'content' => 'CVO-Technologies - 0100Dev'));
-	?>
-  
+    <?=$this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'))?>
+    <?=$this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'))?>
+    <? if (isset($description_for_layout)): ?>
+        <?=$this->Html->meta(array('name' => 'description', 'content' => $description_for_layout, 'itemprop' => 'description'))?>
+    <? endif; ?>
+    <? if (isset($keywords_for_layout)): ?>
+        <?=$this->Html->meta('keywords', implode(', ', $keywords_for_layout))?>
+    <? endif; ?>
+    <?=$this->Html->meta(array('name' => 'author', 'content' => 'CVO-Technologies - 0100Dev'))?>
 	<!-- styles -->
 	<?php
     echo $this->Html->css('bootstrap.min');
