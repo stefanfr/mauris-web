@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-03 22:42+0000\n"
-"PO-Revision-Date: 2014-03-03 23:51+0200\n"
-"Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
+"PO-Revision-Date: 2014-03-04 00:16+0200\n"
+"Last-Translator: Roderik Zandberg <Roderik@Ro-dev.nl>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
 "/ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
@@ -104,38 +104,43 @@ msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:18
 msgid "Debug setting does not allow access to this url."
-msgstr ""
+msgstr "Een instelling bij foutenanalyse staat niet toe deze link te openen."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:27
 #: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:6
+#, fuzzy
 msgid "Alert notice message testing..."
-msgstr ""
+msgstr "Alarm melding bericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:30;41
 #: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:10
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:6
+#, fuzzy
 msgid "Alert success message testing..."
-msgstr ""
+msgstr "Alarm succes bericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:34
 #: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:15
 msgid "Alert error message testing..."
-msgstr ""
+msgstr "Alarm fout bericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:45
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:11
+#, fuzzy
 msgid "Alert info message testing..."
-msgstr ""
+msgstr "Alarm informatie bericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:49
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:16
+#, fuzzy
 msgid "Alert warning message testing..."
-msgstr ""
+msgstr "Alarm waarschuwingsbericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:53
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:21
+#, fuzzy
 msgid "Alert danger message testing..."
-msgstr ""
+msgstr "Alarm gevaar bericht testen..."
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:126
 msgid "The absence has been reported"
