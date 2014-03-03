@@ -1,12 +1,22 @@
 <?
 $this->Html->addCrumb(__('News'), array('controller' => 'posts', 'action' => 'index'));
 $this->Html->addCrumb($post['Post']['title'], $this->here);
+
+if ($post['Post']['summary']):
+    $this->set('description_for_layout', $post['Post']['summary']);
+else:
+    $this->set('description_for_layout', $this->Text->truncate($post['Post']['body'], 200));
+endif;
 ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h2 class="blog-post-title" itemprop="name"><h2><?=h($post['Post']['title'])?></h2></span>
-  <p class="blog-post-meta"><?=h(__('Posted by:'))?> <span itemprop="author"><?=h($this->App->buildName($post['PostedBy']))?></span></p><br>
-    <?=nl2br(h($post['Post']['body']))?>
-</div>
+  <h2 class="blog-post-title" itemprop="name"><?=h($post['Post']['title'])?></h2>
+  <p class="blog-post-meta"><?=h(__('Posted by:'))?> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><?=h($this->App->buildName($post['PostedBy']))?></span></span></p><br>
+  <span itemprop="articleBody">
+<?=nl2br(h($post['Post']['body']))?>
+</span>    
+  
+  <br><br>
+  <a href="<?=$post['PostedBy']['google_profile']?>?rel=author"><?=__('%s profile', 'Google+')?></a>
 
 <? if ($can_comment): ?>
 <?=$this->Html->link(
@@ -18,19 +28,24 @@ $this->Html->addCrumb($post['Post']['title'], $this->here);
 <? if ($can_view_comments): ?>
     <ul class="media-list">
     <? foreach ($comments as $comment): ?>
-        <li class="media">
+        <li class="media" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
             <a class="pull-left" href="<?=Router::url(array('controller' => 'profile', 'action' => 'view', $comment['PostedBy']['id']))?>">
               <?=$this->Gravatar->gravatar($comment['PostedBy']['system_email'], array('s' => 64, 'd' => 'identicon'))?>
             </a>
             <div class="media-body">
-              <h4 class="media-heading"><?=$this->App->buildName($comment['PostedBy'])?></h4>
-              <?=$comment['Comment']['body']?>
+              <h4 class="media-heading" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+                  <span itemprop="name"><?=$this->App->buildName($comment['PostedBy'])?></span>
+              </h4>
+              <span itemprop="commentText"><?=$comment['Comment']['body']?></span>
               <br>
       <? if ($can_comment): ?>
         <?=$this->Html->link(
             __('Reply'),
-            array('controller' => 'comment', 'action' => 'add', 'comment' => $comment['Comment']['id'])
+            array('controller' => 'comment', 'action' => 'add', 'comment' => $comment['Comment']['id']),
+                array('itemprop' => 'replyToUrl')
         );?>
+    <? else: ?>
+        <?=$this->Html->meta(array('itemprop' => 'replyToUrl', 'content' => Router::url(array('controller' => 'comment', 'action' => 'add', 'comment' => $comment['Comment']['id']), true)))?>
         <? endif; ?>
               <? foreach ($comment['Replies'] as $reply): ?>
                 <?=$this->element('reply', array('reply' => $reply)); ?>
@@ -40,3 +55,4 @@ $this->Html->addCrumb($post['Post']['title'], $this->here);
     <? endforeach; ?>
     </ul>
 <? endif; ?>
+</div>

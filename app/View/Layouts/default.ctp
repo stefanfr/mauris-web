@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope="" itemtype="http://schema.org/<?=(isset($schema_type_for_layout)) ? $schema_type_for_layout : 'WebPage'?>">
 <head>
 	<?=$this->Html->charset(); ?>
 	<title><?=$title_for_layout; ?> - <?=$this->get('school_name')?> - <?=$this->get('department_name')?></title>
