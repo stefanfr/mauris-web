@@ -1,3 +1,20 @@
+<?
+$keywords_for_layout = array();
+$keywords_for_layout[] = __('Student information');
+$keywords_for_layout[] = __('Student information for %s', $school_name);
+$keywords_for_layout[] = __('Student information for %s', $department_name);
+$keywords_for_layout[] = __('Class schedule');
+$keywords_for_layout[] = __('Schedule');
+$keywords_for_layout[] = __('Teacher');
+$keywords_for_layout[] = __('Teacher information');
+$keywords_for_layout[] = __('Teacher absence');
+$keywords_for_layout[] = __('Assignments');
+$keywords_for_layout[] = __('Homework');
+
+$this->set(compact('keywords_for_layout'));
+$this->set('description_for_layout', __('%1$s school information for teachers, students and parents at the %2$s department', $school_name, $department_name));
+?>
+
 <?=$this->start('additionalStyle'); ?>
 .navbar-static-top{
 	margin-bottom: 0px;
