@@ -102,6 +102,7 @@
                                         <? if ($can_manage): ?>
                                             <?=$this->Menu->item($this->Html->link(__('Manage'), array('plugin' => 'manage', 'controller' => 'manage', 'action' => 'index'))); ?>
                                         <? endif; ?>
+                                        <?=$this->Menu->item($this->Html->link(__('Organization'), array('controller' => 'pages', 'action' => 'display', 'organization'))); ?>
 				</ul>
 				<?=$this->startIfEmpty('rightMenu'); ?>
                                 <? if (AuthComponent::user('id')): ?>
