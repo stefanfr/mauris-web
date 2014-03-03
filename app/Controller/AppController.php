@@ -37,7 +37,7 @@ class AppController extends Controller {
     
     public $helpers = array(
         'Session',
-        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Html' => array('className' => 'SchemaOrgHtml'),
         'Form' => array('className' => 'BoostCake.BoostCakeForm'),
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
         'Menu'
