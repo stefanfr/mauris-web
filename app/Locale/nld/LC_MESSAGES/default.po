@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-03 23:33+0000\n"
-"PO-Revision-Date: 2014-03-04 00:40+0200\n"
+"PO-Revision-Date: 2014-03-04 00:41+0200\n"
 "Last-Translator: Roderik Zandberg <Roderik@Ro-dev.nl>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
 "/ict-college/ict-college-website/nld/>\n"
@@ -470,7 +470,7 @@ msgstr "-> Testen :url"
 
 #: Plugin/DebugKit/Console/Command/BenchmarkShell.php:67
 msgid "Total Requests made: :requests"
-msgstr ""
+msgstr "Totaal gemaakte aanvragen: :requests"
 
 #: Plugin/DebugKit/Console/Command/BenchmarkShell.php:68
 msgid "Total Time elapsed: :duration (seconds)"
