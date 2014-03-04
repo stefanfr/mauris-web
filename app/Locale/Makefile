@@ -20,7 +20,7 @@ clean:
 	msgfmt -o $@ $<
 
 $(PO_TEMPLATE):
-	../Console/cake i18n extract --app . --paths .. --extract-core yes --output . --merge yes --overwrite
+	../Console/cake i18n extract --app . --paths .. --extract-core no --output . --merge no --overwrite
 
 msgmerge:
 	$(foreach p, $(PO_FILES), echo Updating $p ; msgmerge -U $p $(PO_TEMPLATE) ; )
