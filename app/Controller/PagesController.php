@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Classroom', 'Post', 'TeacherAbsenceReport');
+	public $uses = array('Page', 'Classroom', 'Post', 'TeacherAbsenceReport');
 
 /**
  * Displays a view
@@ -90,4 +90,41 @@ class PagesController extends AppController {
                 throw new NotFoundException();
             }
 	}
+
+    public function show($id = null, $slug = null) {
+        $this->Page->id = $id;
+        if (!$page = $this->Page->read()) {
+            throw new NotFoundException();
+        }
+
+        if (Inflector::slug($page['Page']['title']) != $slug) {
+            return $this->redirect(array($id, Inflector::slug($page['Page']['title'])), 301);
+        }
+
+        $this->set('page', $page);
+
+        $body = preg_replace_callback(
+            '/<a(.*)href="([^"]*)"(.*)>/',
+            function ($matches) {
+                $output = '';
+                $output .= '<a';
+                $output .= $matches[1];
+                $output .= 'href="'
+                    . Router::url(
+                        array(
+                            'controller' => 'intermediary',
+                            'action' => 'check',
+                            $matches[2]
+                        )
+                    )
+                    . '"';
+                $output .= $matches[3];
+                $output .= '>';
+                return $output;
+            },
+            $page['Page']['body']
+        );
+
+        $this->set(compact('body'));
+    }
 }

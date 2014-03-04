@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-03 22:42+0000\n"
+"POT-Creation-Date: 2014-03-04 21:23+0000\n"
 "PO-Revision-Date: 2014-03-04 00:16+0200\n"
 "Last-Translator: Roderik Zandberg <Roderik@Ro-dev.nl>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
-"/ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
+"ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -342,6 +342,13 @@ msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
 msgstr[0] "Lokaal beschikbaar om: %s"
 msgstr[1] "Lokalen beschikbaar om: %s"
+
+#: View/Pages/show.ctp:8
+msgid ""
+"This page was not created by the developers of the system. We've added a "
+"intermediary page that checks every link to warn about possible dangerous "
+"activies."
+msgstr ""
 
 #: View/Posts/add.ctp:1
 msgid "Add post"

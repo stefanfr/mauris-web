@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-03 22:42+0000\n"
+"POT-Creation-Date: 2014-03-04 21:23+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -348,6 +348,10 @@ msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
 msgstr[0] ""
 msgstr[1] ""
+
+#: View/Pages/show.ctp:8
+msgid "This page was not created by the developers of the system. We've added a intermediary page that checks every link to warn about possible dangerous activies."
+msgstr ""
 
 #: View/Posts/add.ctp:1
 msgid "Add post"

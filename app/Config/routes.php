@@ -143,6 +143,8 @@ Router::parseExtensions('xml');
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
+
+Router::connect('/pages/custom/*', array('controller' => 'pages', 'action' => 'show'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 /**

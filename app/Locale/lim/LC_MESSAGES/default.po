@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-03 22:42+0000\n"
+"POT-Creation-Date: 2014-03-04 21:23+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -335,6 +335,13 @@ msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
 msgstr[0] ""
 msgstr[1] ""
+
+#: View/Pages/show.ctp:8
+msgid ""
+"This page was not created by the developers of the system. We've added a "
+"intermediary page that checks every link to warn about possible dangerous "
+"activies."
+msgstr ""
 
 #: View/Posts/add.ctp:1
 msgid "Add post"
