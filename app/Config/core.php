@@ -269,7 +269,7 @@ if (in_array($_SERVER['REMOTE_ADDR'], array('80.100.128.152', '85.150.42.221')))
  * Uncomment this line and correct your server timezone to fix
  * any date & time related errors.
  */
-	//date_default_timezone_set('UTC');
+date_default_timezone_set('UTC');
 
 /**
  * `Config.timezone` is available in which you can set users' timezone string.
@@ -277,7 +277,7 @@ if (in_array($_SERVER['REMOTE_ADDR'], array('80.100.128.152', '85.150.42.221')))
  * then the value of `Config.timezone` will be used. This feature allows you to set users' timezone just
  * once instead of passing it each time in function calls.
  */
-	//Configure::write('Config.timezone', 'Europe/Paris')
+Configure::write('Config.timezone', 'UTC');
 
 /**
  *
