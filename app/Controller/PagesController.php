@@ -37,6 +37,12 @@ class PagesController extends AppController {
  */
 	public $uses = array('Page', 'Classroom', 'Post', 'TeacherAbsenceReport');
 
+        public function beforeFilter() {
+            parent::beforeFilter();
+
+            $this->Auth->allow('show');
+        }
+
 /**
  * Displays a view
  *
@@ -112,9 +118,10 @@ class PagesController extends AppController {
                 $output .= 'href="'
                     . Router::url(
                         array(
+                            'plugin' => 'intermediary',
                             'controller' => 'intermediary',
                             'action' => 'check',
-                            $matches[2]
+                            'url' => urlencode($matches[2])
                         )
                     )
                     . '"';

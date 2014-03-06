@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-04 21:23+0000\n"
+"POT-Creation-Date: 2014-03-05 00:26+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -135,6 +135,39 @@ msgstr ""
 #: Plugin/BoostCake/Controller/BoostCakeController.php:53
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:21
 msgid "Alert danger message testing..."
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:4
+#: View/Pages/home.ctp:71
+msgid "Title"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:5
+msgid "Description"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:6
+msgid "Author"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:7
+msgid "Publisher"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:8
+msgid "Copyright holder"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:30
+msgid "The webpage you're trying to go to might be dangerous. For more information about the page, take a look at the information shown on this page."
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:33
+msgid "Go to the website"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:41
+msgid "Link"
 msgstr ""
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:126
@@ -319,10 +352,6 @@ msgstr ""
 #: View/Schedule/simple.ctp:40
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
-msgstr ""
-
-#: View/Pages/home.ctp:71
-msgid "Title"
 msgstr ""
 
 #: View/Pages/home.ctp:44

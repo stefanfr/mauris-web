@@ -77,6 +77,7 @@ CakePlugin::load('Linkable');
 // Our own plugins
 CakePlugin::load('Api');
 CakePlugin::load('Manage');
+CakePlugin::load('Intermediary', array('routes' => true));
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:

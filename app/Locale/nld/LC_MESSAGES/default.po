@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-04 21:23+0000\n"
+"POT-Creation-Date: 2014-03-05 00:26+0000\n"
 "PO-Revision-Date: 2014-03-04 00:16+0200\n"
 "Last-Translator: Roderik Zandberg <Roderik@Ro-dev.nl>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
@@ -141,6 +141,41 @@ msgstr "Alarm waarschuwingsbericht testen..."
 #, fuzzy
 msgid "Alert danger message testing..."
 msgstr "Alarm gevaar bericht testen..."
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:4 View/Pages/home.ctp:71
+msgid "Title"
+msgstr "Titel"
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:5
+msgid "Description"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:6
+msgid "Author"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:7
+msgid "Publisher"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:8
+#, fuzzy
+msgid "Copyright holder"
+msgstr "Copyright %d-%d ©"
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:30
+msgid ""
+"The webpage you're trying to go to might be dangerous. For more information "
+"about the page, take a look at the information shown on this page."
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:33
+msgid "Go to the website"
+msgstr ""
+
+#: Plugin/Intermediary/View/Intermediary/check.ctp:41
+msgid "Link"
+msgstr ""
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:126
 msgid "The absence has been reported"
@@ -314,10 +349,6 @@ msgstr "Bekijk details »"
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
 msgstr "Klaslokaal"
-
-#: View/Pages/home.ctp:71
-msgid "Title"
-msgstr "Titel"
 
 #: View/Pages/home.ctp:44
 msgid "Absent teacher"
