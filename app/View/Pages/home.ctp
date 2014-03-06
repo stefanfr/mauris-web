@@ -64,7 +64,7 @@ $this->set('description_for_layout', __('%1$s school information for teachers, s
 	</div>
 	<div class="col-md-4">
 		<h2><?=__n('Available classroom', 'Available classrooms', count($classrooms_available))?></h2>
-                <p><?=__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), strftime('%X', $classrooms_available_timestamp))?></p>
+                <p><?=__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat($classrooms_available_timestamp, '%X', null, 'Europe/Amsterdam'))?></p>
                 <table class="table">
                     <tr>
                         <th><?=__('Classroom')?></th>
