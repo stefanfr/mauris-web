@@ -10,5 +10,12 @@ class School extends AppModel {
                 'foreignKey' => 'id'
             )
 	);
+
+    public $belongsTo = array(
+        'UsesLanguage' => array(
+            'className' => 'Language',
+            'foreignKey' => 'language_id'
+        )
+    );
 	
 }

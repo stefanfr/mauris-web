@@ -74,7 +74,19 @@ class AppController extends Controller {
         if (!empty($department)) {
             $this->Department->id = (int) $department['Department']['id'];
             $this->School->id = (int) $department['BelongingToSchool']['id'];
-        
+
+            if ($department['BelongingToSchool']['UsesLanguage']['code']) {
+                $language = $department['BelongingToSchool']['UsesLanguage']['code'];
+            }
+            if ($department['UsesLanguage']['code']) {
+                $language = $department['UsesLanguage']['code'];
+            }
+            if (isset($language)) {
+                if (!$this->Session->check('Config.language')) {
+                    Configure::write('Config.language', $language);
+                }
+            }
+
             $this->set('department_name', $department['Department']['name']);
             $this->set('school_name', $department['BelongingToSchool']['name']);
             

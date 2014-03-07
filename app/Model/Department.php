@@ -14,6 +14,10 @@ class Department extends AppModel {
         'UsesStyle' => array(
             'className' => 'Style',
             'foreignKey' => 'style_id'
+        ),
+        'UsesLanguage' => array(
+            'className' => 'Language',
+            'foreignKey' => 'language_id'
         )
     );
 
@@ -25,7 +29,7 @@ class Department extends AppModel {
         }
         
         $department = $this->find('first', array(
-            'recursive' => 1,
+            'recursive' => 2,
             'conditions' => array(
                 'hostname' => $hostname 
             )
