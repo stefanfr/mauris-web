@@ -2,7 +2,7 @@
     <!-- Pages -->
     <?php foreach ($pages as $page):?>
     <url>
-        <loc><?=Router::url(array('controller' => 'pages', 'action' => 'show', $page['Page']['id'], Inflector::slug($page['Page']['title'])), true)?>/</loc>
+        <loc><?=Router::url(array('controller' => 'pages', 'action' => 'show', $page['Page']['id'], Inflector::slug($page['Page']['title'])), true)?></loc>
         <changefreq>hourly</changefreq>
         <priority>0.7</priority>
     </url>

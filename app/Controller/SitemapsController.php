@@ -95,9 +95,18 @@ class SitemapsController extends AppController {
                 break;
             case 'other':
                 $pages = array(
-                    array('controller' => 'pages', 'action' => 'display', 'home'),
-                    array('controller' => 'pages', 'action' => 'display', 'organization'),
-                    array('controller' => 'posts', 'action' => 'index'),
+                    array(
+                        'title' => __('Home'),
+                        'route' => array('controller' => 'pages', 'action' => 'display', 'home'),
+                    ),
+                    array(
+                        'title' => __('Organization'),
+                        'route' => array('controller' => 'pages', 'action' => 'display', 'organization'),
+                    ),
+                    array(
+                        'title' => __('News'),
+                        'route' => array('controller' => 'posts', 'action' => 'index'),
+                    ),
                 );
 
                 $this->set('pages', $pages);
