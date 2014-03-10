@@ -48,7 +48,8 @@ class Classroom extends AppModel {
                 'conditions' => array(
                     '? BETWEEN CONCAT(ScheduleEntry.date, \' \', Period.start) AND CONCAT(ScheduleEntry.date, \' \', Period.end)' => date('Y-m-d H:i:s', $timestamp),
                     'ScheduleEntry.department_id' => $departmentId,
-                    'ScheduleEntry.classroom_id = Classroom.id'
+                    'ScheduleEntry.cancelled' => 0,
+                    'ScheduleEntry.classroom_id = Classroom.id',
                 ),
                 'order'      => null,
                 'group'      => null
