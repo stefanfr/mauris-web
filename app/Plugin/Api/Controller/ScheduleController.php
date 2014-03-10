@@ -12,7 +12,9 @@ class ScheduleController extends AppController {
         ));
     }
 
-    public function view() {        
+    public function view() {
+        $timezone = new DateTimeZone('Europe/Amsterdam');
+
         //var_dump($this->ScheduleEntry->getData(array('class' => 1)));
         //var_dump($this->request->query);
         $conditions = array(
@@ -60,6 +62,12 @@ class ScheduleController extends AppController {
         
         $calendarEvents = array();
         foreach ($entries as $entry) {
+            $startDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start']);
+            $endDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end']);
+
+            $startDate->setTimezone($timezone);
+            $endDate->setTimezone($timezone);
+
             $event = array(
                 'id' => $entry['ScheduleEntry']['id'],
                 'url' => Router::url(array(
@@ -68,8 +76,8 @@ class ScheduleController extends AppController {
                     $entry['ScheduleEntry']['id']
                 )),
                 'title' => (isset($entry['GivenSubject']['SubjectDetails'])) ? $entry['GivenSubject']['SubjectDetails']['title'] : $entry['GivenSubject']['abbreviation'],
-                'start' => date('c', strtotime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start'])),
-                'end' => date('c', strtotime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end'])),
+                'start' => $startDate->format('c'),
+                'end' => $endDate->format('c'),
                 'cancelled' => (bool) $entry['ScheduleEntry']['cancelled'],
                 'allDay' => false,
                 'class_name' => $entry['GivenToClass']['name'],
