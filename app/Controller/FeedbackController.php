@@ -34,10 +34,21 @@ class FeedbackController extends AppController {
             if ($this->FeedbackEntry->save($this->request->data)) {
 
                 $email = new CakeEmail();
+                $email->emailFormat('both');
                 $email->from(array('website@ictcollege.eu' => 'Feedback ICTCollege'));
-                $email->to('marlin.cremers@gmail.com');
+                $email->to('m.cremers@cvo-technologies.com');
                 $email->subject('Feedback');
-                $email->send($this->request->data['FeedbackEntry']['body']);
+                $email->template('feedback_submitted');
+                $email->viewVars(
+                    array(
+                        'data' => $this->request->data,
+                        'id' => $this->FeedbackEntry->id,
+                        'user' => $this->Auth->user(),
+                        'school_name' => $this->School->field('name'),
+                        'department_name' => $this->Department->field('name')
+                    )
+                );
+                $email->send();
 
                 $this->Session->setFlash(__('Thanks for your feedback!'), 'alert', array(
                     'plugin' => 'BoostCake',
