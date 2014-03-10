@@ -1,5 +1,7 @@
 <?php
 
+App::uses('CakeEmail', 'Network/Email');
+
 class FeedbackController extends AppController {
     
     public $uses = array('FeedbackEntry');
@@ -30,6 +32,13 @@ class FeedbackController extends AppController {
 
             $this->FeedbackEntry->create();
             if ($this->FeedbackEntry->save($this->request->data)) {
+
+                $email = new CakeEmail();
+                $email->from(array('website@ictcollege.eu' => 'Feedback ICTCollege'));
+                $email->to('marlin.cremers@gmail.com');
+                $email->subject('Feedback');
+                $email->send($this->request->data['FeedbackEntry']['body']);
+
                 $this->Session->setFlash(__('Thanks for your feedback!'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
