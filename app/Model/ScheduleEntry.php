@@ -103,6 +103,16 @@ class ScheduleEntry extends AppModel {
             if (ctype_digit($this->id)) {
                 $findConditions['ScheduleEntry.id'] = $this->id;
             }
+
+            $hash = md5(serialize($findConditions));
+            $key = 'schedule-' . $hash;
+
+            Cache::set(array('duration' => '+1 hour'));
+            $data = Cache::read($key);
+            if ($data !== false) {
+                return $data;
+            }
+
             $entries = $this->find(
                 'all',
                 array(
@@ -159,6 +169,9 @@ class ScheduleEntry extends AppModel {
                 }
             }
             
+            Cache::set(array('duration' => '+1 hour'));
+            Cache::write($key, $entries);
+
             return $entries;
         }
 
