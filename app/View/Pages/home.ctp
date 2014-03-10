@@ -58,9 +58,28 @@ $this->set('description_for_layout', __('%1$s school information for teachers, s
                 <p><?=__n('%d absent teacher report', '%d absent teachers reports', count($absent_teachers), count($absent_teachers))?></p>
 	</div>
 	<div class="col-md-4">
-		<h2><?=h(__('Heading'))?></h2>
-		<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-		<p><a class="btn btn-default" href="#" role="button"><?=h(__('View details »'))?></a></p>
+		<h2><?=h(__('Feedback'))?></h2>
+		<?
+                echo $this->Form->create('FeedbackEntry', array(
+                    'inputDefaults' => array(
+                        'div' => 'form-group',
+                        'label' => false,
+                        'class' => 'form-control'
+                    ),
+                    'class' => 'form-horizontal',
+                    'url' => array(
+                        'controller' => 'feedback',
+                        'action' => 'add'
+                    ),
+                ));
+                ?>
+
+                <?=$this->Form->input('body', array('rows' => '5'))?>
+                        <?php echo $this->Form->submit(__('Add'), array(
+                                //'div' => 'col col-md-9 col-md-offset-3',
+                                'class' => 'btn btn-default'
+                        )); ?>
+                <?=$this->Form->end()?>
 	</div>
 	<div class="col-md-4">
 		<h2><?=__n('Available classroom', 'Available classrooms', count($classrooms_available))?></h2>
