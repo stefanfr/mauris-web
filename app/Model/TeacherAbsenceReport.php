@@ -12,7 +12,23 @@ class TeacherAbsenceReport extends AppModel {
     );
     
     public function getAbsentTeachers($startTimestamp, $endTimestamp, $departmentId) {
-        return $this->find(
+        $hash = md5(implode(
+            '|',
+            array(
+                round($startTimestamp / 3600),
+                round($endTimestamp / 3600),
+                $departmentId
+            )
+        ));
+        $key = 'absent-teachers-' . $hash;
+        
+        Cache::set(array('duration' => '+1 hour'));
+        $data = Cache::read($key, 'absent-teachers');
+        if ($data !== false) {
+            return $data;
+        }
+        
+        $data = $this->find(
             'all',
             array(
                 'recursive' => 2,
@@ -24,6 +40,11 @@ class TeacherAbsenceReport extends AppModel {
                 )
             )
         );
+        
+        Cache::set(array('duration' => '+1 hour'));
+        Cache::write($key, $data, 'absent-teachers');
+        
+        return $data;
     }
     
 }
