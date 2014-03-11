@@ -27,6 +27,24 @@ class Classroom extends AppModel {
     }
         
     public function getAvailableClassrooms($timestamp, $departmentId) {
+        $identifier = implode(
+            '|',
+            array(
+                round($timestamp / 600),
+                $departmentId
+            )
+        );
+        $hash = md5($identifier);
+        $key = 'available-classrooms-' . $hash;
+        
+        Cache::set(array('duration' => '+1 hour'));
+        $data = Cache::read($key);
+        if ($data !== false) {
+            $this->log('Available classrooms for \'' . $identifier . '\' from cache', LOG_INFO, 'classrooms');
+            
+            return $data;
+        }
+        
         $db = $this->getDataSource();
         
         $conditions = array();
@@ -61,7 +79,17 @@ class Classroom extends AppModel {
         
         $recursive = 2;
         
-        return $this->find('all', compact('conditions', 'recursive'));
+        $data = array(
+            'timestamp' => $timestamp,
+            'data' => $this->find('all', compact('conditions', 'recursive'))
+        );
+        
+        Cache::set(array('duration' => '+1 hour'));
+        Cache::write($key, $data);
+        
+        $this->log('Available classrooms for \'' . $identifier . '\' stored in the cache', LOG_INFO, 'classrooms');
+        
+        return $data;
     }
 
 }
