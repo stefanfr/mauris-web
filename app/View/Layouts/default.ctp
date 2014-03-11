@@ -24,6 +24,7 @@
 	<?php
     echo $this->Html->script('jquery.min');
     echo $this->Html->script('bootstrap.min');
+    echo $this->Html->script('respond.min.js');
 	?>
   
 	<!-- icons -->
