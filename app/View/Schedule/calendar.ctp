@@ -42,6 +42,7 @@ if ($this->get('target_classroom_id')) {
 $targetData['start'] = (int) $this->get('target_start');
 $targetData['end'] = (int) $this->get('target_end');
 $targetData['date'] = (int) $this->get('target_date');
+$targetData['schoolId'] = (int) $this->get('target_school_id');
 $targetData['departmentId'] = (int) $this->get('target_department_id');
 ?>
 <?=$this->Html->link(__('Simple schedule'), array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple'), $target))?>

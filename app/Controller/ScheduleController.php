@@ -69,6 +69,7 @@ class ScheduleController extends AppController {
             $this->set('target_date', time());
         }
         
+        $this->set('target_school_id', $this->School->id);
         $this->set('target_department_id', $this->Department->id);
 
         if ($this->view == 'simple') {
