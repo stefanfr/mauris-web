@@ -41,6 +41,7 @@ if ($this->get('target_classroom_id')) {
 }
 $targetData['start'] = (int) $this->get('target_start');
 $targetData['end'] = (int) $this->get('target_end');
+$targetData['date'] = (int) $this->get('target_date');
 $targetData['departmentId'] = (int) $this->get('target_department_id');
 ?>
 <?=$this->Html->link(__('Simple schedule'), array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple'), $target))?>
@@ -48,5 +49,6 @@ $targetData['departmentId'] = (int) $this->get('target_department_id');
 var targetData = <?=json_encode($targetData)?>;
 targetData.startDate = new Date(targetData.start * 1000);
 targetData.endDate = new Date(targetData.end * 1000);
+targetData.dateDate = new Date(targetData.date * 1000);
 </script>
 <div id='calendar'></div>

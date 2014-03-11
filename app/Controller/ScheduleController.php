@@ -63,6 +63,11 @@ class ScheduleController extends AppController {
         } else {
             $this->set('target_end', strtotime("{$year}-W{$week}-7"));
         }
+        if (isset($this->passedArgs['date'])) {
+            $this->set('target_date', strtotime($this->passedArgs['date']));
+        } else {
+            $this->set('target_date', time());
+        }
         
         $this->set('target_department_id', $this->Department->id);
 

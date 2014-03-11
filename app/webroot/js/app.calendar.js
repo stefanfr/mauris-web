@@ -87,9 +87,9 @@ $(function() {
 		minTime: '8',
 		maxTime: '17',
 		weekMode: 'liquid',
-                year: targetData.startDate.getFullYear(),
-                month: targetData.startDate.getMonth(),
-                date: targetData.startDate.getDate(),
+                year: targetData.dateDate.getFullYear(),
+                month: targetData.dateDate.getMonth(),
+                date: targetData.dateDate.getDate(),
 		titleFormat: {
 			month: 'MMMM', 
 			week: "MMM d{ '&#8212;'[ MMM] d}",
