@@ -50,7 +50,7 @@ $this->set('description_for_layout', __('%1$s school information for teachers, s
                     </tr>
                     <? foreach ($absent_teachers as $report): ?>
                     <tr>
-                        <th><?=h(date('l', strtotime($report['TeacherAbsenceReport']['date'])))?></th>
+                        <th><?=h($this->Time->i18nFormat($report['TeacherAbsenceReport']['date'], '%A', 'Europe/Amsterdam'))?></th>
                         <th><?=$this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teacher', 'action' => 'view', $report['TeacherAbsenceReport']['teacher_id']))?></th>
                     </tr>
                     <? endforeach; ?>
