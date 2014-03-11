@@ -13,6 +13,22 @@ if ($this->get('target_classroom_id')) {
     $target['classroom'] = (int) $this->get('target_classroom_id');
 }
 ?>
+<?=$this->start('rightMenu'); ?>
+<form class="navbar-form navbar-right" method="POST">
+	<select name="teacher" id="selector-teacher" class="form-control" onchange="this.form.submit()">
+			<option disabled selected><?=__('Teacher'); ?></option>
+		<?php foreach ($this->get('teachers') as $teacher): ?>
+			<option value="<?=$teacher['id']?>"><?=($teacher['name']) ? $teacher['name'] : $teacher['abbreviation']?></option>
+		<?php endforeach; ?>
+	</select>
+	<select name="class" id="selector-class" class="form-control" onchange="this.form.submit()">
+			<option disabled selected><?=__('Class'); ?></option>
+		<?php foreach ($this->get('classes') as $class): ?>
+			<option value="<?=$class['id']?>"><?=$class['name']?></option>
+		<?php endforeach; ?>
+	</select>
+</form>
+<?=$this->end(); ?>
 <?=$this->Html->link(__('Calendar schedule'), array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'calendar'), $target))?>
 <? foreach ($this->get('entries') as $entry): ?>
 <div itemscope itemtype="http://schema.org/EducationEvent">

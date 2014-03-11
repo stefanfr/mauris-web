@@ -23,12 +23,19 @@ class ScheduleController extends AppController {
         $hasAccess = $this->Acl->check(
             $requester, array('scope' => 'department', 'permission' => 'schedule', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
         );
-         if (!$hasAccess) {
+        if (!$hasAccess) {
             throw new ForbiddenException();
         }
         
         $this->Paginator->settings = $this->paginate;
         $this->view = (isset($this->passedArgs['type'])) ? $this->passedArgs['type'] : 'calendar';
+        
+        if (isset($this->request->data['teacher'])) {
+            return $this->redirect(array('teacher' => $this->request->data['teacher'], 'type' => $this->view));
+        }
+        if (isset($this->request->data['class'])) {
+            return $this->redirect(array('class' => $this->request->data['class'], 'type' => $this->view));
+        }
         
         if (isset($this->passedArgs['class'])) {
             $this->set('target_class_id', $this->passedArgs['class']);
