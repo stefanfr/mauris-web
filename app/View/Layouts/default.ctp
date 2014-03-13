@@ -47,27 +47,35 @@
     
     <style>
         .navbar-default, .btn-primary {
-            background-color: #<?=$this->get('header_background_color')?>;
-            border-color: #<?=$this->get('header_border_color')?>;
+            background-color: #<?=$style['menu_background_color']?>;
+            border-color: #<?=$style['menu_border_color']?>;
         }
         .navbar-default .navbar-brand {
-            color: #<?=$this->get('header_brand_color')?>;
+            color: #<?=$style['menu_brand_color']?>;
         }
         .navbar-default .navbar-text {
-            color: #<?=$this->get('header_text_color')?>;
+            color: #<?=$style['menu_text_color']?>;
         }
         .navbar-default .navbar-nav>li>a {
-            color: #<?=$this->get('header_link_color')?>;
+            color: #<?=$style['menu_link_color']?>;
+        }
+        .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+            color: #<?=$style['menu_hover_link_color']?>;
+            background-color: #<?=$style['menu_hover_background_color']?>;
         }
         .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-            color: #<?=$this->get('header_active_link_color')?>;
-            background-color: #<?=$this->get('header_active_background_color')?>;
+            color: #<?=$style['menu_active_link_color']?>;
+            background-color: #<?=$style['menu_active_background_color']?>;
+        }
+        .navbar-default .navbar-nav>.active>a:hover {
+            color: #<?=$style['menu_active_hover_link_color']?>;
+            background-color: #<?=$style['menu_active_hover_background_color']?>;
         }
         a {
-            color: #<?=$this->get('link_color')?>;
+            color: #<?=$style['link_color']?>;
         }
         body {
-            color: #<?=$this->get('text_color')?>;
+            color: #<?=$style['text_color']?>;
         }
     </style>
 </head>

@@ -91,16 +91,7 @@ class AppController extends Controller {
             $this->set('school_name', $department['BelongingToSchool']['name']);
             
             $style = $this->Style->getStyle($department['UsesStyle']['id']);
-            
-            $this->set('header_background_color', $style['header_background_color']);
-            $this->set('header_text_color', $style['header_text_color']);
-            $this->set('header_link_color', $style['header_link_color']);
-            $this->set('header_brand_color', $style['header_brand_color']);
-            $this->set('header_border_color', $style['header_border_color']);
-            $this->set('header_active_background_color', $style['header_active_background_color']);
-            $this->set('header_active_link_color', $style['header_active_link_color']);
-            $this->set('text_color', $style['text_color']);
-            $this->set('link_color', $style['link_color']);
+            $this->set(compact('style'));
         }
         
         if ($this->Auth->user()) {
