@@ -75,7 +75,7 @@ class AppController extends Controller {
             $this->Department->id = (int) $department['Department']['id'];
             $this->School->id = (int) $department['BelongingToSchool']['id'];
 
-            if ($department['BelongingToSchool']['UsesLanguage']['code']) {
+            if (isset($department['BelongingToSchool']['UsesLanguage']['code'])) {
                 $language = $department['BelongingToSchool']['UsesLanguage']['code'];
             }
             if ($department['UsesLanguage']['code']) {
