@@ -11,5 +11,17 @@ class UserClassMapping extends AppModel {
 			'foreignKey' => 'class_id'
 		)
 	);
+        
+    public function getUserClassSubscriptions($userId, $departmentId) {
+        return $this->find(
+            'all',
+            array(
+                'conditions' => array(
+                    'User.id' => $userId,
+                    'Class.department_id' => $departmentId
+                )
+            )
+        );
+    }
 }
 

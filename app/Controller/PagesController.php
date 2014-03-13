@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Page', 'Classroom', 'Post', 'TeacherAbsenceReport');
+	public $uses = array('Page', 'Classroom', 'Post', 'TeacherAbsenceReport', 'UserClassMapping');
 
         public function beforeFilter() {
             parent::beforeFilter();
@@ -79,13 +79,16 @@ class PagesController extends AppController {
                     $title_for_layout = Inflector::humanize($path[$count - 1]);
             }
             $this->set(compact('page', 'subpage', 'title_for_layout'));
-            $this->set('classrooms_available_timestamp', $classroomsAvailableTimestamp = time());
-            $this->set('classrooms_available', $this->Classroom->getAvailableClassrooms($classroomsAvailableTimestamp, $this->Department->id));
-            $this->set('classrooms_available', $this->Classroom->getAvailableClassrooms($classroomsAvailableTimestamp, $this->Department->id));
+            
+            $classroomAvailableData = $this->Classroom->getAvailableClassrooms(time(), $this->Department->id);
+            
+            $this->set('classrooms_available_timestamp', $classroomAvailableData['timestamp']);
+            $this->set('classrooms_available', $classroomAvailableData['data']);
             $this->set('latest_post', $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id));
             $this->set('absent_teachers', $this->TeacherAbsenceReport->getAbsentTeachers(time(), strtotime('+7 days', time()), $this->Department->id));
             $this->set('school', $this->School->read());
             $this->set('department', $this->Department->read());
+            $this->set('user_class_subscriptions', $this->UserClassMapping->getUserClassSubscriptions($this->Auth->user('id'), $this->Department->id));
 
             try {
                 $this->render(implode('/', $path));

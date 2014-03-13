@@ -38,14 +38,33 @@ class PermissionRoleMapping extends AppModel {
             );
         }
         
-        //print_r($conditions);
-        return $this->find('all', array(
+        $identifier = serialize($conditions);
+        $hash = md5($identifier);
+        $key = 'permission-role-mapping-check-' . $hash;
+        
+        Cache::set(array('duration' => '+1 hour'));
+        $data = Cache::read($key);
+        if ($data !== false) {
+            $this->log('Permission role mappings for \'' . $identifier . '\' from cache', LOG_INFO, 'permission-role-mappings');
+            
+            return $data;
+        }
+        
+        $data = $this->find('all', array(
             'order' => array(
                 'preference'
             ),
             'recursive' => 2,
             'conditions' => $conditions
         ));
+        
+        Cache::set(array('duration' => '+1 hour'));
+        Cache::write($key, $data);
+        
+        $this->log('Permission role mappings for \'' . $identifier . '\' stored in the cache', LOG_INFO, 'permission-role-mappings');
+        
+        //print_r($conditions);
+        return $data;
     }
     
 }

@@ -218,7 +218,7 @@ if (in_array($_SERVER['REMOTE_ADDR'], array('80.100.128.152', '85.150.42.221')))
  *
  */
 	Configure::write('Session', array(
-		'defaults' => 'php'
+		'defaults' => 'database'
 	));
 
 /**

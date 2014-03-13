@@ -123,6 +123,8 @@ class TeacherAbsenceController extends ManageAppController {
             
             $this->TeacherAbsenceReport->create();
             if ($this->TeacherAbsenceReport->save($this->request->data)) {
+                Cache::clearGroup('absent-teachers');
+                
                 $this->Session->setFlash(__('The absence has been reported'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
@@ -218,6 +220,8 @@ class TeacherAbsenceController extends ManageAppController {
             
             $this->TeacherAbsenceReport->id = $id;
             if ($this->TeacherAbsenceReport->save($this->request->data)) {
+                Cache::clearGroup('absent-teachers');
+
                 $this->Session->setFlash(__('The absence report has been changed.'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'

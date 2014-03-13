@@ -1,14 +1,81 @@
 <?php
-class ScheduleController extends AppController {
+
+class EventController extends AppController {
 
     public $components = array('RequestHandler');
-    public $uses = array('ScheduleEntry', 'SubjectDetails');
+    public $uses = array('Event');
 
     public function index() {
-        $recipes = $this->Recipe->find('all');
+        $timezone = new DateTimeZone('Europe/Amsterdam');
+        
+        $schoolId = (int) $this->request->query['school'];
+        $departmentId = (int) $this->request->query['department'];
+        
+        $conditions = array();
+        $conditions = array(
+            'or' => array(
+                '? BETWEEN Event.start AND Event.end' => date('Y-m-d', $this->request->query['start']),
+                '? BETWEEN Event.start AND Event.end' => date('Y-m-d', $this->request->query['end'])
+            )
+        );
+        $conditions['and']['or'][] = array(
+            'and' => array(
+                'Event.school_id IS NULL',
+                'Event.department_id IS NULL'
+            )
+        );
+        if ($schoolId) {
+            $conditions['and']['or'][] = array(
+                'and' => array(
+                    'Event.school_id' => $schoolId,
+                    'Event.department_id IS NULL'
+                )
+            );
+        }
+        if ($departmentId) {
+            $conditions['and']['or'][] = array(
+                'and' => array(
+                    'Event.school_id' => $schoolId,
+                    'Event.department_id' => $departmentId
+                )
+            );
+        }
+        
+        
+        
+        //debug($conditions);
+        
+        $events = $this->Event->find(
+            'all',
+            array(
+                'conditions' => $conditions
+            )
+        );
+        
+        $calendarEvents = array();
+        foreach ($events as $entry) {
+            $startDate = new DateTime($entry['Event']['start']);
+            $endDate = new DateTime($entry['Event']['end']);
+
+            $startDate->setTimezone($timezone);
+            $endDate->setTimezone($timezone);
+
+            $event = array(
+                'id' => $entry['Event']['id'],
+                'title' => $entry['Event']['title'],
+                'description' => $entry['Event']['description'],
+                'start' => $startDate->format('c'),
+                'end' => $endDate->format('c'),
+                'allDay' => (bool) $entry['Event']['all_day'],
+                'type' => $entry['Event']['type'],
+            );
+            
+            $calendarEvents[] = $event;
+        }
+        
         $this->set(array(
-            'recipes' => $recipes,
-            '_serialize' => array('recipes')
+            'events' => $calendarEvents,
+            '_serialize' => array('events')
         ));
     }
 
@@ -124,6 +191,12 @@ class ScheduleController extends AppController {
             
             $calendarEvents[] = $event;
         }
+        
+        $calendarEvent = array();
+        $calendarEvent['title'] = 'Voorjaarsvakantie';
+        $calendarEvent['start'] = '2014-03-03';
+        $calendarEvent['end'] = '2014-03-07';
+        $calendarEvents[] = $calendarEvent;
         
         //$recipe = $this->Recipe->findById($id);
         $this->set(array(

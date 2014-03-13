@@ -87,15 +87,16 @@ $(function() {
 		minTime: '8',
 		maxTime: '17',
 		weekMode: 'liquid',
-                year: targetData.startDate.getFullYear(),
-                month: targetData.startDate.getMonth(),
-                date: targetData.startDate.getDate(),
+                year: targetData.dateDate.getFullYear(),
+                month: targetData.dateDate.getMonth(),
+                date: targetData.dateDate.getDate(),
 		titleFormat: {
 			month: 'MMMM', 
 			week: "MMM d{ '&#8212;'[ MMM] d}",
 			day: 'dddd, MMM d'          
 		},
-		events: {
+		eventSources: [
+                    {
 			url: "http://api.ictcollege.eu/schedule/view.json",
 			data: function () {
 				var returnArray = {};
@@ -109,7 +110,19 @@ $(function() {
 				
 				return returnArray;
 			}
-		},
+                    },
+                    {
+			url: "http://api.ictcollege.eu/event.json",
+			data: function () {
+				var returnArray = {};
+				
+                                returnArray['school'] = targetData.schoolId
+                                returnArray['department'] = targetData.departmentId
+				
+				return returnArray;
+			}
+                    },
+                ],
 		timeFormat: 'HH:mm{ - HH:mm}',
 		axisFormat: 'HH:mm',
 		eventDataTransform: function (eventData) {
@@ -156,41 +169,60 @@ $(function() {
 				content += 'Klas: <i>' + event.class_name + '</i><br/>';
 			}
 			
-			content += 'Klaslokaal: <i>' + ((event.classroom_title != null) ? event.classroom_title + ' (' + event.classroom_code + ')' : event.classroom_code) + '</i><br/>';
+                        if (event.classroom_code !== undefined) {
+                            content += 'Klaslokaal: <i>' + ((event.classroom_title != null) ? event.classroom_title + ' (' + event.classroom_code + ')' : event.classroom_code) + '</i><br/>';
+                        }
                         
-			content += '<br>';
+                        if (content.length > 0) {
+                            content += '<br>';
+                        }
                         
-			content += 'Opgaves:<br/>';
-			
-			if(event.assignments.length > 0){
-				console.log(this);
-				
-				$.each(event.assignments, function() {
-					var stateClass;
-                                        if ($.inArray('make', this.state) !== -1) {
-                                            stateClass = 'make';
-                                        }
-                                        if ($.inArray('done', this.state) !== -1) {
-                                            stateClass = 'done';
-                                        }
-                                        if ($.inArray('check', this.state) !== -1) {
-                                            stateClass = 'check';
-                                        }
-					content += '<i class="assignment-state-' + stateClass + '">' + this.title + '</i><br>';
-					
-					if (this.description != '') {
-                                            content += '<i><small>' + this.description + '</small></i><br>';
-                                        }
-				});
-			} else {
-				content += '<i>Geen bekend</i>';
-			}
+                        if (event.assignments !== undefined) {
+                            content += 'Opgaves:<br/>';
+
+                            if (event.assignments.length > 0) {
+                                    console.log(this);
+
+                                    $.each(event.assignments, function() {
+                                            var stateClass;
+                                            if ($.inArray('make', this.state) !== -1) {
+                                                stateClass = 'make';
+                                            }
+                                            if ($.inArray('done', this.state) !== -1) {
+                                                stateClass = 'done';
+                                            }
+                                            if ($.inArray('check', this.state) !== -1) {
+                                                stateClass = 'check';
+                                            }
+                                            content += '<i class="assignment-state-' + stateClass + '">' + this.title + '</i><br>';
+
+                                            if (this.description != '') {
+                                                content += '<i><small>' + this.description + '</small></i><br>';
+                                            }
+                                    });
+                            } else {
+                                    content += '<i>Geen bekend</i>';
+                            }
+                        }
+                        
+                        if (event.description !== undefined) {
+                            content += 'Omschrijving: <br>';
+                            content += event.description;
+                        }
+                        
+                        var title;
+                        if (event.title !== undefined) {
+                            title = event.title;
+                        } else {
+                            title = ((event.subject_title != null) ? event.subject_title + ' (' + event.subject_abbreviation + ')' : event.subject_abbreviation);
+                        }
+                        
 			console.log(content);
 			$(element)
 				.attr('data-container', 'body')
 				.attr('data-trigger', 'hover')
 				.attr('data-placement', 'right')
-				.attr('data-original-title', ((event.subject_title != null) ? event.subject_title + ' (' + event.subject_abbreviation + ')' : event.subject_abbreviation))
+				.attr('data-original-title', title)
 				.popover({
 					html: true,
 					content: content

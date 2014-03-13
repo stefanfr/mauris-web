@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-05 00:26+0000\n"
+"POT-Creation-Date: 2014-03-13 12:23+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -42,9 +42,18 @@ msgstr ""
 msgid "Unable to update your comment."
 msgstr ""
 
+#: Controller/FeedbackController.php:53
+msgid "Thanks for your feedback!"
+msgstr ""
+
+#: Controller/FeedbackController.php:61
+msgid "Could not add your feedback"
+msgstr ""
+
 #: Controller/PostsController.php:79
+#: Controller/SitemapsController.php:107
 #: View/Comment/add.ctp:2
-#: View/Layouts/default.ctp:102
+#: View/Layouts/default.ctp:111
 #: View/Posts/index.ctp:1
 #: View/Posts/view.ctp:2
 msgid "News"
@@ -72,6 +81,16 @@ msgstr ""
 
 #: Controller/PostsController.php:214
 msgid "Your post has been deleted."
+msgstr ""
+
+#: Controller/SitemapsController.php:99
+msgid "Home"
+msgstr ""
+
+#: Controller/SitemapsController.php:103
+#: View/Layouts/default.ctp:116
+#: View/Pages/organization.ctp:2
+msgid "Organization"
 msgstr ""
 
 #: Controller/TeacherController.php:11
@@ -138,7 +157,7 @@ msgid "Alert danger message testing..."
 msgstr ""
 
 #: Plugin/Intermediary/View/Intermediary/check.ctp:4
-#: View/Pages/home.ctp:71
+#: View/Pages/home.ctp:80
 msgid "Title"
 msgstr ""
 
@@ -170,43 +189,44 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: Plugin/Manage/Controller/TeacherAbsenceController.php:126
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:128
 msgid "The absence has been reported"
 msgstr ""
 
-#: Plugin/Manage/Controller/TeacherAbsenceController.php:134
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:136
 msgid "Could not report the absence"
 msgstr ""
 
-#: Plugin/Manage/Controller/TeacherAbsenceController.php:156;161
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:158;163
 msgid "The absence report could not be found"
 msgstr ""
 
-#: Plugin/Manage/Controller/TeacherAbsenceController.php:221
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:225
 msgid "The absence report has been changed."
 msgstr ""
 
-#: Plugin/Manage/Controller/TeacherAbsenceController.php:229
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:233
 msgid "Could not change the absence report"
 msgstr ""
 
-#: Plugin/Manage/Controller/TeacherAbsenceController.php:296
+#: Plugin/Manage/Controller/TeacherAbsenceController.php:300
 msgid "The absence report has been removed"
 msgstr ""
 
 #: Plugin/Manage/View/Layouts/default.ctp:94;149
-#: View/Layouts/default.ctp:105
+#: View/Layouts/default.ctp:114
 msgid "Manage"
 msgstr ""
 
 #: Plugin/Manage/View/Layouts/default.ctp:100
+#: View/Sitemaps/posts.ctp:3;5;8
 msgid "Posts"
 msgstr ""
 
 #: Plugin/Manage/View/Layouts/default.ctp:101
-#: View/Layouts/default.ctp:103
+#: View/Layouts/default.ctp:112
 #: View/Pages/home.ctp:7
-#: View/Schedule/calendar.ctp:2
+#: View/Schedule/calendar.ctp:2;6
 #: View/Schedule/simple.ctp:2
 #: View/Schedule/view.ctp:2
 msgid "Schedule"
@@ -228,8 +248,8 @@ msgstr ""
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:29
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:8
 #: View/Pages/home.ctp:8;49
-#: View/Schedule/calendar.ctp:8
-#: View/Schedule/simple.ctp:33
+#: View/Schedule/calendar.ctp:21
+#: View/Schedule/simple.ctp:19;50
 #: View/Schedule/view.ctp:19
 msgid "Teacher"
 msgstr ""
@@ -237,6 +257,7 @@ msgstr ""
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:33
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:33
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:2
+#: View/Pages/home.ctp:110
 #: View/Posts/add.ctp:42
 msgid "Add"
 msgstr ""
@@ -276,20 +297,23 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: View/Layouts/default.ctp:107
-#: View/Pages/organization.ctp:2
-msgid "Organization"
+#: View/Emails/html/feedback_submitted.ctp:4
+msgid "View the feedback at the system"
 msgstr ""
 
-#: View/Layouts/default.ctp:111
+#: View/Emails/html/feedback_submitted.ctp:7
+msgid "View feedback"
+msgstr ""
+
+#: View/Layouts/default.ctp:120
 msgid "Logged in as %s"
 msgstr ""
 
-#: View/Layouts/default.ctp:132
+#: View/Layouts/default.ctp:141
 msgid "Username"
 msgstr ""
 
-#: View/Layouts/default.ctp:161
+#: View/Layouts/default.ctp:169
 msgid "Copyright %d-%d ©"
 msgstr ""
 
@@ -340,18 +364,25 @@ msgstr ""
 msgid "Absent teachers for the 7 following days"
 msgstr ""
 
-#: View/Pages/home.ctp:61
-msgid "Heading"
+#: View/Pages/home.ctp:62
+msgid "This table shows the classes you've subscriped to"
 msgstr ""
 
-#: View/Pages/home.ctp:63
-msgid "View details »"
+#: View/Pages/home.ctp:65
+#: View/Schedule/calendar.ctp:27
+#: View/Schedule/simple.ctp:26;44
+#: View/Schedule/view.ctp:13
+msgid "Class"
 msgstr ""
 
-#: View/Pages/home.ctp:70
-#: View/Schedule/simple.ctp:40
+#: View/Pages/home.ctp:79
+#: View/Schedule/simple.ctp:57
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
+msgstr ""
+
+#: View/Pages/home.ctp:93
+msgid "Feedback"
 msgstr ""
 
 #: View/Pages/home.ctp:44
@@ -366,13 +397,19 @@ msgid_plural "%d absent teachers reports"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Pages/home.ctp:66
+#: View/Pages/home.ctp:61
+msgid "Class subscription"
+msgid_plural "Class subscriptions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: View/Pages/home.ctp:75
 msgid "Available classroom"
 msgid_plural "Available classrooms"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Pages/home.ctp:67
+#: View/Pages/home.ctp:76
 msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
 msgstr[0] ""
@@ -438,17 +475,23 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: View/Schedule/calendar.ctp:3
+#: View/Schedule/calendar.ctp:3;6
 msgid "Calendar"
 msgstr ""
 
-#: View/Schedule/calendar.ctp:14
-#: View/Schedule/simple.ctp:27
-#: View/Schedule/view.ctp:13
-msgid "Class"
+#: View/Schedule/calendar.ctp:7
+msgid "Calendar of the %1$s schedule at %2$s"
 msgstr ""
 
-#: View/Schedule/calendar.ctp:46
+#: View/Schedule/calendar.ctp:10
+msgid "Schedule calendar"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:11
+msgid "School schedule"
+msgstr ""
+
+#: View/Schedule/calendar.ctp:61
 msgid "Simple schedule"
 msgstr ""
 
@@ -456,11 +499,11 @@ msgstr ""
 msgid "Simple"
 msgstr ""
 
-#: View/Schedule/simple.ctp:16
+#: View/Schedule/simple.ctp:33
 msgid "Calendar schedule"
 msgstr ""
 
-#: View/Schedule/simple.ctp:25
+#: View/Schedule/simple.ctp:42
 #: View/Schedule/view.ctp:11
 msgid "Period"
 msgstr ""
@@ -471,6 +514,38 @@ msgstr ""
 
 #: View/Schedule/view.ctp:47
 msgid "wordt na gekeken"
+msgstr ""
+
+#: View/Sitemaps/index.ctp:2;4
+#: View/Sitemaps/other.ctp:2;5;7
+#: View/Sitemaps/pages.ctp:2;5;7
+#: View/Sitemaps/posts.ctp:2;5;7
+#: View/Sitemaps/schedule_entries.ctp:2;5;7
+msgid "Sitemaps"
+msgstr ""
+
+#: View/Sitemaps/index.ctp:5
+msgid "The following sitemaps are available:"
+msgstr ""
+
+#: View/Sitemaps/other.ctp:3;5;8
+msgid "Other"
+msgstr ""
+
+#: View/Sitemaps/pages.ctp:3;5;8
+msgid "Pages"
+msgstr ""
+
+#: View/Sitemaps/posts.ctp:10
+msgid "For a nicer news overview go to the news page."
+msgstr ""
+
+#: View/Sitemaps/posts.ctp:11
+msgid "Click here"
+msgstr ""
+
+#: View/Sitemaps/schedule_entries.ctp:3;5;8
+msgid "Schedule entries"
 msgstr ""
 
 #: View/Teacher/view.ctp:2
