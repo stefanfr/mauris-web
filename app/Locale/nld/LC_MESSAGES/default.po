@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-13 12:23+0000\n"
-"PO-Revision-Date: 2014-03-04 00:16+0200\n"
-"Last-Translator: Roderik Zandberg <Roderik@Ro-dev.nl>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"ict-college/ict-college-website/nld/>\n"
+"PO-Revision-Date: 2014-03-13 13:39+0200\n"
+"Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
+"/ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,11 +46,11 @@ msgstr "Commentaar kon niet worden aangepast."
 
 #: Controller/FeedbackController.php:53
 msgid "Thanks for your feedback!"
-msgstr ""
+msgstr "Dank je voor je terugkoppeling!"
 
 #: Controller/FeedbackController.php:61
 msgid "Could not add your feedback"
-msgstr ""
+msgstr "Kon je terugkoppeling niet toevoegen"
 
 #: Controller/PostsController.php:79 Controller/SitemapsController.php:107
 #: View/Comment/add.ctp:2 View/Layouts/default.ctp:111 View/Posts/index.ctp:1
@@ -83,9 +83,8 @@ msgid "Your post has been deleted."
 msgstr "Je post is verwijderd."
 
 #: Controller/SitemapsController.php:99
-#, fuzzy
 msgid "Home"
-msgstr "Huiswerk"
+msgstr "Home"
 
 #: Controller/SitemapsController.php:103 View/Layouts/default.ctp:116
 #: View/Pages/organization.ctp:2
@@ -186,6 +185,9 @@ msgid ""
 "The webpage you're trying to go to might be dangerous. For more information "
 "about the page, take a look at the information shown on this page."
 msgstr ""
+"The webpagina waar je heen probeert te gaan kan gevaarlijk zijn. Voor meer "
+"informatie over de webpagina kijk naar de informatie weergegeven op deze "
+"pagina."
 
 #: Plugin/Intermediary/View/Intermediary/check.ctp:33
 msgid "Go to the website"
@@ -294,11 +296,11 @@ msgstr "Reageer"
 
 #: View/Emails/html/feedback_submitted.ctp:4
 msgid "View the feedback at the system"
-msgstr ""
+msgstr "Bekijk de terugkoppeling in het systeem"
 
 #: View/Emails/html/feedback_submitted.ctp:7
 msgid "View feedback"
-msgstr ""
+msgstr "Bekijk terugkoppeling"
 
 #: View/Layouts/default.ctp:120
 msgid "Logged in as %s"
@@ -362,7 +364,7 @@ msgstr "Afwezige docenten voor de komende 7 dagen"
 
 #: View/Pages/home.ctp:62
 msgid "This table shows the classes you've subscriped to"
-msgstr ""
+msgstr "Deze tabel laat de klassen zien waar je op geabonneerd bent"
 
 #: View/Pages/home.ctp:65 View/Schedule/calendar.ctp:27
 #: View/Schedule/simple.ctp:26;44 View/Schedule/view.ctp:13
@@ -376,7 +378,7 @@ msgstr "Klaslokaal"
 
 #: View/Pages/home.ctp:93
 msgid "Feedback"
-msgstr ""
+msgstr "Terugkoppeling"
 
 #: View/Pages/home.ctp:44
 msgid "Absent teacher"
@@ -393,8 +395,8 @@ msgstr[1] "%d meldingen van afwezige docenten"
 #: View/Pages/home.ctp:61
 msgid "Class subscription"
 msgid_plural "Class subscriptions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Klasse abbonnement"
+msgstr[1] "Klasse abonnementen"
 
 #: View/Pages/home.ctp:75
 msgid "Available classroom"
@@ -414,6 +416,9 @@ msgid ""
 "intermediary page that checks every link to warn about possible dangerous "
 "activies."
 msgstr ""
+"Deze pagina is niet gemaakt door de ontwikkelaars van het systeem. We hebben "
+"een tussen pagina toegevoegt die iedere link nakijkt om te waarschuwen voor "
+"mogelijke gevaarlijke activiteiten."
 
 #: View/Posts/add.ctp:1
 msgid "Add post"
@@ -474,19 +479,16 @@ msgid "Calendar"
 msgstr "Kalender"
 
 #: View/Schedule/calendar.ctp:7
-#, fuzzy
 msgid "Calendar of the %1$s schedule at %2$s"
-msgstr "Kalender rooster"
+msgstr "Kalender van het %1$s rooster op %2$s"
 
 #: View/Schedule/calendar.ctp:10
-#, fuzzy
 msgid "Schedule calendar"
-msgstr "Rooster"
+msgstr "Rooster kalender"
 
 #: View/Schedule/calendar.ctp:11
-#, fuzzy
 msgid "School schedule"
-msgstr "Simpel rooster"
+msgstr "School rooster"
 
 #: View/Schedule/calendar.ctp:61
 msgid "Simple schedule"
@@ -516,32 +518,31 @@ msgstr "wordt na gekeken"
 #: View/Sitemaps/pages.ctp:2;5;7 View/Sitemaps/posts.ctp:2;5;7
 #: View/Sitemaps/schedule_entries.ctp:2;5;7
 msgid "Sitemaps"
-msgstr ""
+msgstr "Sitemaps"
 
 #: View/Sitemaps/index.ctp:5
 msgid "The following sitemaps are available:"
-msgstr ""
+msgstr "The volgende sitemaps zijn beschikbaar:"
 
 #: View/Sitemaps/other.ctp:3;5;8
 msgid "Other"
-msgstr ""
+msgstr "Overig"
 
 #: View/Sitemaps/pages.ctp:3;5;8
 msgid "Pages"
-msgstr ""
+msgstr "Pagina's"
 
 #: View/Sitemaps/posts.ctp:10
 msgid "For a nicer news overview go to the news page."
-msgstr ""
+msgstr "Voor een fijner nieuws overzicht ga naar de nieuws pagina."
 
 #: View/Sitemaps/posts.ctp:11
 msgid "Click here"
-msgstr ""
+msgstr "Klik hier"
 
 #: View/Sitemaps/schedule_entries.ctp:3;5;8
-#, fuzzy
 msgid "Schedule entries"
-msgstr "Rooster"
+msgstr "Rooster items"
 
 #: View/Teacher/view.ctp:2
 msgid "Teachers"
