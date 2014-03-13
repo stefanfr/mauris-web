@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Page', 'Classroom', 'Post', 'TeacherAbsenceReport');
+	public $uses = array('Page', 'Classroom', 'Post', 'TeacherAbsenceReport', 'UserClassMapping');
 
         public function beforeFilter() {
             parent::beforeFilter();
@@ -88,6 +88,7 @@ class PagesController extends AppController {
             $this->set('absent_teachers', $this->TeacherAbsenceReport->getAbsentTeachers(time(), strtotime('+7 days', time()), $this->Department->id));
             $this->set('school', $this->School->read());
             $this->set('department', $this->Department->read());
+            $this->set('user_class_subscriptions', $this->UserClassMapping->getUserClassSubscriptions($this->Auth->user('id'), $this->Department->id));
 
             try {
                 $this->render(implode('/', $path));

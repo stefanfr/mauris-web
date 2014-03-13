@@ -57,30 +57,20 @@ $this->set('description_for_layout', __('%1$s school information for teachers, s
                 </table>
                 <p><?=__n('%d absent teacher report', '%d absent teachers reports', count($absent_teachers), count($absent_teachers))?></p>
 	</div>
-	<div class="col-md-4">
-		<h2><?=h(__('Feedback'))?></h2>
-		<?
-                echo $this->Form->create('FeedbackEntry', array(
-                    'inputDefaults' => array(
-                        'div' => 'form-group',
-                        'label' => false,
-                        'class' => 'form-control'
-                    ),
-                    'class' => 'form-horizontal',
-                    'url' => array(
-                        'controller' => 'feedback',
-                        'action' => 'add'
-                    ),
-                ));
-                ?>
-
-                <?=$this->Form->input('body', array('rows' => '5'))?>
-                        <?php echo $this->Form->submit(__('Add'), array(
-                                //'div' => 'col col-md-9 col-md-offset-3',
-                                'class' => 'btn btn-default'
-                        )); ?>
-                <?=$this->Form->end()?>
-	</div>
+    <div class="col-md-4">
+        <h2><?=__n('Class subscription', 'Class subscriptions', count($user_class_subscriptions))?></h2>
+        <p><?=__('This table shows the classes you\'ve subscriped to')?></p>
+        <table class="table">
+            <tr>
+                <th><?=__('Class')?></th>
+            </tr>
+            <? foreach ($user_class_subscriptions as $classroomSubscription): ?>
+            <tr>
+                <th><?=$this->Html->link($classroomSubscription['Class']['name'], array('controller' => 'schedule', 'action' => 'index', 'class' => $classroomSubscription['Class']['id']))?></th>
+            </tr>
+            <? endforeach; ?>
+        </table>
+    </div>
 	<div class="col-md-4">
 		<h2><?=__n('Available classroom', 'Available classrooms', count($classrooms_available))?></h2>
                 <p><?=__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat($classrooms_available_timestamp, '%X', null, 'Europe/Amsterdam'))?></p>
@@ -97,4 +87,30 @@ $this->set('description_for_layout', __('%1$s school information for teachers, s
                     <? endforeach; ?>
                 </table>
 	</div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2><?=h(__('Feedback'))?></h2>
+        <?
+        echo $this->Form->create('FeedbackEntry', array(
+            'inputDefaults' => array(
+                'div' => 'form-group',
+                'label' => false,
+                'class' => 'form-control'
+            ),
+            'class' => 'form-horizontal',
+            'url' => array(
+                'controller' => 'feedback',
+                'action' => 'add'
+            ),
+        ));
+        ?>
+
+        <?=$this->Form->input('body', array('rows' => '5'))?>
+                <?php echo $this->Form->submit(__('Add'), array(
+                        //'div' => 'col col-md-9 col-md-offset-3',
+                        'class' => 'btn btn-default'
+                )); ?>
+        <?=$this->Form->end()?>
+    </div>
 </div>
