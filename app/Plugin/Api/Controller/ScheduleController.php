@@ -1,7 +1,14 @@
 <?php
 class ScheduleController extends AppController {
 
-    public $components = array('RequestHandler');
+    public $components = array(
+        'RequestHandler', 'TimeAware', 'SchoolInformation',
+        'DataFilter' => array(
+            'custom' => array(
+                'class', 'classroom', 'teacher'
+            )
+        )
+    );
     public $uses = array('ScheduleEntry', 'SubjectDetails');
 
     public function index() {
@@ -19,19 +26,19 @@ class ScheduleController extends AppController {
         //var_dump($this->request->query);
         $conditions = array(
              'date' => array(
-                'start' => date('Y-m-d', $this->request->query['start']),
-                'end'   => date('Y-m-d', $this->request->query['end'])
+                'start' => date('Y-m-d', $this->TimeAware->getStart()),
+                'end'   => date('Y-m-d', $this->TimeAware->getEnd())
             )
         );
-        $conditions['department'] = $this->request->query['department'];
-        if (isset($this->request->query['class'])) {
-            $conditions['class'] = $this->request->query['class'];
+        $conditions['department'] = $this->SchoolInformation->getDepartmentId();
+        if ($this->DataFilter->hasCustomFilter('class')) {
+            $conditions['class'] = $this->DataFilter->getCustomFilter('class');
         }
-        if (isset($this->request->query['teacher'])) {
-            $conditions['teacher'] = $this->request->query['teacher'];
+        if ($this->DataFilter->hasCustomFilter('teacher')) {
+            $conditions['teacher'] = $this->DataFilter->getCustomFilter('teacher');
         }
-        if (isset($this->request->query['classroom'])) {
-            $conditions['classroom'] = $this->request->query['classroom'];
+        if ($this->DataFilter->hasCustomFilter('classroom')) {
+            $conditions['classroom'] = $this->DataFilter->getCustomFilter('classroom');
         }
         $entries = $this->ScheduleEntry->getSchedule($conditions);
         /*$scheduleEntries = $this->ScheduleEntry->getWeekScheduleForClass(
