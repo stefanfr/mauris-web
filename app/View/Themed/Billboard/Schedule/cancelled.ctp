@@ -1,9 +1,9 @@
 <? if (!empty($entries)): ?>
 <table class="table">
     <tr>
-        <th><?=__('Klas')?></th>
+        <th><?=__('Class')?></th>
         <th><?=__('Period')?></th>
-        <th><?=__('Vak')?></th>
+        <th><?=__('Subject')?></th>
     </tr>
     <? foreach ($entries as $entry): ?>
     <tr>

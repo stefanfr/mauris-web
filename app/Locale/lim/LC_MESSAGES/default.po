@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-18 20:16+0000\n"
+"POT-Creation-Date: 2014-03-18 20:20+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -381,6 +381,7 @@ msgstr ""
 
 #: View/Pages/home.ctp:65 View/Schedule/calendar.ctp:27
 #: View/Schedule/simple.ctp:26;44 View/Schedule/view.ctp:13
+#: View/Themed/Billboard/Schedule/cancelled.ctp:4
 msgid "Class"
 msgstr ""
 
@@ -573,12 +574,8 @@ msgstr ""
 msgid "No events in the near future"
 msgstr ""
 
-#: View/Themed/Billboard/Schedule/cancelled.ctp:4
-msgid "Klas"
-msgstr ""
-
 #: View/Themed/Billboard/Schedule/cancelled.ctp:6
-msgid "Vak"
+msgid "Subject"
 msgstr ""
 
 #: View/Users/add.ctp:4
