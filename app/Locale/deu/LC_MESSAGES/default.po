@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-13 12:23+0000\n"
+"POT-Creation-Date: 2014-03-18 20:16+0000\n"
 "PO-Revision-Date: 2014-03-01 22:46+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -81,6 +81,7 @@ msgid "Your post has been deleted."
 msgstr ""
 
 #: Controller/SitemapsController.php:99
+#: Plugin/Manage/View/Layouts/default.ctp:151
 msgid "Home"
 msgstr ""
 
@@ -115,6 +116,30 @@ msgstr ""
 
 #: Controller/UsersController.php:89
 msgid "Invalid username or password, try again"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:5 View/Pages/home.ctp:27
+msgid "Latest news"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:14
+msgid "Cancelled subjects"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:22
+msgid "Absent teachers"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:30
+msgid "Events"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:38
+msgid "This information updates every 10 seconds"
+msgstr ""
+
+#: Plugin/Billboard/View/Layouts/default.ctp:104
+msgid "Billboard"
 msgstr ""
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:18
@@ -210,7 +235,7 @@ msgstr ""
 msgid "The absence report has been removed"
 msgstr ""
 
-#: Plugin/Manage/View/Layouts/default.ctp:94;149 View/Layouts/default.ctp:114
+#: Plugin/Manage/View/Layouts/default.ctp:94;150 View/Layouts/default.ctp:114
 msgid "Manage"
 msgstr ""
 
@@ -227,6 +252,7 @@ msgstr ""
 #: Plugin/Manage/View/Layouts/default.ctp:102
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:2
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:2
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:2
 #: Plugin/Manage/View/TeacherAbsence/remove.ctp:2 View/Pages/home.ctp:10
 msgid "Teacher absence"
 msgstr ""
@@ -237,15 +263,15 @@ msgstr ""
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:29
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:29
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:8 View/Pages/home.ctp:8;49
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:11 View/Pages/home.ctp:8;49
 #: View/Schedule/calendar.ctp:21 View/Schedule/simple.ctp:19;50
-#: View/Schedule/view.ctp:19
+#: View/Schedule/view.ctp:19 View/Themed/Billboard/AbsentTeacher/index.ctp:5
 msgid "Teacher"
 msgstr ""
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:33
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:33
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:2 View/Pages/home.ctp:110
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:5 View/Pages/home.ctp:110
 #: View/Posts/add.ctp:42
 msgid "Add"
 msgstr ""
@@ -254,15 +280,16 @@ msgstr ""
 msgid "Edit absence report"
 msgstr ""
 
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:7 View/Pages/home.ctp:48
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:10 View/Pages/home.ctp:48
+#: View/Themed/Billboard/AbsentTeacher/index.ctp:4
 msgid "Date"
 msgstr ""
 
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:9
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:12
 msgid "Change"
 msgstr ""
 
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:10
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:13
 #: Plugin/Manage/View/TeacherAbsence/remove.ctp:11
 msgid "Remove"
 msgstr ""
@@ -336,10 +363,6 @@ msgstr ""
 msgid ""
 "%1$s school information for teachers, students and parents at the %2$s "
 "department"
-msgstr ""
-
-#: View/Pages/home.ctp:27
-msgid "Latest news"
 msgstr ""
 
 #: View/Pages/home.ctp:36 View/Posts/index.ctp:23
@@ -438,10 +461,11 @@ msgid "The latest news"
 msgstr ""
 
 #: View/Posts/index.ctp:7 View/Posts/view.ctp:13
+#: View/Themed/Billboard/Post/index.ctp:5
 msgid "Posted by:"
 msgstr ""
 
-#: View/Posts/index.ctp:19
+#: View/Posts/index.ctp:19 View/Themed/Billboard/Post/index.ctp:15
 msgid "%d comment"
 msgid_plural "%d comments"
 msgstr[0] ""
@@ -488,6 +512,7 @@ msgid "Calendar schedule"
 msgstr ""
 
 #: View/Schedule/simple.ctp:42 View/Schedule/view.ctp:11
+#: View/Themed/Billboard/Schedule/cancelled.ctp:5
 msgid "Period"
 msgstr ""
 
@@ -535,6 +560,23 @@ msgstr ""
 
 #: View/Teacher/view.ctp:9
 msgid "Account"
+msgstr ""
+
+#: View/Themed/Billboard/AbsentTeacher/index.ctp:15
+#: View/Themed/Billboard/Schedule/cancelled.ctp:17
+msgid "No teachers are reported as absent at the moment"
+msgstr ""
+
+#: View/Themed/Billboard/Event/index.ctp:8
+msgid "No events in the near future"
+msgstr ""
+
+#: View/Themed/Billboard/Schedule/cancelled.ctp:4
+msgid "Klas"
+msgstr ""
+
+#: View/Themed/Billboard/Schedule/cancelled.ctp:6
+msgid "Vak"
 msgstr ""
 
 #: View/Users/add.ctp:4
