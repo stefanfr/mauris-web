@@ -2,7 +2,7 @@
 
 class EventController extends AppController {
 
-    public $components = array('RequestHandler', 'TimeAware');
+    public $components = array('RequestHandler', 'ThemeAware', 'TimeAware');
     public $uses = array('Event');
 
     public function index() {
