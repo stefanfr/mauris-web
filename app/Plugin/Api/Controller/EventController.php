@@ -2,7 +2,7 @@
 
 class EventController extends AppController {
 
-    public $components = array('RequestHandler');
+    public $components = array('RequestHandler', 'TimeAware');
     public $uses = array('Event');
 
     public function index() {
@@ -14,8 +14,18 @@ class EventController extends AppController {
         $conditions = array();
         $conditions = array(
             'or' => array(
-                '? BETWEEN Event.start AND Event.end' => date('Y-m-d', $this->request->query['start']),
-                '? BETWEEN Event.start AND Event.end' => date('Y-m-d', $this->request->query['end'])
+                array (
+                    'Event.start BETWEEN ? AND ?' => array(
+                        date('Y-m-d', $this->TimeAware->getStart()),
+                        date('Y-m-d', $this->TimeAware->getEnd())
+                    )
+                ),
+                array(
+                    'Event.end BETWEEN ? AND ?' => array(
+                        date('Y-m-d', $this->TimeAware->getStart()),
+                        date('Y-m-d', $this->TimeAware->getEnd())
+                    )
+                )
             )
         );
         $conditions['and']['or'][] = array(
