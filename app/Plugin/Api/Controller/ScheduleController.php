@@ -2,20 +2,39 @@
 class ScheduleController extends AppController {
 
     public $components = array(
-        'RequestHandler', 'TimeAware', 'SchoolInformation',
+        'RequestHandler', 'TimeAware', 'SchoolInformation', 'ThemeAware',
         'DataFilter' => array(
             'custom' => array(
-                'class', 'classroom', 'teacher'
+                'class', 'classroom', 'teacher', 'cancelled', 'view'
             )
         )
     );
     public $uses = array('ScheduleEntry', 'SubjectDetails');
 
     public function index() {
-        $recipes = $this->Recipe->find('all');
+        $conditions = array();
+        if ($this->DataFilter->hasCustomFilter('cancelled')) {
+            $conditions['ScheduleEntry.cancelled'] = $this->DataFilter->getCustomFilter('cancelled');
+        }
+        $conditions['ScheduleEntry.date BETWEEN ? AND ?'] = array(
+            date('Y-m-d', $this->TimeAware->getStart()),
+            date('Y-m-d', $this->TimeAware->getEnd())
+        );
+        $entries = $this->ScheduleEntry->find(
+            'all',
+            array(
+                'recursive' => 2,
+                'conditions' => $conditions
+            )
+        );
+        
+        if ($this->DataFilter->hasCustomFilter('view')) {
+            $this->view = $this->DataFilter->getCustomFilter('view');
+        }
+        
         $this->set(array(
-            'recipes' => $recipes,
-            '_serialize' => array('recipes')
+            'entries' => $entries,
+            '_serialize' => array('entries')
         ));
     }
 

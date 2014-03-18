@@ -2,14 +2,11 @@
 
 class EventController extends AppController {
 
-    public $components = array('RequestHandler', 'ThemeAware', 'TimeAware');
+    public $components = array('RequestHandler', 'ThemeAware', 'TimeAware', 'SchoolInformation');
     public $uses = array('Event');
 
     public function index() {
         $timezone = new DateTimeZone('Europe/Amsterdam');
-        
-        $schoolId = (int) $this->request->query['school'];
-        $departmentId = (int) $this->request->query['department'];
         
         $conditions = array();
         $conditions = array(
@@ -34,19 +31,19 @@ class EventController extends AppController {
                 'Event.department_id IS NULL'
             )
         );
-        if ($schoolId) {
+        if ($this->SchoolInformation->isSchoolIdAvailable()) {
             $conditions['and']['or'][] = array(
                 'and' => array(
-                    'Event.school_id' => $schoolId,
+                    'Event.school_id' => $this->SchoolInformation->getSchoolId(),
                     'Event.department_id IS NULL'
                 )
             );
         }
-        if ($departmentId) {
+        if ($this->SchoolInformation->isDepartmentIdAvailable()) {
             $conditions['and']['or'][] = array(
                 'and' => array(
-                    'Event.school_id' => $schoolId,
-                    'Event.department_id' => $departmentId
+                    'Event.school_id' => $this->SchoolInformation->getSchoolId(),
+                    'Event.department_id' => $this->SchoolInformation->getDepartmentId()
                 )
             );
         }
