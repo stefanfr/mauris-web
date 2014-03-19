@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-18 20:20+0000\n"
+"POT-Creation-Date: 2014-03-19 13:59+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -120,24 +120,20 @@ msgstr ""
 msgid "Invalid username or password, try again"
 msgstr ""
 
-#: Plugin/Billboard/View/Billboard/index.ctp:5 View/Pages/home.ctp:27
+#: Plugin/Billboard/View/Billboard/index.ctp:6 View/Pages/home.ctp:27
 msgid "Latest news"
 msgstr "Lètste nuujs"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:14
+#: Plugin/Billboard/View/Billboard/index.ctp:15
 msgid "Cancelled subjects"
 msgstr ""
 
-#: Plugin/Billboard/View/Billboard/index.ctp:22
+#: Plugin/Billboard/View/Billboard/index.ctp:23
 msgid "Absent teachers"
 msgstr ""
 
-#: Plugin/Billboard/View/Billboard/index.ctp:30
+#: Plugin/Billboard/View/Billboard/index.ctp:31
 msgid "Events"
-msgstr ""
-
-#: Plugin/Billboard/View/Billboard/index.ctp:38
-msgid "This information updates every 10 seconds"
 msgstr ""
 
 #: Plugin/Billboard/View/Layouts/default.ctp:104
@@ -566,7 +562,6 @@ msgid "Account"
 msgstr ""
 
 #: View/Themed/Billboard/AbsentTeacher/index.ctp:15
-#: View/Themed/Billboard/Schedule/cancelled.ctp:17
 msgid "No teachers are reported as absent at the moment"
 msgstr ""
 
@@ -576,6 +571,10 @@ msgstr ""
 
 #: View/Themed/Billboard/Schedule/cancelled.ctp:6
 msgid "Subject"
+msgstr ""
+
+#: View/Themed/Billboard/Schedule/cancelled.ctp:17
+msgid "No subjects have been cancelled"
 msgstr ""
 
 #: View/Users/add.ctp:4
