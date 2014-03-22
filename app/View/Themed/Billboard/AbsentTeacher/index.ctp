@@ -6,8 +6,8 @@
     </tr>
     <? foreach ($reports as $report): ?>
     <tr>
-        <th><?=h($this->Time->i18nFormat($report['TeacherAbsenceReport']['date'], '%A', 'Europe/Amsterdam'))?></th>
-        <th><?=$this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teacher', 'action' => 'view', $report['TeacherAbsenceReport']['teacher_id']))?></th>
+        <td><?=h($this->Time->niceShort($report['TeacherAbsenceReport']['date'], 'Europe/Amsterdam'))?></td>
+        <td><?=$this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teacher', 'action' => 'view', $report['TeacherAbsenceReport']['teacher_id']))?></td>
     </tr>
     <? endforeach; ?>
 </table>

@@ -1,3 +1,87 @@
+body {
+    zoom: 100%;
+    
+    font-size: 30px;
+    /*font-family: "Trebuchet MS";*/
+}
+
+h1 {
+    font-size: 150%;
+}
+h2 {
+    font-size: 125%;
+}
+
+.navbar-default {
+    zoom: 150%;
+}
+
+.navbar-text {
+    font-size: initial;
+}
+
 .panel-default {
     border-width: 10px;
+}
+
+.container {
+	width: initial !important;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.billboard-content {
+    height: 550px;
+    overflow: hidden;
+}
+
+.panel-body {
+    padding: 5px;
+}
+
+.row {
+    margin: 0px;
+}
+
+.billboard-actual-content .panel-default {
+    word-wrap: break-word; 
+}
+
+/**
+ * Some space between the blocks
+ */
+
+.navbar-default {
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.container {
+    margin: 0px;
+    padding: 0px 5px;
+}
+
+.panel {
+    margin-bottom: 5px;
+}
+
+.billboard-actual-content .panel-default {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding: 0px;
+}
+
+/**
+ * Space is tight so huge margins are stupid
+ */
+
+h1, h2, h3, h4 {
+    margin-top: 0px;
+}
+
+.transit-delayed {
+    color: red;
 }

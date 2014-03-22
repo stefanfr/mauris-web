@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-19 13:59+0000\n"
+"POT-Creation-Date: 2014-03-22 23:05+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -122,21 +122,41 @@ msgstr ""
 msgid "Invalid username or password, try again"
 msgstr ""
 
-#: Plugin/Billboard/View/Billboard/index.ctp:6
+#: Plugin/Billboard/View/Billboard/index.ctp:8
 #: View/Pages/home.ctp:27
 msgid "Latest news"
 msgstr ""
 
-#: Plugin/Billboard/View/Billboard/index.ctp:15
+#: Plugin/Billboard/View/Billboard/index.ctp:23
 msgid "Cancelled subjects"
 msgstr ""
 
-#: Plugin/Billboard/View/Billboard/index.ctp:23
+#: Plugin/Billboard/View/Billboard/index.ctp:31
 msgid "Absent teachers"
 msgstr ""
 
-#: Plugin/Billboard/View/Billboard/index.ctp:31
+#: Plugin/Billboard/View/Billboard/index.ctp:39
 msgid "Events"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:47
+msgid "Public transit"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:66
+msgid "Server unavailable"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:69
+msgid "The server can't be reached. The information may be incorrect or out-dated"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:80
+msgid "Reloading"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:83
+msgid "The billboard is reloading..."
 msgstr ""
 
 #: Plugin/Billboard/View/Layouts/default.ctp:104
@@ -587,6 +607,22 @@ msgstr ""
 
 #: View/Themed/Billboard/Event/index.ctp:8
 msgid "No events in the near future"
+msgstr ""
+
+#: View/Themed/Billboard/PublicTransit/index.ctp:13
+msgid "Type"
+msgstr ""
+
+#: View/Themed/Billboard/PublicTransit/index.ctp:14
+msgid "Destination"
+msgstr ""
+
+#: View/Themed/Billboard/PublicTransit/index.ctp:15
+msgid "Departure"
+msgstr ""
+
+#: View/Themed/Billboard/PublicTransit/index.ctp:36
+msgid "No transit information available"
 msgstr ""
 
 #: View/Themed/Billboard/Schedule/cancelled.ctp:6

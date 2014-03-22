@@ -14,5 +14,5 @@
     <? endforeach; ?>
 </table>
 <? else: ?>
-<span><?=__('No teachers are reported as absent at the moment')?></span>
+<span><?=__('No subjects have been cancelled')?></span>
 <? endif; ?>

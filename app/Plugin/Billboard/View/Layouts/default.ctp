@@ -95,13 +95,16 @@
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-                            <span class="navbar-brand"><?=$this->get('department_name')?> - <?=__('Billboard')?></span>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+					</button>
+				<span class="navbar-brand"><?=$this->get('department_name')?> - <?=__('Billboard')?></span>
+			</div>
+			<div class="navbar-collapse collapse">
+				<p class="nav navbar-text navbar-right">Copyright 2013 - <?=date('Y'); ?> &copy; CVO-Technologies &amp; Dev App ("0100Dev")</p>
 			</div>
 		</div>
 	</div>
@@ -109,16 +112,9 @@
 	<?=$this->fetch('beforeContainer'); ?>
 	
 	<div class="container">	
-		<?=$this->Session->flash(); ?>	
-		
         <?=$content_for_layout; ?>
-	
-		<hr>
-		<footer>
-			<span>Copyright 2013 - <?=date('Y'); ?> &copy; <?=$this->Html->link('CVO-Technologies', 'http://mms-projects.net/', array('target' => '_BLANK')); ?> & <?=$this->Html->link('Dev App ("0100Dev")', 'http://devapp.nl/', array('target' => '_BLANK')); ?></span>
-			<span class="pull-right"><?=$this->get('school_name')?> (<?=$this->get('department_name')?>)</span>
-		</footer>
 	</div>
+	
 	<?=((isset($loadingModal) && $loadingModal) ? $this->element('loadingModal') : ''); ?>
 </body>
 </html>

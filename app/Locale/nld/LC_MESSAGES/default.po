@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-19 13:59+0000\n"
+"POT-Creation-Date: 2014-03-22 23:05+0000\n"
 "PO-Revision-Date: 2014-03-19 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
-"/ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
+"ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,21 +121,43 @@ msgstr "Gebruiker was niet verwijderd"
 msgid "Invalid username or password, try again"
 msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:6 View/Pages/home.ctp:27
+#: Plugin/Billboard/View/Billboard/index.ctp:8 View/Pages/home.ctp:27
 msgid "Latest news"
 msgstr "Laatste nieuws"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:15
+#: Plugin/Billboard/View/Billboard/index.ctp:23
 msgid "Cancelled subjects"
 msgstr "Geannuleerde lessen"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:23
+#: Plugin/Billboard/View/Billboard/index.ctp:31
 msgid "Absent teachers"
 msgstr "Afwezige docenten"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:31
+#: Plugin/Billboard/View/Billboard/index.ctp:39
 msgid "Events"
 msgstr "Evenementen"
+
+#: Plugin/Billboard/View/Billboard/index.ctp:47
+msgid "Public transit"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:66
+msgid "Server unavailable"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:69
+msgid ""
+"The server can't be reached. The information may be incorrect or out-dated"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:80
+#, fuzzy
+msgid "Reloading"
+msgstr "Kop"
+
+#: Plugin/Billboard/View/Billboard/index.ctp:83
+msgid "The billboard is reloading..."
+msgstr ""
 
 #: Plugin/Billboard/View/Layouts/default.ctp:104
 msgid "Billboard"
@@ -582,6 +604,23 @@ msgstr "Er zijn geen docenten afwezig gemeld op het moment"
 msgid "No events in the near future"
 msgstr "Geen evenementen in de nabije toekomst"
 
+#: View/Themed/Billboard/PublicTransit/index.ctp:13
+msgid "Type"
+msgstr ""
+
+#: View/Themed/Billboard/PublicTransit/index.ctp:14
+#, fuzzy
+msgid "Destination"
+msgstr "Beschrijving"
+
+#: View/Themed/Billboard/PublicTransit/index.ctp:15
+msgid "Departure"
+msgstr ""
+
+#: View/Themed/Billboard/PublicTransit/index.ctp:36
+msgid "No transit information available"
+msgstr ""
+
 #: View/Themed/Billboard/Schedule/cancelled.ctp:6
 msgid "Subject"
 msgstr "Vak"
@@ -615,9 +654,6 @@ msgstr "Registreren"
 
 #~ msgid "Klas"
 #~ msgstr "Klas"
-
-#~ msgid "Heading"
-#~ msgstr "Kop"
 
 #~ msgid "View details »"
 #~ msgstr "Bekijk details »"

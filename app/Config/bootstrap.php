@@ -78,7 +78,7 @@ CakePlugin::load('Linkable');
 CakePlugin::load('Api');
 CakePlugin::load('Manage');
 CakePlugin::load('Intermediary', array('routes' => true));
-CakePlugin::load('Billboard');
+CakePlugin::load('Billboard', array('routes' => true));
 CakePlugin::load('OvInfo');
 
 /**

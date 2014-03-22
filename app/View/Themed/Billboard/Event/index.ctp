@@ -1,7 +1,7 @@
 <? if (!empty($events)): ?>
 <ul>
 <? foreach ($events as $event): ?>
-    <li><?=h($event['title'])?></li>
+    <li><?=h($this->Time->niceShort($event['start'], 'Europe/Amsterdam'))?> - <?=h($event['title'])?></li>
 <? endforeach; ?>
 </ul>
 <? else: ?>
