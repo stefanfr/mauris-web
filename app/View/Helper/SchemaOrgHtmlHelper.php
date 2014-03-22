@@ -3,6 +3,20 @@
 App::uses('BoostCakeHtmlHelper', 'BoostCake.View/Helper');
 
 class SchemaOrgHtmlHelper extends BoostCakeHtmlHelper {
+    
+    /**
+ * Adds a link to the breadcrumbs array.
+ *
+ * @param string $name Text for link
+ * @param string $link URL for link (if empty it won't be a link)
+ * @param string|array $options Link attributes e.g. array('id' => 'selected')
+ * @return void
+ * @see HtmlHelper::link() for details on $options that can be used.
+ * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#creating-breadcrumb-trails-with-htmlhelper
+ */
+    public function addCrumbToBeginning($name, $link = null, $options = null) {
+        array_unshift($this->_crumbs, array($name, $link, $options));
+    }
  
     /**
  * Returns breadcrumbs as a (x)html list

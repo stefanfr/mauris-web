@@ -145,9 +145,11 @@
 	
 	<?=$this->fetch('beforeContainer'); ?>
 	
-	<div class="container">		
-        <?=((isset($hideCrumb) && $hideCrumb) ? '' : $this->Html->getCrumbList(array('class' => 'breadcrumb', 'firstClass' => false, 'lastClass' => 'active'), __('Manage'))); ?>
-        
+	<div class="container">	
+            <? if ((!isset($hideCrumb)) || (!$hideCrumb)): ?>
+            <? $this->Html->addCrumbToBeginning(__('Manage'), array('plugin' => 'manage', 'controller' => 'manage',  'action' => 'index'));  ?>
+            <?=$this->Html->getCrumbList(array('class' => 'breadcrumb', 'firstClass' => false, 'lastClass' => 'active'), __('Home')); ?>
+            <? endif; ?>
 		<?=$this->Session->flash(); ?>	
 		
         <?=$content_for_layout; ?>
