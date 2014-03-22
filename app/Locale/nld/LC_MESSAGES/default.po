@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-22 23:05+0000\n"
-"PO-Revision-Date: 2014-03-19 15:09+0200\n"
+"PO-Revision-Date: 2014-03-23 00:34+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
+"/ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -139,25 +139,25 @@ msgstr "Evenementen"
 
 #: Plugin/Billboard/View/Billboard/index.ctp:47
 msgid "Public transit"
-msgstr ""
+msgstr "Openbaar vervoer"
 
 #: Plugin/Billboard/View/Billboard/index.ctp:66
 msgid "Server unavailable"
-msgstr ""
+msgstr "Server onbereikbaar"
 
 #: Plugin/Billboard/View/Billboard/index.ctp:69
 msgid ""
 "The server can't be reached. The information may be incorrect or out-dated"
 msgstr ""
+"De server kan niet bereikt worden. De informatie is mogelijk incorrect of oud"
 
 #: Plugin/Billboard/View/Billboard/index.ctp:80
-#, fuzzy
 msgid "Reloading"
-msgstr "Kop"
+msgstr "Herladen"
 
 #: Plugin/Billboard/View/Billboard/index.ctp:83
 msgid "The billboard is reloading..."
-msgstr ""
+msgstr "Het informatiebord is aan het herladen..."
 
 #: Plugin/Billboard/View/Layouts/default.ctp:104
 msgid "Billboard"
@@ -606,20 +606,19 @@ msgstr "Geen evenementen in de nabije toekomst"
 
 #: View/Themed/Billboard/PublicTransit/index.ctp:13
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: View/Themed/Billboard/PublicTransit/index.ctp:14
-#, fuzzy
 msgid "Destination"
-msgstr "Beschrijving"
+msgstr "Bestemming"
 
 #: View/Themed/Billboard/PublicTransit/index.ctp:15
 msgid "Departure"
-msgstr ""
+msgstr "Vertrek"
 
 #: View/Themed/Billboard/PublicTransit/index.ctp:36
 msgid "No transit information available"
-msgstr ""
+msgstr "Geen vervoer informatie beschikbaar"
 
 #: View/Themed/Billboard/Schedule/cancelled.ctp:6
 msgid "Subject"
