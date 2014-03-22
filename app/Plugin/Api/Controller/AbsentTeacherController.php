@@ -1,7 +1,7 @@
 <?php
 class AbsentTeacherController extends AppController {
 
-    public $components = array('RequestHandler', 'SchoolInformation', 'TimeAware', 'ThemeAware');
+    public $components = array('RequestHandler', 'SchoolInformation', 'TimeAware', 'ThemeAware', 'LanguageAware');
     public $uses = array('TeacherAbsenceReport');
 
     public function index() {

@@ -3,6 +3,7 @@ class ScheduleController extends AppController {
 
     public $components = array(
         'RequestHandler', 'TimeAware', 'SchoolInformation', 'ThemeAware',
+        'LanguageAware',
         'DataFilter' => array(
             'custom' => array(
                 'class', 'classroom', 'teacher', 'cancelled', 'view'
