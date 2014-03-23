@@ -1,3 +1,6 @@
+<?
+$this->Html->addCrumb(__('Teacher absence'), array('action' => 'index')); 
+?>
 <a class="btn btn-default" href="<?=Router::url(array('action' => 'add'))?>">
     <span class="glyphicon glyphicon-plus"></span> <?=h(__('Add'))?>
 </a>
