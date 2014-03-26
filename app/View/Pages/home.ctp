@@ -2,7 +2,9 @@
 $keywords_for_layout = array();
 $keywords_for_layout[] = __('Student information');
 $keywords_for_layout[] = __('Student information for %s', $school_name);
-$keywords_for_layout[] = __('Student information for %s', $department_name);
+if (isset($department_name)) {
+    $keywords_for_layout[] = __('Student information for %s', $department_name);
+}
 $keywords_for_layout[] = __('Class schedule');
 $keywords_for_layout[] = __('Schedule');
 $keywords_for_layout[] = __('Teacher');
@@ -12,7 +14,11 @@ $keywords_for_layout[] = __('Assignments');
 $keywords_for_layout[] = __('Homework');
 
 $this->set(compact('keywords_for_layout'));
-$this->set('description_for_layout', __('%1$s school information for teachers, students and parents at the %2$s department', $school_name, $department_name));
+if (!isset($department_name)) {
+    $this->set('description_for_layout', __('%1$s school information for teachers, students and parents', $school_name));
+} else {
+    $this->set('description_for_layout', __('%1$s school information for teachers, students and parents at the %2$s department', $school_name, $department_name));
+}
 ?>
 
 <?=$this->start('additionalStyle'); ?>

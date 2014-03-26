@@ -21,6 +21,7 @@ class ScheduleController extends AppController {
             date('Y-m-d', $this->TimeAware->getStart()),
             date('Y-m-d', $this->TimeAware->getEnd())
         );
+        $conditions['ScheduleEntry.department_id'] = $this->SchoolInformation->getDepartmentId();
         $entries = $this->ScheduleEntry->find(
             'all',
             array(

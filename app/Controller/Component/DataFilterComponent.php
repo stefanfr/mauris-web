@@ -34,7 +34,17 @@ class DataFilterComponent extends Component {
     }
     
     public function getCustomFilter($filter) {
-        return $this->custom[$filter];
+        return ($this->hasCustomFilter($filter)) ? $this->custom[$filter] : null;
+    }
+    
+    public function setCustomFilter($filter, $content) {
+        $this->log('Set filter ' . $filter . ' content to: ' . $content, 'debug');
+        
+        $this->custom[$filter] = $content;
+    }
+    
+    public function addCustomFilter($filter) {
+        $this->settings['custom'][] = $filter;
     }
     
     private function isSupported($filter) {

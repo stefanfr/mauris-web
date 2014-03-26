@@ -31,7 +31,7 @@ class Department extends AppModel {
         $department = $this->find('first', array(
             'recursive' => 2,
             'conditions' => array(
-                'hostname' => $hostname 
+                'Department.hostname' => $hostname 
             )
         ));
         Cache::write($key, $department);

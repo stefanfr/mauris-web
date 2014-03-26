@@ -2,7 +2,7 @@
 <html lang="en" itemscope="" itemtype="http://schema.org/<?=(isset($schema_type_for_layout)) ? $schema_type_for_layout : 'WebPage'?>">
 <head>
 	<?=$this->Html->charset(); ?>
-	<title><?=$title_for_layout; ?> - <?=$this->get('school_name')?> - <?=$this->get('department_name')?></title>
+	<title><?=$title_for_layout; ?> - <?=$this->get('school_name')?><? if ($this->get('department_name')): ?> - <?=$this->get('department_name')?><?endif?></title>
   
 	<!--  meta info -->
     <?=$this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'))?>
@@ -102,7 +102,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<?=$this->webroot; ?>"><?=$this->get('department_name')?></a>
+				<a class="navbar-brand" href="<?=$this->webroot; ?>"><?=(isset($department_name)) ? $department_name : $school_name?></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>
@@ -168,7 +168,7 @@
 		<hr>
 		<footer>
 			<span><?=h(__('Copyright %d-%d ©', 2013, date('Y'))) . ' - '.  $this->Html->link('CVO-Technologies', 'http://mms-projects.net/', array('target' => '_BLANK')); ?> & <?=$this->Html->link('Dev App ("0100Dev")', 'http://devapp.nl/', array('target' => '_BLANK')); ?></span>
-			<span class="pull-right"><?=$this->get('school_name')?> (<?=$this->get('department_name')?>)</span>
+			<span class="pull-right"><?=$this->get('school_name')?><?if ($this->get('department_name')):?> (<?=$this->get('department_name')?>)<?endif?></span>
 		</footer>
 	</div>
 	<?=((isset($loadingModal) && $loadingModal) ? $this->element('loadingModal') : ''); ?>

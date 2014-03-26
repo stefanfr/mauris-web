@@ -91,7 +91,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                            <a class="navbar-brand" href="<?=Router::url(array('plugin' => 'manage', 'controller' => 'manage'))?>"><?=$this->get('department_name')?> - <?=__('Manage')?></a>
+                            <a class="navbar-brand" href="<?=Router::url(array('plugin' => 'manage', 'controller' => 'manage'))?>"><?=(isset($department_name)) ? $department_name : $school_name?> - <?=__('Manage')?></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>

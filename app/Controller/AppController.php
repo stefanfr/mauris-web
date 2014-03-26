@@ -57,7 +57,10 @@ class AppController extends Controller {
                 'home'
             )
         ),
-        'Acl'
+        'Acl',
+        'SchoolInformation',
+        'Styling',
+        'LanguageAware'
     );
         
     function beforeFilter() {
@@ -68,31 +71,6 @@ class AppController extends Controller {
                 'passwordHasher' => 'Blowfish'
             )
         );
-        
-        $department = $this->Department->findByHostname($_SERVER['HTTP_HOST']);
-        
-        if (!empty($department)) {
-            $this->Department->id = (int) $department['Department']['id'];
-            $this->School->id = (int) $department['BelongingToSchool']['id'];
-
-            if (isset($department['BelongingToSchool']['UsesLanguage']['code'])) {
-                $language = $department['BelongingToSchool']['UsesLanguage']['code'];
-            }
-            if ($department['UsesLanguage']['code']) {
-                $language = $department['UsesLanguage']['code'];
-            }
-            if (isset($language)) {
-                if (!$this->Session->check('Config.language')) {
-                    Configure::write('Config.language', $language);
-                }
-            }
-
-            $this->set('department_name', $department['Department']['name']);
-            $this->set('school_name', $department['BelongingToSchool']['name']);
-            
-            $style = $this->Style->getStyle($department['UsesStyle']['id']);
-            $this->set(compact('style'));
-        }
         
         if ($this->Auth->user()) {
             $requester = 'user::' . $this->Auth->user('id');
