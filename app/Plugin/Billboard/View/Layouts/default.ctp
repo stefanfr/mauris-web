@@ -17,6 +17,7 @@
     echo $this->Html->css('bootstrap.min');
     echo $this->Html->css('custom.bootstrap');
     echo $this->Html->css('Billboard.billboard');
+    echo $this->Html->css(Router::url(array('plugin' => 'api', 'controller' => 'style', 'ext' => 'css')));
 	?>
   
 	<!-- scripts -->
@@ -43,40 +44,6 @@
 		<?=$this->fetch('additionalStyle'); ?>
     </style>
     <?php endif; ?>
-    
-    <style>
-        .navbar-default, .btn-primary {
-            background-color: #<?=$style['menu_background_color']?>;
-            border-color: #<?=$style['menu_border_color']?>;
-        }
-        .navbar-default .navbar-brand {
-            color: #<?=$style['menu_brand_color']?>;
-        }
-        .navbar-default .navbar-text {
-            color: #<?=$style['menu_text_color']?>;
-        }
-        .navbar-default .navbar-nav>li>a {
-            color: #<?=$style['menu_link_color']?>;
-        }
-        .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
-            color: #<?=$style['menu_hover_link_color']?>;
-            background-color: #<?=$style['menu_hover_background_color']?>;
-        }
-        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-            color: #<?=$style['menu_active_link_color']?>;
-            background-color: #<?=$style['menu_active_background_color']?>;
-        }
-        .navbar-default .navbar-nav>.active>a:hover {
-            color: #<?=$style['menu_active_hover_link_color']?>;
-            background-color: #<?=$style['menu_active_hover_background_color']?>;
-        }
-        a {
-            color: #<?=$style['link_color']?>;
-        }
-        body {
-            color: #<?=$style['text_color']?>;
-        }
-    </style>
 </head>
 <body>
     <!-- Google Tag Manager -->

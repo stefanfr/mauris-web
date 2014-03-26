@@ -16,6 +16,7 @@
 	<?php
     echo $this->Html->css('bootstrap.min');
     echo $this->Html->css('custom.bootstrap');
+    echo $this->Html->css(Router::url(array('plugin' => 'api', 'controller' => 'style', 'ext' => 'css')));
 	?>
   
 	<!-- scripts -->
@@ -41,32 +42,6 @@
 		<?=$this->fetch('additionalStyle'); ?>
     </style>
     <?php endif; ?>
-    
-    <style>
-        .navbar-default, .btn-primary {
-            background-color: #<?=$this->get('header_background_color')?>;
-            border-color: #<?=$this->get('header_border_color')?>;
-        }
-        .navbar-default .navbar-brand {
-            color: #<?=$this->get('header_brand_color')?>;
-        }
-        .navbar-default .navbar-text {
-            color: #<?=$this->get('header_text_color')?>;
-        }
-        .navbar-default .navbar-nav>li>a {
-            color: #<?=$this->get('header_link_color')?>;
-        }
-        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-            color: #<?=$this->get('header_active_link_color')?>;
-            background-color: #<?=$this->get('header_active_background_color')?>;
-        }
-        a {
-            color: #<?=$this->get('link_color')?>;
-        }
-        body {
-            color: #<?=$this->get('text_color')?>;
-        }
-    </style>
 </head>
 <body>
     <!-- Google Tag Manager -->
