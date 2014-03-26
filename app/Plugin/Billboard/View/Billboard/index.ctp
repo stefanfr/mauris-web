@@ -1,3 +1,13 @@
+<?
+$this->Html->css(
+    'Billboard.billboard',
+    array('block' => 'css')
+);
+$this->Html->script(
+    'Billboard.billboard',
+    array('block' => 'script')
+);
+?>
 <div id="temp-data" style="display: none;"></div>
 <div class="row">
     <div class="col-md-8">

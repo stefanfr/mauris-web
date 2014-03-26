@@ -16,7 +16,6 @@
 	<?php
     echo $this->Html->css('bootstrap.min');
     echo $this->Html->css('custom.bootstrap');
-    echo $this->Html->css('Billboard.billboard');
     echo $this->Html->css(Router::url(array('plugin' => 'api', 'controller' => 'style', 'ext' => 'css')));
 	?>
   
@@ -24,7 +23,6 @@
 	<?php
     echo $this->Html->script('jquery.min');
     echo $this->Html->script('bootstrap.min');
-    echo $this->Html->script('Billboard.billboard');
 	?>
   
 	<!-- icons -->
@@ -37,7 +35,8 @@
         
 	<!-- page specific scripts -->
     <?=$scripts_for_layout; ?>
-    
+    <?=$this->fetch('script')?>
+    <?=$this->fetch('css')?>
     <?php if($this->fetch('additionalStyle') != ''): ?>
     <!-- additional style -->
     <style>

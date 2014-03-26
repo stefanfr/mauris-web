@@ -35,7 +35,8 @@
         
 	<!-- page specific scripts -->
     <?=$scripts_for_layout; ?>
-    
+    <?=$this->fetch('script')?>
+    <?=$this->fetch('css')?>
     <?php if($this->fetch('additionalStyle') != ''): ?>
     <!-- additional style -->
     <style>
