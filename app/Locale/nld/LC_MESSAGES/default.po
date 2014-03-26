@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-22 23:05+0000\n"
+"POT-Creation-Date: 2014-03-26 19:34+0000\n"
 "PO-Revision-Date: 2014-03-23 00:34+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects"
-"/ict-college/ict-college-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
+"ict-college/ict-college-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgid "Could not add your feedback"
 msgstr "Kon je terugkoppeling niet toevoegen"
 
 #: Controller/PostsController.php:79 Controller/SitemapsController.php:107
-#: View/Comment/add.ctp:2 View/Layouts/default.ctp:111 View/Posts/index.ctp:1
+#: View/Comment/add.ctp:2 View/Layouts/default.ctp:83 View/Posts/index.ctp:1
 #: View/Posts/view.ctp:2
 msgid "News"
 msgstr "Nieuws"
@@ -83,11 +83,11 @@ msgid "Your post has been deleted."
 msgstr "Je post is verwijderd."
 
 #: Controller/SitemapsController.php:99
-#: Plugin/Manage/View/Layouts/default.ctp:151
+#: Plugin/Manage/View/Layouts/default.ctp:127
 msgid "Home"
 msgstr "Home"
 
-#: Controller/SitemapsController.php:103 View/Layouts/default.ctp:116
+#: Controller/SitemapsController.php:103 View/Layouts/default.ctp:88
 #: View/Pages/organization.ctp:2
 msgid "Organization"
 msgstr "Organisatie"
@@ -121,45 +121,63 @@ msgstr "Gebruiker was niet verwijderd"
 msgid "Invalid username or password, try again"
 msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:8 View/Pages/home.ctp:27
+#: Controller/Component/LanguageAwareComponent.php:8
+msgid "Processing organization language"
+msgstr ""
+
+#: Controller/Component/SchoolInformationComponent.php:10
+#, fuzzy
+msgid "Processing school information"
+msgstr "Docent informatie"
+
+#: Controller/Component/SchoolInformationComponent.php:59
+msgid "Render preparation with school information "
+msgstr ""
+
+#: Controller/Component/StylingComponent.php:14
+msgid "Render preparation with organization style"
+msgstr ""
+
+#: Plugin/Billboard/View/Billboard/index.ctp:18 View/Pages/home.ctp:33
+#: View/Posts/rss/index.ctp:3
 msgid "Latest news"
 msgstr "Laatste nieuws"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:23
+#: Plugin/Billboard/View/Billboard/index.ctp:33
 msgid "Cancelled subjects"
 msgstr "Geannuleerde lessen"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:31
+#: Plugin/Billboard/View/Billboard/index.ctp:41
 msgid "Absent teachers"
 msgstr "Afwezige docenten"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:39
+#: Plugin/Billboard/View/Billboard/index.ctp:49
 msgid "Events"
 msgstr "Evenementen"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:47
+#: Plugin/Billboard/View/Billboard/index.ctp:57
 msgid "Public transit"
 msgstr "Openbaar vervoer"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:66
+#: Plugin/Billboard/View/Billboard/index.ctp:76
 msgid "Server unavailable"
 msgstr "Server onbereikbaar"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:69
+#: Plugin/Billboard/View/Billboard/index.ctp:79
 msgid ""
 "The server can't be reached. The information may be incorrect or out-dated"
 msgstr ""
 "De server kan niet bereikt worden. De informatie is mogelijk incorrect of oud"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:80
+#: Plugin/Billboard/View/Billboard/index.ctp:90
 msgid "Reloading"
 msgstr "Herladen"
 
-#: Plugin/Billboard/View/Billboard/index.ctp:83
+#: Plugin/Billboard/View/Billboard/index.ctp:93
 msgid "The billboard is reloading..."
 msgstr "Het informatiebord is aan het herladen..."
 
-#: Plugin/Billboard/View/Layouts/default.ctp:104
+#: Plugin/Billboard/View/Layouts/default.ctp:70
 msgid "Billboard"
 msgstr "Informatiebord"
 
@@ -203,7 +221,7 @@ msgstr "Alarm waarschuwingsbericht testen..."
 msgid "Alert danger message testing..."
 msgstr "Alarm gevaar bericht testen..."
 
-#: Plugin/Intermediary/View/Intermediary/check.ctp:4 View/Pages/home.ctp:80
+#: Plugin/Intermediary/View/Intermediary/check.ctp:4 View/Pages/home.ctp:86
 msgid "Title"
 msgstr "Titel"
 
@@ -264,25 +282,25 @@ msgstr "Kon de aanwezigheids melding niet aanpassen"
 msgid "The absence report has been removed"
 msgstr "De aanwezigheids melding is verwijderd"
 
-#: Plugin/Manage/View/Layouts/default.ctp:94;150 View/Layouts/default.ctp:114
+#: Plugin/Manage/View/Layouts/default.ctp:70;126 View/Layouts/default.ctp:86
 msgid "Manage"
 msgstr "Beheer"
 
-#: Plugin/Manage/View/Layouts/default.ctp:100 View/Sitemaps/posts.ctp:3;5;8
+#: Plugin/Manage/View/Layouts/default.ctp:76 View/Sitemaps/posts.ctp:3;5;8
 msgid "Posts"
 msgstr "Berichten"
 
-#: Plugin/Manage/View/Layouts/default.ctp:101 View/Layouts/default.ctp:112
-#: View/Pages/home.ctp:7 View/Schedule/calendar.ctp:2;6
+#: Plugin/Manage/View/Layouts/default.ctp:77 View/Layouts/default.ctp:41;84
+#: View/Pages/home.ctp:9 View/Schedule/calendar.ctp:2;6
 #: View/Schedule/simple.ctp:2 View/Schedule/view.ctp:2
 msgid "Schedule"
 msgstr "Rooster"
 
-#: Plugin/Manage/View/Layouts/default.ctp:102
+#: Plugin/Manage/View/Layouts/default.ctp:78
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:2
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:2
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:2
-#: Plugin/Manage/View/TeacherAbsence/remove.ctp:2 View/Pages/home.ctp:10
+#: Plugin/Manage/View/TeacherAbsence/remove.ctp:2 View/Pages/home.ctp:12
 msgid "Teacher absence"
 msgstr "Docent afwezigheid"
 
@@ -292,7 +310,7 @@ msgstr "Voeg afwezigheids melding toe"
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:29
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:29
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:11 View/Pages/home.ctp:8;49
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:11 View/Pages/home.ctp:10;55
 #: View/Schedule/calendar.ctp:21 View/Schedule/simple.ctp:19;50
 #: View/Schedule/view.ctp:19 View/Themed/Billboard/AbsentTeacher/index.ctp:5
 msgid "Teacher"
@@ -300,7 +318,7 @@ msgstr "Docent"
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:33
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:33
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:5 View/Pages/home.ctp:110
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:5 View/Pages/home.ctp:116
 #: View/Posts/add.ctp:42
 msgid "Add"
 msgstr "Toevoegen"
@@ -309,7 +327,7 @@ msgstr "Toevoegen"
 msgid "Edit absence report"
 msgstr "Pas afwezigheids melding aan"
 
-#: Plugin/Manage/View/TeacherAbsence/index.ctp:10 View/Pages/home.ctp:48
+#: Plugin/Manage/View/TeacherAbsence/index.ctp:10 View/Pages/home.ctp:54
 #: View/Themed/Billboard/AbsentTeacher/index.ctp:4
 msgid "Date"
 msgstr "Datum"
@@ -347,15 +365,15 @@ msgstr "Bekijk de terugkoppeling in het systeem"
 msgid "View feedback"
 msgstr "Bekijk terugkoppeling"
 
-#: View/Layouts/default.ctp:120
+#: View/Layouts/default.ctp:92
 msgid "Logged in as %s"
 msgstr "Ingelogd als %s"
 
-#: View/Layouts/default.ctp:141
+#: View/Layouts/default.ctp:113
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: View/Layouts/default.ctp:169
+#: View/Layouts/default.ctp:141
 msgid "Copyright %d-%d ©"
 msgstr "Copyright %d-%d ©"
 
@@ -368,85 +386,91 @@ msgstr "Deze email was verstuurd met het"
 msgid "Student information"
 msgstr "Studenten information"
 
-#: View/Pages/home.ctp:4;5
+#: View/Pages/home.ctp:4;6
 msgid "Student information for %s"
 msgstr "Student informatie voor %s"
 
-#: View/Pages/home.ctp:6
+#: View/Pages/home.ctp:8
 msgid "Class schedule"
 msgstr "Klassen rooster"
 
-#: View/Pages/home.ctp:9
+#: View/Pages/home.ctp:11
 msgid "Teacher information"
 msgstr "Docent informatie"
 
-#: View/Pages/home.ctp:11 View/Schedule/view.ctp:33
+#: View/Pages/home.ctp:13 View/Schedule/view.ctp:33
 msgid "Assignments"
 msgstr "Opgaves"
 
-#: View/Pages/home.ctp:12
+#: View/Pages/home.ctp:14
 msgid "Homework"
 msgstr "Huiswerk"
 
-#: View/Pages/home.ctp:15
+#: View/Pages/home.ctp:18
+#, fuzzy
+msgid "%1$s school information for teachers, students and parents"
+msgstr ""
+"%1$s school informatie voor docenten, studenten, ouders op afdeling %2$s"
+
+#: View/Pages/home.ctp:20
 msgid ""
 "%1$s school information for teachers, students and parents at the %2$s "
 "department"
 msgstr ""
 "%1$s school informatie voor docenten, studenten, ouders op afdeling %2$s"
 
-#: View/Pages/home.ctp:36 View/Posts/index.ctp:23
+#: View/Pages/home.ctp:42 View/Posts/index.ctp:23
 msgid "Read more"
 msgstr "Lees meer"
 
-#: View/Pages/home.ctp:45
+#: View/Pages/home.ctp:51
 msgid "Absent teachers for the 7 following days"
 msgstr "Afwezige docenten voor de komende 7 dagen"
 
-#: View/Pages/home.ctp:62
+#: View/Pages/home.ctp:68
 msgid "This table shows the classes you've subscriped to"
 msgstr "Deze tabel laat de klassen zien waar je op geabonneerd bent"
 
-#: View/Pages/home.ctp:65 View/Schedule/calendar.ctp:27
+#: View/Pages/home.ctp:71 View/Schedule/calendar.ctp:27
 #: View/Schedule/simple.ctp:26;44 View/Schedule/view.ctp:13
 #: View/Themed/Billboard/Schedule/cancelled.ctp:4
 msgid "Class"
 msgstr "Klas"
 
-#: View/Pages/home.ctp:79 View/Schedule/simple.ctp:57
+#: View/Pages/home.ctp:85 View/Schedule/simple.ctp:57
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
 msgstr "Klaslokaal"
 
-#: View/Pages/home.ctp:93
+#: View/Pages/home.ctp:99
 msgid "Feedback"
 msgstr "Terugkoppeling"
 
-#: View/Pages/home.ctp:44
+#: View/Pages/home.ctp:50
 msgid "Absent teacher"
 msgid_plural "Absent teachers"
 msgstr[0] "Afwezige docent"
 msgstr[1] "Afwezige docenten"
 
-#: View/Pages/home.ctp:58
+#: View/Pages/home.ctp:64
 msgid "%d absent teacher report"
 msgid_plural "%d absent teachers reports"
 msgstr[0] "%d melding van èèn afwezige docent"
 msgstr[1] "%d meldingen van afwezige docenten"
 
-#: View/Pages/home.ctp:61
+#: View/Pages/home.ctp:67
 msgid "Class subscription"
 msgid_plural "Class subscriptions"
 msgstr[0] "Klasse abbonnement"
 msgstr[1] "Klasse abonnementen"
 
-#: View/Pages/home.ctp:75
+#: View/Pages/home.ctp:81
 msgid "Available classroom"
 msgid_plural "Available classrooms"
 msgstr[0] "Beschikbaar klaslokaal"
 msgstr[1] "Beschikbare klaslokalen"
 
-#: View/Pages/home.ctp:76
+#: View/Pages/home.ctp:82
 msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
 msgstr[0] "Lokaal beschikbaar om: %s"
@@ -490,7 +514,7 @@ msgstr "Opties"
 msgid "Scope"
 msgstr "Omvang"
 
-#: View/Posts/index.ctp:2
+#: View/Posts/index.ctp:2 View/Posts/rss/index.ctp:5
 msgid "The latest news"
 msgstr "Het laatste nieuws"
 
@@ -603,6 +627,10 @@ msgstr "Er zijn geen docenten afwezig gemeld op het moment"
 #: View/Themed/Billboard/Event/index.ctp:8
 msgid "No events in the near future"
 msgstr "Geen evenementen in de nabije toekomst"
+
+#: View/Themed/Billboard/Post/index.ctp:15
+msgid "You can reply at: %1$s"
+msgstr ""
 
 #: View/Themed/Billboard/PublicTransit/index.ctp:13
 msgid "Type"
