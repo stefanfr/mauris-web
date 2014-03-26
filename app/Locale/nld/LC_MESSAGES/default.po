@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-03-26 19:34+0000\n"
-"PO-Revision-Date: 2014-03-23 00:34+0200\n"
-"Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"ict-college/ict-college-website/nld/>\n"
+"PO-Revision-Date: 2014-03-26 20:39+0200\n"
+"Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -407,10 +407,8 @@ msgid "Homework"
 msgstr "Huiswerk"
 
 #: View/Pages/home.ctp:18
-#, fuzzy
 msgid "%1$s school information for teachers, students and parents"
-msgstr ""
-"%1$s school informatie voor docenten, studenten, ouders op afdeling %2$s"
+msgstr "%1$s school informatie voor docenten, studenten en ouders"
 
 #: View/Pages/home.ctp:20
 msgid ""
@@ -630,7 +628,7 @@ msgstr "Geen evenementen in de nabije toekomst"
 
 #: View/Themed/Billboard/Post/index.ctp:15
 msgid "You can reply at: %1$s"
-msgstr ""
+msgstr "Je kan reageren op: %1$s"
 
 #: View/Themed/Billboard/PublicTransit/index.ctp:13
 msgid "Type"
