@@ -216,17 +216,31 @@ class Kv78TurboSource extends DataSource {
     public function delete(Model $model, $id = null) {}
     
     private function getTableData($table) {
-        if ($data = Cache::read('turbo-' .  $table)) {
+        $key = 'turbo-' .  $table;
+        
+        if ($data = Cache::read($key)) {
+            $this->log(
+                __CLASS__ . ': Got ' . $table . ' data from the cache',
+                'debug',
+                array('caching', $this->loggingScope)
+            );
+            
             return $data;
         }
         
-        $json = $this->Http->get(
+        $json = $this->doRequest(
             'http://kv78turbo.ovapi.nl/' . $table . '/'
         );
         
         $data = json_decode($json, true);
         
-        Cache::write('turbo-' .  $table, $data);
+        Cache::write($key, $data);
+        
+        $this->log(
+            __CLASS__ . ': Saved ' . $table . ' data in the cache',
+            'debug',
+            array('caching', $this->loggingScope)
+        );
         
         return $data;
     }
@@ -234,11 +248,17 @@ class Kv78TurboSource extends DataSource {
     private function getDataByIds($table, array $ids) {
         $key = 'turbo-' .  $table . '-' . md5(implode(',', $ids));
         
-        /*if ($data = Cache::read($key)) {
+        if ($data = Cache::read($key)) {
+            $this->log(
+                __CLASS__ . ': Got ' . $table . ' data from the cache for ids ' . implode(',', $ids),
+                'debug',
+                array('caching', $this->loggingScope)
+            );
+            
             return $data;
-        }*/
+        }
         
-        $json = $this->Http->get(
+        $json = $this->doRequest(
             'http://v0.ovapi.nl/' . $table . '/' . implode(',', $ids)
         );
         
@@ -246,7 +266,23 @@ class Kv78TurboSource extends DataSource {
         
         Cache::write($key, $data);
         
+        $this->log(
+            __CLASS__ . ': Saved ' . $table . ' data in the cache for ids ' . implode(',', $ids),
+            'debug',
+            array('caching', $this->loggingScope)
+        );
+        
         return $data;
+    }
+    
+    private function doRequest($url) {
+        $this->log(
+            'Requesting public transit data: ' . $url,
+            'info',
+            array('http', $this->loggingScope)
+        );
+        
+        return $this->Http->get($url);
     }
 
 }

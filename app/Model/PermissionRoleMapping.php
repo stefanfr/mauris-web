@@ -45,7 +45,7 @@ class PermissionRoleMapping extends AppModel {
         Cache::set(array('duration' => '+1 hour'));
         $data = Cache::read($key);
         if ($data !== false) {
-            $this->log('Permission role mappings for \'' . $identifier . '\' from cache', LOG_INFO, 'permission-role-mappings');
+            $this->log('Permission role mappings for \'' . $identifier . '\' from cache', LOG_DEBUG, 'caching');
             
             return $data;
         }
@@ -61,7 +61,7 @@ class PermissionRoleMapping extends AppModel {
         Cache::set(array('duration' => '+1 hour'));
         Cache::write($key, $data);
         
-        $this->log('Permission role mappings for \'' . $identifier . '\' stored in the cache', LOG_INFO, 'permission-role-mappings');
+        $this->log('Permission role mappings for \'' . $identifier . '\' stored in the cache', LOG_DEBUG, 'caching');
         
         //print_r($conditions);
         return $data;

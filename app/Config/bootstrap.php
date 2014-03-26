@@ -116,3 +116,31 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+CakeLog::config('permission', array(
+    'engine' => 'File',
+    'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
+    'scopes' => array('permissions'),
+    'file' => 'permission',
+));
+
+CakeLog::config('permission-debugging', array(
+    'engine' => 'File',
+    'types' => array('notice', 'info', 'debug'),
+    'scopes' => array('permissions'),
+    'file' => 'permission-debug',
+));
+
+CakeLog::config('cache-debugging', array(
+    'engine' => 'File',
+    'types' => array('notice', 'info', 'debug'),
+    'scopes' => array('caching'),
+    'file' => 'cache-debug',
+));
+
+CakeLog::config('public-transit', array(
+    'engine' => 'File',
+    'types' => array('warning', 'error', 'critical', 'alert', 'emergency', 'notice', 'info', 'debug'),
+    'scopes' => array('public-transit'),
+    'file' => 'public-transit',
+));

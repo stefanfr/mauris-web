@@ -170,6 +170,7 @@ class ScheduleAcl extends Object implements AclInterface {
         
         $allow = false;
         $scopes = array();
+        $this->log('Permission request about: ' . $permission, 'info', 'permissions');
         foreach ($permissionRoleMappings as $permissionRoleMapping) {
             $allow = (bool) $permissionRoleMapping['PermissionRoleMapping']['allow'];
             $mappingScopes = explode(',', $permissionRoleMapping['PermissionRoleMapping']['scope']);
@@ -184,8 +185,12 @@ class ScheduleAcl extends Object implements AclInterface {
                     }
                 }
             }
-            $this->log($permissionRoleMapping['Role']['system_alias'] . ' with preference ' . $permissionRoleMapping['PermissionRoleMapping']['preference'] . ' gives: ' . $allow, 'debug');
-            $this->log('Scope: ' . $permissionRoleMapping['PermissionRoleMapping']['scope'] . ' - Actions: ' . $permissionRoleMapping['PermissionRoleMapping']['actions'], 'debug');
+            
+            $this->log(
+                'Role ' . $permissionRoleMapping['Role']['system_alias'] . ' ' . (($allow) ? 'allows' : 'denies') . ' ' . $permissionRoleMapping['PermissionRoleMapping']['actions'] . ' permissions on ' . $permissionRoleMapping['PermissionRoleMapping']['scope'] . ' with preference ' . $permissionRoleMapping['PermissionRoleMapping']['preference'],
+                'debug',
+                'permissions'
+            );
         }
         
         if (!isset($scope)) {
