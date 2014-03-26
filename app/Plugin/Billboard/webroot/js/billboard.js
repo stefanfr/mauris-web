@@ -12,35 +12,35 @@ var billboard = {
         {
             id: '#news-content',
             container: '.billboard-content-main',
-            url: 'http://api.ictcollege.eu/post?school=1&department=1&language=nld&theme=Billboard',
+            url: '/api/post?theme=Billboard',
         },
         {
             id: '#event-content',
             container: '.billboard-content-sidebar',
-            url: 'http://api.ictcollege.eu/event?school=1&department=1&language=nld&theme=Billboard',
+            url: '/api/event?theme=Billboard',
             date: 'month'
         },
         {
             id: '#absent-teacher-content',
             container: '.billboard-content-sidebar',
-            url: 'http://api.ictcollege.eu/absent_teacher?school=1&department=1&language=nld&theme=Billboard',
+            url: '/api/absent_teacher?theme=Billboard',
         },
         {
             id: '#cancelled-content',
             container: '.billboard-content-sidebar',
-            url: 'http://api.ictcollege.eu/schedule?school=1&department=1&language=nld&theme=Billboard&cancelled=true&view=cancelled',
+            url: '/api/schedule?theme=Billboard&cancelled=true&view=cancelled',
             date: 'day'
         },
         {
             id: '#transit-content',
             container: '.billboard-content-sidebar',
-            url: 'http://api.ictcollege.eu/public_transit?stop_area_code=hmonoo&theme=Billboard',
+            url: '/api/public_transit?stop_area_code=hmonoo&theme=Billboard',
             date: 'day'
         },
         {
             id: '#time-content',
             container: '.billboard-content-sidebar',
-            url: 'http://ictcollege.eu/time.php?school=1&department=1&language=nld&theme=Billboard&cancelled=true&view=cancelled',
+            url: 'http://ictcollege.eu/time.php?theme=Billboard&cancelled=true&view=cancelled',
             date: 'day'
         }
     ],
@@ -88,7 +88,7 @@ var billboard = {
     checkVersion: function () {
         if (billboard.version.current === undefined) {
             $.ajax({
-                url: '/billboard/version_check.json',
+                url: '/billboard/version_check/check.json',
                 cache: false,
                 success: function(json) {
                     billboard.version.current = json.version.current;
@@ -97,7 +97,7 @@ var billboard = {
             });
         } else {
             $.ajax({
-                url: '/billboard/version_check.json?hash=' + billboard.version.current,
+                url: '/billboard/version_check/check.json?hash=' + billboard.version.current,
                 cache: false,
                 success: function(json) {
                     if (!json.version['up-to-date']) {
