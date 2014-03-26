@@ -1,7 +1,7 @@
 <?php
 class PostsController extends AppController {
 	
-    public $components = array('Session', 'Paginator');
+    public $components = array('Session', 'Paginator', 'RequestHandler');
     
     public $uses = array('Post', 'Comment', 'User');
     
@@ -21,7 +21,7 @@ class PostsController extends AppController {
         $allowedScopes = $this->Acl->check(
             $requester, array('permission' => 'post', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
         );
-        debug($allowedScopes);
+        //debug($allowedScopes);
         if (empty($allowedScopes)) {
             throw new ForbiddenException();
         }

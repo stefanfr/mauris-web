@@ -31,7 +31,7 @@ if ($_SERVER['HTTP_HOST'] == 'api.ictcollege.eu') {
 	Router::connect('/:controller/:action/*', array('plugin' => 'api'));
 } else {    
     
-Router::parseExtensions('xml'); 
+    Router::parseExtensions('json', 'xml', 'rss', 'css', 'html'); 
     
 //Router::connect('/api/:controller/:action/*', array('plugin' => 'api'));
 //Router::connect('/api/:controller/*', array('plugin' => 'api', 'action' => 'index'));
