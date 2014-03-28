@@ -13,6 +13,8 @@ class ScheduleController extends AppController {
     public $uses = array('ScheduleEntry', 'SubjectDetails');
 
     public function index() {
+        $this->RequestHandler->setContent('ics', 'text/calendar');
+        
         $conditions = array();
         if ($this->DataFilter->hasCustomFilter('cancelled')) {
             $conditions['ScheduleEntry.cancelled'] = $this->DataFilter->getCustomFilter('cancelled');
@@ -22,6 +24,15 @@ class ScheduleController extends AppController {
             date('Y-m-d', $this->TimeAware->getEnd())
         );
         $conditions['ScheduleEntry.department_id'] = $this->SchoolInformation->getDepartmentId();
+        if ($this->DataFilter->hasCustomFilter('class')) {
+            $conditions['ScheduleEntry.class_id'] = $this->DataFilter->getCustomFilter('class');
+        }
+        if ($this->DataFilter->hasCustomFilter('teacher')) {
+            $conditions['ScheduleEntry.teacher_id'] = $this->DataFilter->getCustomFilter('teacher');
+        }
+        if ($this->DataFilter->hasCustomFilter('classroom')) {
+            $conditions['ScheduleEntry.classroom_id'] = $this->DataFilter->getCustomFilter('classroom');
+        }
         $entries = $this->ScheduleEntry->find(
             'all',
             array(
