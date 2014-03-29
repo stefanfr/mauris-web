@@ -18,7 +18,7 @@ var billboard = {
             id: '#event-content',
             container: '.billboard-content-sidebar',
             url: '/api/event?theme=Billboard',
-            date: 'month'
+            //date: 'month'
         },
         {
             id: '#absent-teacher-content',
