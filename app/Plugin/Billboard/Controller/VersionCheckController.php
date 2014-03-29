@@ -2,7 +2,7 @@
 
 class VersionCheckController extends AppController {
 
-    public $components = array('RequestHandler');
+    public $components = array('RequestHandler', 'SchoolInformation', 'Styling');
   
     public function beforeFilter() {
         $this->Auth->allow('check');
@@ -31,6 +31,8 @@ class VersionCheckController extends AppController {
         foreach (new RecursiveIteratorIterator($di) as $filename => $file) {
             $parts[] = filemtime($filename);
         }
+        
+        $parts = array_merge($parts, $this->Styling->getStyle());
         
         return md5(implode(' ', $parts));
     }

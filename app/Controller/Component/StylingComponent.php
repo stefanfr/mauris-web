@@ -2,13 +2,13 @@
 
 class StylingComponent extends Component {
     
+    private $_style;
+    
     public function startup(\Controller $controller) {
         if (!isset($controller->SchoolInformation)) {
             $controller->SchoolInformation = $controller->Components->load('SchoolInformation');
         }
-    }
-    
-    public function beforeRender(\Controller $controller) {
+        
         $styleId = null;
         
         DebugTimer::start('component-styling', __('Render preparation with organization style'));
@@ -39,12 +39,20 @@ class StylingComponent extends Component {
         }
         
         if ($styleId) {
-            $style = $controller->Style->getStyle($styleId);
+            $this->_style = $controller->Style->getStyle($styleId);
             
-            $controller->set(compact('style'));
+            $controller->set(
+                array(
+                    'style' => $this->getStyle()
+                )
+            );
         }
         
         DebugTimer::stop('component-styling');
+    }
+    
+    public function getStyle() {
+        return $this->_style;
     }
     
 }
