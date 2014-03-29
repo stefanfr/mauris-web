@@ -8,6 +8,8 @@ class Kv78TurboSource extends DataSource {
  * An optional description of your datasource
  */
     public $description = 'A far away datasource';
+    
+    public $loggingScope = 'public-transit';
 
 /**
  * Create our HttpSocket and handle any config tweaks.
