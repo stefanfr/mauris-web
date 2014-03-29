@@ -15,15 +15,7 @@ class ScheduleController extends AppController {
     );
     
     public function index() {
-        if ($this->Auth->user()) {
-            $requester = 'user::' . $this->Auth->user('id');
-        } else {
-            $requester = 'role::anonymous';
-        }
-        $hasAccess = $this->Acl->check(
-            $requester, array('scope' => 'department', 'permission' => 'schedule', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
-        );
-        if (!$hasAccess) {
+        if (!$this->PermissionCheck->checkPermission('schedule', 'read')) {
             throw new ForbiddenException();
         }
         
