@@ -2,29 +2,39 @@
 
 class EventController extends AppController {
 
-    public $components = array('RequestHandler', 'ThemeAware', 'TimeAware', 'SchoolInformation', 'LanguageAware');
+    public $components = array(
+        'RequestHandler', 'ThemeAware',
+        'TimeAware' => array(
+            'end' => false,
+        ),
+        'SchoolInformation', 'LanguageAware'
+    );
     public $uses = array('Event');
 
     public function index() {
         $timezone = new DateTimeZone('Europe/Amsterdam');
         
         $conditions = array();
-        $conditions = array(
-            'or' => array(
-                array (
-                    'Event.start BETWEEN ? AND ?' => array(
-                        date('Y-m-d', $this->TimeAware->getStart()),
-                        date('Y-m-d', $this->TimeAware->getEnd())
-                    )
-                ),
-                array(
-                    'Event.end BETWEEN ? AND ?' => array(
-                        date('Y-m-d', $this->TimeAware->getStart()),
-                        date('Y-m-d', $this->TimeAware->getEnd())
+        if ($this->TimeAware->hasEnd()) {
+            $conditions = array(
+                'or' => array(
+                    array (
+                        'Event.start BETWEEN ? AND ?' => array(
+                            date('Y-m-d', $this->TimeAware->getStart()),
+                            date('Y-m-d', $this->TimeAware->getEnd())
+                        )
+                    ),
+                    array(
+                        'Event.end BETWEEN ? AND ?' => array(
+                            date('Y-m-d', $this->TimeAware->getStart()),
+                            date('Y-m-d', $this->TimeAware->getEnd())
+                        )
                     )
                 )
-            )
-        );
+            );
+        } else {
+            $conditions['? < Event.start'] = date('Y-m-d', $this->TimeAware->getStart());
+        }
         $conditions['and']['or'][] = array(
             'and' => array(
                 'Event.school_id IS NULL',
@@ -55,7 +65,8 @@ class EventController extends AppController {
         $events = $this->Event->find(
             'all',
             array(
-                'conditions' => $conditions
+                'conditions' => $conditions,
+                'order' => 'Event.start ASC'
             )
         );
         

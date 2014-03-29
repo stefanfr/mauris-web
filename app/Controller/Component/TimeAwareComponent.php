@@ -25,7 +25,9 @@ class TimeAwareComponent extends Component {
                 $this->end = strtotime($controller->request->query['end']);
             }
         } else {
-            $this->end = strtotime("{$year}-W{$week}-7");
+            if ((!isset($this->settings['end'])) || ($this->settings['end'])) {
+                $this->end = strtotime("{$year}-W{$week}-7");
+            }
         }
     }
     
@@ -33,6 +35,11 @@ class TimeAwareComponent extends Component {
         return $this->start;
     }
     
+    public function hasEnd() {
+        return (bool) $this->end;
+    }
+
+
     public function getEnd() {
         return $this->end;
     }
