@@ -1,6 +1,4 @@
-body {
-    zoom: 100%;
-    
+body {    
     font-size: 30px;
     /*font-family: "Trebuchet MS";*/
 }
@@ -10,10 +8,6 @@ h1 {
 }
 h2 {
     font-size: 125%;
-}
-
-.navbar-default {
-    zoom: 150%;
 }
 
 .navbar-text {
@@ -84,4 +78,12 @@ h1, h2, h3, h4 {
 
 .transit-delayed {
     color: red;
+}
+
+.transit-early {
+    color: green;
+}
+
+.navbar-default {
+    zoom: 150%;
 }

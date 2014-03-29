@@ -36,16 +36,6 @@ class PublicTransitController extends AppController {
             foreach ($timingPoints as $timingPoint => $timingPointData) {
                 $journeyCodes = array_merge($journeyCodes, array_keys($timingPointData['Passes']));
             }
-            
-            uasort($passes[$stopAreaCode], function ($a, $b) {
-                $aTime = strtotime($a['TargetArrivalTime']); 
-                $bTime = strtotime($b['TargetArrivalTime']); 
-
-                 if ($aTime == $bTime) {
-                     return 0;
-                 }
-                 return ($aTime < $bTime) ? -1 : 1;
-             });
         }
         
         $journeys = $this->Journey->find(
@@ -57,15 +47,34 @@ class PublicTransitController extends AppController {
                 'recursive' => 0
             )
         );
-        if (!$journeys['Journey']) {
+        
+        if ($journeys['Journey']) {
             foreach ($journeys['Journey'] as $journeyCode => $journey) {
                 foreach ($journey['Stops'] as $stop) {
                     if (isset($passes[$stop['StopAreaCode']])) {
                         $passes[$stop['StopAreaCode']]['StopData']['TimingPointName'] = $stop['TimingPointName'];
                         $passes[$stop['StopAreaCode']]['Journeys'][$journeyCode]['JourneyData'] = $stop;
                     }
+                    
+                    $departureTime = new DateTime($stop['ExpectedDepartureTime'], new DateTimeZone('Europe/Amsterdam'));
+                    
+                    if (time() > $departureTime->getTimestamp()) {
+                        unset($passes[$stop['StopAreaCode']]['Journeys'][$journeyCode]);
+                    }
                 }
             }
+        }
+        
+        foreach ($passes as $stopAreaCode => $data) {
+            uasort($passes[$stopAreaCode]['Journeys'], function ($a, $b) {
+                $aTime = strtotime($a['JourneyData']['TargetArrivalTime']); 
+                $bTime = strtotime($b['JourneyData']['TargetArrivalTime']); 
+
+                 if ($aTime == $bTime) {
+                     return 0;
+                 }
+                 return ($aTime < $bTime) ? -1 : 1;
+             });
         }
         
         $this->set(array(

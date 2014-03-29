@@ -20,14 +20,16 @@ foreach ($passes as $stopAreaCode => $stopData):
     $delayed = (bool) $delay;
     
     $rowClasses = array();
-    if ($delayed) {
+    if ($delay > 0) {
         $rowClasses[] = 'transit-delayed';
+    } elseif ($delay < 0) {
+        $rowClasses[] = 'transit-early';
     }
     ?>
     <tr class="<?=implode(' ', $rowClasses)?>">
         <td><?=h($pass['JourneyData']['TransportType'])?></td>
         <td><?=h($pass['JourneyData']['DestinationName50'])?></td>
-        <td><?=h($this->Time->format($pass['JourneyData']['ExpectedDepartureTime'], '%X'))?><?=($delay) ? ' (' . h($delay) . ')' : ''?></td>
+        <td><?=h($this->Time->format($pass['JourneyData']['ExpectedDepartureTime'], '%X'))?><?=(($delay > 0) && (floor($delay / 60))) ? ' (' . h(round($delay / 60, 0)) . ')' : ''?></td>
     </tr>
 <? endforeach; ?>
 </table>
