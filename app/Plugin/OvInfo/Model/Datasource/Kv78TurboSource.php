@@ -248,7 +248,7 @@ class Kv78TurboSource extends DataSource {
     private function getDataByIds($table, array $ids) {
         $key = 'turbo-' .  $table . '-' . md5(implode(',', $ids));
         
-        if ($data = Cache::read($key)) {
+        /*if ($data = Cache::read($key)) {
             $this->log(
                 __CLASS__ . ': Got ' . $table . ' data from the cache for ids ' . implode(',', $ids),
                 'debug',
@@ -256,7 +256,7 @@ class Kv78TurboSource extends DataSource {
             );
             
             return $data;
-        }
+        }*/
         
         $json = $this->doRequest(
             'http://v0.ovapi.nl/' . $table . '/' . implode(',', $ids)
