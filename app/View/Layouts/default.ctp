@@ -35,10 +35,15 @@
     echo $this->Html->meta(array('rel' => 'apple-touch-icon', 'href'=> $this->webroot.'img/apple-touch-icon.png', 'sizes'=>'72x72'));
     echo $this->Html->meta(array('rel' => 'apple-touch-icon', 'href'=> $this->webroot.'img/apple-touch-icon.png', 'sizes'=>'114x114'));
 	?>
-        
+        <meta name="application-name" content="<?=(isset($department_name)) ? $department_name : $school_name?>"/>
+<meta name="msapplication-TileColor" content="#3351B5"/>
+<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=5; cycle=1"/>
+<meta content="name=<?=__('Schedule')?>;
+      action-uri=<?=Router::url(array('controller' => 'schedule'))?>" name="msapplication-task" />        
+
 	<!-- page specific scripts -->
     <?=$scripts_for_layout; ?>
-    
+        
     <?php if($this->fetch('additionalStyle') != ''): ?>
     <!-- additional style -->
     <style>
