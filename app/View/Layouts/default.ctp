@@ -2,7 +2,7 @@
 <html lang="en" itemscope="" itemtype="http://schema.org/<?=(isset($schema_type_for_layout)) ? $schema_type_for_layout : 'WebPage'?>">
 <head>
 	<?=$this->Html->charset(); ?>
-	<title><?=$title_for_layout; ?> - <?=$this->get('school_name')?><? if ($this->get('department_name')): ?> - <?=$this->get('department_name')?><?endif?></title>
+    <title><?=$title_for_layout; ?> - <?=$this->Naming->title()?></title>
   
 	<!--  meta info -->
     <?=$this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'))?>
@@ -35,7 +35,7 @@
     echo $this->Html->meta(array('rel' => 'apple-touch-icon', 'href'=> $this->webroot.'img/apple-touch-icon.png', 'sizes'=>'72x72'));
     echo $this->Html->meta(array('rel' => 'apple-touch-icon', 'href'=> $this->webroot.'img/apple-touch-icon.png', 'sizes'=>'114x114'));
 	?>
-        <meta name="application-name" content="<?=(isset($department_name)) ? $department_name : $school_name?>"/>
+        <meta name="application-name" content="<?=$this->Naming->brand()?>"/>
 <meta name="msapplication-TileColor" content="#3351B5"/>
 <meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://ictcollege.eu/posts.rss&amp;id=5; cycle=1"/>
 <meta content="name=<?=__('Schedule')?>;
@@ -76,7 +76,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<?=$this->webroot; ?>"><?=(isset($department_name)) ? $department_name : $school_name?></a>
+				<a class="navbar-brand" href="<?=$this->webroot; ?>"><?=$this->Naming->brand()?></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>
@@ -142,7 +142,7 @@
 		<hr>
 		<footer>
 			<span><?=h(__('Copyright %d-%d ©', 2013, date('Y'))) . ' - '.  $this->Html->link('CVO-Technologies', 'http://mms-projects.net/', array('target' => '_BLANK')); ?> & <?=$this->Html->link('Dev App ("0100Dev")', 'http://devapp.nl/', array('target' => '_BLANK')); ?></span>
-			<span class="pull-right"><?=$this->get('school_name')?><?if ($this->get('department_name')):?> (<?=$this->get('department_name')?>)<?endif?></span>
+			<span class="pull-right"><?=$this->Naming->footer()?></span>
 		</footer>
 	</div>
 	<?=((isset($loadingModal) && $loadingModal) ? $this->element('loadingModal') : ''); ?>

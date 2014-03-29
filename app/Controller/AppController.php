@@ -40,7 +40,8 @@ class AppController extends Controller {
         'Html' => array('className' => 'SchemaOrgHtml'),
         'Form' => array('className' => 'BoostCake.BoostCakeForm'),
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
-        'Menu'
+        'Menu',
+        'Naming'
     );
     
     public $components = array(
