@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<?=$this->Html->charset(); ?>
-	<title><?=$this->get('school_name')?> - <?=$this->get('department_name')?> - <?=$title_for_layout; ?></title>
+	<title><?=$title_for_layout?> - <?=$this->Naming->title()?></title>
   
 	<!--  meta info -->
 	<?php
@@ -45,6 +45,7 @@
     <?php endif; ?>
 </head>
 <body>
+    <? if (Configure::read('debug') == 0): ?>
     <!-- Google Tag Manager -->
 	<noscript>
 		<iframe src="//www.googletagmanager.com/ns.html?id=GTM-WJVJJD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -57,6 +58,7 @@
 		})(window,document,'script','dataLayer','GTM-WJVJJD');
 	</script>
 	<!-- End Google Tag Manager -->
+        <? endif; ?>
 	
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
@@ -67,7 +69,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 					</button>
-				<span class="navbar-brand"><?=($this->get('department_name')) ? $this->get('department_name') : $this->get('school_name')?> - <?=__('Billboard')?></span>
+                            <span class="navbar-brand"><?=$this->Naming->brand()?> - <?=__('Billboard')?></span>
 			</div>
 			<div class="navbar-collapse collapse">
 				<p class="nav navbar-text navbar-right">Copyright 2013 - <?=date('Y'); ?> &copy; CVO-Technologies &amp; Dev App ("0100Dev")</p>

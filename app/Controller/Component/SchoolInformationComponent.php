@@ -2,11 +2,13 @@
 
 class SchoolInformationComponent extends Component {
     
+    public $components = array('DataFilter');
+
     private $dataFilter;
     private $school;
     private $department;
     
-    public function startup(\Controller $controller) {
+    public function initialize(\Controller $controller) {
         DebugTimer::start('component-school-information-startup', __('Processing school information'));
         
         if (!isset($controller->DataFilter)) {

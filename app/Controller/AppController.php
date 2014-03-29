@@ -40,7 +40,8 @@ class AppController extends Controller {
         'Html' => array('className' => 'SchemaOrgHtml'),
         'Form' => array('className' => 'BoostCake.BoostCakeForm'),
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
-        'Menu'
+        'Menu',
+        'Naming'
     );
     
     public $components = array(
@@ -60,7 +61,8 @@ class AppController extends Controller {
         'Acl',
         'SchoolInformation',
         'Styling',
-        'LanguageAware'
+        'LanguageAware',
+        'PermissionCheck'
     );
         
     function beforeFilter() {
@@ -72,15 +74,7 @@ class AppController extends Controller {
             )
         );
         
-        if ($this->Auth->user()) {
-            $requester = 'user::' . $this->Auth->user('id');
-        } else {
-            $requester = 'role::anonymous';
-        }
-        $manageAllowedScopes = $this->Acl->check(
-            $requester, array('permission' => 'manage', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
-        );
-        $this->set('can_manage', (bool) $manageAllowedScopes);
+        $this->set('can_manage', $this->PermissionCheck->checkPermission('manage', 'read'));
     }
 
 }

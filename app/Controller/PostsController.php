@@ -13,20 +13,16 @@ class PostsController extends AppController {
     );
     
     public function index() {
-        if ($this->Auth->user()) {
-            $requester = 'user::' . $this->Auth->user('id');
-        } else {
-            $requester = 'role::anonymous';
-        }
-        $allowedScopes = $this->Acl->check(
-            $requester, array('permission' => 'post', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
-        );
-        //debug($allowedScopes);
+        $allowedScopes = $this->PermissionCheck->getScopes('post', 'read');
+
         if (empty($allowedScopes)) {
             throw new ForbiddenException();
         }
-        $this->Paginator->settings = $this->paginate;
         
+        $this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
+
+        $this->Paginator->settings = $this->paginate;
+
         $conditions = array();
         $conditions['and']['Post.published'] = true; 
         if (in_array('system', $allowedScopes)) {
@@ -99,8 +95,15 @@ class PostsController extends AppController {
         //print_r($post);
         if ($post['PostedBy']['id'] == $this->Auth->user('id')) {
             $scope = 'own';
-        } elseif ((empty($post['Post']['school_id'])) && (empty($post['Post']['department_id']))) {
-            $scope = 'system';
+        } else {
+            if ((!empty($post['Post']['school_id'])) && ($post['Post']['school_id'] == $this->SchoolInformation->isSchoolIdAvailable())) {
+                $scope = 'school';
+                if ((!empty($post['Post']['department_id'])) && ($post['Post']['department_id'] == $this->SchoolInformation->isDepartmentIdAvailable())) {
+                    $scope = 'department';
+                }
+            } else {
+                $scope = 'system';
+            }
         }
         
         debug($scope);
@@ -109,31 +112,15 @@ class PostsController extends AppController {
         
         $this->set('post', $post);
         $this->set('comments', $this->Comment->getPostComments($id));
-        
-        if ($this->Auth->user()) {
-            $requester = 'user::' . $this->Auth->user('id');
-        } else {
-            $requester = 'role::anonymous';
-        }
-        $this->set('can_comment', $this->Acl->check(
-            $requester, array('scope' => $scope, 'permission' => 'comment', 'school_id' => $post['Post']['school_id'], 'department_id' => $post['Post']['department_id']), 'create'
-        ));
-        $this->set('can_view_comments', $this->Acl->check(
-            $requester, array('scope' => $scope, 'permission' => 'comment', 'school_id' => $post['Post']['school_id'], 'department_id' => $post['Post']['department_id']), 'read'
-        ));
+
+        $this->set('can_comment', $this->PermissionCheck->checkPermission('comment', 'create', $scope));
+        $this->set('can_view_comments', $this->PermissionCheck->checkPermission('comment', 'read', $scope));
 
         $this->set('title_for_layout', $post['Post']['title']);
     }
 
     public function add() {
-        if ($this->Auth->user()) {
-            $requester = 'user::' . $this->Auth->user('id');
-        } else {
-            $requester = 'role::anonymous';
-        }
-        $allowedScopes = $this->Acl->check(
-            $requester, array('permission' => 'post', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'create'
-        );
+        $allowedScopes = $this->PermissionCheck->getScopes('post', 'create');
         $this->set('allowed_scopes', $allowedScopes);
         if (empty($allowedScopes)) {
             throw new ForbiddenException();

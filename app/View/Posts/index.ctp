@@ -1,5 +1,13 @@
 <? $this->Html->addCrumb(__('News'), array('controller' => 'posts', 'action' => 'index')); ?>
 <div class="page-header"><h1><?=h(__('The latest news'))?></h1></div>
+<?
+if ($can_post):
+    echo $this->Html->link(
+        __('Create post'),
+        array('controller' => 'posts', 'action' => 'add')
+    );
+endif;
+?>
 <? foreach ($posts as $post): ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
   <h2 class="blog-post-title" itemprop="name"><h2><?=h($post['Post']['title'])?></h2></span>

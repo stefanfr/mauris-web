@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<?=$this->Html->charset(); ?>
-	<title><?=$this->get('school_name')?> - <?=$this->get('department_name')?> - <?=$title_for_layout; ?></title>
+    <title><?=$title_for_layout?> - <?=$this->Naming->title()?></title>
   
 	<!--  meta info -->
 	<?php
@@ -67,7 +67,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                            <a class="navbar-brand" href="<?=Router::url(array('plugin' => 'manage', 'controller' => 'manage'))?>"><?=(isset($department_name)) ? $department_name : $school_name?> - <?=__('Manage')?></a>
+                            <a class="navbar-brand" href="<?=Router::url(array('plugin' => 'manage', 'controller' => 'manage'))?>"><?=$this->Naming->brand()?> - <?=__('Manage')?></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>
@@ -133,7 +133,7 @@
 		<hr>
 		<footer>
 			<span>Copyright 2013 - <?=date('Y'); ?> &copy; <?=$this->Html->link('CVO-Technologies', 'http://mms-projects.net/', array('target' => '_BLANK')); ?> & <?=$this->Html->link('Dev App ("0100Dev")', 'http://devapp.nl/', array('target' => '_BLANK')); ?></span>
-			<span class="pull-right"><?=$this->get('school_name')?> (<?=$this->get('department_name')?>)</span>
+                        <span class="pull-right"><?=$this->Naming->footer()?></span>
 		</footer>
 	</div>
 	<?=((isset($loadingModal) && $loadingModal) ? $this->element('loadingModal') : ''); ?>
