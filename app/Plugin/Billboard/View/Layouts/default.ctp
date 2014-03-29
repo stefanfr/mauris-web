@@ -45,6 +45,7 @@
     <?php endif; ?>
 </head>
 <body>
+    <? if (Configure::read('debug') == 0): ?>
     <!-- Google Tag Manager -->
 	<noscript>
 		<iframe src="//www.googletagmanager.com/ns.html?id=GTM-WJVJJD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -57,6 +58,7 @@
 		})(window,document,'script','dataLayer','GTM-WJVJJD');
 	</script>
 	<!-- End Google Tag Manager -->
+        <? endif; ?>
 	
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
