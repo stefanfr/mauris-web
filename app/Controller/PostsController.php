@@ -18,8 +18,11 @@ class PostsController extends AppController {
         if (empty($allowedScopes)) {
             throw new ForbiddenException();
         }
-        $this->Paginator->settings = $this->paginate;
         
+        $this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
+
+        $this->Paginator->settings = $this->paginate;
+
         $conditions = array();
         $conditions['and']['Post.published'] = true; 
         if (in_array('system', $allowedScopes)) {
