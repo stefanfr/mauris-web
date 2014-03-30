@@ -11,15 +11,7 @@ class ManageAppController extends AppController {
             throw new UnauthorizedException();
         }
         
-        if ($this->Auth->user()) {
-            $requester = 'user::' . $this->Auth->user('id');
-        } else {
-            $requester = 'role::anonymous';
-        }
-        
-        $hasAccess = $this->Acl->check(
-            $requester, array('permission' => 'manage', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
-        );
+        $hasAccess = $this->PermissionCheck->checkPermission('manage', 'read');
         if (!$hasAccess) {
             throw new ForbiddenException();
         }
