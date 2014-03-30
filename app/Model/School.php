@@ -7,7 +7,7 @@ class School extends AppModel {
         public $hasMany = array(
             'HasDepartments' => array(
                 'className' => 'Department',
-                'foreignKey' => 'id'
+                'foreignKey' => 'school_id'
             )
 	);
 
