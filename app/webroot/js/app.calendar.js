@@ -64,7 +64,7 @@ $(function() {
                             'selectedText': $('#selector-' + type + ' option:selected').text(),
                         };
                         
-                        dataLayer.push(pushData);
+                        //dataLayer.push(pushData);
                         
                         console.log(pushData);
 			
@@ -244,7 +244,7 @@ $(function() {
                         'viewName': view.name,
                     };
 
-                    dataLayer.push(pushData);
+                    //dataLayer.push(pushData);
 
                     console.log(pushData);
                 }
