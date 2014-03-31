@@ -197,8 +197,12 @@ class ScheduleController extends AppController {
         
         $this->set('entry_cancelled', (bool) $entry['ScheduleEntry']['cancelled']);
         $this->set('entry_period', $entry['GivenInPeriod']['period']);
-        $this->set('entry_date_start', strtotime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start']));
-        $this->set('entry_date_end', strtotime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end']));
+        
+        $beginDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
+        $endDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
+        
+        $this->set('entry_date_start', $beginDate->getTimestamp());
+        $this->set('entry_date_end', $endDate->getTimestamp());
         //$period = $this->Period->findByPeriod($entry['ScheduleEntry']['period']);
         
         $assignments = array();

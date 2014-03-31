@@ -95,6 +95,7 @@ $(function() {
 			week: "MMM d{ '&#8212;'[ MMM] d}",
 			day: 'dddd, MMM d'          
 		},
+                ignoreTimezone: false,
 		eventSources: [
                     {
 			url: "http://api.ictcollege.eu/schedule/view.json",
