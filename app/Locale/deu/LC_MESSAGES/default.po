@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-26 19:34+0000\n"
+"POT-Creation-Date: 2014-04-01 17:53+0000\n"
 "PO-Revision-Date: 2014-03-01 22:46+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -50,42 +50,42 @@ msgstr ""
 msgid "Could not add your feedback"
 msgstr ""
 
-#: Controller/PostsController.php:79 Controller/SitemapsController.php:107
-#: View/Comment/add.ctp:2 View/Layouts/default.ctp:83 View/Posts/index.ctp:1
+#: Controller/PostsController.php:75 Controller/SitemapsController.php:107
+#: View/Comment/add.ctp:2 View/Layouts/default.ctp:85 View/Posts/index.ctp:1
 #: View/Posts/view.ctp:2
 msgid "News"
 msgstr ""
 
-#: Controller/PostsController.php:84;91;176;181
+#: Controller/PostsController.php:80;87;163;168
 msgid "Invalid post"
 msgstr ""
 
-#: Controller/PostsController.php:159
+#: Controller/PostsController.php:146
 msgid "Your post has been saved."
 msgstr ""
 
-#: Controller/PostsController.php:167
+#: Controller/PostsController.php:154
 msgid "Unable to add your post."
 msgstr ""
 
-#: Controller/PostsController.php:188
+#: Controller/PostsController.php:175
 msgid "Your post has been updated."
 msgstr ""
 
-#: Controller/PostsController.php:196
+#: Controller/PostsController.php:183
 msgid "Unable to update your post."
 msgstr ""
 
-#: Controller/PostsController.php:214
+#: Controller/PostsController.php:201
 msgid "Your post has been deleted."
 msgstr ""
 
 #: Controller/SitemapsController.php:99
-#: Plugin/Manage/View/Layouts/default.ctp:127
+#: Plugin/Manage/View/Layouts/default.ctp:128
 msgid "Home"
 msgstr ""
 
-#: Controller/SitemapsController.php:103 View/Layouts/default.ctp:88
+#: Controller/SitemapsController.php:103 View/Layouts/default.ctp:90
 #: View/Pages/organization.ctp:2
 msgid "Organization"
 msgstr ""
@@ -122,11 +122,15 @@ msgstr ""
 msgid "Processing organization language"
 msgstr ""
 
-#: Controller/Component/SchoolInformationComponent.php:10
+#: Controller/Component/PermissionCheckComponent.php:43
+msgid "Looking up %2$s permission for %1$s"
+msgstr ""
+
+#: Controller/Component/SchoolInformationComponent.php:12
 msgid "Processing school information"
 msgstr ""
 
-#: Controller/Component/SchoolInformationComponent.php:59
+#: Controller/Component/SchoolInformationComponent.php:61
 msgid "Render preparation with school information "
 msgstr ""
 
@@ -172,7 +176,7 @@ msgstr ""
 msgid "The billboard is reloading..."
 msgstr ""
 
-#: Plugin/Billboard/View/Layouts/default.ctp:70
+#: Plugin/Billboard/View/Layouts/default.ctp:72
 msgid "Billboard"
 msgstr ""
 
@@ -269,26 +273,34 @@ msgstr ""
 msgid "The absence report has been removed"
 msgstr ""
 
-#: Plugin/Manage/View/Layouts/default.ctp:70;126 View/Layouts/default.ctp:86
+#: Plugin/Manage/View/Layouts/default.ctp:70;127 View/Layouts/default.ctp:88
 msgid "Manage"
 msgstr ""
 
-#: Plugin/Manage/View/Layouts/default.ctp:76 View/Sitemaps/posts.ctp:3;5;8
+#: Plugin/Manage/View/Layouts/default.ctp:76
+msgid "Back"
+msgstr ""
+
+#: Plugin/Manage/View/Layouts/default.ctp:77 View/Sitemaps/posts.ctp:3;5;8
 msgid "Posts"
 msgstr ""
 
-#: Plugin/Manage/View/Layouts/default.ctp:77 View/Layouts/default.ctp:41;84
+#: Plugin/Manage/View/Layouts/default.ctp:78 View/Layouts/default.ctp:41;86
 #: View/Pages/home.ctp:9 View/Schedule/calendar.ctp:2;6
 #: View/Schedule/simple.ctp:2 View/Schedule/view.ctp:2
 msgid "Schedule"
 msgstr ""
 
-#: Plugin/Manage/View/Layouts/default.ctp:78
+#: Plugin/Manage/View/Layouts/default.ctp:79
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:2
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:2
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:2
 #: Plugin/Manage/View/TeacherAbsence/remove.ctp:2 View/Pages/home.ctp:12
 msgid "Teacher absence"
+msgstr ""
+
+#: Plugin/Manage/View/Organizations/index.ctp:2;3
+msgid "Organizations"
 msgstr ""
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:4;8
@@ -298,7 +310,7 @@ msgstr ""
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:29
 #: Plugin/Manage/View/TeacherAbsence/edit.ctp:29
 #: Plugin/Manage/View/TeacherAbsence/index.ctp:11 View/Pages/home.ctp:10;55
-#: View/Schedule/calendar.ctp:21 View/Schedule/simple.ctp:19;50
+#: View/Schedule/calendar.ctp:21 View/Schedule/simple.ctp:19;49
 #: View/Schedule/view.ctp:19 View/Themed/Billboard/AbsentTeacher/index.ctp:5
 msgid "Teacher"
 msgstr ""
@@ -340,7 +352,7 @@ msgstr ""
 msgid "Update comment"
 msgstr ""
 
-#: View/Elements/reply.ctp:13 View/Posts/view.ctp:43
+#: View/Elements/reply.ctp:13 View/Posts/view.ctp:46
 msgid "Reply"
 msgstr ""
 
@@ -352,15 +364,15 @@ msgstr ""
 msgid "View feedback"
 msgstr ""
 
-#: View/Layouts/default.ctp:92
+#: View/Layouts/default.ctp:94
 msgid "Logged in as %s"
 msgstr ""
 
-#: View/Layouts/default.ctp:113
+#: View/Layouts/default.ctp:115
 msgid "Username"
 msgstr ""
 
-#: View/Layouts/default.ctp:141
+#: View/Layouts/default.ctp:144
 msgid "Copyright %d-%d ©"
 msgstr ""
 
@@ -403,7 +415,7 @@ msgid ""
 "department"
 msgstr ""
 
-#: View/Pages/home.ctp:42 View/Posts/index.ctp:23
+#: View/Pages/home.ctp:42 View/Posts/index.ctp:31
 msgid "Read more"
 msgstr ""
 
@@ -416,12 +428,12 @@ msgid "This table shows the classes you've subscriped to"
 msgstr ""
 
 #: View/Pages/home.ctp:71 View/Schedule/calendar.ctp:27
-#: View/Schedule/simple.ctp:26;44 View/Schedule/view.ctp:13
+#: View/Schedule/simple.ctp:25;43 View/Schedule/view.ctp:13
 #: View/Themed/Billboard/Schedule/cancelled.ctp:4
 msgid "Class"
 msgstr ""
 
-#: View/Pages/home.ctp:85 View/Schedule/simple.ctp:57
+#: View/Pages/home.ctp:85 View/Schedule/simple.ctp:56
 #: View/Schedule/view.ctp:26
 msgid "Classroom"
 msgstr ""
@@ -499,22 +511,26 @@ msgstr ""
 msgid "The latest news"
 msgstr ""
 
-#: View/Posts/index.ctp:7 View/Posts/view.ctp:13
+#: View/Posts/index.ctp:6
+msgid "Create post"
+msgstr ""
+
+#: View/Posts/index.ctp:15 View/Posts/view.ctp:15
 #: View/Themed/Billboard/Post/index.ctp:5
 msgid "Posted by:"
 msgstr ""
 
-#: View/Posts/index.ctp:19 View/Themed/Billboard/Post/index.ctp:15
+#: View/Posts/index.ctp:27 View/Themed/Billboard/Post/index.ctp:15
 msgid "%d comment"
 msgid_plural "%d comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Posts/view.ctp:19
+#: View/Posts/view.ctp:22
 msgid "%s profile"
 msgstr ""
 
-#: View/Posts/view.ctp:23
+#: View/Posts/view.ctp:26
 msgid "Comment"
 msgstr ""
 
@@ -546,11 +562,11 @@ msgstr ""
 msgid "Simple"
 msgstr ""
 
-#: View/Schedule/simple.ctp:33
+#: View/Schedule/simple.ctp:32
 msgid "Calendar schedule"
 msgstr ""
 
-#: View/Schedule/simple.ctp:42 View/Schedule/view.ctp:11
+#: View/Schedule/simple.ctp:41 View/Schedule/view.ctp:11
 #: View/Themed/Billboard/Schedule/cancelled.ctp:5
 msgid "Period"
 msgstr ""
@@ -625,7 +641,7 @@ msgstr ""
 msgid "Departure"
 msgstr ""
 
-#: View/Themed/Billboard/PublicTransit/index.ctp:36
+#: View/Themed/Billboard/PublicTransit/index.ctp:38
 msgid "No transit information available"
 msgstr ""
 
