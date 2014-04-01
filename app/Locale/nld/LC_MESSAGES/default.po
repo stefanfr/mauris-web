@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-04-01 17:53+0000\n"
-"PO-Revision-Date: 2014-03-26 20:39+0200\n"
+"PO-Revision-Date: 2014-04-01 19:58+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,16 +123,15 @@ msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
 
 #: Controller/Component/LanguageAwareComponent.php:8
 msgid "Processing organization language"
-msgstr ""
+msgstr "Verwerking organisatie taal"
 
 #: Controller/Component/PermissionCheckComponent.php:43
 msgid "Looking up %2$s permission for %1$s"
 msgstr ""
 
 #: Controller/Component/SchoolInformationComponent.php:12
-#, fuzzy
 msgid "Processing school information"
-msgstr "Docent informatie"
+msgstr "Verwerking school informatie"
 
 #: Controller/Component/SchoolInformationComponent.php:61
 msgid "Render preparation with school information "
@@ -292,7 +291,7 @@ msgstr "Beheer"
 
 #: Plugin/Manage/View/Layouts/default.ctp:76
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #: Plugin/Manage/View/Layouts/default.ctp:77 View/Sitemaps/posts.ctp:3;5;8
 msgid "Posts"
@@ -313,9 +312,8 @@ msgid "Teacher absence"
 msgstr "Docent afwezigheid"
 
 #: Plugin/Manage/View/Organizations/index.ctp:2;3
-#, fuzzy
 msgid "Organizations"
-msgstr "Organisatie"
+msgstr "Organisaties"
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:4;8
 msgid "Add absence report"
@@ -531,7 +529,7 @@ msgstr "Het laatste nieuws"
 
 #: View/Posts/index.ctp:6
 msgid "Create post"
-msgstr ""
+msgstr "Maak bericht"
 
 #: View/Posts/index.ctp:15 View/Posts/view.ctp:15
 #: View/Themed/Billboard/Post/index.ctp:5
