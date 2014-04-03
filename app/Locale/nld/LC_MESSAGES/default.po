@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-04-01 17:53+0000\n"
-"PO-Revision-Date: 2014-04-01 19:58+0200\n"
+"PO-Revision-Date: 2014-04-03 22:12+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/mauris/mauris-website/nld/>\n"
@@ -501,15 +501,15 @@ msgstr "Voeg post toe"
 
 #: View/Posts/add.ctp:16
 msgid "System wide"
-msgstr "Systeem wijd"
+msgstr "Systeem breed"
 
 #: View/Posts/add.ctp:19
 msgid "School wide"
-msgstr "School wijd"
+msgstr "School breed"
 
 #: View/Posts/add.ctp:22
 msgid "Department wide"
-msgstr "Afdeling wijd"
+msgstr "Afdeling breed"
 
 #: View/Posts/add.ctp:28
 msgid "Content"
