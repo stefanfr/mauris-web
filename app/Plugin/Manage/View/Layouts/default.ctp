@@ -74,9 +74,9 @@
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>
 				<ul class="nav navbar-nav">
-					<?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), array('plugin' => 'manage', 'controller' => 'manage'), array('escapeTitle' => false))); ?>
-                                        <?=$this->Menu->item($this->Html->link(__('Back'), array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home'))); ?>
-										<?=$this->Menu->item($this->Html->link(__('Posts'), array('controller' => 'posts', 'action' => 'index'))); ?>
+                                    <?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home'), array('escapeTitle' => false))); ?>
+                                    <?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-cog')), array('plugin' => 'manage', 'controller' => 'manage'), array('escapeTitle' => false))); ?>
+                                        <?=$this->Menu->item($this->Html->link(__('Posts'), array('controller' => 'posts', 'action' => 'index'))); ?>
 					<?=$this->Menu->item($this->Html->link(__('Schedule'), array('controller' => 'schedule'))); ?>
                                         <?=$this->Menu->item($this->Html->link(__('Teacher absence'), array('controller' => 'teacher_absence', 'action' => 'index'))); ?>
 				</ul>
