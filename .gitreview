@@ -1,0 +1,4 @@
+[gerrit]
+host=review.cvo-technologies.com
+port=29418
+project=mauris-web
