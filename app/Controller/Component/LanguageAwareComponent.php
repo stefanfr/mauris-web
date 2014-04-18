@@ -34,7 +34,7 @@ class LanguageAwareComponent extends Component {
                     )
                 );
 
-                if ((!$language) && ($department['UsesLanguage']['code'])) {
+                if ($department['UsesLanguage']['code']) {
                     $language = $department['UsesLanguage']['code'];
                 }
             }
