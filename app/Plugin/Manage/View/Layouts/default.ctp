@@ -7,7 +7,7 @@
 	<!--  meta info -->
 	<?php
     echo $this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'));
-    echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=600px, initial-scale=1'));
+    echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'));
     echo $this->Html->meta(array('name' => 'description', 'content' => 'this is the description'));
     echo $this->Html->meta(array('name' => 'author', 'content' => '0100Dev - CVO-Technologies'));
 	?>
