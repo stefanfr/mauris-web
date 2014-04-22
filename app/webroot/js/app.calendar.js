@@ -97,7 +97,7 @@ $(function () {
 		},
 		ignoreTimezone: false,
 		eventSources: [{
-			url: "http://api.ictcollege.eu/schedule/view.json",
+			url: "/api/schedule/view.json",
 			data: function () {
 				var returnArray = {};
 
@@ -112,7 +112,7 @@ $(function () {
 				return returnArray;
 			}
 		}, {
-			url: "http://api.ictcollege.eu/event.json",
+			url: "/api/event.json",
 			data: function () {
 				var returnArray = {};
 
