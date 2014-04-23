@@ -32,7 +32,7 @@
  * In development mode, you need to click the flash message to continue.
  */
 if (isset($_SERVER['REMOTE_ADDR'])) {
-	if (in_array($_SERVER['REMOTE_ADDR'], array('80.100.128.152', '85.150.42.221'))) {
+	if (in_array($_SERVER['REMOTE_ADDR'], array('80.100.128.152', '85.150.42.221', '127.0.0.1'))) {
 		Configure::write('debug', 2);
 	}
 }
