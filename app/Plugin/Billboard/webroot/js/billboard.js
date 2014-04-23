@@ -36,12 +36,6 @@ var billboard = {
             container: '.billboard-content-sidebar',
             url: App.fullBaseUrl + '/api/public_transit?stop_area_code=hmonoo&theme=Billboard',
             date: 'day'
-        },
-        {
-            id: '#time-content',
-            container: '.billboard-content-sidebar',
-            url: 'http://ictcollege.eu/time.php?theme=Billboard&cancelled=true&view=cancelled',
-            date: 'day'
         }
     ],
     version: {},
