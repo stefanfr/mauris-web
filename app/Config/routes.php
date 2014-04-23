@@ -20,7 +20,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-if ($_SERVER['HTTP_HOST'] == 'api.ictcollege.eu') {
+if ((isset($_SERVER['HTTP_HOST'])) && ($_SERVER['HTTP_HOST'] == 'api.ictcollege.eu')) {
 	//Router::mapResources('plugin.schedule');
 	Router::parseExtensions();
 	//Router::connect('/api/:controller/:action/*', array('plugin' => 'api'));
