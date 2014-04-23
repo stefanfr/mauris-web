@@ -10,3 +10,4 @@ $this->set('schema_type_for_layout', 'ProfilePage');
 <? endif; ?>
 </span>
 </div>
+<b><?=__('Email address')?>:</b> <?=$system_email?>
