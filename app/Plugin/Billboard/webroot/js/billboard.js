@@ -202,4 +202,14 @@ $(function(){
 	setInterval(function(){                
 		billboard.checkVersion();
 	}, 2 * 1000);
+	
+	var on = true;
+	
+	setInterval(function(){
+		var date = new Date();
+		
+		$('#clock').html(date.getHours() + '<span class="time-seperator">' + ((on) ? ':' : ' ') + '</span>' + date.getMinutes());
+		
+		on = !on;
+	}, 1000);
 });

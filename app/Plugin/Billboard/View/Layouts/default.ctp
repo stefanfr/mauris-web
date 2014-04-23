@@ -62,21 +62,14 @@
 		})(window,document,'script','dataLayer','GTM-WJVJJD');
 	</script>
 	<!-- End Google Tag Manager -->
-        <? endif; ?>
+	<? endif; ?>
 	
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
-			<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-					</button>
-                            <span class="navbar-brand"><?=$this->Naming->brand()?> - <?=__('Billboard')?></span>
-			</div>
-			<div class="navbar-collapse collapse">
-				<p class="nav navbar-text navbar-right">Copyright 2013 - <?=date('Y'); ?> &copy; CVO-Technologies &amp; Dev App ("0100Dev")</p>
+			<div class="row">
+				<div class="col-md-5"><span class="navbar-brand"><?=$this->Naming->brand()?> - <?=__('Billboard')?></span></div>
+				<div class="col-md-2"><span class="navbar-brand time" id="clock"></span></div>
+				<div class="col-md-5"><span class="nav navbar-text navbar-right">Copyright 2013 - <?=date('Y'); ?> &copy; CVO-Technologies &amp; Dev App ("0100Dev")</span></div>
 			</div>
 		</div>
 	</div>

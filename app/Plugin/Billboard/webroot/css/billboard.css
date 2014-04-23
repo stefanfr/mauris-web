@@ -87,3 +87,15 @@ h1, h2, h3, h4 {
 .navbar-default {
     zoom: 150%;
 }
+
+.time {
+	width: 100%;
+	text-align: center; 
+	font-size: 30px;
+}
+
+.time-seperator {
+	width: 0.3em;
+	display: inline-block;
+	text-align: center;
+}
