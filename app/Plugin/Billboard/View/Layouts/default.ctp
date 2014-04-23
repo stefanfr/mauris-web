@@ -20,6 +20,10 @@
 	?>
   
 	<!-- scripts -->
+	<script>
+	var App = {};
+	App.fullBaseUrl = <?php echo json_encode(substr(Router::url('/'), 0, -1)); ?>;
+	</script>
 	<?php
     echo $this->Html->script('jquery.min');
     echo $this->Html->script('bootstrap.min');
