@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-04-23 13:25+0000\n"
-"PO-Revision-Date: 2014-04-03 22:12+0200\n"
+"PO-Revision-Date: 2014-04-23 15:30+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: Console/Command/AppShell.php:34
 msgid "<info>Welcome to Mauris Systems web app Console</info>"
-msgstr ""
+msgstr "<info>Welkom bij de Mauris Systems web app Console</info>"
 
 #: Controller/CommentController.php:11
 msgid "The comment you want to reply on doesn't exist"
