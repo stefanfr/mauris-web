@@ -16,7 +16,7 @@
 	<?php
     echo $this->Html->css('bootstrap.min');
     echo $this->Html->css('custom.bootstrap');
-    echo $this->Html->css(Router::url(array('plugin' => 'api', 'controller' => 'style', 'ext' => 'css')));
+    echo $this->Html->css(Router::url(array('plugin' => 'api', 'controller' => 'style', 'ext' => 'css'), true));
 	?>
   
 	<!-- scripts -->
