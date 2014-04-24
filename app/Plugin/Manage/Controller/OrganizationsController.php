@@ -51,7 +51,9 @@ class OrganizationsController extends ManageAppController {
 			// permissions
 			throw new ForbiddenException();
 		}
-
+		
+		$this->set('hostname_editable', $this->PermissionCheck->checkPermission('hostname', 'update', $scope));
+		
 		// If no data has been entered in the form, pre-populate it with the
 		// data in the database
 		if (!$this->request->data) {
