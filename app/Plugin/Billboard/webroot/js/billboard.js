@@ -203,13 +203,13 @@ $(function(){
 		billboard.checkVersion();
 	}, 2 * 1000);
 	
-	var on = true;
+	var nextSeperator = true;
 	
 	setInterval(function(){
 		var date = new Date();
 		
-		$('#clock').html(date.getHours() + '<span class="time-seperator">' + ((on) ? ':' : ' ') + '</span>' + date.getMinutes());
+		$('#clock').html(('0' + date.getHours()).slice(-2) + '<span class="time-seperator">' + ((nextSeperator) ? ':' : ' ') + '</span>' + ('0' + date.getMinutes()).slice(-2));
 		
-		on = !on;
+		nextSeperator = !nextSeperator;
 	}, 1000);
 });
