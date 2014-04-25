@@ -62,7 +62,8 @@ class AppController extends Controller {
         'SchoolInformation',
         'Styling',
         'LanguageAware',
-        'PermissionCheck'
+        'PermissionCheck',
+		'WebApp.WebApp'
     );
         
     function beforeFilter() {

@@ -19,6 +19,7 @@
     echo $this->Html->css('bootstrap.min');
     echo $this->Html->css('custom.bootstrap');
     echo $this->Html->css(Router::url(array('plugin' => 'api', 'controller' => 'style', 'ext' => 'css')));
+	echo $this->fetch('layout-style');
 	?>
   
 	<!-- scripts -->
@@ -26,6 +27,7 @@
     echo $this->Html->script('jquery.min');
     echo $this->Html->script('bootstrap.min');
     echo $this->Html->script('respond.min.js');
+	echo $this->fetch('layout-script');
 	?>
   
 	<!-- icons -->
@@ -42,11 +44,13 @@
       action-uri=<?=Router::url(array('controller' => 'schedule'))?>" name="msapplication-task" />        
 
 	<!-- page specific scripts -->
+	<div data-block="script" data-block-empty>
     <?=$scripts_for_layout; ?>
+	</div>
         
     <?php if($this->fetch('additionalStyle') != ''): ?>
     <!-- additional style -->
-    <style>
+    <style data-block="additionalStyle" data-block-empty>
 		<?=$this->fetch('additionalStyle'); ?>
     </style>
     <?php endif; ?>
@@ -89,6 +93,7 @@
                                         <? endif; ?>
                                         <?=$this->Menu->item($this->Html->link(__('Organization'), array('controller' => 'pages', 'action' => 'display', 'organization'))); ?>
 				</ul>
+				<div data-block="rightMenu" data-block-empty>
 				<?=$this->startIfEmpty('rightMenu'); ?>
                                 <? if (AuthComponent::user('id')): ?>
                                 <p class="navbar-text navbar-right"><?=h(__('Logged in as %s', $this->App->buildName(AuthComponent::user())))?></p>
@@ -126,19 +131,23 @@
                                 <? endif; ?>
 				<?=$this->end(); ?>
 				<?=$this->fetch('rightMenu'); ?>
+				</div>
 			</div>
 		</div>
 	</div>
 	
+	<div data-block="beforeContainer" data-block-empty>
 	<?=$this->fetch('beforeContainer'); ?>
-	
+	</div>
+		
 	<div class="container">		
         <?=((isset($hideCrumb) && $hideCrumb) ? '' : $this->Html->getCrumbList(array('class' => 'breadcrumb', 'firstClass' => false, 'lastClass' => 'active'), 'Home')); ?>
         
 		<?=$this->Session->flash(); ?>	
 		
+		<div data-block="content">
         <?=$content_for_layout; ?>
-	
+		</div>
 		<hr>
 		<footer>
 			<span><?=h(__('Copyright %d-%d ©', 2013, date('Y'))) . ' - '.  $this->Html->link('CVO-Technologies', 'http://mms-projects.net/', array('target' => '_BLANK')); ?> & <?=$this->Html->link('Dev App ("0100Dev")', 'http://devapp.nl/', array('target' => '_BLANK')); ?></span>
