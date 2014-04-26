@@ -10,8 +10,9 @@ endif;
 ?>
 <? foreach ($posts as $post): ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h2 class="blog-post-title" itemprop="name"><h2><?=h($post['Post']['title'])?></h2></span>
-  <p class="blog-post-meta" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+  <h2 class="blog-post-title" itemprop="name"><?=h($post['Post']['title'])?></h2>
+  <p class="blog-post-meta pull-right" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+	  <?=$this->Gravatar->gravatar($post['PostedBy']['system_email'], array('s' => 64, 'd' => 'identicon'))?><br>
         <?=h(__('Posted by:'))?> <a itemprop="url" href="<?=Router::url(array('controller' => 'profile', 'action' => 'view', $post['PostedBy']['id']))?>">
             <span itemprop="name"><?=h($this->App->buildName($post['PostedBy']))?></span>
         </a>

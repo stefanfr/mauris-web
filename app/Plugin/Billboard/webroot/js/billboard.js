@@ -12,35 +12,29 @@ var billboard = {
         {
             id: '#news-content',
             container: '.billboard-content-main',
-            url: '/api/post?theme=Billboard',
+            url: App.fullBaseUrl + '/api/post?theme=Billboard',
         },
         {
             id: '#event-content',
             container: '.billboard-content-sidebar',
-            url: '/api/event?theme=Billboard',
+            url: App.fullBaseUrl + '/api/event?theme=Billboard',
             //date: 'month'
         },
         {
             id: '#absent-teacher-content',
             container: '.billboard-content-sidebar',
-            url: '/api/absent_teacher?theme=Billboard',
+            url: App.fullBaseUrl + '/api/absent_teacher?theme=Billboard',
         },
         {
             id: '#cancelled-content',
             container: '.billboard-content-sidebar',
-            url: '/api/schedule?theme=Billboard&cancelled=true&view=cancelled',
+            url: App.fullBaseUrl + '/api/schedule?theme=Billboard&cancelled=true&view=cancelled',
             date: 'day'
         },
         {
             id: '#transit-content',
             container: '.billboard-content-sidebar',
-            url: '/api/public_transit?stop_area_code=hmonoo&theme=Billboard',
-            date: 'day'
-        },
-        {
-            id: '#time-content',
-            container: '.billboard-content-sidebar',
-            url: 'http://ictcollege.eu/time.php?theme=Billboard&cancelled=true&view=cancelled',
+            url: App.fullBaseUrl + '/api/public_transit?stop_area_code=hmonoo&theme=Billboard',
             date: 'day'
         }
     ],
@@ -88,7 +82,7 @@ var billboard = {
     checkVersion: function () {
         if (billboard.version.current === undefined) {
             $.ajax({
-                url: '/billboard/version_check/check.json',
+                url: App.fullBaseUrl + '/billboard/version_check/check.json',
                 cache: false,
                 success: function(json) {
                     billboard.version.current = json.version.current;
@@ -97,7 +91,7 @@ var billboard = {
             });
         } else {
             $.ajax({
-                url: '/billboard/version_check/check.json?hash=' + billboard.version.current,
+                url: App.fullBaseUrl + '/billboard/version_check/check.json?hash=' + billboard.version.current,
                 cache: false,
                 success: function(json) {
                     if (!json.version['up-to-date']) {
@@ -208,4 +202,14 @@ $(function(){
 	setInterval(function(){                
 		billboard.checkVersion();
 	}, 2 * 1000);
+	
+	var nextSeperator = true;
+	
+	setInterval(function(){
+		var date = new Date();
+		
+		$('#clock').html(('0' + date.getHours()).slice(-2) + '<span class="time-seperator">' + ((nextSeperator) ? ':' : ' ') + '</span>' + ('0' + date.getMinutes()).slice(-2));
+		
+		nextSeperator = !nextSeperator;
+	}, 1000);
 });

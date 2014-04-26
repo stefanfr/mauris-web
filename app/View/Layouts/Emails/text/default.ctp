@@ -18,4 +18,5 @@
 ?>
 <?php echo $this->fetch('content'); ?>
 
+
 <?=__('This email was sent using the')?> CakePHP Framework, http://cakephp.org.

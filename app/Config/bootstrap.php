@@ -80,6 +80,7 @@ CakePlugin::load('Manage');
 CakePlugin::load('Intermediary', array('routes' => true));
 CakePlugin::load('Billboard', array('routes' => true));
 CakePlugin::load('OvInfo');
+CakePlugin::load('Schedule', array('routes' => true));
 if ($_SERVER['SERVER_NAME'] == 'mauris.systems') {
     CakePlugin::load('Website', array('routes' => true));
 }

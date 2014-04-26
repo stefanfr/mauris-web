@@ -125,26 +125,30 @@ class ScheduleAcl extends Object implements AclInterface {
                     $conditions[] = 'UserRoleMapping.department_id IS NULL';
                 }
             } else {*/
-                $conditions['or'][] = array(
-                    'and' => array(
-                        'UserRoleMapping.school_id IS NULL',
-                        'UserRoleMapping.department_id IS NULL'
-                    ),
-                );
-                if (isset($departmentId)) {
+                if ((isset($aco['global_lookup'])) && (in_array($permission, $aco['global_lookup']))) {
+                    
+                } else {
                     $conditions['or'][] = array(
                         'and' => array(
-                            'UserRoleMapping.school_id' => $schoolId,
-                            'UserRoleMapping.department_id' => $departmentId
-                        )
+                            'UserRoleMapping.school_id IS NULL',
+                            'UserRoleMapping.department_id IS NULL'
+                        ),
                     );
-                } else {
-                    if (isset($schoolId)) {
+                    if (isset($departmentId)) {
                         $conditions['or'][] = array(
                             'and' => array(
                                 'UserRoleMapping.school_id' => $schoolId,
+                                'UserRoleMapping.department_id' => $departmentId
                             )
                         );
+                    } else {
+                        if (isset($schoolId)) {
+                            $conditions['or'][] = array(
+                                'and' => array(
+                                    'UserRoleMapping.school_id' => $schoolId,
+                                )
+                            );
+                        }
                     }
                 }
                 
@@ -171,17 +175,34 @@ class ScheduleAcl extends Object implements AclInterface {
         $allow = false;
         $scopes = array();
         $this->log('Permission request about: ' . $permission, 'info', 'permissions');
-        foreach ($permissionRoleMappings as $permissionRoleMapping) {
+        foreach ($permissionRoleMappings as $index => $permissionRoleMapping) {
             $allow = (bool) $permissionRoleMapping['PermissionRoleMapping']['allow'];
-            $mappingScopes = explode(',', $permissionRoleMapping['PermissionRoleMapping']['scope']);
-            foreach ($mappingScopes as $mappingScope) {
-                if ($allow){
-                    if (!in_array($mappingScope, $scopes)) {
-                        $scopes[] = $mappingScope;
+            if ((isset($aco['global_lookup'])) && (in_array($permission, $aco['global_lookup']))) {
+                //debug($permissionRoleMapping);
+                $scopes[$index]['PermissionRoleMapping'] = $permissionRoleMapping['PermissionRoleMapping'];
+                $mappingScopes = explode(',', $permissionRoleMapping['PermissionRoleMapping']['scope']);
+                foreach ($mappingScopes as $mappingScope) {
+                    if ($allow){
+                        if (!in_array($mappingScope, $scopes)) {
+                            $scopes[$index]['scopes'][] = $mappingScope;
+                        }
+                    } else {
+                        if (($key = array_search($mappingScope, $scopes[$index]['scopes'])) !== false) {
+                            unset($scopes[$index]['scopes'][$key]);
+                        }
                     }
-                } else {
-                    if (($key = array_search($mappingScope, $scopes)) !== false) {
-                        unset($scopes[$key]);
+                }
+            } else {
+                $mappingScopes = explode(',', $permissionRoleMapping['PermissionRoleMapping']['scope']);
+                foreach ($mappingScopes as $mappingScope) {
+                    if ($allow){
+                        if (!in_array($mappingScope, $scopes)) {
+                            $scopes[] = $mappingScope;
+                        }
+                    } else {
+                        if (($key = array_search($mappingScope, $scopes)) !== false) {
+                            unset($scopes[$key]);
+                        }
                     }
                 }
             }

@@ -7,7 +7,7 @@
 	<!--  meta info -->
 	<?php
     echo $this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'));
-    echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=600px, initial-scale=1'));
+    echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'));
     echo $this->Html->meta(array('name' => 'description', 'content' => 'this is the description'));
     echo $this->Html->meta(array('name' => 'author', 'content' => '0100Dev - CVO-Technologies'));
 	?>
@@ -16,6 +16,7 @@
 	<?php
     echo $this->Html->css('bootstrap.min');
     echo $this->Html->css('custom.bootstrap');
+	echo $this->Html->css('font-awesome.min');
     echo $this->Html->css(Router::url(array('plugin' => 'api', 'controller' => 'style', 'ext' => 'css')));
 	?>
   
@@ -45,6 +46,7 @@
     <?php endif; ?>
 </head>
 <body>
+    <? if (Configure::read('debug') == 0): ?>
     <!-- Google Tag Manager -->
 	<noscript>
 		<iframe src="//www.googletagmanager.com/ns.html?id=GTM-WJVJJD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -57,6 +59,7 @@
 		})(window,document,'script','dataLayer','GTM-WJVJJD');
 	</script>
 	<!-- End Google Tag Manager -->
+        <?endif?>
 	
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
@@ -72,7 +75,9 @@
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>
 				<ul class="nav navbar-nav">
-					<?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), array('plugin' => 'manage', 'controller' => 'manage'), array('escapeTitle' => false))); ?>
+                                    <?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home'), array('escapeTitle' => false))); ?>
+                                    <?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-cog')), array('plugin' => 'manage', 'controller' => 'manage'), array('escapeTitle' => false))); ?>
+                                        <?=$this->Menu->item($this->Html->link(__('Organizations'), array('controller' => 'organizations', 'action' => 'index'))); ?>
                                         <?=$this->Menu->item($this->Html->link(__('Posts'), array('controller' => 'posts', 'action' => 'index'))); ?>
 					<?=$this->Menu->item($this->Html->link(__('Schedule'), array('controller' => 'schedule'))); ?>
                                         <?=$this->Menu->item($this->Html->link(__('Teacher absence'), array('controller' => 'teacher_absence', 'action' => 'index'))); ?>

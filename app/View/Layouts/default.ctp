@@ -82,8 +82,12 @@
 				<?=$this->fetch('leftMenu'); ?>
 				<ul class="nav navbar-nav">
 					<?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), '/home', array('escapeTitle' => false))); ?>
-                                        <?=$this->Menu->item($this->Html->link(__('News'), array('plugin' => null, 'controller' => 'posts', 'action' => 'index'))); ?>
-					<?=$this->Menu->item($this->Html->link(__('Schedule'), array('plugin' => null, 'controller' => 'schedule'))); ?>
+					<?=$this->Menu->item($this->Html->link(__('News'), array('plugin' => null, 'controller' => 'posts', 'action' => 'index'))); ?>
+					<?php
+					if(CakePlugin::loaded('Schedule')):
+						echo $this->Menu->item($this->Html->link(__('Schedule'), array('plugin' => 'schedule', 'controller' => 'schedule')));
+					endif;
+					?>
                                         <? if ($can_manage): ?>
                                             <?=$this->Menu->item($this->Html->link(__('Manage'), array('plugin' => 'manage', 'controller' => 'manage', 'action' => 'index'))); ?>
                                         <? endif; ?>

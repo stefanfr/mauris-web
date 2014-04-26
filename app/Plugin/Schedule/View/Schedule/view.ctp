@@ -6,9 +6,9 @@ $this->Html->addCrumb(($subject_title) ? $subject_title : $subject_abbreviation,
 <div itemscope itemtype="http://schema.org/EducationEvent">
   <h1 itemprop="name"><?=($this->fetch('subject_title') != false) ? $this->fetch('subject_title') : $this->fetch('subject_abbreviation')?></h1>
 
-    <meta itemprop="startDate" content="<?=date('c', $this->get('entry_date_start'))?>">
-    <meta itemprop="endDate" content="<?=date('c', $this->get('entry_date_end'))?>">
-    <?=h(__('Period'))?>: <?=$this->get('entry_period');?> (<?=strftime('%X', $this->get('entry_date_start'))?> - <?=strftime('%X', $this->get('entry_date_end'))?>)
+    <meta itemprop="startDate" content="<?=date(DateTime::ISO8601, $this->get('entry_date_start'))?>">
+    <meta itemprop="endDate" content="<?=date(DateTime::ISO8601, $this->get('entry_date_end'))?>">
+    <?=h(__('Period'))?>: <?=$this->get('entry_period');?> (<?=$this->Time->i18nFormat($this->Time->format('c', $this->get('entry_date_start'), null, 'Europe/Amsterdam'), '%X')?> - <?=$this->Time->i18nFormat($this->Time->format('c', $this->get('entry_date_end'), null, 'Europe/Amsterdam'), '%X')?>)
     <div itemprop="attendee" itemscope itemtype="http://schema.org/Organization">
         <?=h(__('Class'))?>: <a itemprop="url" href="<?=$this->get('class_url')?>">
             <span itemprop="name"><?=$this->get('class_name')?></span>

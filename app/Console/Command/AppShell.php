@@ -26,5 +26,14 @@ App::uses('Shell', 'Console');
  * @package       app.Console.Command
  */
 class AppShell extends Shell {
-
+	
+	protected function _welcome() {
+		parent::_welcome();
+		
+		$this->out();
+		$this->out(__('<info>Welcome to Mauris Systems web app Console</info>'));
+		$this->hr();
+		$this->out();
+	}
+	
 }
