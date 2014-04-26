@@ -1,4 +1,52 @@
-<?=$this->Menu->item($this->Html->link(__('Edit organizations'), array('controller' => 'organizations', 'action' => 'index'))); ?>
-<?=$this->Menu->item($this->Html->link(__('Edit posts'), array('controller' => 'posts', 'action' => 'index'))); ?>
-<?=$this->Menu->item($this->Html->link(__('Edit schedule'), array('controller' => 'schedule'))); ?>
-<?=$this->Menu->item($this->Html->link(__('Report teacher absence'), array('controller' => 'teacher_absence', 'action' => 'add'))); ?>
+<div class="row">
+	<div class="col-lg-3">
+		<?php
+		echo $this->element(
+			'announcement',
+			array(
+				'heading' => $amount = 1,
+				'text'    => __n('Organization', 'Organizations', $amount),
+				'icon'    => 'fa-building-o',
+				'link'    => array(
+					'url'   => array('controller' => 'organizations'),
+					'label' => __('View organizations')
+				)
+			)
+		)
+		?>
+	</div>
+	<div class="col-lg-3">
+		<?php
+		echo $this->element(
+			'announcement',
+			array(
+				'type'    => 'warning',
+				'heading' => $amount = 5,
+				'text'    => __n('Absent teacher', 'Absent teachers', $amount),
+				'icon'    => 'fa-' . (($amount == 1) ? 'user' : 'users'),
+				'link'    => array(
+					'url'   => array('controller' => 'teacher_absence'),
+					'label' => __('View absent teachers')
+				)
+			)
+		)
+		?>
+	</div>
+	<div class="col-lg-3">
+		<?php
+		echo $this->element(
+			'announcement',
+			array(
+				'type'    => 'info',
+				'heading' => __('Cache'),
+				'text'    => __('Cache'),
+				'icon'    => 'fa-code',
+				'link'    => array(
+					'url'   => array('controller' => 'caches'),
+					'label' => __('View cache information')
+				)
+			)
+		)
+		?>
+	</div>
+</div>
