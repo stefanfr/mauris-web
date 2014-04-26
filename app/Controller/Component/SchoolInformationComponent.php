@@ -1,5 +1,7 @@
 <?php
 
+App::uses('OrganizationSelector', 'Lib');
+
 class SchoolInformationComponent extends Component {
     
     public $components = array('DataFilter');
@@ -92,6 +94,25 @@ class SchoolInformationComponent extends Component {
         
         DebugTimer::stop('component-school-information-before-render');
     }
+
+	/**
+	 * Return a OrganizationSelector containing information about the current
+	 * organization, department and location.
+	 *
+	 * @return \OrganizationSelector
+	 */
+	public function getSelector() {
+		$OrganizationSelector = new OrganizationSelector();
+
+		if ($this->isSchoolIdAvailable()) {
+			$OrganizationSelector->setOrganization($this->getSchoolId());
+		}
+		if ($this->isDepartmentIdAvailable()) {
+			$OrganizationSelector->setDepartment($this->getDepartmentId());
+		}
+
+		return $OrganizationSelector;
+	}
     
     public function isSchoolIdAvailable() {
         return $this->dataFilter->hasCustomFilter('school');
