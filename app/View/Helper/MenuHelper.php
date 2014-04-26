@@ -38,17 +38,24 @@ class MenuHelper extends AppHelper {
         $linkRoutes = Xml::toArray(Xml::build($link));
         $linkRoutes = str_replace($this->base, '', $linkRoutes['a']['@href']);
         $linkRoutes = Router::parse($linkRoutes);
-        
+		
         $active = false;
-        
+		
         // if the current controller matches the one the link routes to, it is active
-        if ($this->params['controller'] == $linkRoutes['controller'] && $this->params['action'] == $linkRoutes['action']) {
+        if (
+			$this->params['plugin'] == $linkRoutes['plugin'] &&
+			$this->params['controller'] == $linkRoutes['controller'] &&
+			$this->params['action'] == $linkRoutes['action']
+		) {
             $active = true;
-            
+			
             if (isset($this->params['pass'])) {
                 if (!(bool) count(array_filter(array_keys($linkRoutes['pass']), 'is_string'))) {
                     foreach ($linkRoutes['pass'] as $key => $value) {
-                        if ($this->params['pass'][$key] != $value) {
+                        if (
+							(!isset($this->params['pass'][$key])) ||
+							($this->params['pass'][$key] != $value)
+						) {
                             $active = false;
                             
                             break;

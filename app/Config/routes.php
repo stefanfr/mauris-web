@@ -73,24 +73,6 @@ if ((isset($_SERVER['HTTP_HOST'])) && ($_SERVER['HTTP_HOST'] == 'api.ictcollege.
                 'type' => '(calendar|simple)'
             )
     );*/
-    Router::connect('/schedule/*',
-            array(
-                'controller' => 'schedule', 'action' => 'index',
-                //'type' => 'calendar'
-            ),
-            array(
-                'named' => array(
-                    'teacher',
-                    'class',
-                    'classroom',
-                    'type',
-                    'page',
-                    'limit',
-                    'start',
-                    'end'
-                ),
-            )
-    );
     /*Router::connect('/schedule/:action/:type/*',
             array(
                 'controller' => 'schedule', 'action' => 'index',

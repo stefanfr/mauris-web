@@ -32,9 +32,9 @@ $this->set(compact('title_for_layout', 'description_for_layout', 'keywords_for_l
 </form>
 <?=$this->end(); ?>
 <?php
-$this->Html->script('fullcalendar.min', array ('inline' => false));
-$this->Html->css('fullcalendar', array('inline' => false));
-$this->Html->script('app.calendar', array('inline' => false));
+$this->Html->script('Schedule.fullcalendar.min', array ('inline' => false));
+$this->Html->css('Schedule.fullcalendar', array('inline' => false));
+$this->Html->script('Schedule.app.calendar', array('inline' => false));
 
 $this->set('loadingModal', true);
 
