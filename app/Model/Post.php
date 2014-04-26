@@ -1,4 +1,7 @@
 <?php
+
+App::uses('OrganizationManage', 'Lib');
+
 class Post extends AppModel {
     
     public $validate = array(
@@ -37,44 +40,32 @@ class Post extends AppModel {
             'foreignKey' => 'user_id'
         ),  
     );
+
+	public $actsAs = array(
+		'OrganizationOwned'
+	);
     
-    public function getLatestPost($scopes, $schoolId, $departmentId) {
+	public function getLatestPost($scopes, \OrganizationSelector $Selector) {
         $conditions = array();
-        $conditions['and']['Post.published'] = true; 
-        if (in_array('system', $scopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id IS NULL',
-                    'Post.department_id IS NULL'
-                )
-            );
-        }
-        if (in_array('school', $scopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $schoolId,
-                    'Post.department_id IS NULL'
-                )
-            );
-        }
-        if (in_array('department', $scopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $schoolId,
-                    'Post.department_id' => $departmentId
-                )
-            );
-        }
-        
-        return $this->find(
-            'first', array(
-                'recursive' => -1,
-                'conditions' => $conditions,
-                'order' => array(
-                    'Post.created' => 'DESC'
-                ),
-            )
-        );
+        $conditions['Post.published'] = true;
+
+		if (!in_array('school', $scopes)) {
+			$Selector->unsetOrganization();
+		}
+		if (!in_array('department', $scopes)) {
+			$Selector->unsetDepartment();
+		}
+
+		return $this->find(
+			'first', array(
+				'recursive'  => -1,
+				'match'      => $Selector,
+				'conditions' => $conditions,
+				'order'      => array(
+					'Post.created' => 'DESC'
+				),
+			)
+		);
     }
     
 }

@@ -84,8 +84,8 @@ class PagesController extends AppController {
             
             $this->set('classrooms_available_timestamp', $classroomAvailableData['timestamp']);
             $this->set('classrooms_available', $classroomAvailableData['data']);
-            $this->set('latest_post', $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id));
-            $this->set('absent_teachers', $this->TeacherAbsenceReport->getAbsentTeachers(time(), strtotime('+7 days', time()), $this->Department->id));
+            $this->set('latest_post', $this->Post->getLatestPost($allowedPostScopes, $this->SchoolInformation->getSelector()));
+            $this->set('absent_teachers', $this->TeacherAbsenceReport->getAbsentTeachers(time(), strtotime('+7 days', time()), $this->SchoolInformation->getSelector()));
             $this->set('school', $this->School->read());
             $this->set('department', $this->Department->read());
             $this->set('user_class_subscriptions', $this->UserClassMapping->getUserClassSubscriptions($this->Auth->user('id'), $this->Department->id));

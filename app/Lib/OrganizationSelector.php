@@ -6,8 +6,20 @@ class OrganizationSelector {
 	protected $_department;
 	protected $_location;
 
+	public function __toString() {
+		return implode('.', array(
+			$this->_organization,
+			$this->_department,
+			$this->_location
+		));
+	}
+
 	public function setOrganization($id) {
 		$this->_organization = $id;
+	}
+
+	public function unsetOrganization() {
+		$this->_organization = null;
 	}
 
 	public function hasOrganization() {
@@ -22,6 +34,10 @@ class OrganizationSelector {
 		$this->_department = $id;
 	}
 
+	public function unsetDepartment() {
+		$this->_department = null;
+	}
+
 	public function hasDepartment() {
 		return (bool) $this->_department;
 	}
@@ -32,6 +48,10 @@ class OrganizationSelector {
 
 	public function setLocation($id) {
 		$this->_location = $id;
+	}
+
+	public function unsetLocation() {
+		$this->_location = null;
 	}
 
 	public function hasLocation() {

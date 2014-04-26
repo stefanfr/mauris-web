@@ -24,49 +24,21 @@ class PostsController extends AppController {
         
         $this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
 
-        $this->Paginator->settings = $this->paginate;
+		$this->Paginator->settings = $this->paginate;
 
-        $conditions = array();
-        $conditions['and']['Post.published'] = true; 
-        if (in_array('system', $allowedScopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id IS NULL',
-                    'Post.department_id IS NULL'
-                )
-            );
+		$Selector = $this->SchoolInformation->getSelector();
+
+		$conditions = array();
+		$conditions['and']['Post.published'] = true;
+        if (!in_array('school', $allowedScopes)) {
+            $Selector->unsetOrganization();
         }
-        if (in_array('school', $allowedScopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $this->School->id,
-                    'Post.department_id IS NULL'
-                )
-            );
+        if (!in_array('department', $allowedScopes)) {
+			$Selector->unsetDepartment();
         }
-        if (in_array('department', $allowedScopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $this->School->id,
-                    'Post.department_id' => $this->Department->id
-                )
-            );
-        }
-        if ((in_array('own', $allowedScopes)) && ($this->Auth->user())) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.user_id' => $this->Auth->user('id'),
-                    'Post.school_id' => $this->School->id,
-                    array(
-                        'or' => array(
-                            'Post.department_id' => $this->Department->id,
-                            'Post.department_id IS NULL'
-                        )
-                    )
-                )
-            );
-        }
-        
+
+		$this->Paginator->settings['match'] = $Selector;
+
         $this->set(
             'posts',
             $this->Paginator->paginate(
