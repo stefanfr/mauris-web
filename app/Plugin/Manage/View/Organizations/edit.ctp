@@ -25,7 +25,7 @@ $this->Form->create('School', array(
 <?= $this->Form->input('website') ?>
 <?= $this->Form->input('style_id', array('empty' => array(null => __('None')))) ?>
 <?= $this->Form->input('language_id', array('empty' => array(null => __('Default')))) ?>
-<?= $this->Form->input('hostname', array('before' => '<span class="label label-warning">' . __('Changing this might make the website inaccessible!') . '</span>')) ?>
+<?= $this->Form->input('hostname', (($hostname_editable) ? null : array('disabled' => 'disabled'))) ?>
 	<?= $this->Form->input('id', array('type' => 'hidden')) ?>
 <div class="form-group">
 	<?php

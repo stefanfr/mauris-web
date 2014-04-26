@@ -51,7 +51,9 @@ class OrganizationsController extends ManageAppController {
 			// permissions
 			throw new ForbiddenException();
 		}
-
+		
+		$this->set('hostname_editable', $this->PermissionCheck->checkPermission('hostname', 'update', $scope));
+		
 		// If no data has been entered in the form, pre-populate it with the
 		// data in the database
 		if (!$this->request->data) {
@@ -61,14 +63,15 @@ class OrganizationsController extends ManageAppController {
 		$conditions = array();
 		$conditions['or']['UsesStyle.school_id'][] = $this->SchoolInformation->getSchoolId();
 		$conditions['or'][] = 'UsesStyle.school_id IS NULL';
+		
 		$styles = $this->School->UsesStyle->find(
-				'list', array(
-			'fields' => array('id', 'title', 'UsedBySchool.name'),
-			'recursive' => 2,
-			'conditions' => $conditions,
-				)
+			'list', array(
+				'fields'     => array('id', 'title', 'UsedBySchool.name'),
+				'recursive'  => 2,
+				'conditions' => $conditions,
+			)
 		);
-		// Get a list of languages
+		
 		$languages = $this->School->UsesLanguage->find('list');
 
 		if ($this->request->is(array('post', 'put'))) {
@@ -80,21 +83,24 @@ class OrganizationsController extends ManageAppController {
 					'class' => 'alert-success'
 				));
 
-				$email = new CakeEmail();
-				//$email->config('debug');
-				$email->config('default');
-				$email->emailFormat('both');
-				$email->addTo($this->Auth->user('system_email'));
-				$email->template('Manage.organization_change');
-				$email->viewVars(array_merge(
-								array(
-					'original' => $organization,
-					'current' => $this->request->data,
-					'styles' => call_user_func_array('array_replace', $styles)
-								), compact('organization', 'languages')
-				));
-				$response = $email->send();
-
+				if ($this->Auth->user('system_email') != '') {
+					$email = new CakeEmail();
+					//$email->config('debug');
+					$email->config('default');
+					$email->emailFormat('both');
+					$email->addTo($this->Auth->user('system_email'));
+					$email->template('Manage.organization_change');
+					$email->viewVars(array_merge(
+						array(
+							'original' => $organization,
+							'current'  => $this->request->data,
+							'styles'   => call_user_func_array('array_replace', $styles)
+						), 
+						compact('organization', 'languages')
+					));
+					$response = $email->send();
+				}
+				
 				return $this->redirect(array('action' => 'index'));
 			}
 

@@ -21,7 +21,7 @@ class TeacherAbsenceController extends ManageAppController {
         }
         
         $readAccessScopes = $this->Acl->check(
-            $requester, array('permission' => 'teacher-absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
+            $requester, array('permission' => 'teacher_absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
         );
         if (!$readAccessScopes) {
             throw new ForbiddenException();
@@ -69,7 +69,7 @@ class TeacherAbsenceController extends ManageAppController {
         }
         
         $createAccessScopes = $this->Acl->check(
-            $requester, array('permission' => 'teacher-absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'create'
+            $requester, array('permission' => 'teacher_absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'create'
         );
         if (!$createAccessScopes) {
             throw new ForbiddenException();
@@ -148,7 +148,7 @@ class TeacherAbsenceController extends ManageAppController {
         }
         
         $createAccessScopes = $this->Acl->check(
-            $requester, array('permission' => 'teacher-absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'create'
+            $requester, array('permission' => 'teacher_absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'create'
         );
         if (!$createAccessScopes) {
             throw new ForbiddenException();
@@ -245,7 +245,7 @@ class TeacherAbsenceController extends ManageAppController {
         }
         
         $deleteAccessScopes = $this->Acl->check(
-            $requester, array('permission' => 'teacher-absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'delete'
+            $requester, array('permission' => 'teacher_absence', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'delete'
         );
         if (!$deleteAccessScopes) {
             throw new ForbiddenException();

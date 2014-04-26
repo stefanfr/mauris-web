@@ -10,29 +10,33 @@ $infoDisplay = array(
 
 $this->Html->scriptStart();
 ?>
-$(document).ready(function () {
-console.log('lalalal');
+$(function(){
     var sec = 5;
-    var timer = setInterval(function() { 
-   $('#continue-button span').text(sec--);
-   if (sec == -1) {
-      $('#continue-button').prop('disabled', false);
-      $('#continue-button span').text('');
-      clearInterval(timer);
-   } 
-}, 1000);
+    
+    var language = {};
+    language.goto = "<?=__('Go to the website')?>";
+    language.gotoin = "<?=__('Go to the website in %s second(s)', '[seconds]')?>";
+    
+	$('#continue-button').html(language.gotoin.replace('[seconds]', sec--));
+		
+    var timer = setInterval(function() {
+		$('#continue-button').html(language.gotoin.replace('[seconds]', sec--));
+		if (sec == -1) {
+			$('#continue-button').removeClass('disabled');
+			$('#continue-button').html(language.goto);
+			clearInterval(timer);
+		} 
+	}, 1000);
 });
 <?=$this->Html->scriptEnd()?>
 <div class="col-md-12">
     <div class="row">
         <div class="col-sm-7">
-            <h1>Warning</h1>
+            <h1><?=__('Warning')?></h1>
             <p><?=__('The webpage you\'re trying to go to might be dangerous. For more information about the page, take a look at the information shown on this page.')?></p>
-            <br>
-            <button id="continue-button" class="btn btn-danger" disabled>
-                <?=$this->Html->link(__('Go to the website'), $page_url)?>
-                <span></span>
-            </button>
+            <br/>
+            <?=$this->Html->link(__('Go to the website'), $page_url, array('id' => 'continue-button', 'class' => 'btn btn-danger disabled'))?>
+            <br/><br/>
         </div>
         <div class="col-sm-5">
             <table class="table">
