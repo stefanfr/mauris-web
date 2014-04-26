@@ -40,18 +40,28 @@
 				</div>
 			</div>
 			<p><?php echo h(__('Help us develop and improve %1$s by contributing code', 'Mauris'))?></p>
-			<a href="http://redmine.cvo-technologies.com/projects/schedule-system-website" target="_blank">
-				<div class="panel-footer announcement-bottom">
-					<div class="row">
+			<div class="panel-footer announcement-bottom">
+				<div class="row">
+					<a href="https://github.com/MMS-Projects/mauris-web" target="_blank">
 						<div class="col-xs-10">
 							<?php echo h(__('Go to %1$s', 'GitHub'))?>
 						</div>
 						<div class="col-xs-2 text-right">
 							<i class="fa fa-arrow-circle-right"></i>
 						</div>
-					</div>
+					</a>
 				</div>
-			</a>
+				<div class="row">
+					<a href="http://redmine.cvo-technologies.com/projects/schedule-system-website" target="_blank">
+						<div class="col-xs-10">
+							<?php echo h(__('Go to %1$s', 'Redmine'))?>
+						</div>
+						<div class="col-xs-2 text-right">
+							<i class="fa fa-arrow-circle-right"></i>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
