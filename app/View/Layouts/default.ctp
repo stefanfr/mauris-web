@@ -81,7 +81,14 @@
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>
 				<ul class="nav navbar-nav">
-					<?=$this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), '/home', array('escapeTitle' => false))); ?>
+					<?php
+					if (CakePlugin::loaded('Website')) {
+						$homeRoute = array('plugin' => 'website', 'controller' => 'home');
+					} else {
+						$homeRoute = array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home');
+					}
+					echo $this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), $homeRoute, array('escapeTitle' => false)));
+					?>
 					<?=$this->Menu->item($this->Html->link(__('News'), array('plugin' => null, 'controller' => 'posts', 'action' => 'index'))); ?>
 					<?php
 					if(CakePlugin::loaded('Schedule')):
