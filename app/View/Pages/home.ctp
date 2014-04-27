@@ -1,4 +1,6 @@
 <?
+$this->Title->addSegment(__('Home'));
+
 $keywords_for_layout = array();
 $keywords_for_layout[] = __('Student information');
 if (isset($school_name)) {

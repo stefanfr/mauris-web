@@ -1,6 +1,11 @@
 <?
-$this->Html->addCrumb(__('Schedule'), array('controller' => 'schedule', 'action' => 'index')); 
-$this->Html->addCrumb(__('Simple'), array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple'));
+$this->Title->addSegment(__('Schedule'));
+$this->Title->addSegment(__('Simple'));
+
+$this->Title->addCrumbs(array(
+	array('controller' => 'schedule', 'action' => 'index'),
+	array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple')
+));
 
 $target = array();
 if ($this->get('target_class_id')) {

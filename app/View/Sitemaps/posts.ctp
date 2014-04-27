@@ -1,8 +1,9 @@
 <?
-$this->Html->addCrumb(__('Sitemaps'), array('action' => 'index')); 
-$this->Html->addCrumb(__('Posts'), $this->here); 
+$this->Title->addSegment(__('Sitemaps'));
+$this->Title->addSegment(__('Posts'));
 
-$this->set('title_for_layout', __('Sitemaps') . ' - ' . __('Posts'));
+$this->Html->addCrumb($this->Title->getTopSegment(1), array('action' => 'index')); 
+$this->Html->addCrumb($this->Title->getTopSegment(), $this->here); 
 ?>
 <h1><?=__('Sitemaps')?></h1>
 <h2><?=__('Posts')?></h2>

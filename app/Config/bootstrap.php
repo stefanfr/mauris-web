@@ -64,6 +64,10 @@ Configure::write('Website.hostname', 'mauris.systems');
 
 Configure::load('local');
 
+Inflector::rules('singular', array('irregular' => array(
+	'caches' => 'cache'
+)));
+
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. Make sure you read the documentation on CakePlugin to use more

@@ -1,9 +1,12 @@
 <?
-$this->Html->addCrumb(__('Schedule'), array('controller' => 'schedule', 'action' => 'index')); 
-$this->Html->addCrumb(__('Calendar'), array('controller' => 'schedule', 'action' => 'index', 'type' => 'calendar'));
+$this->Title->addSegment(__('Schedule'));
+$this->Title->addSegment(__('Calendar'));
 
+$this->Title->addCrumbs(array(
+	array('controller' => 'schedule', 'action' => 'index'),
+	array('controller' => 'schedule', 'action' => 'index', 'type' => 'calendar')
+));
 
-$title_for_layout = implode(' - ', array(__('Calendar'), __('Schedule')));
 $description_for_layout = __('Calendar of the %1$s schedule at %2$s', $department_name, $school_name);
 
 $keywords_for_layout = array();
@@ -13,7 +16,7 @@ $keywords_for_layout[] = $school_name;
 $keywords_for_layout[] = $department_name;
 
 
-$this->set(compact('title_for_layout', 'description_for_layout', 'keywords_for_layout'));
+$this->set(compact('description_for_layout', 'keywords_for_layout'));
 ?>
 <?=$this->start('rightMenu'); ?>
 <form class="navbar-form navbar-right">
