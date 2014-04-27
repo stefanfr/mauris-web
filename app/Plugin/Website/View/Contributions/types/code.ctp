@@ -22,7 +22,7 @@ $this->Html->addCrumb(__('Code'), $this->here);
 						</div>
 					</div>
 				</div>
-				<p><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></p>
+				<div class="panel-body"><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></div>
 				<a href="http://redmine.cvo-technologies.com/projects/schedule-system-website" target="_blank">
 					<div class="panel-footer announcement-bottom">
 						<div class="row">
@@ -49,7 +49,7 @@ $this->Html->addCrumb(__('Code'), $this->here);
 						</div>
 					</div>
 				</div>
-				<p><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></p>
+				<div class="panel-body"><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></div>
 				<a href="https://github.com/MMS-Projects/mauris-web" target="_blank">
 					<div class="panel-footer announcement-bottom">
 						<div class="row">

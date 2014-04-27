@@ -9,7 +9,7 @@ $this->Html->addCrumb(__('Contributions'), $this->here);
 					<header class="panel-heading">
 						<h2><?php echo h(__('Want to contribute?'))?></h2>
 					</header>
-					<?php echo h(__('Want to contribute to %1$s? Click on \'%2$s\' for more information.', 'Mauris', __('Learn more'))) ?>
+					<div class="panel-body"><?php echo h(__('Want to contribute to %1$s? Click on \'%2$s\' for more information.', 'Mauris', __('Learn more'))) ?></div>
 					<footer class="panel-footer">
 						<a href="<?php echo Router::url(array('action' => 'contribute'))?>">
 							<div class="row">

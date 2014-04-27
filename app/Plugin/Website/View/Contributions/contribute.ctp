@@ -22,7 +22,7 @@ $this->Html->addCrumb(__('Contribute'), $this->here);
 						</div>
 					</div>
 				</div>
-				<p><?php echo h(__('Help us bring %1$s to people around the globe by translating it to all kinds of languages', 'Mauris'))?></p>
+				<div class="panel-body"><?php echo h(__('Help us bring %1$s to people around the globe by translating it to all kinds of languages', 'Mauris'))?></div>
 				<a href="<?php echo Router::url(array('action' => 'info', 'i18n'))?>">
 					<div class="panel-footer announcement-bottom">
 						<div class="row">
@@ -49,7 +49,7 @@ $this->Html->addCrumb(__('Contribute'), $this->here);
 					</div>
 				</div>
 			</div>
-			<p><?php echo h(__('Help us develop and improve %1$s by contributing code', 'Mauris'))?></p>
+			<div class="panel-body"><?php echo h(__('Help us develop and improve %1$s by contributing code', 'Mauris'))?></div>
 			<div class="panel-footer announcement-bottom">
 				<div class="row">
 					<a href="<?php echo Router::url(array('action' => 'info', 'code'))?>">
