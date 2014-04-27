@@ -758,8 +758,8 @@ msgstr "Draag vertalingen bij"
 #: Plugin/Website/View/Contributions/index.ctp:41
 msgid "%1$d contribution"
 msgid_plural "%1$d contributions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$d bijdrage"
+msgstr[1] "%1$d bijdrages"
 
 #: Plugin/Website/View/Contributions/types/code.ctp:4
 msgid "Code"
