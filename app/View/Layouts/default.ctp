@@ -1,8 +1,12 @@
+<?php
+$this->Title->setSeparator(' - ');
+$this->Title->setSiteTitle($this->Naming->title());
+?>
 <!DOCTYPE html>
 <html lang="en" itemscope="" itemtype="http://schema.org/<?=(isset($schema_type_for_layout)) ? $schema_type_for_layout : 'WebPage'?>">
 <head>
 	<?=$this->Html->charset(); ?>
-    <title><?=$title_for_layout; ?> - <?=$this->Naming->title()?></title>
+	<?php echo $this->Title->title()?>
   
 	<!--  meta info -->
     <?=$this->Html->meta(array('http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'))?>

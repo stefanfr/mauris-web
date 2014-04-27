@@ -1,5 +1,7 @@
 <?
-$this->Html->addCrumb(__('Sitemaps'), $this->here); 
+$this->Title->addSegment(__('Sitemaps'));
+
+$this->Html->addCrumb($this->Title->getTopSegment(), $this->here); 
 ?>
 <h1><?=__('Sitemaps')?></h1>
 <p><?=__('The following sitemaps are available:')?></p>

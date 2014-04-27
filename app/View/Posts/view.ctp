@@ -1,6 +1,9 @@
 <?
-$this->Html->addCrumb(__('News'), array('controller' => 'posts', 'action' => 'index'));
-$this->Html->addCrumb($post['Post']['title'], $this->here);
+$this->Title->addSegment(__('News'));
+$this->Title->setPageTitle($post['Post']['title']);
+
+$this->Html->addCrumb($this->Title->getTopSegment(1), array('controller' => 'posts', 'action' => 'index'));
+$this->Html->addCrumb($this->Title->getTopSegment(), $this->here);
 
 if ($post['Post']['summary']):
     $this->set('description_for_layout', $post['Post']['summary']);
@@ -9,7 +12,7 @@ else:
 endif;
 ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h2 class="blog-post-title" itemprop="name"><?=h($post['Post']['title'])?></h2>
+	<h2 class="blog-post-title" itemprop="name"><?=h($this->Title->getPageTitle())?></h2>
   <div class="pull-right">
     <?=$this->Gravatar->gravatar($post['PostedBy']['system_email'], array('s' => 64, 'd' => 'identicon'))?>
   <p class="blog-post-meta"><?=h(__('Posted by:'))?> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><?=h($this->App->buildName($post['PostedBy']))?></span></span></p>
