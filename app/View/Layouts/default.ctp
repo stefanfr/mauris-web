@@ -151,7 +151,7 @@ $this->Title->setSiteTitle($this->Naming->title());
 						<span class="icon-bar"></span>
 					</button>
 					<?php
-					echo $this->Html->link($this->Naming->brand(),
+					echo $this->Html->link($this->Title->getSiteTitle(),
 						$this->webroot, array('class' => 'navbar-brand')
 					);
 					?>
