@@ -43,6 +43,7 @@ $this->Title->setSiteTitle($this->Naming->title());
 		<?php
 		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('custom.bootstrap');
+		echo $this->Html->css('font-awesome.min');
 		echo $this->Html->css(Router::url(
 			array(
 				'plugin'     => 'api',
@@ -162,16 +163,30 @@ $this->Title->setSiteTitle($this->Naming->title());
 					?>
 					<ul class="nav navbar-nav">
 						<?php
+						if (CakePlugin::loaded('Website')):
+							$homeRoute = array(
+								'plugin'     => 'website',
+								'controller' => 'home'
+							);
+						else:
+							$homeRoute = array(
+								'plugin'     => null,
+								'controller' => 'pages',
+								'action'     => 'display',
+								'home'
+							);
+						endif;
 						echo $this->Menu->item($this->Html->link(
 							$this->Html->tag('span', '', array(
 								'class' => 'glyphicon glyphicon-home')
 							),
-							'/home',
+							$homeRoute,
 							array('escapeTitle' => false)
 						));
 						echo $this->Menu->item($this->Html->link(
 							__('News'),
 							array(
+								'plugin'     => null,
 								'controller' => 'posts',
 								'action'     => 'index'
 							)
@@ -200,6 +215,7 @@ $this->Title->setSiteTitle($this->Naming->title());
 						echo $this->Menu->item($this->Html->link(
 							__('Organization'),
 							array(
+								'plugin'     => null,
 								'controller' => 'pages',
 								'action'     => 'display',
 								'organization'
@@ -230,6 +246,7 @@ $this->Title->setSiteTitle($this->Naming->title());
 								'class' => 'form-control'
 							),
 							'url'           => array(
+								'plugin'     => null,
 								'controller' => 'users',
 								'action'     => 'login'
 							),
@@ -283,7 +300,7 @@ $this->Title->setSiteTitle($this->Naming->title());
 					echo ' - ';
 					echo $this->Html->link(
 						'CVO-Technologies',
-						'http://mms-projects.net/',
+						'http://cvo-technologies.com/',
 						array('target' => '_BLANK')
 					);
 					echo ' & ';
