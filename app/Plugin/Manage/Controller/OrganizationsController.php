@@ -35,7 +35,7 @@ class OrganizationsController extends ManageAppController {
 
 		// If no organization data has been found return a 404
 		if (!$organization = $this->School->read()) {
-			throw new NotFoundException(__('That school doesn\'t exist'));
+			throw new NotFoundException(__('Could not find that organization'));
 		}
 
 		if ($organization['School']['id'] == $this->SchoolInformation->getSchoolId()) {
@@ -77,7 +77,7 @@ class OrganizationsController extends ManageAppController {
 			if ($this->School->save($this->request->data)) {
 				Cache::clearGroup('organization');
 
-				$this->Session->setFlash(__('The organization has been changed.'), 'alert', array(
+				$this->Session->setFlash(__('The organization has been changed'), 'alert', array(
 					'plugin' => 'BoostCake',
 					'class' => 'alert-success'
 				));

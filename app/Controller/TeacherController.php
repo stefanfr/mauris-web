@@ -8,7 +8,7 @@ class TeacherController extends AppController {
         
         $teacher = $this->Teacher->read();
         if (!$teacher) {
-            throw new NotFoundException(__('No such teacher'));
+            throw new NotFoundException(__('Could not find this teacher'));
         }
         
         $this->set(

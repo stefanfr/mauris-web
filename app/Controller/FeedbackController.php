@@ -50,7 +50,7 @@ class FeedbackController extends AppController {
                 );
                 $email->send();
 
-                $this->Session->setFlash(__('Thanks for your feedback!'), 'alert', array(
+                $this->Session->setFlash(__('Thank you for your feedback!'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
                 ));

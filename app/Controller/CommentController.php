@@ -8,7 +8,7 @@ class CommentController extends AppController {
             $replyTo = $this->Comment->findById((int) $this->passedArgs['comment']);
             
             if (!$replyTo) {
-                throw new NotFoundException(__('The comment you want to reply on doesn\'t exist'));
+                throw new NotFoundException(__('The comment you want to reply to doesn\'t exist'));
             }
             
             $this->Post->id = $replyTo['CommentedOn']['id'];
@@ -26,7 +26,7 @@ class CommentController extends AppController {
         $post = $this->Post->read();
         $this->set('post', $post);
         if (!$post) {
-            throw new NotFoundException(__('No such post'));
+            throw new NotFoundException(__('Could not find that post'));
         }
         
         if ($post['PostedBy']['id'] == $this->Auth->user('id')) {
@@ -54,7 +54,7 @@ class CommentController extends AppController {
             $this->request->data['Comment']['user_id'] = $this->Auth->user('id');
             $this->Comment->create();
             if ($this->Comment->save($this->request->data)) {
-                $this->Session->setFlash(__('Your comment has been added.'), 'alert', array(
+                $this->Session->setFlash(__('Your comment has been created'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
                 ));
@@ -66,7 +66,7 @@ class CommentController extends AppController {
             
             debug($this->Comment->validationErrors);
 
-            $this->Session->setFlash(__('Unable to add your comment.'), 'alert', array(
+            $this->Session->setFlash(__('Could not create your comment'), 'alert', array(
                 'plugin' => 'BoostCake',
                 'class' => 'alert-danger'
             ));

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-27 20:50+0000\n"
+"POT-Creation-Date: 2014-04-27 21:17+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -21,19 +21,19 @@ msgid "<info>Welcome to Mauris Systems web app Console</info>"
 msgstr ""
 
 #: Controller/CommentController.php:11
-msgid "The comment you want to reply on doesn't exist"
+msgid "The comment you want to reply to doesn't exist"
 msgstr ""
 
 #: Controller/CommentController.php:29
-msgid "No such post"
+msgid "Could not find that post"
 msgstr ""
 
 #: Controller/CommentController.php:57
-msgid "Your comment has been added."
+msgid "Your comment has been created"
 msgstr ""
 
 #: Controller/CommentController.php:69
-msgid "Unable to add your comment."
+msgid "Could not create your comment"
 msgstr ""
 
 #: Controller/CommentController.php:78;83
@@ -49,7 +49,7 @@ msgid "Unable to update your comment."
 msgstr ""
 
 #: Controller/FeedbackController.php:53
-msgid "Thanks for your feedback!"
+msgid "Thank you for your feedback!"
 msgstr ""
 
 #: Controller/FeedbackController.php:61
@@ -61,28 +61,36 @@ msgstr ""
 msgid "News"
 msgstr "Nuujs"
 
-#: Controller/PostsController.php:83;90;166;171
+#: Controller/PostsController.php:83;90
 msgid "Invalid post"
 msgstr ""
 
 #: Controller/PostsController.php:149
-msgid "Your post has been saved."
+msgid "Your post has been created"
 msgstr ""
 
 #: Controller/PostsController.php:157
-msgid "Unable to add your post."
+msgid "Could not create your post"
+msgstr ""
+
+#: Controller/PostsController.php:171
+msgid "Could not find this post"
 msgstr ""
 
 #: Controller/PostsController.php:178
-msgid "Your post has been updated."
+msgid "Your post has been changed"
 msgstr ""
 
 #: Controller/PostsController.php:186
-msgid "Unable to update your post."
+msgid "Could not change your post"
 msgstr ""
 
-#: Controller/PostsController.php:204
-msgid "Your post has been deleted."
+#: Controller/PostsController.php:203
+msgid "Your post has been removed"
+msgstr ""
+
+#: Controller/PostsController.php:211
+msgid "Could not remove your post"
 msgstr ""
 
 #: Controller/SitemapsController.php:99
@@ -96,11 +104,11 @@ msgid "Organization"
 msgstr ""
 
 #: Controller/TeacherController.php:11
-msgid "No such teacher"
+msgid "Could not find this teacher"
 msgstr ""
 
-#: Controller/UsersController.php:21;55;76
-msgid "Invalid user"
+#: Controller/UsersController.php:21
+msgid "Could not find this user"
 msgstr ""
 
 #: Controller/UsersController.php:30;43;59
@@ -109,6 +117,10 @@ msgstr ""
 
 #: Controller/UsersController.php:34;47;63
 msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:55;76
+msgid "Invalid user"
 msgstr ""
 
 #: Controller/UsersController.php:79
@@ -341,11 +353,11 @@ msgid "The garbage collector has run successfully"
 msgstr ""
 
 #: Plugin/Manage/Controller/OrganizationsController.php:38
-msgid "That school doesn't exist"
+msgid "Could not find that organization"
 msgstr ""
 
 #: Plugin/Manage/Controller/OrganizationsController.php:80
-msgid "The organization has been changed."
+msgid "The organization has been changed"
 msgstr ""
 
 #: Plugin/Manage/Controller/OrganizationsController.php:106

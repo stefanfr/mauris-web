@@ -146,7 +146,7 @@ class PostsController extends AppController {
             
             $this->Post->create();
             if ($this->Post->save($this->request->data)) {
-                $this->Session->setFlash(__('Your post has been saved.'), 'alert', array(
+                $this->Session->setFlash(__('Your post has been created'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
                 ));
@@ -154,7 +154,7 @@ class PostsController extends AppController {
                 return $this->redirect(array('action' => 'index'));
             }
             
-            $this->Session->setFlash(__('Unable to add your post.'), 'alert', array(
+            $this->Session->setFlash(__('Could not create your post'), 'alert', array(
                 'plugin' => 'BoostCake',
                 'class' => 'alert-danger'
             ));
@@ -163,19 +163,19 @@ class PostsController extends AppController {
     
     public function edit($id = null) {
 		if (!$id) {
-			throw new NotFoundException(__('Invalid post'));
+			throw new NotFoundException();
 		}
 
 		$post = $this->Post->findById($id);
 		if (!$post) {
-			throw new NotFoundException(__('Invalid post'));
+			throw new NotFoundException(__('Could not find this post'));
 		}
 
 		if ($this->request->is(array('post', 'put'))) {
 			$this->Post->id = $id;
 			if ($this->Post->save($this->request->data)) {
 				
-				$this->Session->setFlash(__('Your post has been updated.'), 'alert', array(
+				$this->Session->setFlash(__('Your post has been changed'), 'alert', array(
 					'plugin' => 'BoostCake',
 					'class' => 'alert-success'
 				));
@@ -183,7 +183,7 @@ class PostsController extends AppController {
 				return $this->redirect(array('action' => 'index'));
 			}
             
-            $this->Session->setFlash(__('Unable to update your post.'), 'alert', array(
+            $this->Session->setFlash(__('Could not change your post'), 'alert', array(
 				'plugin' => 'BoostCake',
 				'class' => 'alert-danger'
 			));
@@ -200,13 +200,17 @@ class PostsController extends AppController {
 		}
 
 		if ($this->Post->delete($id)) {
-			
-			$this->Session->setFlash(__('Your post has been deleted.'), 'alert', array(
+			$this->Session->setFlash(__('Your post has been removed'), 'alert', array(
 				'plugin' => 'BoostCake',
 				'class' => 'alert-danger'
 			));
 					
 			return $this->redirect(array('action' => 'index'));
 		}
+
+		$this->Session->setFlash(__('Could not remove your post'), 'alert', array(
+			'plugin' => 'BoostCake',
+			'class' => 'alert-danger'
+		));
 	}
 }

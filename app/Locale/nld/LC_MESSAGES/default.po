@@ -4,11 +4,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-27 20:22+0000\n"
+"POT-Creation-Date: 2014-04-27 21:17+0000\n"
 "PO-Revision-Date: 2014-04-27 22:39+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
-"projects.net/projects/mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
+"mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,20 +21,24 @@ msgid "<info>Welcome to Mauris Systems web app Console</info>"
 msgstr "<info>Welkom bij de Mauris Systems web app Console</info>"
 
 #: Controller/CommentController.php:11
-msgid "The comment you want to reply on doesn't exist"
+#, fuzzy
+msgid "The comment you want to reply to doesn't exist"
 msgstr "Het commentaar waarop je wilt reageren bestaat niet"
 
 #: Controller/CommentController.php:29
-msgid "No such post"
-msgstr "De dergelijke post bestaat niet"
+#, fuzzy
+msgid "Could not find that post"
+msgstr "Kon de aanwezigheids melding niet aanpassen"
 
 #: Controller/CommentController.php:57
-msgid "Your comment has been added."
-msgstr "Je commentaar is toegevoegt."
+#, fuzzy
+msgid "Your comment has been created"
+msgstr "Je commentaar is toegevoegd."
 
 #: Controller/CommentController.php:69
-msgid "Unable to add your comment."
-msgstr "Kon je commentaar niet toevoegen."
+#, fuzzy
+msgid "Could not create your comment"
+msgstr "Kon de afdeling niet aanmaken"
 
 #: Controller/CommentController.php:78;83
 msgid "Invalid comment"
@@ -49,7 +53,8 @@ msgid "Unable to update your comment."
 msgstr "Commentaar kon niet worden aangepast."
 
 #: Controller/FeedbackController.php:53
-msgid "Thanks for your feedback!"
+#, fuzzy
+msgid "Thank you for your feedback!"
 msgstr "Dank je voor je terugkoppeling!"
 
 #: Controller/FeedbackController.php:61
@@ -61,29 +66,44 @@ msgstr "Kon je terugkoppeling niet toevoegen"
 msgid "News"
 msgstr "Nieuws"
 
-#: Controller/PostsController.php:83;90;166;171
+#: Controller/PostsController.php:83;90
 msgid "Invalid post"
 msgstr "Ongeldige post"
 
 #: Controller/PostsController.php:149
-msgid "Your post has been saved."
-msgstr "Je post is opgeslagen."
-
-#: Controller/PostsController.php:157
-msgid "Unable to add your post."
-msgstr "Je post kon niet worden toegevoegt."
-
-#: Controller/PostsController.php:178
-msgid "Your post has been updated."
+#, fuzzy
+msgid "Your post has been created"
 msgstr "Je post is aangepast."
 
-#: Controller/PostsController.php:186
-msgid "Unable to update your post."
-msgstr "Je post kon niet worden aangepast."
+#: Controller/PostsController.php:157
+#, fuzzy
+msgid "Could not create your post"
+msgstr "Kon de afdeling niet aanmaken"
 
-#: Controller/PostsController.php:204
-msgid "Your post has been deleted."
-msgstr "Je post is verwijderd."
+#: Controller/PostsController.php:171
+#, fuzzy
+msgid "Could not find this post"
+msgstr "Kon de aanwezigheids melding niet aanpassen"
+
+#: Controller/PostsController.php:178
+#, fuzzy
+msgid "Your post has been changed"
+msgstr "Je post is opgeslagen."
+
+#: Controller/PostsController.php:186
+#, fuzzy
+msgid "Could not change your post"
+msgstr "Kon de aanwezigheids melding niet aanpassen"
+
+#: Controller/PostsController.php:203
+#, fuzzy
+msgid "Your post has been removed"
+msgstr "Je post is opgeslagen."
+
+#: Controller/PostsController.php:211
+#, fuzzy
+msgid "Could not remove your post"
+msgstr "Kon je terugkoppeling niet toevoegen"
 
 #: Controller/SitemapsController.php:99
 #: Plugin/Manage/View/Layouts/default.ctp:132 View/Pages/home.ctp:2
@@ -96,12 +116,14 @@ msgid "Organization"
 msgstr "Organisatie"
 
 #: Controller/TeacherController.php:11
-msgid "No such teacher"
-msgstr "De dergelijke docent bestaat niet"
+#, fuzzy
+msgid "Could not find this teacher"
+msgstr "Kon de aanwezigheids melding aanmaken"
 
-#: Controller/UsersController.php:21;55;76
-msgid "Invalid user"
-msgstr "Ongeldige gebruiker"
+#: Controller/UsersController.php:21
+#, fuzzy
+msgid "Could not find this user"
+msgstr "Kon de aanwezigheids melding aanmaken"
 
 #: Controller/UsersController.php:30;43;59
 msgid "The user has been saved"
@@ -111,6 +133,10 @@ msgstr "De gebruiker is opgeslagen"
 msgid "The user could not be saved. Please, try again."
 msgstr ""
 "De gebruiker kon niet worden opgeslagen. Probeer het alstublieft opnieuw."
+
+#: Controller/UsersController.php:55;76
+msgid "Invalid user"
+msgstr "Ongeldige gebruiker"
 
 #: Controller/UsersController.php:79
 msgid "User deleted"
@@ -352,11 +378,13 @@ msgid "The garbage collector has run successfully"
 msgstr "De garbage collector is succesvol uitgevoerd"
 
 #: Plugin/Manage/Controller/OrganizationsController.php:38
-msgid "That school doesn't exist"
-msgstr "Die school bestaat niet"
+#, fuzzy
+msgid "Could not find that organization"
+msgstr "Kon de organisatie niet aanpassen"
 
 #: Plugin/Manage/Controller/OrganizationsController.php:80
-msgid "The organization has been changed."
+#, fuzzy
+msgid "The organization has been changed"
 msgstr "De organisatie is aangepast."
 
 #: Plugin/Manage/Controller/OrganizationsController.php:106
@@ -1051,6 +1079,30 @@ msgstr "Inloggen"
 #: View/Users/register.ctp:4;9
 msgid "Register"
 msgstr "Registreren"
+
+#~ msgid "No such post"
+#~ msgstr "De dergelijke post bestaat niet"
+
+#~ msgid "Your comment has been added."
+#~ msgstr "Je commentaar is toegevoegt."
+
+#~ msgid "Unable to add your comment."
+#~ msgstr "Kon je commentaar niet toevoegen."
+
+#~ msgid "Unable to add your post."
+#~ msgstr "Je post kon niet worden toegevoegt."
+
+#~ msgid "Unable to update your post."
+#~ msgstr "Je post kon niet worden aangepast."
+
+#~ msgid "Your post has been deleted."
+#~ msgstr "Je post is verwijderd."
+
+#~ msgid "No such teacher"
+#~ msgstr "De dergelijke docent bestaat niet"
+
+#~ msgid "That school doesn't exist"
+#~ msgstr "Die school bestaat niet"
 
 #~ msgid "Back"
 #~ msgstr "Terug"
