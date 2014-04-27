@@ -11,15 +11,13 @@ $this->Html->script(
 <div id="temp-data" style="display: none;"></div>
 <div class="row">
     <div class="col-md-8">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="billboard-content billboard-content-main">
-                    <div class="billboard-actual-content">
-                        <h1><?=__('Latest news')?></h1>
-                        <div id="news-content"></div>
-                    </div>
-                </div>
-            </div>
+		<div class="billboard-content billboard-content-main">
+			<div class="billboard-actual-content">
+				<div class="panel panel-info">
+					<header class="panel-heading"><h2><?=__('Latest news')?></h2></header>
+					<div class="panel-body" id="news-content"></div>
+				</div>
+			</div>
         </div>
     </div>
     <div class="col-md-4">
@@ -28,34 +26,30 @@ $this->Html->script(
                 <div class="billboard-content billboard-content-sidebar">
                     <div class="billboard-actual-content">
                         <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h1><?=__('Cancelled subjects')?></h1>
-                                    <div id="cancelled-content"></div>
+                            <div class="panel panel-info">
+								<header class="panel-heading"><h2><?=__('Cancelled subjects')?></h2></header>
+                                <div class="panel-body" id="cancelled-content">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h1><?=__('Absent teachers')?></h1>
-                                    <div id="absent-teacher-content"></div>
+                            <div class="panel panel-info">
+								<header class="panel-heading"><h2><?=__('Absent teachers')?></h2></header>
+                                <div class="panel-body" id="absent-teacher-content">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h1><?=__('Events')?></h1>
-                                    <div id="event-content"></div>
+                            <div class="panel panel-info">
+								<header class="panel-heading"><h2><?=__('Events')?></h2></header>
+                                <div class="panel-body" id="event-content">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h1><?=__('Public transit')?></h1>
-                                    <div id="transit-content"></div>
+                            <div class="panel panel-info">
+								<header class="panel-heading"><h2><?=__('Public transit')?></h2></header>
+                                <div class="panel-body" id="transit-content">
                                 </div>
                             </div>
                         </div>

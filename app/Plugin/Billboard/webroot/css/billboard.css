@@ -14,8 +14,8 @@ h2 {
     font-size: initial;
 }
 
-.panel-default {
-    border-width: 10px;
+.panel-default, .panel-info {
+    /*border-width: 10px;*/
 }
 
 .container {
@@ -30,14 +30,14 @@ h2 {
 }
 
 .panel-body {
-    padding: 5px;
+    /*padding: 5px;*/
 }
 
 .row {
     margin: 0px;
 }
 
-.billboard-actual-content .panel-default {
+.billboard-actual-content .panel-default, .panel-info {
     word-wrap: break-word; 
 }
 
@@ -59,7 +59,7 @@ h2 {
     margin-bottom: 5px;
 }
 
-.billboard-actual-content .panel-default {
+.billboard-actual-content .panel-default, .panel-info {
     margin-left: 5px;
     margin-right: 0px;
 }
