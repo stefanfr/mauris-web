@@ -2,6 +2,10 @@
 
 class CachesController extends ManageAppController {
     
+	public $helpers =  array(
+		'DynList.DynList'
+	);
+
     public function index() {
 		$this->set('can_delete', $this->PermissionCheck->checkPermission(
 			'cache', 'delete', 'system'
@@ -17,6 +21,10 @@ class CachesController extends ManageAppController {
 			throw new ForbiddenException();
 		}
 		
+		if ($this->request->query('dynlist')) {
+			$this->layout = false;
+		}
+
 		$this->set('configuration_name', $configuration);
 		$this->set('configuration', Cache::config($configuration));
 	}
