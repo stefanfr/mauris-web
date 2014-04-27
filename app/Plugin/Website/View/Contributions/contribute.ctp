@@ -1,8 +1,13 @@
 <?php
-$this->Html->addCrumb(__('Contributions'), array('action' => 'index'));
-$this->Html->addCrumb(__('Contribute'), $this->here);
+$this->Title->addSegment(__('Contributions'));
+$this->Title->setPageTitle(__('Contribute to %1$s', 'Mauris'));
+
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
+	$this->here
+));
 ?>
-<h1><?php echo h(__('Contribute to %1$s', 'Mauris'))?></h1>
+<h1><?php echo h($this->Title->getPageTitle())?></h1>
 <div class="row">
 	<main class="col-lg-9">
 		<div class="well">

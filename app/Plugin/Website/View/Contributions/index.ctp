@@ -1,6 +1,11 @@
 <?php
-$this->Html->addCrumb(__('Contributions'), $this->here);
+$this->Title->setPageTitle(__('Contributions'));
+
+$this->Title->addCrumbs(array(
+	$this->here
+));
 ?>
+<h1><?php echo h($this->Title->getPageTitle())?></h1>
 <div class="row">
 	<main class="col col-sm-9">
 		<div class="row">
