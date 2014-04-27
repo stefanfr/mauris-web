@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-04-27 20:22+0000\n"
-"PO-Revision-Date: 2014-04-23 15:30+0200\n"
+"PO-Revision-Date: 2014-04-27 22:39+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -130,7 +130,7 @@ msgstr "Verwerking organisatie taal"
 
 #: Controller/Component/PermissionCheckComponent.php:43
 msgid "Looking up %2$s permission for %1$s"
-msgstr ""
+msgstr "Opzoeken %2$ toestemming voor %1$s"
 
 #: Controller/Component/SchoolInformationComponent.php:12
 msgid "Processing school information"
@@ -252,13 +252,12 @@ msgid "Go to the website"
 msgstr "Ga naar de website"
 
 #: Plugin/Intermediary/View/Intermediary/check.ctp:18
-#, fuzzy
 msgid "Go to the website in %s second(s)"
-msgstr "Ga naar de website"
+msgstr "Ga naar de website %s seconde"
 
 #: Plugin/Intermediary/View/Intermediary/check.ctp:35
 msgid "Warning"
-msgstr ""
+msgstr "Waarschuwing"
 
 #: Plugin/Intermediary/View/Intermediary/check.ctp:36
 msgid ""
@@ -274,102 +273,95 @@ msgid "Link"
 msgstr "Link"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:44
-#, fuzzy
 msgid "Main information"
-msgstr "Studenten information"
+msgstr "Hoofd information"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:46
 msgid "Enter the department name"
-msgstr ""
+msgstr "Vul de afdeling naam in"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:48
 msgid "Enter the school name:"
-msgstr ""
+msgstr "Vul de school naam in:"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:52
-#, fuzzy
 msgid "Optional information"
-msgstr "Studenten information"
+msgstr "Optionele information"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:56
 msgid "What style is the department supposed to use?"
-msgstr ""
+msgstr "Welke stijl hoort de afdeling te gebruiken?"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:60
 msgid "What language is the department supposed to use?"
-msgstr ""
+msgstr "Welke taal hoort de afdeling te gebruiken?"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:69
-#, fuzzy
 msgid "The department has been created with id %d"
-msgstr "De afwezigheid is gemeld"
+msgstr "De afdeling is gemaakt met id %d"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:72
 msgid "Department could not be created"
-msgstr ""
+msgstr "Afdeling kon niet worden gemaakt"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:73
-#, fuzzy
 msgid "Could not create the department"
-msgstr "Kon de aanwezigheids melding aanmaken"
+msgstr "Kon de afdeling niet aanmaken"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:84
 msgid "The department with id %d was deleted"
-msgstr ""
+msgstr "De afdeling met id %d was verwijderd"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:87
-#, fuzzy
 msgid "Department could not be removed"
-msgstr "De afwezigheids melding kon niet worden gevonden"
+msgstr "De afdeling kon niet worden verwijderd"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:88
 msgid ""
 "Could not delete the department with id %d, possibly because it doesn't "
 "exist."
 msgstr ""
+"Kon de afdeling met id %d niet verwijderen, mogelijk omdat deze niet bestaat."
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:100
 msgid "List the departments"
-msgstr ""
+msgstr "Lijst van afdelingen"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:103
 msgid "Add a departments"
-msgstr ""
+msgstr "Voeg een afdeling toe"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:106
 msgid "Delete a department"
-msgstr ""
+msgstr "Verwijder een afdeling"
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:108
 msgid "Use this command to delete a department from the database."
-msgstr ""
+msgstr "Gebruik dit commando om een afdeling te verwijderen uit de database."
 
 #: Plugin/Manage/Console/Command/DepartmentShell.php:111
 msgid "The id of the department to delete"
-msgstr ""
+msgstr "De id van de afdeling om te verwijderen"
 
 #: Plugin/Manage/Controller/CachesController.php:44
-#, fuzzy
 msgid "The caches have been cleared"
-msgstr "De afwezigheid is gemeld"
+msgstr "De caches zijn leeggemaakt"
 
 #: Plugin/Manage/Controller/CachesController.php:65
 msgid "The garbage collector has run successfully"
-msgstr ""
+msgstr "De garbage collector is succesvol uitgevoerd"
 
 #: Plugin/Manage/Controller/OrganizationsController.php:38
 msgid "That school doesn't exist"
-msgstr ""
+msgstr "Die school bestaat niet"
 
 #: Plugin/Manage/Controller/OrganizationsController.php:80
-#, fuzzy
 msgid "The organization has been changed."
-msgstr "De afwezigheids melding is aangepast."
+msgstr "De organisatie is aangepast."
 
 #: Plugin/Manage/Controller/OrganizationsController.php:106
-#, fuzzy
 msgid "Could not change the organization"
-msgstr "Kon de aanwezigheids melding niet aanpassen"
+msgstr "Kon de organisatie niet aanpassen"
 
 #: Plugin/Manage/Controller/TeacherAbsenceController.php:128
 msgid "The absence has been reported"
@@ -397,18 +389,16 @@ msgstr "De aanwezigheids melding is verwijderd"
 
 #: Plugin/Manage/View/Caches/clear.ctp:2 Plugin/Manage/View/Caches/gc.ctp:2
 #: Plugin/Manage/View/Caches/index.ctp:2 Plugin/Manage/View/Caches/view.ctp:4
-#, fuzzy
 msgid "Caches"
-msgstr "Docent"
+msgstr "Caches"
 
 #: Plugin/Manage/View/Caches/clear.ctp:3;7 Plugin/Manage/View/Caches/gc.ctp:3
-#, fuzzy
 msgid "Clear caches"
-msgstr "Docent"
+msgstr "Leeg caches"
 
 #: Plugin/Manage/View/Caches/clear.ctp:23
 msgid "Clear"
-msgstr ""
+msgstr "Legen"
 
 #: Plugin/Manage/View/Caches/gc.ctp:7
 msgid "Garbage collect cache"
@@ -427,43 +417,43 @@ msgstr "Naam"
 
 #: Plugin/Manage/View/Caches/index.ctp:13
 msgid "View"
-msgstr ""
+msgstr "Bekijk"
 
 #: Plugin/Manage/View/Caches/view.ctp:2
 msgid "Cache configuration: %1$s"
-msgstr ""
+msgstr "Cache configuratie: %1$s"
 
 #: Plugin/Manage/View/Caches/view.ctp:8
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: Plugin/Manage/View/Caches/view.ctp:8
 msgid "No"
-msgstr ""
+msgstr "Nee"
 
 #: Plugin/Manage/View/Caches/view.ctp:13;19
 msgid "Engine"
-msgstr ""
+msgstr "Motor"
 
 #: Plugin/Manage/View/Caches/view.ctp:15
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: Plugin/Manage/View/Caches/view.ctp:17
 msgid "Prefix"
-msgstr ""
+msgstr "Voorvoegsel"
 
 #: Plugin/Manage/View/Caches/view.ctp:18
 msgid "Duration in seconds"
-msgstr ""
+msgstr "Duur in seconde"
 
 #: Plugin/Manage/View/Caches/view.ctp:20
 msgid "Path"
-msgstr ""
+msgstr "Pad"
 
 #: Plugin/Manage/View/Caches/view.ctp:21
 msgid "Lock"
-msgstr ""
+msgstr "Vergrendeld"
 
 #: Plugin/Manage/View/Caches/view.ctp:22
 msgid "Serialize"
@@ -475,11 +465,11 @@ msgstr ""
 
 #: Plugin/Manage/View/Caches/view.ctp:24
 msgid "Mask"
-msgstr ""
+msgstr "Masker"
 
 #: Plugin/Manage/View/Caches/view.ctp:25
 msgid "Propability"
-msgstr ""
+msgstr "Waarschijnlijkheid"
 
 #: Plugin/Manage/View/Elements/emails/html/organization_details.ctp:7
 #: Plugin/Manage/View/Elements/emails/text/organization_details.ctp:3
@@ -489,45 +479,44 @@ msgstr ""
 #: Plugin/Manage/View/Elements/emails/html/organization_details.ctp:11
 #: Plugin/Manage/View/Elements/emails/text/organization_details.ctp:5
 msgid "Language"
-msgstr ""
+msgstr "Taal"
 
 #: Plugin/Manage/View/Elements/emails/html/organization_details.ctp:12;16
 #: Plugin/Manage/View/Elements/emails/text/organization_details.ctp:5;7
 #: Plugin/Manage/View/Organizations/edit.ctp:27
 msgid "Default"
-msgstr ""
+msgstr "Standaard"
 
 #: Plugin/Manage/View/Elements/emails/html/organization_details.ctp:15
 #: Plugin/Manage/View/Elements/emails/text/organization_details.ctp:7
 msgid "Style"
-msgstr ""
+msgstr "Stijl"
 
 #: Plugin/Manage/View/Elements/emails/html/organization_details.ctp:19
 #: Plugin/Manage/View/Elements/emails/text/organization_details.ctp:9
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: Plugin/Manage/View/Elements/emails/html/organization_details.ctp:25
 #: Plugin/Manage/View/Elements/emails/text/organization_details.ctp:9
 #: Plugin/Manage/View/Organizations/edit.ctp:26
 msgid "None"
-msgstr ""
+msgstr "Geen"
 
 #: Plugin/Manage/View/Emails/html/organization_change.ctp:1
 #: Plugin/Manage/View/Emails/text/organization_change.ctp:1
-#, fuzzy
 msgid "Organization %1$s changed"
-msgstr "Organisaties"
+msgstr "Organisatie %1$s is aangepast"
 
 #: Plugin/Manage/View/Emails/html/organization_change.ctp:2
 #: Plugin/Manage/View/Emails/text/organization_change.ctp:5
 msgid "Original"
-msgstr ""
+msgstr "Orgineel"
 
 #: Plugin/Manage/View/Emails/html/organization_change.ctp:4
 #: Plugin/Manage/View/Emails/text/organization_change.ctp:12
 msgid "Current"
-msgstr ""
+msgstr "Actueel"
 
 #: Plugin/Manage/View/Layouts/default.ctp:73;131 View/Layouts/default.ctp:206
 msgid "Manage"
@@ -561,29 +550,24 @@ msgid "Teacher absence"
 msgstr "Docent afwezigheid"
 
 #: Plugin/Manage/View/Manage/index.ctp:1
-#, fuzzy
 msgid "Edit organizations"
-msgstr "Organisaties"
+msgstr "Bewerk organisaties"
 
 #: Plugin/Manage/View/Manage/index.ctp:2
-#, fuzzy
 msgid "Edit posts"
-msgstr "Voeg post toe"
+msgstr "Bewerk post"
 
 #: Plugin/Manage/View/Manage/index.ctp:3
-#, fuzzy
 msgid "Edit schedule"
-msgstr "Simpel rooster"
+msgstr "Bewerk rooster"
 
 #: Plugin/Manage/View/Manage/index.ctp:4
-#, fuzzy
 msgid "Report teacher absence"
-msgstr "Docent afwezigheid"
+msgstr "Meld docent afwezigheid"
 
 #: Plugin/Manage/View/Organizations/edit.ctp:2
-#, fuzzy
 msgid "Edit %1$s"
-msgstr "Voeg post toe"
+msgstr "Bewerk %1$s"
 
 #: Plugin/Manage/View/TeacherAbsence/add.ctp:4;8
 msgid "Add absence report"
@@ -691,60 +675,61 @@ msgstr "wordt na gekeken"
 #: Plugin/Website/View/Contributions/types/code.ctp:2
 #: Plugin/Website/View/Contributions/types/i18n.ctp:2
 msgid "Contributions"
-msgstr ""
+msgstr "Bijdrages"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:3
 #: Plugin/Website/View/Contributions/types/code.ctp:3
 #: Plugin/Website/View/Contributions/types/i18n.ctp:3
 msgid "Contribute"
-msgstr ""
+msgstr "Draag bij"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:5
 msgid "Contribute to %1$s"
-msgstr ""
+msgstr "Draag bij aan %1$s"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:9
 #: Plugin/Website/View/Contributions/types/code.ctp:9
 #: Plugin/Website/View/Contributions/types/i18n.ctp:9
 msgid "Nothing yet?"
-msgstr ""
+msgstr "Nog niks?"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:25
 msgid ""
 "Help us bring %1$s to people around the globe by translating it to all kinds "
 "of languages"
 msgstr ""
+"Help ons %1$ naar mensen over de hele wereld te brengen door het te vertalen "
+"naar allerlei talen"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:30;57
 #: Plugin/Website/View/Contributions/index.ctp:12;17;71;98
 #: Plugin/Website/View/Home/index.ctp:20
-#, fuzzy
 msgid "Learn more"
-msgstr "Lees meer"
+msgstr "Meer informatie"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:52
 msgid "Help us develop and improve %1$s by contributing code"
-msgstr ""
+msgstr "Help ons %1$s te ontwikkelen en verbeteren door code bij te dragen"
 
 #: Plugin/Website/View/Contributions/index.ctp:10
 msgid "Want to contribute?"
-msgstr ""
+msgstr "Wil je bijdragen?"
 
 #: Plugin/Website/View/Contributions/index.ctp:12
 msgid "Want to contribute to %1$s? Click on '%2$s' for more information."
-msgstr ""
+msgstr "Wil je bijdragen aan %1$s? Klik op '%2$s' voor meer informatie."
 
 #: Plugin/Website/View/Contributions/index.ctp:62
 msgid "Contribute code"
-msgstr ""
+msgstr "Draag code bij"
 
 #: Plugin/Website/View/Contributions/index.ctp:89
 msgid "Contribute translations"
-msgstr ""
+msgstr "Draag vertalingen bij"
 
 #: Plugin/Website/View/Contributions/types/code.ctp:4
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: Plugin/Website/View/Contributions/types/code.ctp:21
 msgid "Issues"
@@ -754,35 +739,35 @@ msgstr ""
 #: Plugin/Website/View/Home/index.ctp:15
 msgid "Contribute to %1$s by helping with translations, code and other things"
 msgstr ""
+"Draag bij aan %1$s door te helpen met vertalingen, code en andere dingen"
 
 #: Plugin/Website/View/Contributions/types/code.ctp:30;57
 msgid "Go to"
-msgstr ""
+msgstr "Ga naar"
 
 #: Plugin/Website/View/Contributions/types/code.ctp:48
 msgid "Repo"
-msgstr ""
+msgstr "Repo"
 
 #: Plugin/Website/View/Contributions/types/i18n.ctp:4
 msgid "I18n"
-msgstr ""
+msgstr "I18n"
 
 #: Plugin/Website/View/Home/index.ctp:1
 msgid "Welcome to %1$s"
-msgstr ""
+msgstr "Welkom bij %1$s"
 
 #: Plugin/Website/View/Organizations/index.ctp:24
 msgid "To go to the organization's website :click_here"
-msgstr ""
+msgstr "Om naar de organisatie's website te gaan :click_here"
 
 #: Plugin/Website/View/Organizations/index.ctp:27;57
-#, fuzzy
 msgid "click here"
-msgstr "Klik hier"
+msgstr "klik hier"
 
 #: Plugin/Website/View/Organizations/index.ctp:54
 msgid "To go to the department's website :click_here"
-msgstr ""
+msgstr "Om naar de afdeling's website te gaan :click_here"
 
 #: View/Comment/add.ctp:4;8;13
 msgid "Add comment"
@@ -822,9 +807,8 @@ msgid "This email was sent using the"
 msgstr "Deze email was verstuurd met het"
 
 #: View/Pages/home.ctp:5
-#, fuzzy
 msgid "Student information"
-msgstr "Student informatie voor %s"
+msgstr "Studenten informatie"
 
 #: View/Pages/home.ctp:7;10
 msgid "Student information for %s"
@@ -966,7 +950,7 @@ msgstr "Reageer"
 
 #: View/Profile/view.ctp:13
 msgid "Email address"
-msgstr ""
+msgstr "Email adres"
 
 #: View/Sitemaps/index.ctp:2;6 View/Sitemaps/other.ctp:2;5;7
 #: View/Sitemaps/pages.ctp:2;5;7 View/Sitemaps/posts.ctp:2;8
