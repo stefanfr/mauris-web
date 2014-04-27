@@ -38,7 +38,7 @@ $this->Html->addCrumb(__('Contributions'), $this->here);
 										<span itemprop="name"><?php echo $contributer['username']?></span>
 									</header>
 								</a>
-								<span style="font-size: 3em;">Contributions: <?php echo $contributer['contributions']?></span>
+								<span style="font-size: 3em;"><?php echo __n('%1$d contribution', '%1$d contributions', $contributer['contributions'], $contributer['contributions'])?></span>
 								<div class="pull-right">
 									<span class="fa fa-<?php echo $contributer['source']?> fa-5x"></span>
 								</div>

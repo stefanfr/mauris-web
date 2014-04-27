@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-27 20:22+0000\n"
+"POT-Creation-Date: 2014-04-27 20:50+0000\n"
 "PO-Revision-Date: 2014-03-01 22:46+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -711,6 +711,12 @@ msgstr ""
 #: Plugin/Website/View/Contributions/index.ctp:89
 msgid "Contribute translations"
 msgstr ""
+
+#: Plugin/Website/View/Contributions/index.ctp:41
+msgid "%1$d contribution"
+msgid_plural "%1$d contributions"
+msgstr[0] ""
+msgstr[1] ""
 
 #: Plugin/Website/View/Contributions/types/code.ctp:4
 msgid "Code"
