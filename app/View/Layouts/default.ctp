@@ -292,7 +292,7 @@ $this->Title->setSiteTitle($this->Naming->title());
 					echo ' - ';
 					echo $this->Html->link(
 						'CVO-Technologies',
-						'http://mms-projects.net/',
+						'http://cvo-technologies.com/',
 						array('target' => '_BLANK')
 					);
 					echo ' & ';
