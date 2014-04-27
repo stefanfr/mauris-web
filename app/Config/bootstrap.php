@@ -60,6 +60,10 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 
+Configure::write('Website.hostname', 'mauris.systems');
+
+Configure::load('local');
+
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. Make sure you read the documentation on CakePlugin to use more
@@ -81,7 +85,7 @@ CakePlugin::load('Intermediary', array('routes' => true));
 CakePlugin::load('Billboard', array('routes' => true));
 CakePlugin::load('OvInfo');
 CakePlugin::load('DynList');
-if ($_SERVER['HTTP_HOST'] == 'mauris.systems') {
+if ($_SERVER['HTTP_HOST'] == Configure::read('Website.hostname')) {
     CakePlugin::load('Website', array('routes' => true));
 } else {
 	CakePlugin::load('Schedule', array('routes' => true));
