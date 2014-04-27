@@ -191,8 +191,8 @@ $(function(){
 	billboard.checkVersion();
         
         $(window).resize(function() {
-            $('[data-billboard-container="main"]').css('height', $(window).height() - $('[data-billboard-container="main"]').offset().top - 25);
-            $('[data-billboard-container="sidebar"]').css('height', $(window).height() - $('[data-billboard-container="sidebar"]').offset().top - 25);
+            $('[data-billboard-container="main"]').css('height', $(window).height() - $('[data-billboard-container="main"]').offset().top - 5);
+            $('[data-billboard-container="sidebar"]').css('height', $(window).height() - $('[data-billboard-container="sidebar"]').offset().top - 5);
         }).resize();
         
 	setInterval(function(){
