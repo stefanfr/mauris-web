@@ -12,51 +12,49 @@ $this->Html->script(
 <div class="row">
     <div class="col-md-8">
 		<div data-billboard-container="main">
-			<div>
+			<div class="row">
 				<div class="panel panel-info">
-					<header class="panel-heading"><h2><?=__('Latest news')?></h2></header>
+					<header class="panel-heading"><h2><?php echo h(__('Latest news'))?></h2></header>
 					<div class="panel-body" data-billboard-id="news"></div>
 				</div>
 			</div>
         </div>
     </div>
     <div class="col-md-4">
-        <!--<div class="panel panel-default">
-            <div class="panel-body">-->
-                <div data-billboard-container="sidebar">
-                    <div>
-                        <div class="row">
-                            <div class="panel panel-info">
-								<header class="panel-heading"><h2><?=__('Cancelled subjects')?></h2></header>
-                                <div class="panel-body" data-billboard-id="cancelled">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="panel panel-info">
-								<header class="panel-heading"><h2><?=__('Absent teachers')?></h2></header>
-                                <div class="panel-body" data-billboard-id="absent-teacher">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="panel panel-info">
-								<header class="panel-heading"><h2><?=__('Events')?></h2></header>
-                                <div class="panel-body" data-billboard-id="event">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="panel panel-info">
-								<header class="panel-heading"><h2><?=__('Public transit')?></h2></header>
-                                <div class="panel-body" data-billboard-id="transit">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!--</div>
-        </div>-->
+		<div data-billboard-container="sidebar">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-info">
+						<header class="panel-heading"><h2><?php echo h(__('Cancelled subjects'))?></h2></header>
+						<div class="panel-body" data-billboard-id="cancelled"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-info">
+						<header class="panel-heading"><h2><?php echo h(__('Absent teachers'))?></h2></header>
+						<div class="panel-body" data-billboard-id="absent-teacher"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-info">
+						<header class="panel-heading"><h2><?php echo h(__('Events'))?></h2></header>
+						<div class="panel-body" data-billboard-id="event"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-info">
+						<header class="panel-heading"><h2><?php h(__('Public transit'))?></h2></header>
+						<div class="panel-body" data-billboard-id="transit"></div>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
 </div>			
 
@@ -67,10 +65,10 @@ $this->Html->script(
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title"><?=__('Server unavailable')?></h4>
+        <h4 class="modal-title"><?php echo h(__('Server unavailable'))?></h4>
       </div>
       <div class="modal-body">
-        <?=__('The server can\'t be reached. The information may be incorrect or out-dated')?>
+        <?php echo h(__('The server can\'t be reached. The information may be incorrect or out-dated'))?>
       </div>
     </div>
   </div>
