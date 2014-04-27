@@ -10,30 +10,30 @@ var billboard = {
     scrollSpeed: 40, 
     data: [
         {
-            id: '#news-content',
-            container: '.billboard-content-main',
+            id: 'news',
+            container: 'main',
             url: App.fullBaseUrl + '/api/post?theme=Billboard',
         },
         {
-            id: '#event-content',
-            container: '.billboard-content-sidebar',
+            id: 'event',
+            container: 'sidebar',
             url: App.fullBaseUrl + '/api/event?theme=Billboard',
             //date: 'month'
         },
         {
-            id: '#absent-teacher-content',
-            container: '.billboard-content-sidebar',
+            id: 'absent-teacher',
+            container: 'sidebar',
             url: App.fullBaseUrl + '/api/absent_teacher?theme=Billboard',
         },
         {
-            id: '#cancelled-content',
-            container: '.billboard-content-sidebar',
+            id: 'cancelled',
+            container: 'sidebar',
             url: App.fullBaseUrl + '/api/schedule?theme=Billboard&cancelled=true&view=cancelled',
             date: 'day'
         },
         {
-            id: '#transit-content',
-            container: '.billboard-content-sidebar',
+            id: 'transit',
+            container: 'sidebar',
             url: App.fullBaseUrl + '/api/public_transit?stop_area_code=hmonoo&theme=Billboard',
             date: 'day'
         }
@@ -132,7 +132,7 @@ var billboard = {
             scrollDifference = animateParameters.scrollTop - $(selector).scrollTop();
         }
         
-        var contentHeight = $('.billboard-actual-content', $(selector)).outerHeight(true);
+        var contentHeight = $('.panel', $(selector)).outerHeight(true);
         var animationDuration = billboard.scrollSpeed * scrollDifference;
         
         console.log($(selector).scrollTop());
@@ -164,14 +164,14 @@ var billboard = {
                 $('#temp-data').html(html);
                 
                 if ($('#temp-data').html() != $(id).html()) {
-                    $(id).fadeOut(function () {
-                        $(id).html(html);
-                        $(id).fadeIn(function () {                            
-                            billboard.scroll(entry.container, false);
+                    $('[data-billboard-id="' + id + '"]').fadeOut(function () {
+                        $('[data-billboard-id="' + id + '"]').html(html);
+                        $('[data-billboard-id="' + id + '"]').fadeIn(function () {
+                            billboard.scroll('[data-billboard-container="' + entry.container + '"]', false);
                         });
                     });
                 } else {
-                    $(id).html(html);
+                    $('[data-billboard-id="' + id + '"]').html(html);
                 }
                 
                 $('#modal-server-unavailable').modal('hide');
@@ -191,8 +191,8 @@ $(function(){
 	billboard.checkVersion();
         
         $(window).resize(function() {
-            $('.billboard-content-main').css('height', $(window).height() - $('.billboard-content-main').offset().top - 25);
-            $('.billboard-content-sidebar').css('height', $(window).height() - $('.billboard-content-sidebar').offset().top - 25);
+            $('[data-billboard-container="main"]').css('height', $(window).height() - $('[data-billboard-container="main"]').offset().top - 25);
+            $('[data-billboard-container="sidebar"]').css('height', $(window).height() - $('[data-billboard-container="sidebar"]').offset().top - 25);
         }).resize();
         
 	setInterval(function(){

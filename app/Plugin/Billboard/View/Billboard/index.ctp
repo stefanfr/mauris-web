@@ -11,11 +11,11 @@ $this->Html->script(
 <div id="temp-data" style="display: none;"></div>
 <div class="row">
     <div class="col-md-8">
-		<div class="billboard-content billboard-content-main">
-			<div class="billboard-actual-content">
+		<div data-billboard-container="main">
+			<div>
 				<div class="panel panel-info">
 					<header class="panel-heading"><h2><?=__('Latest news')?></h2></header>
-					<div class="panel-body" id="news-content"></div>
+					<div class="panel-body" data-billboard-id="news"></div>
 				</div>
 			</div>
         </div>
@@ -23,33 +23,33 @@ $this->Html->script(
     <div class="col-md-4">
         <!--<div class="panel panel-default">
             <div class="panel-body">-->
-                <div class="billboard-content billboard-content-sidebar">
-                    <div class="billboard-actual-content">
+                <div data-billboard-container="sidebar">
+                    <div>
                         <div class="row">
                             <div class="panel panel-info">
 								<header class="panel-heading"><h2><?=__('Cancelled subjects')?></h2></header>
-                                <div class="panel-body" id="cancelled-content">
+                                <div class="panel-body" data-billboard-id="cancelled">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="panel panel-info">
 								<header class="panel-heading"><h2><?=__('Absent teachers')?></h2></header>
-                                <div class="panel-body" id="absent-teacher-content">
+                                <div class="panel-body" data-billboard-id="absent-teacher">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="panel panel-info">
 								<header class="panel-heading"><h2><?=__('Events')?></h2></header>
-                                <div class="panel-body" id="event-content">
+                                <div class="panel-body" data-billboard-id="event">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="panel panel-info">
 								<header class="panel-heading"><h2><?=__('Public transit')?></h2></header>
-                                <div class="panel-body" id="transit-content">
+                                <div class="panel-body" data-billboard-id="transit">
                                 </div>
                             </div>
                         </div>

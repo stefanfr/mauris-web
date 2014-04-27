@@ -24,9 +24,8 @@ h2 {
 	margin-left: 15px;
 }
 
-.billboard-content {
-    height: 550px;
-    overflow: hidden;
+[data-billboard-container] {
+	overflow: hidden;
 }
 
 .panel-body {
