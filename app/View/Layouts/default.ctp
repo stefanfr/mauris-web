@@ -163,11 +163,19 @@ $this->Title->setSiteTitle($this->Naming->title());
 					?>
 					<ul class="nav navbar-nav">
 						<?php
-						if (CakePlugin::loaded('Website')) {
-							$homeRoute = array('plugin' => 'website', 'controller' => 'home');
-						} else {
-							$homeRoute = array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home');
-						}
+						if (CakePlugin::loaded('Website')):
+							$homeRoute = array(
+								'plugin'     => 'website',
+								'controller' => 'home'
+							);
+						else:
+							$homeRoute = array(
+								'plugin'     => null,
+								'controller' => 'pages',
+								'action'     => 'display',
+								'home'
+							);
+						endif;
 						echo $this->Menu->item($this->Html->link(
 							$this->Html->tag('span', '', array(
 								'class' => 'glyphicon glyphicon-home')
