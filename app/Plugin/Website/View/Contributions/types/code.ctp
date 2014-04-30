@@ -12,6 +12,9 @@ $this->Title->addCrumbs(array(
 <h1><?php echo h($this->Title->getPageTitle())?></h1>
 <div class="row">
 	<main class="col-lg-9">
+		<?php
+		echo $this->i18n->element(implode(DS, array('types', 'code', 'techniques')));
+		?>
 		<div class="well">
 			<?php echo h(__('Nothing yet?'))?>
 		</div>
