@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-lg-3">
 		<div class="panel panel-primary">
-			<div class="panel-heading">
+			<header class="panel-heading">
 				<div class="row">
 					<div class="col-xs-2">
 						<i class="fa fa-users fa-5x"></i>
@@ -11,10 +11,12 @@
 						<p class="announcement-heading">Help</p>
 					</div>
 				</div>
+			</header>
+			<div class="panel-body">
+				<p><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></p>
 			</div>
-			<p><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></p>
-			<a href="<?php echo Router::url(array('controller' => 'contributions'))?>">
-				<div class="panel-footer announcement-bottom">
+			<footer class="panel-footer announcement-bottom">
+				<a href="<?php echo Router::url(array('controller' => 'contributions'))?>">
 					<div class="row">
 						<div class="col-xs-10">
 							<?php echo h(__('Learn more'))?>
@@ -23,8 +25,8 @@
 							<i class="fa fa-arrow-circle-right"></i>
 						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			</footer>
 		</div>
 	</div>
 </div>

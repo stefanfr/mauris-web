@@ -18,8 +18,8 @@ $this->Title->addCrumbs(array(
 	</main>
 	<div class="col-lg-3">
 		<div class="row">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
+			<nav class="panel panel-primary">
+				<header class="panel-heading">
 					<div class="row">
 						<div class="col-xs-2">
 							<i class="fa fa-calendar fa-5x"></i>
@@ -28,10 +28,12 @@ $this->Title->addCrumbs(array(
 							<p class="announcement-heading"><?php echo h(__('Issues'))?></p>
 						</div>
 					</div>
+				</header>
+				<div class="panel-body">
+					<p><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></p>
 				</div>
-				<div class="panel-body"><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></div>
-				<a href="http://redmine.cvo-technologies.com/projects/schedule-system-website" target="_blank">
-					<div class="panel-footer announcement-bottom">
+				<footer class="panel-footer announcement-bottom">
+					<a href="http://redmine.cvo-technologies.com/projects/schedule-system-website" target="_blank">
 						<div class="row">
 							<div class="col-xs-7">
 								<?php echo h(__('Go to'))?>
@@ -40,13 +42,13 @@ $this->Title->addCrumbs(array(
 								Redmine <i class="fa fa-arrow-circle-right"></i>
 							</div>
 						</div>
-					</div>
-				</a>
-			</div>
+					</a>
+				</footer>
+			</nav>
 		</div>
 		<div class="row">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
+			<nav class="panel panel-primary">
+				<header class="panel-heading">
 					<div class="row">
 						<div class="col-xs-2">
 							<i class="fa fa-code fa-5x"></i>
@@ -55,10 +57,12 @@ $this->Title->addCrumbs(array(
 							<p class="announcement-heading"><?php echo h(__('Repo'))?></p>
 						</div>
 					</div>
+				</header>
+				<div class="panel-body">
+					<p><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></p>
 				</div>
-				<div class="panel-body"><?php echo h(__('Contribute to %1$s by helping with translations, code and other things', 'Mauris'))?></div>
-				<a href="https://github.com/MMS-Projects/mauris-web" target="_blank">
-					<div class="panel-footer announcement-bottom">
+				<footer class="panel-footer announcement-bottom">
+					<a href="https://github.com/MMS-Projects/mauris-web" target="_blank">
 						<div class="row">
 							<div class="col-xs-7">
 								<?php echo h(__('Go to'))?>
@@ -67,9 +71,9 @@ $this->Title->addCrumbs(array(
 								GitHub <i class="fa fa-arrow-circle-right"></i>
 							</div>
 						</div>
-					</div>
-				</a>
-			</div>
+					</a>
+				</footer>
+			</nav>
 		</div>
 	</div>
 </div>

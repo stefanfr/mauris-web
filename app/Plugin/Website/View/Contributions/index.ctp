@@ -10,11 +10,20 @@ $this->Title->addCrumbs(array(
 	<main class="col col-sm-9">
 		<div class="row">
 			<div class="col col-sm-12">
-				<section class="panel panel-primary">
+				<nav class="panel panel-primary">
 					<header class="panel-heading">
-						<h2><?php echo h(__('Want to contribute?'))?></h2>
+						<div class="row">
+							<div class="col-xs-2">
+								<i class="fa fa-tasks fa-5x"></i>
+							</div>
+							<div class="col-xs-10 text-right">
+								<p class="announcement-heading"><?php echo h(__('Want to contribute?'))?></p>
+							</div>
+						</div>
 					</header>
-					<div class="panel-body"><?php echo h(__('Want to contribute to %1$s? Click on \'%2$s\' for more information.', 'Mauris', __('Learn more'))) ?></div>
+					<div class="panel-body">
+						<p><?php echo h(__('Want to contribute to %1$s? Click on \'%2$s\' for more information.', 'Mauris', __('Learn more'))) ?></p>
+					</div>
 					<footer class="panel-footer">
 						<a href="<?php echo Router::url(array('action' => 'contribute'))?>">
 							<div class="row">
@@ -27,7 +36,7 @@ $this->Title->addCrumbs(array(
 							</div>
 						</a>
 					</footer>
-				</section>
+				</nav>
 			</div>
 		</div>
 		<div class="row">
@@ -57,7 +66,7 @@ $this->Title->addCrumbs(array(
 	</main>
 	<div class="col col-sm-3">
 		<div class="row">
-			<section class="panel panel-primary">
+			<nav class="panel panel-primary">
 				<header class="panel-heading">
 					<div class="row">
 						<div class="col-xs-2">
@@ -68,7 +77,6 @@ $this->Title->addCrumbs(array(
 						</div>
 					</div>
 				</header>
-
 				<footer class="panel-footer">
 					<a href="<?php echo Router::url(array('action' => 'info', 'code'))?>">
 						<div class="row">
@@ -81,10 +89,10 @@ $this->Title->addCrumbs(array(
 						</div>
 					</a>
 				</footer>
-			</section>
+			</nav>
 		</div>
 		<div class="row">
-			<section class="panel panel-primary">
+			<nav class="panel panel-primary">
 				<header class="panel-heading">
 					<div class="row">
 						<div class="col-xs-2">
@@ -95,7 +103,6 @@ $this->Title->addCrumbs(array(
 						</div>
 					</div>
 				</header>
-
 				<footer class="panel-footer">
 					<a href="<?php echo Router::url(array('action' => 'info', 'i18n'))?>">
 						<div class="row">
@@ -108,7 +115,7 @@ $this->Title->addCrumbs(array(
 						</div>
 					</a>
 				</footer>
-			</section>
+			</nav>
 		</div>
 	</div>
 </div>
