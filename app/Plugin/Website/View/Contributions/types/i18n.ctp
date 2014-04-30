@@ -17,6 +17,34 @@ $this->Title->addCrumbs(array(
 		</div>
 	</main>
 	<div class="col-lg-3">
-		
+		<div class="row">
+			<nav class="panel panel-primary">
+				<header class="panel-heading">
+					<div class="row">
+						<div class="col-xs-2">
+							<i class="fa fa-globe fa-5x"></i>
+						</div>
+						<div class="col-xs-10 text-right">
+							<p class="announcement-heading"><?php echo h(__('I18n'))?></p>
+						</div>
+					</div>
+				</header>
+				<div class="panel-body">
+					<p><?php echo h(__('Go to %2$s to help translate %1$s easiliy without having work on the code directly', 'Mauris', 'Weblate'))?></p>
+				</div>
+				<footer class="panel-footer announcement-bottom">
+					<a href="http://weblate.cvo-technologies.com/engage/mauris/" target="_blank">
+						<div class="row">
+							<div class="col-xs-7">
+								<?php echo h(__('Go to'))?>
+							</div>
+							<div class="col-xs-5 text-right">
+								Weblate <i class="fa fa-arrow-circle-right"></i>
+							</div>
+						</div>
+					</a>
+				</footer>
+			</nav>
+		</div>
 	</div>
 </div>
