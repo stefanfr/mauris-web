@@ -1,6 +1,11 @@
 <?php
 $this->Title->setSeparator(' - ');
 $this->Title->setSiteTitle($this->Naming->title());
+
+$this->element('Parts/copyright');
+
+$this->element('Parts/NavbarElements/brand');
+$this->element('Parts/NavbarElements/right_menu');
 ?>
 <!DOCTYPE html>
 <html lang="en" itemscope="" itemtype="http://schema.org/<?php echo (isset($schema_type_for_layout)) ? $schema_type_for_layout : 'WebPage'?>">
@@ -142,7 +147,10 @@ $this->Title->setSiteTitle($this->Naming->title());
 		<!-- End Google Tag Manager -->
 		<? endif; ?>
 
-		<div class="navbar navbar-default navbar-static-top" role="navigation">
+		<?php
+		$this->startIfEmpty('header');
+		?>
+		<header class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -152,9 +160,7 @@ $this->Title->setSiteTitle($this->Naming->title());
 						<span class="icon-bar"></span>
 					</button>
 					<?php
-					echo $this->Html->link($this->Title->getSiteTitle(),
-						$this->webroot, array('class' => 'navbar-brand')
-					);
+					echo $this->fetch('brand');
 					?>
 				</div>
 				<div class="navbar-collapse collapse">
@@ -224,52 +230,15 @@ $this->Title->setSiteTitle($this->Naming->title());
 						?>
 					</ul>
 					<?php
-					echo $this->startIfEmpty('rightMenu');
-					if (AuthComponent::user('id')):
-					?>
-					<p class="navbar-text navbar-right">
-						<?php
-						echo h(__(
-							'Logged in as %s',
-							$this->App->buildName(AuthComponent::user())
-						));
-						?>
-					</p>
-					<?php
-					else:
-						echo $this->Form->create('User', array(
-							'inputDefaults' => array(
-								'label' => false,
-								'div'   => array(
-									'class' => 'form-group'
-								),
-								'class' => 'form-control'
-							),
-							'url'           => array(
-								'plugin'     => null,
-								'controller' => 'users',
-								'action'     => 'login'
-							),
-							'class'         => 'navbar-form navbar-right'
-						));
-						echo $this->Form->input('username', array(
-							'placeholder' => __('Username')
-						));
-						echo $this->Form->input('password', array(
-							'placeholder' => _('Password')
-						));
-						echo $this->Form->end(array(
-							'div'   => 'form-group',
-							'class' => 'btn btn-default'
-						));
-					endif;
-
-					echo $this->end();
 					echo $this->fetch('rightMenu');
 					?>
 				</div>
 			</div>
-		</div>
+		</header>
+		<?php
+		$this->end();
+		echo $this->fetch('header');
+		?>
 
 		<?php
 		echo $this->fetch('beforeContainer');
@@ -289,32 +258,13 @@ $this->Title->setSiteTitle($this->Naming->title());
 			endif;
 
 			echo $this->Session->flash();
-			echo $content_for_layout;
+			echo $this->fetch('content');
 			?>
 
-			<hr>
-			<footer>
-				<span>
-					<?php
-					echo h(__('Copyright %d-%d ©', 2013, date('Y')));
-					echo ' - ';
-					echo $this->Html->link(
-						'CVO-Technologies',
-						'http://cvo-technologies.com/',
-						array('target' => '_BLANK')
-					);
-					echo ' & ';
-					echo $this->Html->link(
-						'Dev App ("0100Dev")',
-						'http://devapp.nl/',
-						array('target' => '_BLANK')
-					);
-					?>
-				</span>
-				<span class="pull-right">
-					<?php echo $this->Naming->footer()?>
-				</span>
-			</footer>
+			<!-- Footer -->
+			<?php
+			echo $this->element('Parts/footer');
+			?>
 		</div>
 		<?php
 		if ((isset($loadingModal) && $loadingModal)):
