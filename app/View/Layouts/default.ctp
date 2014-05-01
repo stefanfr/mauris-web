@@ -42,6 +42,8 @@ $this->element('Parts/NavbarElements/right_menu');
 			'name'    => 'author',
 			'content' => 'CVO-Technologies - 0100Dev'
 		));
+
+		echo $this->fetch('meta');
 		?>
 
 		<!-- styles -->
@@ -56,6 +58,8 @@ $this->element('Parts/NavbarElements/right_menu');
 				'ext'        => 'css'
 			)
 		));
+
+		echo $this->fetch('css');
 		?>
 
 		<!-- scripts -->
@@ -63,6 +67,8 @@ $this->element('Parts/NavbarElements/right_menu');
 		echo $this->Html->script('jquery.min');
 		echo $this->Html->script('bootstrap.min');
 		echo $this->Html->script('respond.min.js');
+
+		echo $this->fetch('script');
 		?>
 
 		<!-- icons -->
@@ -164,9 +170,6 @@ $this->element('Parts/NavbarElements/right_menu');
 					?>
 				</div>
 				<div class="navbar-collapse collapse">
-					<?php
-					echo $this->fetch('leftMenu');
-					?>
 					<ul class="nav navbar-nav">
 						<?php
 						if (CakePlugin::loaded('Website')):
@@ -182,55 +185,78 @@ $this->element('Parts/NavbarElements/right_menu');
 								'home'
 							);
 						endif;
-						echo $this->Menu->item($this->Html->link(
-							$this->Html->tag('span', '', array(
-								'class' => 'glyphicon glyphicon-home')
-							),
-							$homeRoute,
-							array('escapeTitle' => false)
+						$this->append(
+							'left_menu',
+							$this->Menu->item($this->Html->link(
+								$this->Html->tag('span', '', array(
+									'class' => 'glyphicon glyphicon-home')
+								),
+								$homeRoute,
+								array('escapeTitle' => false)
+							)
 						));
-						echo $this->Menu->item($this->Html->link(
-							__('News'),
-							array(
-								'plugin'     => null,
-								'controller' => 'posts',
-								'action'     => 'index'
+						$this->append(
+							'left_menu',
+							$this->Menu->item($this->Html->link(
+								__('News'),
+								array(
+									'plugin'     => null,
+									'controller' => 'posts',
+									'action'     => 'index'
+								)
 							)
 						));
 
 						if (CakePlugin::loaded('Schedule')):
-							echo $this->Menu->item($this->Html->link(
-								__('Schedule'),
-								array(
-									'plugin'     => 'schedule',
-									'controller' => 'schedule'
+							$this->append(
+								'left_menu',
+								$this->Menu->item($this->Html->link(
+									__('Schedule'),
+									array(
+										'plugin'     => 'schedule',
+										'controller' => 'schedule'
+									)
 								)
 							));
 						endif;
 						if ($can_manage):
-							echo $this->Menu->item($this->Html->link(
-								__('Manage'),
-								array(
-									'plugin'     => 'manage',
-									'controller' => 'manage',
-									'action'     => 'index'
+							$this->append(
+								'left_menu',
+								$this->Menu->item($this->Html->link(
+									__('Manage'),
+									array(
+										'plugin'     => 'manage',
+										'controller' => 'manage',
+										'action'     => 'index'
+									)
 								)
 							));
 						endif;
 
-						echo $this->Menu->item($this->Html->link(
-							__('Organization'),
-							array(
-								'plugin'     => null,
-								'controller' => 'pages',
-								'action'     => 'display',
-								'organization'
+						$this->append(
+							'left_menu',
+							$this->Menu->item($this->Html->link(
+								__('Organization'),
+								array(
+									'plugin'     => null,
+									'controller' => 'pages',
+									'action'     => 'display',
+									'organization'
+								)
 							)
 						));
+
+						echo $this->fetch('left_menu');
 						?>
 					</ul>
 					<?php
-					echo $this->fetch('rightMenu');
+					$rightMenuBlock = $this->fetch('rightMenu'); // Deprecated
+					if ($rightMenuBlock) {
+						CakeLog::warning(__('Block \'%1$s\' is deprecated! Use right_menu instead.', 'rightMenu'), 'view');
+
+						$this->assign('right_menu', $rightMenuBlock); // Assign the content to the new block
+					}
+					echo $this->fetch('right_menu');
 					?>
 				</div>
 			</div>

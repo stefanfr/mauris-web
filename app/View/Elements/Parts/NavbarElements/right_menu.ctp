@@ -1,6 +1,6 @@
 <?php
 
-$this->startIfEmpty('rightMenu');
+$this->startIfEmpty('right_menu');
 if (AuthComponent::user('id')):
 ?>
 <p class="navbar-text navbar-right">
