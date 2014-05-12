@@ -39,7 +39,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="panel panel-info">
-						<header class="panel-heading"><h2><?php h(__('Public transit'))?></h2></header>
+						<header class="panel-heading"><h2><?php echo h(__('Public transit'))?></h2></header>
 						<div class="panel-body" data-billboard-id="transit"></div>
 					</div>
 				</div>
