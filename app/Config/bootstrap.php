@@ -89,6 +89,8 @@ CakePlugin::load('Intermediary', array('routes' => true));
 CakePlugin::load('Billboard', array('routes' => true));
 CakePlugin::load('OvInfo');
 CakePlugin::load('DynList');
+CakePlugin::load('MaurisTheme');
+
 if ($_SERVER['HTTP_HOST'] == Configure::read('Website.hostname')) {
     CakePlugin::load('Website', array('routes' => true));
 } else {
