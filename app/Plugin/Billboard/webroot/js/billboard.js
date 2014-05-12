@@ -152,12 +152,14 @@ var billboard = {
 			url: url,
 			cache: false,
 			success: function(html) {
-				$('#temp-data').html(html);
+                var temp_data = $('#temp-data');
+                var billboard_data = $('[data-billboard-id="' + id + '"]');
 
-				if ($('#temp-data').html() !== $(id).html()) {
-					$('[data-billboard-id="' + id + '"]').fadeOut(function() {
-						$('[data-billboard-id="' + id + '"]').html(html);
-						$('[data-billboard-id="' + id + '"]').fadeIn(function() {
+                temp_data.html(html);
+
+				if (temp_data.html() !== billboard_data.html()) {
+                    billboard_data.fadeOut(function() {
+                        billboard_data.html(html).fadeIn(function() {
 							billboard.scroll(
 								'[data-billboard-container="' + entry.container + '"]',
 								false
@@ -165,7 +167,7 @@ var billboard = {
 						});
 					});
 				} else {
-					$('[data-billboard-id="' + id + '"]').html(html);
+                    billboard_data.html(html);
 				}
 
 				$('#modal-server-unavailable').modal('hide');
