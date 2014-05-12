@@ -1,5 +1,7 @@
 <?php
 
+App::uses('AuthComponent', 'Controller/Component');
+
 $this->startIfEmpty('right_menu');
 if (AuthComponent::user('id')):
 ?>

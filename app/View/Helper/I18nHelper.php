@@ -1,5 +1,7 @@
 <?php
 
+App::uses('AppHelper', 'View/Helper');
+
 class I18nHelper extends AppHelper {
 
 	public function element($element) {

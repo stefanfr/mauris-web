@@ -60,9 +60,6 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 
-Configure::write('Website.hostname', 'mauris.systems');
-
-Configure::load('local');
 
 Inflector::rules('singular', array('irregular' => array(
 	'caches' => 'cache'
@@ -77,12 +74,22 @@ Inflector::rules('singular', array('irregular' => array(
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
- 
+
 CakePlugin::load('DebugKit');
 CakePlugin::load('BoostCake');
 CakePlugin::load('Linkable');
 
-// Our own plugins
+/**
+ * Load our local configuration
+ */
+
+Configure::write('Website.hostname', 'mauris.systems');
+
+Configure::load('local');
+
+/**
+ * Load our plugins
+ */
 CakePlugin::load('Api');
 CakePlugin::load('Manage');
 CakePlugin::load('Intermediary', array('routes' => true));
