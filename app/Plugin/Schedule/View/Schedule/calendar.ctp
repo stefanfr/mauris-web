@@ -1,4 +1,12 @@
+
 <?
+$this->Html->scriptStart(array('block' => 'script'));
+?>
+var App = {};
+App.fullBaseUrl = <?php echo json_encode(substr(Router::url('/'), 0, -1)); ?>;
+<?php
+$this->Html->scriptEnd();
+
 $this->Title->addSegment(__('Schedule'));
 $this->Title->addSegment(__('Calendar'));
 
@@ -40,30 +48,10 @@ $this->Html->css('Schedule.fullcalendar', array('inline' => false));
 $this->Html->script('Schedule.app.calendar', array('inline' => false));
 
 $this->set('loadingModal', true);
-
-$targetData = array();
-$target = array();
-if ($this->get('target_class_id')) {
-    $targetData['classId'] = (int) $this->get('target_class_id');
-    $target['class'] = (int) $this->get('target_class_id');
-}
-if ($this->get('target_teacher_id')) {
-    $targetData['teacherId'] = (int) $this->get('target_teacher_id');
-    $target['teacher'] = (int) $this->get('target_teacher_id');
-}
-if ($this->get('target_classroom_id')) {
-    $targetData['classroomId'] = (int) $this->get('target_classroom_id');
-    $target['classroom'] = (int) $this->get('target_classroom_id');
-}
-$targetData['start'] = (int) $this->get('target_start');
-$targetData['end'] = (int) $this->get('target_end');
-$targetData['date'] = (int) $this->get('target_date');
-$targetData['schoolId'] = (int) $this->get('target_school_id');
-$targetData['departmentId'] = (int) $this->get('target_department_id');
 ?>
 <?=$this->Html->link(__('Simple schedule'), array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple'), $target))?>
 <script>
-var targetData = <?=json_encode($targetData)?>;
+var targetData = <?=json_encode($target)?>;
 targetData.startDate = new Date(targetData.start * 1000);
 targetData.endDate = new Date(targetData.end * 1000);
 targetData.dateDate = new Date(targetData.date * 1000);

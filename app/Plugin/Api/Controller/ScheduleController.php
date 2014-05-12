@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Class ScheduleController
+ *
+ * @deprecated
+ */
 class ScheduleController extends AppController {
 
     public $components = array(

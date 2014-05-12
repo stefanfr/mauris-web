@@ -6,17 +6,6 @@ $this->Title->addCrumbs(array(
 	array('controller' => 'schedule', 'action' => 'index'),
 	array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple')
 ));
-
-$target = array();
-if ($this->get('target_class_id')) {
-    $target['class'] = (int) $this->get('target_class_id');
-}
-if ($this->get('target_teacher_id')) {
-    $target['teacher'] = (int) $this->get('target_teacher_id');
-}
-if ($this->get('target_classroom_id')) {
-    $target['classroom'] = (int) $this->get('target_classroom_id');
-}
 ?>
 <?=$this->start('rightMenu'); ?>
 <form class="navbar-form navbar-right" method="POST">
@@ -35,7 +24,7 @@ if ($this->get('target_classroom_id')) {
 </form>
 <?=$this->end(); ?>
 <?=$this->Html->link(__('Calendar schedule'), array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'calendar'), $target))?>
-<? foreach ($this->get('entries') as $entry): ?>
+<? foreach ($events as $entry): ?>
 <div itemscope itemtype="http://schema.org/EducationEvent">
     <a itemprop="url" href="<?=Router::url(array('controller' => 'schedule', 'action' => 'view', $entry['id']))?>">
     <h1 itemprop="name"><?=(isset($entry['subject_title'])) ? $entry['subject_title'] : $entry['subject_abbreviation']?></h1>

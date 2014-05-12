@@ -97,7 +97,7 @@ $(function () {
 		},
 		ignoreTimezone: false,
 		eventSources: [{
-			url: "/api/schedule/view.json",
+			url: App.fullBaseUrl + '/schedule.json',
 			data: function () {
 				var returnArray = {};
 
@@ -106,8 +106,6 @@ $(function () {
 				} else {
 					returnArray[currentDisplay] = currentDisplayId;
 				}
-				
-				returnArray['department'] = targetData.departmentId;
 
 				return returnArray;
 			}
