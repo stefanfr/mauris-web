@@ -84,8 +84,13 @@ CakePlugin::load('Linkable');
  */
 
 Configure::write('Website.hostname', 'mauris.systems');
+Configure::write('Debug.ips', array('127.0.0.1'));
 
 Configure::load('local');
+
+if ((isset($_SERVER['REMOTE_ADDR'])) && (in_array($_SERVER['REMOTE_ADDR'], Configure::read('Debug.ips')))) {
+	Configure::write('debug', 2);
+}
 
 /**
  * Load our plugins

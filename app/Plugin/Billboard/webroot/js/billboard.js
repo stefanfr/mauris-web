@@ -2,7 +2,7 @@ var billboard = {
 	/**
 	 * @type Number The interval at wich to update the billboard content
 	 */
-	interval:    10,
+	interval:    60,
 	/**
 	 * 
 	 * @type Number Miliseconds per pixel scrolling speed
@@ -204,7 +204,7 @@ $(function() {
 		function() {
 			billboard.checkVersion();
 		},
-		2 * 1000
+		10 * 1000
 	);
 
 	var nextSeperator = true;

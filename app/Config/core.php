@@ -31,11 +31,7 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-if (isset($_SERVER['REMOTE_ADDR'])) {
-	if (in_array($_SERVER['REMOTE_ADDR'], array('80.100.128.152', '85.150.42.221', '127.0.0.1'))) {
-		Configure::write('debug', 2);
-	}
-}
+	Configure::write('debug', 0);
 
 /**
  * Configure the Error handler used to handle errors for your application. By default
