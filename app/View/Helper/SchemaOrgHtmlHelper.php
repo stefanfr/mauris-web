@@ -1,5 +1,6 @@
 <?php
 
+App::uses('AppHelper', 'View/Helper');
 App::uses('BoostCakeHtmlHelper', 'BoostCake.View/Helper');
 
 class SchemaOrgHtmlHelper extends BoostCakeHtmlHelper {

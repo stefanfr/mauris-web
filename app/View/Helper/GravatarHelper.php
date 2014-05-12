@@ -1,5 +1,7 @@
 <?php
 
+App::uses('AppHelper', 'View/Helper');
+
 class GravatarHelper extends AppHelper {
 
     public $helpers = array('Html');

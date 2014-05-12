@@ -1,5 +1,7 @@
 <?php
 
+App::uses('AppHelper', 'View/Helper');
+
 class NamingHelper extends Helper {
 
     public function title() {
