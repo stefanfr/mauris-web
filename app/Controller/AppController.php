@@ -76,6 +76,21 @@ class AppController extends Controller {
         );
         
         $this->set('can_manage', $this->PermissionCheck->checkPermission('manage', 'read'));
+
+	    if ((isset($this->params['prefix']) && $this->params['prefix'] == 'manage')) {
+		    $this->layout = 'manage';
+
+		    $this->PermissionCheck->settings['global_lookup'] = array('manage');
+
+		    if (!$this->Auth->user()) {
+			    throw new UnauthorizedException();
+		    }
+
+		    $hasAccess = $this->PermissionCheck->checkPermission('manage', 'read');
+		    if (!$hasAccess) {
+			    throw new ForbiddenException();
+		    }
+	    }
     }
 
 }

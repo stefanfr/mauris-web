@@ -96,7 +96,6 @@ if ((isset($_SERVER['REMOTE_ADDR'])) && (in_array($_SERVER['REMOTE_ADDR'], Confi
  * Load our plugins
  */
 CakePlugin::load('Api');
-CakePlugin::load('Manage');
 CakePlugin::load('Intermediary', array('routes' => true));
 CakePlugin::load('Billboard', array('routes' => true));
 CakePlugin::load('OvInfo');
@@ -104,7 +103,7 @@ CakePlugin::load('DynList');
 CakePlugin::load('MaurisTheme');
 
 if ($_SERVER['HTTP_HOST'] == Configure::read('Website.hostname')) {
-    CakePlugin::load('Website', array('routes' => true));
+	CakePlugin::load('Website', array('routes' => true));
 } else {
 	CakePlugin::load('Schedule', array('routes' => true));
 }
@@ -118,10 +117,10 @@ if ($_SERVER['HTTP_HOST'] == Configure::read('Website.hostname')) {
  * Feel free to remove or add filters as you see fit for your application. A few examples:
  *
  * Configure::write('Dispatcher.filters', array(
- *		'MyCacheFilter', //  will use MyCacheFilter class from the Routing/Filter package in your app.
- *		'MyPlugin.MyFilter', // will use MyFilter class from the Routing/Filter package in MyPlugin plugin.
- * 		array('callable' => $aFunction, 'on' => 'before', 'priority' => 9), // A valid PHP callback type to be called on beforeDispatch
- *		array('callable' => $anotherMethod, 'on' => 'after'), // A valid PHP callback type to be called on afterDispatch
+ *        'MyCacheFilter', //  will use MyCacheFilter class from the Routing/Filter package in your app.
+ *        'MyPlugin.MyFilter', // will use MyFilter class from the Routing/Filter package in MyPlugin plugin.
+ *        array('callable' => $aFunction, 'on' => 'before', 'priority' => 9), // A valid PHP callback type to be called on beforeDispatch
+ *        array('callable' => $anotherMethod, 'on' => 'after'), // A valid PHP callback type to be called on afterDispatch
  *
  * ));
  */
@@ -137,38 +136,38 @@ App::uses('CakeLog', 'Log');
 CakeLog::config('debug', array(
 	'engine' => 'File',
 	'types' => array('notice', 'info', 'debug'),
-	'file' => 'debug',
+	'file'  => 'debug',
 ));
 CakeLog::config('error', array(
 	'engine' => 'File',
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-	'file' => 'error',
+	'file'  => 'error',
 ));
 
 CakeLog::config('permission', array(
-    'engine' => 'File',
-    'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-    'scopes' => array('permissions'),
-    'file' => 'permission',
+	'engine' => 'File',
+	'types'  => array('warning', 'error', 'critical', 'alert', 'emergency'),
+	'scopes' => array('permissions'),
+	'file'   => 'permission',
 ));
 
 CakeLog::config('permission-debugging', array(
-    'engine' => 'File',
-    'types' => array('notice', 'info', 'debug'),
-    'scopes' => array('permissions'),
-    'file' => 'permission-debug',
+	'engine' => 'File',
+	'types'  => array('notice', 'info', 'debug'),
+	'scopes' => array('permissions'),
+	'file'   => 'permission-debug',
 ));
 
 CakeLog::config('cache-debugging', array(
-    'engine' => 'File',
-    'types' => array('notice', 'info', 'debug'),
-    'scopes' => array('caching'),
-    'file' => 'cache-debug',
+	'engine' => 'File',
+	'types'  => array('notice', 'info', 'debug'),
+	'scopes' => array('caching'),
+	'file'   => 'cache-debug',
 ));
 
 CakeLog::config('public-transit', array(
-    'engine' => 'File',
-    'types' => array('warning', 'error', 'critical', 'alert', 'emergency', 'notice', 'info', 'debug'),
-    'scopes' => array('public-transit'),
-    'file' => 'public-transit',
+	'engine' => 'File',
+	'types'  => array('warning', 'error', 'critical', 'alert', 'emergency', 'notice', 'info', 'debug'),
+	'scopes' => array('public-transit'),
+	'file'   => 'public-transit',
 ));
