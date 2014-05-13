@@ -1,13 +1,21 @@
 var billboard = {
 	/**
-	 * @type Number The interval at wich to update the billboard content
+     * The interval at wich to update the billboard content
+     *
+	 * @type Number
 	 */
 	interval:    60,
 	/**
-	 * 
-	 * @type Number Miliseconds per pixel scrolling speed
+	 * Miliseconds per pixel scrolling speed
+     *
+	 * @type Number
 	 */
 	scrollSpeed: 40,
+    /**
+     * All of the billboard data that can be updated using API calls
+     *
+     * @type Array
+     */
 	data: [
 		{
 			id:        'news',
@@ -42,7 +50,7 @@ var billboard = {
 	/**
 	 * Used to update all of the content on the billboard
 	 *
-	 * @returns {Void} Returns nothing
+	 * @returns {Void} Nothing
 	 */
 	update: function() {
 		var subInterval = this.interval / this.data.length;
@@ -82,6 +90,10 @@ var billboard = {
 			itemInterval += subInterval;
 		}
 	},
+    /**
+     * Checks if the version of the billboard currently running in the browser is the latest version. If not it causes
+     * a reload of the page to make sure the latest version is loaded.
+     */
 	checkVersion: function() {
 		if (billboard.version.current === undefined) {
 			$.ajax({
@@ -112,6 +124,12 @@ var billboard = {
 			});
 		}
 	},
+    /**
+     * Starts the scrolling animation on the provided selector
+     *
+     * @param selector The selector to the element that needs to scroll.
+     * @param scrollDown True when the content should scroll down and vise-versa
+     */
 	scroll: function(selector, scrollDown) {
 		if ($(selector).is(':animated')) {
 			return;
@@ -200,6 +218,9 @@ $(function() {
 		billboard.interval * 1000
 	);
 
+    /**
+     * Check for updates every 10 seconds
+     */
 	setInterval(
 		function() {
 			billboard.checkVersion();
