@@ -223,9 +223,10 @@ $this->element('Parts/NavbarElements/right_menu');
 								$this->Menu->item($this->Html->link(
 									__('Manage'),
 									array(
-										'plugin'     => 'manage',
-										'controller' => 'manage',
-										'action'     => 'index'
+										'plugin'     => null,
+										'controller' => 'home',
+										'action'     => 'index',
+										'manage'     => true
 									)
 								)
 							));
