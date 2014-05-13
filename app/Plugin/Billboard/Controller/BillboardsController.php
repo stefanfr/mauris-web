@@ -18,6 +18,12 @@ class BillboardsController extends AppController {
 		'limit' => 5
 	);
 
+	public function display($id) {
+		$this->Billboard->id = $id;
+
+		$this->set('billboard', $this->Billboard->read());
+	}
+
 	public function manage_index() {
 		$allowedScopes = $this->PermissionCheck->getScopes('billboard', 'read');
 
