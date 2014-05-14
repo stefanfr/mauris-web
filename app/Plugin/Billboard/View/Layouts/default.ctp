@@ -40,7 +40,7 @@ $this->end();
 // Brand
 $this->start('brand');
 ?>
-Mauris - Billboard
+Mauris - <?php echo h($configuration['title']) ?>
 <?php
 $this->end();
 
@@ -51,7 +51,11 @@ $this->start('header');
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5"><span class="navbar-brand"><? echo $this->fetch('brand') ?></span></div>
+		<?php if ($configuration['show_clock']): ?>
 			<div class="col-md-2"><span class="navbar-brand time" id="clock"></span></div>
+		<?php else: ?>
+			<div class="col-md-2"></div>
+		<?php endif; ?>
 			<div class="col-md-5"><?php echo $this->fetch('rightMenu') ?></div>
 		</div>
 	</div>

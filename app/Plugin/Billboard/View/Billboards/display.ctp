@@ -1,3 +1,20 @@
+<?php
+if (!empty($billboard)) {
+	$configuration =  array_diff_key($billboard['Billboard'], array_flip(array(
+		'organization_id', 'location_id', 'department_id'
+	)));
+} else {
+	$configuration = array(
+		'location'   => __('Unknown'),
+		'title'      => __('Billboard'),
+		'show_clock' => true,
+	);
+}
+
+$this->Title->setPageTitle($configuration['title']);
+
+$this->set(compact('configuration'));
+?>
 <div id="temp-data" style="display: none;"></div>
 <div class="row">
     <div class="col-md-8">
