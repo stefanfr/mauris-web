@@ -2,6 +2,11 @@
 
 App::uses('AppController', 'Controller');
 
+/**
+ * Class UsersController
+ *
+ * @property User User
+ */
 class UsersController extends AppController {
 
     public function beforeFilter() {
@@ -96,7 +101,84 @@ class UsersController extends AppController {
     public function logout() {
         return $this->redirect($this->Auth->logout());
     }
-    
+
+	public function manage_index() {
+		$hasPermission = $this->PermissionCheck->checkPermission('user', 'read', 'system');
+		if (!$hasPermission) {
+			throw new ForbiddenException();
+		}
+
+		$users = $this->User->find('all');
+
+		$this->set(compact('users'));
+	}
+
+	public function manage_edit($id) {
+		$this->User->id = $id;
+		$user = $this->User->read();
+		if (empty($user)) {
+			throw new NotFoundException();
+		}
+
+		if (!$this->request->data) {
+			$this->request->data = $user;
+		}
+
+		if ($this->request->is(array('post', 'put'))) {
+			$this->User->id = $id;
+			if ($this->User->save($this->request->data)) {
+				Cache::clearGroup('users');
+
+				$this->Session->setFlash(__('The user has been changed.'), 'alert', array(
+					'plugin' => 'BoostCake',
+					'class'  => 'alert-success'
+				));
+
+				return $this->redirect(array('action' => 'index'));
+			}
+
+			$this->Session->setFlash(__('Could not change the user'), 'alert', array(
+				'plugin' => 'BoostCake',
+				'class'  => 'alert-danger'
+			));
+		}
+
+		$this->set(compact('user'));
+	}
+
+	public function manage_delete($id) {
+		$this->User->id = $id;
+		$user = $this->User->read();
+		if (empty($user)) {
+			throw new NotFoundException();
+		}
+
+		if (!$this->request->data) {
+			$this->request->data = $user;
+		}
+
+		if ($this->request->is(array('post', 'delete'))) {
+			$this->User->id = $id;
+			if ($this->User->delete()) {
+				Cache::clearGroup('users');
+
+				$this->Session->setFlash(__('The user has been removed.'), 'alert', array(
+					'plugin' => 'BoostCake',
+					'class'  => 'alert-success'
+				));
+
+				return $this->redirect(array('action' => 'index'));
+			}
+
+			$this->Session->setFlash(__('Could not remove the user'), 'alert', array(
+				'plugin' => 'BoostCake',
+				'class'  => 'alert-danger'
+			));
+		}
+
+		$this->set(compact('user'));
+	}
+
     public function install(){     
         /*if($this->Acl->Aro->findByAlias("Admin")){ 
             $this->redirect('/'); 
