@@ -1,0 +1,1 @@
+<h1><?php echo h(__('Mauris installer')) ?></h1>
