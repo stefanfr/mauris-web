@@ -84,15 +84,16 @@ class AppController extends Controller {
 			    case 'install':
 				    $this->layout = $this->params['prefix'];
 		    }
+
+		    $this->PermissionCheck->settings['global_lookup'] = array('manage');
+
 		    switch ($this->params['prefix']) {
 			    case 'manage':
-				    $this->PermissionCheck->settings['global_lookup'] = array('manage');
-
 				    if (!$this->Auth->user()) {
 					    throw new UnauthorizedException();
 				    }
 
-				    $hasAccess = $this->PermissionCheck->checkPermission('manage', 'read');
+				    $hasAccess = $this->PermissionCheck->checkPermission($this->params['prefix'], 'read');
 				    if (!$hasAccess) {
 					    throw new ForbiddenException();
 				    }
