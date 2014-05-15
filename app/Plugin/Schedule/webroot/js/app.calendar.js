@@ -97,7 +97,7 @@ $(function () {
 		},
 		ignoreTimezone: false,
 		eventSources: [{
-			url: App.fullBaseUrl + '/schedule.json',
+			url: App.fullBaseUrl + '/api/schedule/view.json',
 			data: function () {
 				var returnArray = {};
 
