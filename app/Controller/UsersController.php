@@ -102,7 +102,7 @@ class UsersController extends AppController {
         return $this->redirect($this->Auth->logout());
     }
 
-	public function manage_index() {
+	public function admin_index() {
 		$hasPermission = $this->PermissionCheck->checkPermission('user', 'read', 'system');
 		if (!$hasPermission) {
 			throw new ForbiddenException();
@@ -113,7 +113,7 @@ class UsersController extends AppController {
 		$this->set(compact('users'));
 	}
 
-	public function manage_edit($id) {
+	public function admin_edit($id) {
 		$this->User->id = $id;
 		$user = $this->User->read();
 		if (empty($user)) {
@@ -146,7 +146,7 @@ class UsersController extends AppController {
 		$this->set(compact('user'));
 	}
 
-	public function manage_delete($id) {
+	public function admin_delete($id) {
 		$this->User->id = $id;
 		$user = $this->User->read();
 		if (empty($user)) {

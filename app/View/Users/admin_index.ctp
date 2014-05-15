@@ -14,8 +14,8 @@ $this->Title->addCrumbs(array(
 	<thead>
 	<tr>
 		<th><?php echo h(__('Name')) ?></th>
-		<th><?php echo h(__('Change'))?></th>
-		<th><?php echo h(__('Remove'))?></th>
+		<th><?php echo h(__('Change')) ?></th>
+		<th><?php echo h(__('Remove')) ?></th>
 	</tr>
 	</thead>
 	<tbody>

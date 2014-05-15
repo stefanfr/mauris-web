@@ -22,9 +22,11 @@ class OrganizationsController extends AppController {
 
 	public function manage_index() {
 		if ($this->SchoolInformation->isSchoolIdAvailable()) {
-			$this->redirect(array('action' => 'edit', $this->SchoolInformation->getSchoolId()));
+			return $this->redirect(array('action' => 'edit', $this->SchoolInformation->getSchoolId()));
 		}
+	}
 
+	public function admin_index() {
 		debug($this->PermissionCheck->getScopes('organization', 'read'));
 
 		$this->set('organizations', $this->Paginator->paginate('School'));
