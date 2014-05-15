@@ -116,6 +116,7 @@ if ((isset($_SERVER['HTTP_HOST'])) && ($_SERVER['HTTP_HOST'] == 'api.ictcollege.
     );*/
 
 	Router::connect('/manage', array('controller' => 'home', 'prefix' => 'manage'));
+	Router::connect('/admin', array('controller' => 'home', 'admin' => true));
 
 	/**
  * Here, we are connecting '/' (base path) to controller called 'Pages',

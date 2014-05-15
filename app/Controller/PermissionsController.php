@@ -22,6 +22,12 @@ class PermissionsController extends AppController {
 				'system_alias' => 'billboard',
 				'title'        => 'Billboard'
 			)
+		),
+		array(
+			'Permission' => array(
+				'system_alias' => 'admin',
+				'title'        => 'Admin'
+			)
 		)
 	);
 

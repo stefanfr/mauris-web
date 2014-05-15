@@ -8,6 +8,10 @@ class HomeController extends AppController {
 
 	}
 
+	public function admin_index() {
+
+	}
+
 	public function install_index() {
 
 	}

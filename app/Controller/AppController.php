@@ -81,14 +81,16 @@ class AppController extends Controller {
 	    if (isset($this->params['prefix'])) {
 		    switch ($this->params['prefix']) {
 			    case 'manage':
+			    case 'admin':
 			    case 'install':
 				    $this->layout = $this->params['prefix'];
 		    }
 
-		    $this->PermissionCheck->settings['global_lookup'] = array('manage');
+		    $this->PermissionCheck->settings['global_lookup'] = array('manage', 'admin');
 
 		    switch ($this->params['prefix']) {
 			    case 'manage':
+			    case 'admin':
 				    if (!$this->Auth->user()) {
 					    throw new UnauthorizedException();
 				    }
