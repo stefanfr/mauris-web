@@ -172,9 +172,10 @@ $this->element('Parts/NavbarElements/right_menu');
 						<?php
 						if (CakePlugin::loaded('Website')):
 							$homeRoute = array(
-								'plugin'     => 'website',
+								'plugin'  => null,
 								'controller' => 'home',
-								'website'    => false
+								'action'  => 'index',
+								'website' => true
 							);
 						else:
 							$homeRoute = array(

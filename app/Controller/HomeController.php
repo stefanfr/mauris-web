@@ -4,6 +4,10 @@ App::uses('AppController', 'Controller');
 
 class HomeController extends AppController {
 
+	public function website_index() {
+
+	}
+
 	public function manage_index() {
 
 	}

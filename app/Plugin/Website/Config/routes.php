@@ -1,6 +1,6 @@
 <?php
 
-Router::connect('/', array('plugin' => 'website', 'controller' => 'home', 'action' => 'index'));
+Router::connect('/', array('controller' => 'home', 'action' => 'index', 'website' => true));
 Router::promote();
 
 Router::connect('/contribute', array('plugin' => 'website', 'controller' => 'contributions', 'action' => 'contribute'));
