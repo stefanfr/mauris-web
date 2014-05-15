@@ -77,7 +77,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand"
-			   href="<?= Router::url(array('plugin' => false, 'controller' => 'home', 'action' => 'index', 'manage' => true)) ?>">Mauris
+			   href="<?= Router::url(array('plugin' => false, 'controller' => 'home', 'action' => 'index')) ?>">Mauris
 				- <?= __('Admin') ?></a>
 		</div>
 		<div class="navbar-collapse collapse">
