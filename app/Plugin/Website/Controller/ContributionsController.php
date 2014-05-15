@@ -13,27 +13,18 @@ class ContributionsController extends WebsiteAppController {
 	public function index() {
 		$this->set('contributers', $this->_getContributers());
 	}
-	
-	public function contribute() {
-		
-	}
-	
-	public function info($type) {
-		$viewPath = array($this->viewPath, 'types', $type);
 
-		try {
-			$this->render(implode(DS, $viewPath));
-		} catch (MissingViewException $exception) {
-			if (Configure::read('debug')) {
-				throw $exception;
-			}
-			throw new NotFoundException();
-		}
-	}
-	
 	private function _getContributers() {
 		$contributors = array();
-		
+
+		if (!function_exists('curl_init')) {
+			$this->log(
+				'Could not get the contributors list of GitHub because cURL isn\'t installed', LOG_WARNING, 'website'
+			);
+
+			return false;
+		}
+
 		// create a new cURL resource
 		$ch = curl_init();
 
@@ -52,19 +43,36 @@ class ContributionsController extends WebsiteAppController {
 			$contributor['gravatar_id'] = $jsonContributor->author->gravatar_id;
 			$contributor['profile'] = $jsonContributor->author->html_url;
 			$contributor['source'] = 'github';
-			
+
 			$contributors[] = $contributor;
 		}
-		
+
 		usort($contributors, function ($a, $b) {
 			if ($a['contributions'] == $b['contributions']) {
 				return 0;
 			}
-			
+
 			return ($a['contributions'] < $b['contributions']) ? 1 : 0;
 		});
-		
+
 		return $contributors;
+	}
+	
+	public function contribute() {
+
+	}
+
+	public function info($type) {
+		$viewPath = array($this->viewPath, 'types', $type);
+
+		try {
+			$this->render(implode(DS, $viewPath));
+		} catch (MissingViewException $exception) {
+			if (Configure::read('debug')) {
+				throw $exception;
+			}
+			throw new NotFoundException();
+		}
 	}
 	
 }

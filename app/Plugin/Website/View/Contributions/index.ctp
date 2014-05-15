@@ -39,6 +39,7 @@ $this->Title->addCrumbs(array(
 				</nav>
 			</div>
 		</div>
+		<?php if ($contributers): ?>
 		<div class="row">
 			<div class="col col-sm-12">
 				<div class="well">
@@ -63,6 +64,7 @@ $this->Title->addCrumbs(array(
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
 	</main>
 	<div class="col col-sm-3">
 		<div class="row">
