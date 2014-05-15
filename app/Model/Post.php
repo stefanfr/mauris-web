@@ -1,20 +1,23 @@
 <?php
+
 class Post extends AppModel {
-    
-    public $validate = array(
-        'scope' => array(
-             'rule' => array('inList', array('system', 'school', 'department')),
-         ),
-        'title' => array(
-            'rule' => 'notEmpty'
-        ),
-        'body' => array(
-            'rule' => 'notEmpty'
-        ),
-        'published' => array(
-            'rule' => array('boolean')
-        )
-    );
+
+	public $validate = array(
+		'scope'     => array(
+			'rule'     => array('inList', array('system', 'school', 'department')),
+			'required' => true
+		),
+		'title'     => array(
+			'required' => true
+		),
+		'body'      => array(
+			'required' => true
+		),
+		'published' => array(
+			'rule'     => array('boolean'),
+			'required' => true
+		)
+	);
     
     public $hasMany = array(
         'Comments' => array(
