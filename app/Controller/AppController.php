@@ -68,7 +68,7 @@ class AppController extends Controller {
     );
         
     function beforeFilter() {
-        $this->Auth->allow('index', 'view', 'display');
+	    $this->Auth->allow('index', 'view', 'display', 'install_check', 'install_load');
         $this->Auth->authenticate = array(
             'Form' => array(
                 'userModel' => 'User',
@@ -78,19 +78,28 @@ class AppController extends Controller {
         
         $this->set('can_manage', $this->PermissionCheck->checkPermission('manage', 'read'));
 
-	    if ((isset($this->params['prefix']) && $this->params['prefix'] == 'manage')) {
-		    $this->layout = 'manage';
+	    if (isset($this->params['prefix'])) {
+		    switch ($this->params['prefix']) {
+			    case 'manage':
+			    case 'install':
+				    $this->layout = $this->params['prefix'];
+		    }
+		    switch ($this->params['prefix']) {
+			    case 'manage':
+				    $this->PermissionCheck->settings['global_lookup'] = array('manage');
 
-		    $this->PermissionCheck->settings['global_lookup'] = array('manage');
+				    if (!$this->Auth->user()) {
+					    throw new UnauthorizedException();
+				    }
 
-		    if (!$this->Auth->user()) {
-			    throw new UnauthorizedException();
+				    $hasAccess = $this->PermissionCheck->checkPermission('manage', 'read');
+				    if (!$hasAccess) {
+					    throw new ForbiddenException();
+				    }
+
+				    break;
 		    }
 
-		    $hasAccess = $this->PermissionCheck->checkPermission('manage', 'read');
-		    if (!$hasAccess) {
-			    throw new ForbiddenException();
-		    }
 	    }
     }
 
