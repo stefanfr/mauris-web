@@ -13,6 +13,9 @@ class OrganizationsController extends AppController {
 		'Paginator' => array(
 			'settings' => array(
 				'limit' => 5,
+				'order' => array(
+					'School.name ASC',
+				)
 			)
 		),
 		'Security'
@@ -23,6 +26,12 @@ class OrganizationsController extends AppController {
 		parent::beforeFilter();
 
 		$this->PermissionCheck->settings['global_lookup'][] = 'organization';
+	}
+
+	public function website_index() {
+		$organizations = $this->Paginator->paginate('School');
+
+		$this->set('organizations', $organizations);
 	}
 
 	public function manage_index() {
