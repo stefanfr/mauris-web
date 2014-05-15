@@ -1,37 +1,41 @@
 .navbar-static-top {
-  margin-bottom: 19px;
+	margin-bottom: 19px;
 }
 
 .assignment-state-make {
-    color: green;
+	color: green;
 }
 
 .assignment-state-done {
-    color: #feb91d;
+	color: #feb91d;
 }
 
 .assignment-state-check {
-    color: red;
+	color: red;
 }
 
-.eventCancelled{
-    border-color: DarkGray !important;
-    background-color: LightGray !important;
-    color: red !important;
+.eventCancelled {
+	border-color:     DarkGray !important;
+	background-color: LightGray !important;
+	color:            red !important;
 }
-
 
 /* Nav Announcements */
 
 .announcement-heading {
-  font-size: 50px;
-  margin: 0;
+	font-size: 50px;
+	margin:    0;
 }
 
 .announcement-text {
-  margin: 0;
+	margin: 0;
 }
 
 button, input, optgroup, select, textarea {
-  margin-right: 5px;
+	margin-right: 5px;
+}
+
+.required label:after {
+	content: " *";
+	color:   red;
 }
