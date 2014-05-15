@@ -120,6 +120,44 @@ class OrganizationsController extends AppController {
 		$this->set('organizations', $this->Paginator->paginate('School'));
 	}
 
+	public function admin_add() {
+		if (!$this->PermissionCheck->checkPermission('organization', 'create', 'system')) {
+			throw new ForbiddenException();
+		}
+
+		$styles = $this->School->UsesStyle->find('list', array(
+			'fields'     => array('id', 'title'),
+			'recursive'  => 2,
+			'conditions' => array(
+				'UsesStyle.school_id IS NULL'
+			),
+		));
+		$languages = $this->School->UsesLanguage->find('list');
+
+		$this->set(compact('styles', 'languages'));
+
+		if ($this->request->is(array('post', 'put'))) {
+			$this->School->create();
+			if ($this->School->save($this->request->data)) {
+				Cache::clearGroup('organization');
+
+				$this->Session->setFlash(__('The organization has been created'), 'alert', array(
+					'plugin' => 'BoostCake',
+					'class'  => 'alert-success'
+				));
+
+				$this->redirect(array('action' => 'edit', $this->School->id));
+
+				return;
+			}
+
+			$this->Session->setFlash(__('Could not create the organization'), 'alert', array(
+				'plugin' => 'BoostCake',
+				'class'  => 'alert-danger'
+			));
+		}
+	}
+
 	public function admin_edit($id) {
 		$this->School->id = $id;
 

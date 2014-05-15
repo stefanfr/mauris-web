@@ -12,6 +12,13 @@ $this->Title->addCrumbs(array(
 $this->set('title_for_layout', $this->Title->getPageTitle());
 ?>
 <h1><?php echo h($this->Title->getPageTitle()) ?></h1>
+<?php
+echo $this->Html->link(
+	__('%1$s Add', '<span class="fa fa-plus"></span>'),
+	array('action' => 'add'),
+	array('class' => 'btn btn-default', 'escape' => false)
+)
+?>
 <table class="table">
 	<thead>
 	<tr>
