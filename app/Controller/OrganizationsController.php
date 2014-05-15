@@ -2,6 +2,11 @@
 
 App::uses('CakeEmail', 'Network/Email');
 
+/**
+ * Class OrganizationsController
+ *
+ * @property School School
+ */
 class OrganizationsController extends AppController {
 
 	public $components = array(
@@ -24,12 +29,6 @@ class OrganizationsController extends AppController {
 		if ($this->SchoolInformation->isSchoolIdAvailable()) {
 			return $this->redirect(array('action' => 'edit', $this->SchoolInformation->getSchoolId()));
 		}
-	}
-
-	public function admin_index() {
-		debug($this->PermissionCheck->getScopes('organization', 'read'));
-
-		$this->set('organizations', $this->Paginator->paginate('School'));
 	}
 
 	public function manage_edit($id) {
@@ -111,6 +110,119 @@ class OrganizationsController extends AppController {
 			));
 		}
 		$this->set(compact('organization', 'styles', 'languages'));
+	}
+
+	public function admin_index() {
+		if (!$this->PermissionCheck->checkPermission('organization', 'read', 'system')) {
+			throw new ForbiddenException();
+		}
+
+		$this->set('organizations', $this->Paginator->paginate('School'));
+	}
+
+	public function admin_edit($id) {
+		$this->School->id = $id;
+
+		if (!$this->PermissionCheck->checkPermission('organization', 'update', 'system')) {
+			throw new ForbiddenException();
+		}
+
+		$organization = $this->School->read();
+		if (empty($organization)) {
+			throw new NotFoundException();
+		}
+
+		if (empty($this->request->data)) {
+			$this->request->data = $organization;
+		}
+
+		$styles = $this->School->UsesStyle->find('list', array(
+			'fields'     => array('id', 'title', 'UsedBySchool.name'),
+			'recursive'  => 2,
+			'conditions' => array(
+				'or' => array(
+					'UsesStyle.school_id' => $organization['School']['id'],
+					'UsesStyle.school_id IS NULL'
+				)
+			),
+		));
+		$languages = $this->School->UsesLanguage->find('list');
+
+		$this->set(compact('organization', 'styles', 'languages'));
+
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->School->save($this->request->data)) {
+				Cache::clearGroup('organization');
+
+				$this->Session->setFlash(__('The organization has been changed'), 'alert', array(
+					'plugin' => 'BoostCake',
+					'class'  => 'alert-success'
+				));
+
+				if ($this->Auth->user('system_email') != '') {
+					$email = new CakeEmail();
+					$email->config('default');
+					$email->emailFormat('both');
+					$email->addTo($this->Auth->user('system_email'));
+					$email->template('organization_change');
+					$email->viewVars(array_merge(
+						array(
+							'original' => $organization,
+							'current'  => $this->request->data,
+							'styles'   => call_user_func_array('array_replace', $styles)
+						),
+						compact('organization', 'languages')
+					));
+					$email->send();
+				}
+
+				return;
+			}
+
+			$this->Session->setFlash(__('Could not change the organization'), 'alert', array(
+				'plugin' => 'BoostCake',
+				'class'  => 'alert-danger'
+			));
+		}
+	}
+
+	public function admin_delete($id) {
+		$this->School->id = $id;
+
+		if (!$this->PermissionCheck->checkPermission('organization', 'delete', 'system')) {
+			throw new ForbiddenException();
+		}
+
+		$organization = $this->School->read();
+		if (empty($organization)) {
+			throw new NotFoundException();
+		}
+
+		$this->set(compact('organization'));
+
+		if ($this->request->is(array('post', 'delete'))) {
+			if ($this->School->delete()) {
+				Cache::clearGroup('organization');
+
+				$this->Session->setFlash(__('The organization has been removed'), 'alert', array(
+					'plugin' => 'BoostCake',
+					'class'  => 'alert-success'
+				));
+
+				/*
+				 * The organization has been removed so its no longer possible to go the the organization's edit page.
+				 * This is to make sure the user gets redirected to the index.
+				 */
+				$this->redirect(array('action' => 'index'));
+
+				return;
+			}
+
+			$this->Session->setFlash(__('Could not remove the organization'), 'alert', array(
+				'plugin' => 'BoostCake',
+				'class'  => 'alert-danger'
+			));
+		}
 	}
 
 }
