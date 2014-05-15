@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-05-15 17:30+0000\n"
-"PO-Revision-Date: 2014-04-27 22:39+0200\n"
+"PO-Revision-Date: 2014-05-15 19:40+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,24 +100,20 @@ msgid "The garbage collector has run successfully"
 msgstr "De garbage collector is succesvol uitgevoerd"
 
 #: Controller/CommentController.php:11
-#, fuzzy
 msgid "The comment you want to reply to doesn't exist"
 msgstr "Het commentaar waarop je wilt reageren bestaat niet"
 
 #: Controller/CommentController.php:29
-#, fuzzy
 msgid "Could not find that post"
-msgstr "Kon de aanwezigheids melding niet aanpassen"
+msgstr "Kon dat bericht niet vinden"
 
 #: Controller/CommentController.php:57
-#, fuzzy
 msgid "Your comment has been created"
-msgstr "Je commentaar is toegevoegd."
+msgstr "Je commentaar is aangemaakt"
 
 #: Controller/CommentController.php:69
-#, fuzzy
 msgid "Could not create your comment"
-msgstr "Kon de afdeling niet aanmaken"
+msgstr "Kon je commentaar niet aanmaken"
 
 #: Controller/CommentController.php:78;83
 msgid "Invalid comment"
@@ -132,9 +128,8 @@ msgid "Unable to update your comment."
 msgstr "Commentaar kon niet worden aangepast."
 
 #: Controller/FeedbackController.php:53
-#, fuzzy
 msgid "Thank you for your feedback!"
-msgstr "Dank je voor je terugkoppeling!"
+msgstr "Dank je voor je feedback!"
 
 #: Controller/FeedbackController.php:61
 msgid "Could not add your feedback"
@@ -142,45 +137,39 @@ msgstr "Kon je terugkoppeling niet toevoegen"
 
 #: Controller/HomeController.php:22
 msgid "Roles"
-msgstr ""
+msgstr "Rollen"
 
 #: Controller/HomeController.php:31
 msgid "Permissions"
-msgstr ""
+msgstr "Rechten"
 
 #: Controller/OrganizationsController.php:48
-#, fuzzy
 msgid "Could not find that organization"
-msgstr "Kon de organisatie niet aanpassen"
+msgstr "Kon die organisatie niet vinden"
 
 #: Controller/OrganizationsController.php:90;204
-#, fuzzy
 msgid "The organization has been changed"
-msgstr "De organisatie is aangepast."
+msgstr "De organisatie is aangepast"
 
 #: Controller/OrganizationsController.php:116;229
 msgid "Could not change the organization"
 msgstr "Kon de organisatie niet aanpassen"
 
 #: Controller/OrganizationsController.php:153
-#, fuzzy
 msgid "The organization has been created"
-msgstr "De organisatie is aangepast."
+msgstr "De organisatie is aangemaakt"
 
 #: Controller/OrganizationsController.php:163
-#, fuzzy
 msgid "Could not create the organization"
-msgstr "Kon de organisatie niet aanpassen"
+msgstr "Kon de organisatie niet aanmaken"
 
 #: Controller/OrganizationsController.php:254
-#, fuzzy
 msgid "The organization has been removed"
-msgstr "De organisatie is aangepast."
+msgstr "De organisatie is verwijderd"
 
 #: Controller/OrganizationsController.php:268
-#, fuzzy
 msgid "Could not remove the organization"
-msgstr "Kon de organisatie niet aanpassen"
+msgstr "Kon de organisatie niet verwijderen"
 
 #: Controller/PostsController.php:78 Controller/SitemapsController.php:107
 #: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:200
@@ -192,39 +181,32 @@ msgid "Invalid post"
 msgstr "Ongeldige post"
 
 #: Controller/PostsController.php:149
-#, fuzzy
 msgid "Your post has been created"
-msgstr "Je post is aangepast."
+msgstr "Je bericht is aangepast"
 
 #: Controller/PostsController.php:157
-#, fuzzy
 msgid "Could not create your post"
-msgstr "Kon de afdeling niet aanmaken"
+msgstr "Kon de je bericht niet aanmaken"
 
 #: Controller/PostsController.php:171
-#, fuzzy
 msgid "Could not find this post"
-msgstr "Kon de aanwezigheids melding niet aanpassen"
+msgstr "Kon dit bericht niet vinden"
 
 #: Controller/PostsController.php:178
-#, fuzzy
 msgid "Your post has been changed"
-msgstr "Je post is opgeslagen."
+msgstr "Je bericht is aangepast"
 
 #: Controller/PostsController.php:186
-#, fuzzy
 msgid "Could not change your post"
-msgstr "Kon de aanwezigheids melding niet aanpassen"
+msgstr "Kon je bericht niet aanpassen"
 
 #: Controller/PostsController.php:203
-#, fuzzy
 msgid "Your post has been removed"
-msgstr "Je post is opgeslagen."
+msgstr "Je bericht is verwijderd"
 
 #: Controller/PostsController.php:211
-#, fuzzy
 msgid "Could not remove your post"
-msgstr "Kon je terugkoppeling niet toevoegen"
+msgstr "Kon je bericht niet verwijderen"
 
 #: Controller/SitemapsController.php:99 View/Layouts/admin.ctp:138
 #: View/Layouts/manage.ctp:134
@@ -261,14 +243,12 @@ msgid "The absence report has been removed"
 msgstr "De aanwezigheids melding is verwijderd"
 
 #: Controller/TeacherController.php:11
-#, fuzzy
 msgid "Could not find this teacher"
-msgstr "Kon de aanwezigheids melding aanmaken"
+msgstr "Kon die docent niet vinden"
 
 #: Controller/UsersController.php:26
-#, fuzzy
 msgid "Could not find this user"
-msgstr "Kon de aanwezigheids melding aanmaken"
+msgstr "Kon die gebruiker niet vinden"
 
 #: Controller/UsersController.php:35;48;64
 msgid "The user has been saved"
@@ -296,33 +276,28 @@ msgid "Invalid username or password, try again"
 msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
 
 #: Controller/UsersController.php:132
-#, fuzzy
 msgid "The user has been changed."
-msgstr "De gebruiker is opgeslagen"
+msgstr "De gebruiker is aangepast."
 
 #: Controller/UsersController.php:140
-#, fuzzy
 msgid "Could not change the user"
-msgstr "Kon de aanwezigheids melding niet aanpassen"
+msgstr "Kon de gebruiker niet aanpassen"
 
 #: Controller/UsersController.php:165
-#, fuzzy
 msgid "The user has been removed."
-msgstr "De gebruiker is opgeslagen"
+msgstr "De gebruiker is verwijderd."
 
 #: Controller/UsersController.php:173
-#, fuzzy
 msgid "Could not remove the user"
-msgstr "Kon de aanwezigheids melding aanmaken"
+msgstr "Kon de gebruiker niet verwijderen"
 
 #: Controller/Component/InstallComponent.php:21
 msgid "All %1$s are set-up correctly."
-msgstr ""
+msgstr "Alle %1$s zijn correct opgezet."
 
 #: Controller/Component/InstallComponent.php:31
-#, fuzzy
 msgid "%1$s %2$s doesn't exist."
-msgstr "Die school bestaat niet"
+msgstr "%1$s %2$s bestaat niet."
 
 #: Controller/Component/LanguageAwareComponent.php:8
 msgid "Processing organization language"
@@ -346,7 +321,7 @@ msgstr ""
 
 #: Plugin/Billboard/View/Billboards/display.ctp:8
 msgid "Unknown"
-msgstr ""
+msgstr "Onbekend"
 
 #: Plugin/Billboard/View/Billboards/display.ctp:9
 msgid "Billboard"
@@ -392,7 +367,7 @@ msgstr "Het informatiebord is aan het herladen..."
 
 #: Plugin/Billboard/View/Billboards/manage_index.ctp:11
 msgid "Location"
-msgstr ""
+msgstr "Locatie"
 
 #: Plugin/Billboard/View/Billboards/manage_index.ctp:12
 #: View/Assignments/manage_index.ctp:14 View/Organizations/admin_index.ctp:26
@@ -643,10 +618,12 @@ msgid ""
 "Go to %2$s to help translate %1$s easiliy without having work on the code "
 "directly"
 msgstr ""
+"Ga naar %2$s om te helpen %1$s te vertalen zonder rechtstreeks aan de code "
+"te hoeven werken"
 
 #: Plugin/Website/View/Elements/Contributions/types/code/techniques.ctp:1
 msgid "Techniques"
-msgstr ""
+msgstr "Technieken"
 
 #: Plugin/Website/View/Home/index.ctp:1
 msgid "Welcome to %1$s"
@@ -824,7 +801,7 @@ msgstr ""
 
 #: View/Home/install_index.ctp:1
 msgid "Mauris installer"
-msgstr ""
+msgstr "Mauris installatie"
 
 #: View/Home/manage_index.ctp:1
 msgid "Edit organizations"
@@ -855,17 +832,16 @@ msgstr "Organisaties"
 
 #: View/Layouts/admin.ctp:89 View/Users/admin_delete.ctp:6
 #: View/Users/admin_edit.ctp:6 View/Users/admin_index.ctp:6
-#, fuzzy
 msgid "Users"
-msgstr "Gebruikersnaam"
+msgstr "Gebruikers"
 
 #: View/Layouts/install.ctp:3
 msgid "%1$s - Installer"
-msgstr ""
+msgstr "%1$s - Installatie"
 
 #: View/Layouts/install.ctp:143
 msgid "Installer"
-msgstr ""
+msgstr "Installatie"
 
 #: View/Layouts/manage.ctp:83 View/Sitemaps/posts.ctp:9
 msgid "Posts"
@@ -881,22 +857,20 @@ msgid "This email was sent using the"
 msgstr "Deze email was verstuurd met het"
 
 #: View/Organizations/admin_add.ctp:7
-#, fuzzy
 msgid "Add organization"
-msgstr "Bewerk organisaties"
+msgstr "Voeg organisatie toe"
 
 #: View/Organizations/admin_add.ctp:36 View/Organizations/admin_edit.ctp:36
 msgid "Appearance"
-msgstr ""
+msgstr "Uiterlijk"
 
 #: View/Organizations/admin_add.ctp:44 View/Organizations/admin_edit.ctp:44
 msgid "Technical details"
-msgstr ""
+msgstr "Technische details"
 
 #: View/Organizations/admin_delete.ctp:7
-#, fuzzy
 msgid "Delete %1$s"
-msgstr "Welkom bij %1$s"
+msgstr "Verwijder %1$s"
 
 #: View/Organizations/admin_edit.ctp:7 View/Users/admin_edit.ctp:7
 msgid "Edit %1$s"
@@ -904,16 +878,15 @@ msgstr "Bewerk %1$s"
 
 #: View/Organizations/admin_index.ctp:17
 msgid "%1$s Add"
-msgstr ""
+msgstr "%1$s Toevoegen"
 
 #: View/Organizations/website_index.ctp:48
 msgid "Mauris homepage"
 msgstr ""
 
 #: View/Organizations/website_index.ctp:59
-#, fuzzy
 msgid "Information"
-msgstr "Hoofd information"
+msgstr "Informatie"
 
 #: View/Pages/home.ctp:46 View/Posts/index.ctp:35
 msgid "Read more"
@@ -1127,7 +1100,7 @@ msgstr "Verwijderen"
 
 #: View/Users/admin_edit.ctp:33
 msgid "Personal details"
-msgstr ""
+msgstr "Persoonlijke details"
 
 #: View/Users/admin_edit.ctp:41
 msgid "Contact details"
