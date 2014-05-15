@@ -13,7 +13,26 @@ class HomeController extends AppController {
 	}
 
 	public function install_check() {
-		$sources = array();
+		$sources = array(
+			array(
+				'title' => __('Roles'),
+				'url'   => Router::url(array(
+						'controller' => 'roles',
+						'action'     => 'check',
+						'ext'        => 'json',
+						'install'    => true
+					))
+			),
+			array(
+				'title' => __('Permissions'),
+				'url'   => Router::url(array(
+						'controller' => 'permissions',
+						'action'     => 'check',
+						'ext'        => 'json',
+						'install'    => true
+					))
+			)
+		);
 
 		$this->set(compact('sources'));
 	}
