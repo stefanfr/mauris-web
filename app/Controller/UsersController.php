@@ -99,9 +99,15 @@ class UsersController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                return $this->redirect($this->Auth->redirect());
+	            $this->redirect($this->Auth->redirectUrl());
+
+	            return;
             }
-            $this->Session->setFlash(__('Invalid username or password, try again'), 'alert-box', array('class'=>'alert-info'));
+
+	        $this->Session->setFlash(__('Invalid username or password, try again'), 'alert', array(
+		        'plugin' => 'BoostCake',
+		        'class'  => 'alert-danger'
+	        ));
         }
     }
 
