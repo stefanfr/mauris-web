@@ -45,27 +45,35 @@ class AppController extends Controller {
         'Naming',
 		'Title'
     );
-    
-    public $components = array(
-        'DebugKit.Toolbar',
-        'Session',
-        'Auth' => array(
-            'loginRedirect' => array(
-                'controller' => 'profile',
-                'action' => 'view'
-            ),
-            'logoutRedirect' => array(
-                'controller' => 'pages',
-                'action' => 'display',
-                'home'
-            )
-        ),
-        'Acl',
-        'SchoolInformation',
-        'Styling',
-        'LanguageAware',
-        'PermissionCheck'
-    );
+
+	public $components = array(
+		'DebugKit.Toolbar',
+		'Session',
+		'Auth' => array(
+			'loginAction'    => array(
+				'plugin'     => null,
+				'controller' => 'users',
+				'action'     => 'login',
+				'website'    => false,
+				'manage'     => false,
+				'admin'      => false
+			),
+			'loginRedirect'  => array(
+				'controller' => 'profile',
+				'action'     => 'view'
+			),
+			'logoutRedirect' => array(
+				'controller' => 'pages',
+				'action'     => 'display',
+				'home'
+			)
+		),
+		'Acl',
+		'SchoolInformation',
+		'Styling',
+		'LanguageAware',
+		'PermissionCheck'
+	);
         
     function beforeFilter() {
 	    $this->Auth->allow('index', 'view', 'display', 'install_check', 'install_load');
