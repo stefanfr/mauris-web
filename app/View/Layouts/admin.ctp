@@ -87,6 +87,7 @@
 				<?= $this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-cog')), array('plugin' => false, 'controller' => 'home', 'admin' => true), array('escapeTitle' => false))); ?>
 				<?= $this->Menu->item($this->Html->link(__('Organizations'), array('plugin' => false, 'controller' => 'organizations', 'action' => 'index', 'admin' => true))); ?>
 				<?= $this->Menu->item($this->Html->link(__('Users'), array('plugin' => false, 'controller' => 'users', 'action' => 'index', 'admin' => true))); ?>
+				<?= $this->Menu->item($this->Html->link(__('Styles'), array('plugin' => false, 'controller' => 'styles', 'action' => 'index', 'admin' => true))); ?>
 			</ul>
 			<?= $this->startIfEmpty('rightMenu'); ?>
 			<? if (AuthComponent::user('id')): ?>

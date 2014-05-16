@@ -4,6 +4,16 @@ class Style extends AppModel {
 
     public $displayField = 'title';
 
+	public $validate = array(
+		'title'     => array(
+			'rule' => 'notEmpty'
+		),
+		'school_id' => array(
+			'rule'       => 'numeric',
+			'allowEmpty' => true
+		)
+	);
+
     public $recursive = 2;
     
     public $belongsTo = array(
@@ -45,11 +55,11 @@ class Style extends AppModel {
         if ($style !== false) {
             return $style;
         }
-        
-        $style = $this->findById($id);
+
+	    $style = $this->findById($id);
         Cache::write($key, $style);
-        
-        return $style;
+
+	    return $style;
     }
 	
 }
