@@ -9,6 +9,14 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+	public $components = array(
+		'Paginator' => array(
+			'settings' => array(
+				'limit' => 5
+			)
+		)
+	);
+
     public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
@@ -108,9 +116,7 @@ class UsersController extends AppController {
 			throw new ForbiddenException();
 		}
 
-		$users = $this->User->find('all');
-
-		$this->set(compact('users'));
+		$this->set('users', $this->Paginator->paginate('User'));
 	}
 
 	public function admin_edit($id) {
