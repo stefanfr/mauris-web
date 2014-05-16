@@ -28,6 +28,12 @@ class PermissionsController extends AppController {
 				'system_alias' => 'admin',
 				'title'        => 'Admin'
 			)
+		),
+		array(
+			'Permission' => array(
+				'system_alias' => 'style',
+				'title'        => 'Style'
+			)
 		)
 	);
 
