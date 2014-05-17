@@ -66,6 +66,14 @@ class AppController extends Controller {
 				'controller' => 'pages',
 				'action'     => 'display',
 				'home'
+			),
+			'flash'          => array(
+				'element' => 'alert',
+				'key'     => 'auth',
+				'params'  => array(
+					'plugin' => 'BoostCake',
+					'class'  => 'alert-danger'
+				)
 			)
 		),
 		'Acl',
