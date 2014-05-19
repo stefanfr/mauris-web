@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-05-19 16:28+0000\n"
-"PO-Revision-Date: 2014-05-19 18:33+0200\n"
+"PO-Revision-Date: 2014-05-19 18:35+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/mauris/mauris-website/nld/>\n"
@@ -388,7 +388,7 @@ msgstr "Locatie"
 #: View/TeacherAbsence/manage_index.ctp:12 View/Users/admin_edit.ctp:55
 #: View/Users/admin_index.ctp:17
 msgid "Change"
-msgstr "Verander"
+msgstr "Pas aan"
 
 #: Plugin/Billboard/View/Billboards/manage_index.ctp:179
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:21
