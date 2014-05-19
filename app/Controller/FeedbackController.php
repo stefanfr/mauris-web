@@ -2,8 +2,25 @@
 
 App::uses('CakeEmail', 'Network/Email');
 
+/**
+ * Class FeedbackController
+ *
+ * @property Feedback Feedback
+ */
 class FeedbackController extends AppController {
-    
+
+	public $components = array(
+		'Paginator' => array(
+			'settings' => array(
+				'limit'     => 5,
+				'recursive' => 2,
+				'order'     => array(
+					'Feedback.created DESC',
+				)
+			)
+		),
+	);
+
     public function beforeFilter() {
         parent::beforeFilter();
         
@@ -62,5 +79,28 @@ class FeedbackController extends AppController {
             ));
         }
     }
-    
+
+	public function admin_index() {
+		if (!$this->PermissionCheck->checkPermission('feedback', 'read', 'system')) {
+			throw new ForbiddenException();
+		}
+
+		$this->set('feedback', $this->Paginator->paginate('Feedback'));
+	}
+
+	public function admin_view($id) {
+		$this->Feedback->id = $id;
+
+		$feedback = $this->Feedback->read();
+		if (!$feedback) {
+			throw new NotFoundException();
+		}
+
+		if (!$this->PermissionCheck->checkPermission('feedback', 'read', 'system')) {
+			throw new ForbiddenException();
+		}
+
+		$this->set(compact('feedback'));
+	}
+
 }
