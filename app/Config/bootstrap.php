@@ -61,8 +61,16 @@ Cache::config('default', array('engine' => 'File'));
  */
 
 
-Inflector::rules('singular', array('irregular' => array(
-	'caches' => 'cache'
+Inflector::rules('singular', array(
+	'irregular'   => array(
+		'caches' => 'cache'
+	),
+	'uninflected' => array(
+		'feedback'
+	)
+));
+Inflector::rules('plural', array('uninflected' => array(
+	'feedback'
 )));
 
 /**

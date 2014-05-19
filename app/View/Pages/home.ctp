@@ -102,7 +102,7 @@ if (isset($department_name)) {
     <div class="col-md-4">
         <h2><?=h(__('Feedback'))?></h2>
         <?
-        echo $this->Form->create('FeedbackEntry', array(
+        echo $this->Form->create('Feedback', array(
             'inputDefaults' => array(
                 'div' => 'form-group',
                 'label' => false,

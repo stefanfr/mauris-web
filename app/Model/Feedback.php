@@ -1,6 +1,6 @@
 <?php
 
-class FeedbackEntry extends AppModel {
+class Feedback extends AppModel {
     
     public $validate = array(
         'school_id' => array(
