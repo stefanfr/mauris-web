@@ -3,7 +3,7 @@ class Teacher extends AppModel {
 	
     public $displayField = 'name';
 
-    public $order = "name";
+    public $order = "Teacher.name";
 
     public $hasMany = array(
         'UserMappings' => array(
