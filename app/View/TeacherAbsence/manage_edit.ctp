@@ -1,7 +1,7 @@
 <?
 $this->Html->addCrumb(__('Teacher absence'), array('action' => 'index'));
 $this->Html->addCrumb(
-	__('Edit absence report'),
+	__('Change absence report'),
 	$this->here
 );
 ?>
@@ -31,7 +31,7 @@ $this->Form->input('teacher_id', array(
 ))?>
 <?= $this->Form->input('date', array('type' => 'date')) ?>
 <div class="form-group">
-	<?php echo $this->Form->submit(__('Add'), array(
+	<?php echo $this->Form->submit(__('Change'), array(
 		'div'   => 'col col-md-9 col-md-offset-3',
 		'class' => 'btn btn-default'
 	)); ?>

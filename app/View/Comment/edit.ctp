@@ -1,4 +1,4 @@
-<h1><?=h(__('Update comment'))?></h1>
+<h1><?=h(__('Change comment'))?></h1>
 <?php
 echo $this->Form->create('Comment', array(
 	'inputDefaults' => array(
@@ -15,7 +15,7 @@ echo $this->Form->create('Comment', array(
 <?=$this->Form->input('body', array('rows' => '3'))?>
 <?=$this->Form->input('id', array('type' => 'hidden'))?>
 <div class="form-group">
-	<?php echo $this->Form->submit('Aanpassen', array(
+	<?php echo $this->Form->submit('Change', array(
 		'div' => 'col col-md-9 col-md-offset-3',
 		'class' => 'btn btn-default'
 	)); ?>

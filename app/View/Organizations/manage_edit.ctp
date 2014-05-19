@@ -2,7 +2,7 @@
 $title = __('Edit %1$s', $organization['School']['name']);
 
 $this->Html->addCrumb(__('Organizations'), array('action' => 'index'));
-$this->Html->addCrumb($title, $this->here);
+$this->Html->addCrumb(__('Change %1$S', $title), $this->here);
 
 $this->set('title_for_layout', $title . ' - ' . __('Organizations'));
 ?>
@@ -29,7 +29,7 @@ $this->Form->create('School', array(
 <?= $this->Form->input('id', array('type' => 'hidden')) ?>
 <div class="form-group">
 	<?php
-	echo $this->Form->submit('Edit', array(
+	echo $this->Form->submit('Change', array(
 		'div'   => 'col col-md-9 col-md-offset-3',
 		'class' => 'btn btn-default'
 	));
