@@ -47,7 +47,7 @@ echo $this->Form->input('website');
 <?php echo $this->Form->input('id', array('type' => 'hidden')) ?>
 <div class="form-group">
 	<?php
-	echo $this->Form->submit('Add', array(
+	echo $this->Form->submit(__('Add'), array(
 		'div'   => 'col col-md-9 col-md-offset-3',
 		'class' => 'btn btn-default'
 	));

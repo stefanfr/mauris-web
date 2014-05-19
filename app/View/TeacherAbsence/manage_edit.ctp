@@ -5,7 +5,7 @@ $this->Html->addCrumb(
 	$this->here
 );
 ?>
-<h1><?= h(__('Edit absence report')) ?></h1>
+<h1><?= h(__('Change absence report')) ?></h1>
 <?
 echo $this->Form->create('TeacherAbsenceReport', array(
 	'inputDefaults' => array(

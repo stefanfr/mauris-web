@@ -30,7 +30,7 @@ echo $this->Form->create('School', array(
 ?>
 <div class="form-group">
 	<?php
-	echo $this->Form->submit('Delete', array(
+	echo $this->Form->submit(__('Delete'), array(
 		'div'   => 'col col-md-9 col-md-offset-3',
 		'class' => 'btn btn-danger'
 	));
