@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Class ScheduleController
+ *
+ * @property ScheduleEntry ScheduleEntry
+ */
 class ScheduleController extends AppController {
 
     public $uses = array('ScheduleEntry', 'SubjectDetails', 'ClassroomDetails', 'AClass', 'Teacher');
@@ -134,6 +140,84 @@ class ScheduleController extends AppController {
         }
         $this->set('assignments', $assignments);
     }
+
+	public function manage_index() {
+		$readAccessScopes = $this->PermissionCheck->getScopes('schedule', 'read');
+		if (!$readAccessScopes) {
+			throw new ForbiddenException();
+		}
+
+		$this->Paginator->settings = $this->paginate;
+		$this->Paginator->settings['group'] = array('WEEK(ScheduleEntry.date, 3)');
+
+		$conditions = array();
+		if (in_array('department', $readAccessScopes)) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'ScheduleEntry.department_id' => $this->Department->id,
+				)
+			);
+		}
+
+		$schedule_entries = $this->Paginator->paginate('ScheduleEntry', $conditions);
+
+		$this->set(compact('schedule_entries'));
+	}
+
+	public function manage_edit($id) {
+		$this->ScheduleEntry->id = $id;
+
+		$schedule_entry = $this->ScheduleEntry->read();
+		if (!$schedule_entry) {
+			throw new NotFoundException();
+		}
+
+		//region Scope determination
+		$scope = 'system';
+		if ($schedule_entry['ScheduleEntry']['department_id'] === $this->SchoolInformation->getDepartmentId()) {
+			$scope = 'department';
+		}
+		//endregion
+
+		$readAccessScopes = $this->PermissionCheck->checkPermission('schedule', 'update', $scope);
+		if (!$readAccessScopes) {
+			throw new ForbiddenException();
+		}
+
+		$conditions = array(
+			'department_id' => $schedule_entry['ScheduleEntry']['department_id']
+		);
+
+		$departments = $this->ScheduleEntry->GivenAtDeparment->find('list', ($scope == 'system') ? array() : $conditions);
+		$periods = $this->ScheduleEntry->GivenInPeriod->find('list', $conditions);
+		$subjects = $this->ScheduleEntry->GivenSubject->find('list', $conditions);
+		$teachers = $this->ScheduleEntry->GivenByTeacher->find('list', $conditions);
+		$classrooms = $this->ScheduleEntry->GivenInClassroom->find('list', $conditions);
+		$classes = $this->ScheduleEntry->GivenToClass->find('list', $conditions);
+
+		$this->set(compact('schedule_entry', 'departments', 'periods', 'subjects', 'teachers', 'classrooms', 'classes'));
+
+		if ($this->request->is(array('post', 'put'))) {
+			if (!in_array($this->request->data['ScheduleEntry']['department_id'], array_keys($departments))) {
+				throw new ForbiddenException();
+			}
+
+			if ($this->ScheduleEntry->save($this->request->data)) {
+
+				$this->Session->setFlash(__('The schedule entry has been change'), 'alert', array(
+					'plugin' => 'BoostCake',
+					'class' => 'alert-success'
+				));
+
+				return $this->redirect(array('action' => 'index'));
+			}
+
+			$this->Session->setFlash(__('Could not change the schedule entry'), 'alert', array(
+				'plugin' => 'BoostCake',
+				'class' => 'alert-danger'
+			));
+		}
+	}
 
     private function _createEntryVariables($entry) {
         $startDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
