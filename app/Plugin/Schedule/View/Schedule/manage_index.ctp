@@ -12,11 +12,11 @@ $this->Title->addCrumbs(array(
 <table class="table">
 	<thead>
 		<tr>
-			<th><?php echo h(__('Date')) ?></th>
-			<th><?php echo h(__('Period')) ?></th>
-			<th><?php echo h(__('Class')) ?></th>
-			<th><?php echo h(__('Subject')) ?></th>
-			<th><?php echo h(__('Teacher')) ?></th>
+			<th><?php echo $this->Paginator->sort('date', __('Date')); ?></th>
+			<th><?php echo $this->Paginator->sort('period', __('Period')); ?></th>
+			<th><?php echo $this->Paginator->sort('class_id', __('Class')); ?></th>
+			<th><?php echo $this->Paginator->sort('subject_id', __('Subject')); ?></th>
+			<th><?php echo $this->Paginator->sort('teacher_id', __('Teacher')); ?></th>
 			<th><?php echo h(__('Change')) ?></th>
 			<th><?php echo h(__('Remove')) ?></th>
 		</tr>
