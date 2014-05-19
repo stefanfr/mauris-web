@@ -83,63 +83,112 @@ class ScheduleController extends AppController {
             '_serialize' => array('events')
         ));
     }
-        
-    public function view($id) {    
-        $this->ScheduleEntry->recursive = 2;
-        $this->ScheduleEntry->id = $id;
-        
-        $entries = $this->ScheduleEntry->getSchedule();
-        $entry = $entries[0];
-        
-        //print_r($entry);
-        
-        //$entry = $this->ScheduleEntry->read();
-        
-        $this->set('title_for_layout', $this->SubjectDetails->field('title'));
-        
+
+	private function _createEntryVariables($entry) {
+		$startDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
+		$endDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
+		//debug($entry);
+		$vars = array();
+		$vars['url'] = Router::url(array('plugin' => 'schedule', 'controller' => 'schedule', 'action' => 'view', $entry['ScheduleEntry']['id']));
         if (isset($entry['GivenSubject']['SubjectDetails'])) {
-            $this->set('subject_title', $entry['GivenSubject']['SubjectDetails']['title']);
+	        $vars['subject_title'] = $entry['GivenSubject']['SubjectDetails']['title'];
         }
-        $this->set('subject_abbreviation', $entry['GivenSubject']['abbreviation']);
-        
+		$vars['subject_abbreviation'] = $entry['GivenSubject']['abbreviation'];
+
         if (isset($entry['GivenByTeacher']['name'])) {
-            $this->set('teacher_name', $entry['GivenByTeacher']['name']);
-            $this->set('teacher_abbreviation', $entry['GivenByTeacher']['abbreviation']);
-            $this->set('teacher_url', Router::url(array('controller' => 'teacher', 'action' => 'view', $entry['GivenByTeacher']['id'])));
+	        $vars['teacher_name'] = $entry['GivenByTeacher']['name'];
+	        $vars['teacher_abbreviation'] = $entry['GivenByTeacher']['abbreviation'];
+	        $vars['teacher_url'] = Router::url(array('controller' => 'teacher', 'action' => 'view', $entry['GivenByTeacher']['id']));
         }
-        
-        if (isset($entry['GivenInClassroom']['ClassroomDetails'])) {
-            $this->set('classroom_name', $entry['GivenInClassroom']['ClassroomDetails']['title']);
+
+		if (isset($entry['GivenInClassroom']['ClassroomDetails'])) {
+			$vars['classroom_title'] = $entry['GivenInClassroom']['ClassroomDetails']['title'];
         }
-        $this->set('classroom_code', $entry['GivenInClassroom']['code']);
-        $this->set('classroom_id', $entry['GivenInClassroom']['id']);
-        $this->set('classroom_url', Router::url(array('controller' => 'classroom', 'action' => 'view', $entry['GivenInClassroom']['id'])));
-        
-        $this->set('class_name', $entry['GivenToClass']['name']);
-        $this->set('class_url', Router::url(array('controller' => 'class', 'action' => 'view', $entry['GivenToClass']['id'])));
-        
-        $this->set('entry_cancelled', (bool) $entry['ScheduleEntry']['cancelled']);
-        $this->set('entry_period', $entry['GivenInPeriod']['period']);
-        
-        $beginDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
-        $endDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
-        
-        $this->set('entry_date_start', $beginDate->getTimestamp());
-        $this->set('entry_date_end', $endDate->getTimestamp());
+		$vars['classroom_code'] = $entry['GivenInClassroom']['code'];
+		$vars['classroom_id'] = $entry['GivenInClassroom']['id'];
+		$vars['classroom_url'] = Router::url(array('controller' => 'classroom', 'action' => 'view', $entry['GivenInClassroom']['id']));
+
+		$vars['class_name'] = $entry['GivenToClass']['name'];
+		$vars['class_url'] = Router::url(array('controller' => 'class', 'action' => 'view', $entry['GivenToClass']['id']));
+
+		$vars['id'] = (int)$entry['ScheduleEntry']['id'];
+		$vars['cancelled'] = (bool)$entry['ScheduleEntry']['cancelled'];
+		$vars['period'] = $entry['GivenInPeriod']['period'];
+		$vars['start'] = strtotime($startDate->format(DateTime::ISO8601));
+		$vars['end'] = strtotime($endDate->format(DateTime::ISO8601));
+		$vars['allDay'] = false;
         //$period = $this->Period->findByPeriod($entry['ScheduleEntry']['period']);
-        
-        $assignments = array();
+
+		$vars['assignments'] = array();
         foreach ($entry['GivenAssignments'] as $assignmentMapping) {
             $assignment = $assignmentMapping['Assignment'];
-            $assignments[] = array(
+	        $vars['assignments'][] = array(
                 'id' => $assignment['id'],
                 'title' => $assignment['title'],
                 'description' => $assignment['description'],
                 'state' => explode(',', $assignmentMapping['state'])
             );
         }
-        $this->set('assignments', $assignments);
+
+		return $vars;
     }
+
+	public function view($id) {
+		$this->ScheduleEntry->recursive = 2;
+		$this->ScheduleEntry->id = $id;
+
+		$entries = $this->ScheduleEntry->getSchedule();
+		$entry = $entries[0];
+
+		//print_r($entry);
+
+		//$entry = $this->ScheduleEntry->read();
+
+		$this->set('title_for_layout', $this->SubjectDetails->field('title'));
+
+		if (isset($entry['GivenSubject']['SubjectDetails'])) {
+			$this->set('subject_title', $entry['GivenSubject']['SubjectDetails']['title']);
+		}
+		$this->set('subject_abbreviation', $entry['GivenSubject']['abbreviation']);
+
+		if (isset($entry['GivenByTeacher']['name'])) {
+			$this->set('teacher_name', $entry['GivenByTeacher']['name']);
+			$this->set('teacher_abbreviation', $entry['GivenByTeacher']['abbreviation']);
+			$this->set('teacher_url', Router::url(array('controller' => 'teacher', 'action' => 'view', $entry['GivenByTeacher']['id'])));
+		}
+
+		if (isset($entry['GivenInClassroom']['ClassroomDetails'])) {
+			$this->set('classroom_name', $entry['GivenInClassroom']['ClassroomDetails']['title']);
+		}
+		$this->set('classroom_code', $entry['GivenInClassroom']['code']);
+		$this->set('classroom_id', $entry['GivenInClassroom']['id']);
+		$this->set('classroom_url', Router::url(array('controller' => 'classroom', 'action' => 'view', $entry['GivenInClassroom']['id'])));
+
+		$this->set('class_name', $entry['GivenToClass']['name']);
+		$this->set('class_url', Router::url(array('controller' => 'class', 'action' => 'view', $entry['GivenToClass']['id'])));
+
+		$this->set('entry_cancelled', (bool)$entry['ScheduleEntry']['cancelled']);
+		$this->set('entry_period', $entry['GivenInPeriod']['period']);
+
+		$beginDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
+		$endDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
+
+		$this->set('entry_date_start', $beginDate->getTimestamp());
+		$this->set('entry_date_end', $endDate->getTimestamp());
+		//$period = $this->Period->findByPeriod($entry['ScheduleEntry']['period']);
+
+		$assignments = array();
+		foreach ($entry['GivenAssignments'] as $assignmentMapping) {
+			$assignment = $assignmentMapping['Assignment'];
+			$assignments[] = array(
+				'id'          => $assignment['id'],
+				'title'       => $assignment['title'],
+				'description' => $assignment['description'],
+				'state'       => explode(',', $assignmentMapping['state'])
+			);
+		}
+		$this->set('assignments', $assignments);
+	}
 
 	public function manage_index() {
 		$readAccessScopes = $this->PermissionCheck->getScopes('schedule', 'read');
@@ -148,7 +197,11 @@ class ScheduleController extends AppController {
 		}
 
 		$this->Paginator->settings = $this->paginate;
-		$this->Paginator->settings['group'] = array('WEEK(ScheduleEntry.date, 3)');
+		/**
+		 * The latest schedule entries need the shown first
+		 */
+		$this->Paginator->settings['order']['ScheduleEntry.date'] = 'DESC';
+		$this->Paginator->settings['order']['ScheduleEntry.period'] = 'DESC';
 
 		$conditions = array();
 		if (in_array('department', $readAccessScopes)) {
@@ -206,7 +259,7 @@ class ScheduleController extends AppController {
 
 				$this->Session->setFlash(__('The schedule entry has been change'), 'alert', array(
 					'plugin' => 'BoostCake',
-					'class' => 'alert-success'
+					'class'  => 'alert-success'
 				));
 
 				return $this->redirect(array('action' => 'index'));
@@ -214,58 +267,9 @@ class ScheduleController extends AppController {
 
 			$this->Session->setFlash(__('Could not change the schedule entry'), 'alert', array(
 				'plugin' => 'BoostCake',
-				'class' => 'alert-danger'
+				'class'  => 'alert-danger'
 			));
 		}
 	}
-
-    private function _createEntryVariables($entry) {
-        $startDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['start'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
-        $endDate = new DateTime($entry['ScheduleEntry']['date'] . ' ' . $entry['GivenInPeriod']['end'], new DateTimeZone($entry['GivenInPeriod']['timezone']));
-        //debug($entry);
-        $vars = array();
-        $vars['url'] = Router::url(array('plugin' => 'schedule', 'controller' => 'schedule', 'action' => 'view', $entry['ScheduleEntry']['id']));
-        if (isset($entry['GivenSubject']['SubjectDetails'])) {
-            $vars['subject_title'] = $entry['GivenSubject']['SubjectDetails']['title'];
-        }
-        $vars['subject_abbreviation'] = $entry['GivenSubject']['abbreviation'];
-        
-        if (isset($entry['GivenByTeacher']['name'])) {
-            $vars['teacher_name'] = $entry['GivenByTeacher']['name'];
-            $vars['teacher_abbreviation'] = $entry['GivenByTeacher']['abbreviation'];
-            $vars['teacher_url'] = Router::url(array('controller' => 'teacher', 'action' => 'view', $entry['GivenByTeacher']['id']));
-        }
-        
-        if (isset($entry['GivenInClassroom']['ClassroomDetails'])) {
-            $vars['classroom_title'] = $entry['GivenInClassroom']['ClassroomDetails']['title'];
-        }
-        $vars['classroom_code'] = $entry['GivenInClassroom']['code'];
-        $vars['classroom_id'] = $entry['GivenInClassroom']['id'];
-        $vars['classroom_url'] = Router::url(array('controller' => 'classroom', 'action' => 'view', $entry['GivenInClassroom']['id']));
-        
-        $vars['class_name'] = $entry['GivenToClass']['name'];
-        $vars['class_url'] = Router::url(array('controller' => 'class', 'action' => 'view', $entry['GivenToClass']['id']));
-        
-        $vars['id'] = (int) $entry['ScheduleEntry']['id'];
-        $vars['cancelled'] = (bool) $entry['ScheduleEntry']['cancelled'];
-        $vars['period'] = $entry['GivenInPeriod']['period'];
-        $vars['start'] = strtotime($startDate->format(DateTime::ISO8601));
-        $vars['end'] = strtotime($endDate->format(DateTime::ISO8601));
-        $vars['allDay'] = false;
-        //$period = $this->Period->findByPeriod($entry['ScheduleEntry']['period']);
-
-        $vars['assignments'] = array();
-        foreach ($entry['GivenAssignments'] as $assignmentMapping) {
-            $assignment = $assignmentMapping['Assignment'];
-            $vars['assignments'][] = array(
-                'id' => $assignment['id'],
-                'title' => $assignment['title'],
-                'description' => $assignment['description'],
-                'state' => explode(',', $assignmentMapping['state'])
-            );
-        }
-        
-        return $vars;
-    }
     
 }
