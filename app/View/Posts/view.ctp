@@ -2,8 +2,10 @@
 $this->Title->addSegment(__('News'));
 $this->Title->setPageTitle($post['Post']['title']);
 
-$this->Html->addCrumb($this->Title->getTopSegment(1), array('controller' => 'posts', 'action' => 'index'));
-$this->Html->addCrumb($this->Title->getTopSegment(), $this->here);
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
+	$this->here
+));
 
 if ($post['Post']['summary']):
     $this->set('description_for_layout', $post['Post']['summary']);

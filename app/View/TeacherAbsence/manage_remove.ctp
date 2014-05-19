@@ -1,11 +1,13 @@
 <?
-$this->Html->addCrumb(__('Teacher absence'), array('action' => 'index'));
-$this->Html->addCrumb(
-	__('Remove absence report'),
+$this->Title->addSegment(__('Teacher absence'));
+$this->Title->setPageTitle(__('Remove absence report'));
+
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
 	$this->here
-);
+));
 ?>
-<h1><?= h(__('Remove absence report')) ?></h1>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <?
 echo $this->Form->postButton(
 	'<span class="glyphicon glyphicon-trash"></span> ' . h(__('Remove')),

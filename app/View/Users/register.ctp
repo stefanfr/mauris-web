@@ -1,3 +1,13 @@
+<?php
+$this->Title->addSegment(__('Users'));
+$this->Title->setPageTitle(__('Register'));
+
+$this->Title->addCrumbs(array(
+	null,
+	$this->here
+));
+?>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <div class="users form">
 <?php echo $this->Form->create('User'); ?>
     <fieldset>

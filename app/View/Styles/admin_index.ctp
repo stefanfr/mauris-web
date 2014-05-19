@@ -14,7 +14,7 @@ echo $this->Html->link(
 	array('class' => 'btn btn-default', 'escape' => false)
 )
 ?>
-
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <table class="table">
 	<thead>
 	<tr>

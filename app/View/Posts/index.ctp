@@ -1,8 +1,11 @@
 <?php
-$this->Title->addSegment(__('The latest news'));
+$this->Title->setPageTitle(__('The latest news'));
+
+$this->Title->addCrumbs(array(
+	array('action' => 'index')
+));
 ?>
-<? $this->Html->addCrumb($this->Title->getTopSegment(), array('controller' => 'posts', 'action' => 'index')); ?>
-<div class="page-header"><h1><?=h($this->Title->getTopSegment())?></h1></div>
+<div class="page-header"><h1><?=h($this->Title->getPageTitle())?></h1></div>
 <?
 if ($can_post):
     echo $this->Html->link(

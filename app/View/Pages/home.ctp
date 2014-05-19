@@ -1,5 +1,5 @@
 <?
-$this->Title->addSegment(__('Home'));
+$this->Title->setPageTitle(__('Home'));
 
 $keywords_for_layout = array();
 $keywords_for_layout[] = __('Student information');

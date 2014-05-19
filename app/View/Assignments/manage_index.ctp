@@ -6,7 +6,7 @@ $this->Title->addCrumbs(array(
 	array('action' => 'index'),
 ));
 ?>
-
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <table class="table">
 	<thead>
 		<tr>

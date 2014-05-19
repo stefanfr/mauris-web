@@ -1,11 +1,13 @@
 <?
-$this->Html->addCrumb(__('Sitemaps'), array('action' => 'index')); 
-$this->Html->addCrumb(__('Schedule entries'), $this->here); 
+$this->Title->addSegment(__('Sitemaps'));
+$this->Title->setPageTitle(__('Schedule entries'));
 
-$this->set('title_for_layout', __('Sitemaps') . ' - ' . __('Schedule entries'));
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
+	$this->here
+));
 ?>
-<h1><?=__('Sitemaps')?></h1>
-<h2><?=__('Schedule entries')?></h2>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <ul>
     <?php foreach ($schedule_entries as $entry):?>
     <li>

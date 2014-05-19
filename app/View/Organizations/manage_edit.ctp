@@ -1,12 +1,15 @@
 <?
-$title = __('Edit %1$s', $organization['School']['name']);
+$this->Title->addSegment(__('Organizations'));
+$this->Title->setPageTitle(__('Change %1$s', $organization['School']['name']));
 
-$this->Html->addCrumb(__('Organizations'), array('action' => 'index'));
-$this->Html->addCrumb(__('Change %1$S', $title), $this->here);
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
+	array($organization['School']['id'])
+));
 
-$this->set('title_for_layout', $title . ' - ' . __('Organizations'));
+$this->set('title_for_layout', $this->Title->getPageTitle());
 ?>
-<h1><?= $title ?></h1>
+<h1><?= $this->Title->getPageTitle() ?></h1>
 <?=
 $this->Form->create('School', array(
 	'inputDefaults' => array(

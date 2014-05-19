@@ -1,10 +1,10 @@
 <?
 $this->Title->addSegment(__('Schedule'));
-$this->Title->addSegment(__('Simple'));
+$this->Title->setPageTitle(__('Simple'));
 
 $this->Title->addCrumbs(array(
-	array('controller' => 'schedule', 'action' => 'index'),
-	array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple')
+	array('action' => 'index'),
+	array('action' => 'index', 'type' => 'simple')
 ));
 ?>
 <?=$this->start('rightMenu'); ?>

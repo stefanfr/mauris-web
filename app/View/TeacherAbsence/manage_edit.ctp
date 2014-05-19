@@ -1,11 +1,13 @@
 <?
-$this->Html->addCrumb(__('Teacher absence'), array('action' => 'index'));
-$this->Html->addCrumb(
-	__('Change absence report'),
+$this->Title->addSegment(__('Teacher absence'));
+$this->Title->setPageTitle(__('Change absence report'));
+
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
 	$this->here
-);
+));
 ?>
-<h1><?= h(__('Change absence report')) ?></h1>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <?
 echo $this->Form->create('TeacherAbsenceReport', array(
 	'inputDefaults' => array(

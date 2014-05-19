@@ -13,7 +13,7 @@ $this->Title->addCrumbs(array(
 
 $this->set('title_for_layout', $this->Title->getPageTitle());
 ?>
-<h1><?php echo $this->Title->getPageTitle() ?></h1>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <?php
 echo $this->Form->create('ScheduleEntry', array(
 	'inputDefaults' => array(

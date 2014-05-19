@@ -8,7 +8,7 @@ App.fullBaseUrl = <?php echo json_encode(substr(Router::url('/'), 0, -1)); ?>;
 $this->Html->scriptEnd();
 
 $this->Title->addSegment(__('Schedule'));
-$this->Title->addSegment(__('Calendar'));
+$this->Title->setPageTitle(__('Calendar'));
 
 $this->Title->addCrumbs(array(
 	array('controller' => 'schedule', 'action' => 'index'),

@@ -1,4 +1,13 @@
-<h1><?=__('Add post')?></h1>
+<?php
+$this->Title->addSegment(__('News'));
+$this->Title->setPageTitle(__('Add post'));
+
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
+	array('action' => 'add'),
+));
+?>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <?
 echo $this->Form->create('Post', array(
     'inputDefaults' => array(

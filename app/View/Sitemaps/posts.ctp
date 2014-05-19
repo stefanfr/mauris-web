@@ -1,12 +1,13 @@
 <?
 $this->Title->addSegment(__('Sitemaps'));
-$this->Title->addSegment(__('Posts'));
+$this->Title->setPageTitle(__('Pages'));
 
-$this->Html->addCrumb($this->Title->getTopSegment(1), array('action' => 'index')); 
-$this->Html->addCrumb($this->Title->getTopSegment(), $this->here); 
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
+	$this->here
+));
 ?>
-<h1><?=__('Sitemaps')?></h1>
-<h2><?=__('Posts')?></h2>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <p>
 <?=__('For a nicer news overview go to the news page.')?><br>
 <?=$this->Html->link(__('Click here'), array('controller' => 'posts', 'action' => 'index'))?>

@@ -12,7 +12,7 @@ $this->Title->addCrumbs(array(
 ));
 ?>
 
-<h1><?php echo h($assignment['Assignment']['title']) ?></h1>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <table class="table">
 	<tr>
 		<th><?php echo h(__('Description')) ?></th>

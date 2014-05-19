@@ -1,9 +1,11 @@
 <?
-$this->Title->addSegment(__('Sitemaps'));
+$this->Title->setPageTitle(__('Sitemaps'));
 
-$this->Html->addCrumb($this->Title->getTopSegment(), $this->here); 
+$this->Title->addCrumbs(array(
+	$this->here
+));
 ?>
-<h1><?=__('Sitemaps')?></h1>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <p><?=__('The following sitemaps are available:')?></p>
 <ul>
     <? foreach ($sitemaps as $sitemap): ?>

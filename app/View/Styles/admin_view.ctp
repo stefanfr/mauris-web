@@ -86,7 +86,7 @@ $this->set('title_for_layout', $this->Title->getPageTitle());
 		background-color: # <?=$style['Style']['button_active_background_color']?>;
 	}
 </style>
-<h1><?php echo $this->Title->getPageTitle() ?></h1>
+<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <div class="well">
 	<p>
 		<?php echo h(__('The style is being applied to this page')) ?>

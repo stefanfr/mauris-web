@@ -1,10 +1,14 @@
 <?
-$this->Html->addCrumb(__('Schedule'), array('controller' => 'schedule', 'action' => 'index'));
-$this->Html->addCrumb(($subject_title) ? $subject_title : $subject_abbreviation, $this->here); 
+$this->Title->addSegment(__('Schedule'));
+$this->Title->setPageTitle($subject_title) ? $subject_title : $subject_abbreviation);
 
+$this->Title->addCrumbs(array(
+	array('action' => 'index'),
+	$this->here
+));
 ?>
 <div itemscope itemtype="http://schema.org/EducationEvent">
-  <h1 itemprop="name"><?=($this->fetch('subject_title') != false) ? $this->fetch('subject_title') : $this->fetch('subject_abbreviation')?></h1>
+  <h1 itemprop="name"><?php echo h($this->Title->getPageTitle())) ?></h1>
 
     <meta itemprop="startDate" content="<?=date(DateTime::ISO8601, $this->get('entry_date_start'))?>">
     <meta itemprop="endDate" content="<?=date(DateTime::ISO8601, $this->get('entry_date_end'))?>">

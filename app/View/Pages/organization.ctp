@@ -1,10 +1,12 @@
 <?
-$this->Title->addSegment(__('Organization'));
+$this->Title->setPageTitle(__('Organization'));
 
-$this->Title->addCrumbs(array($this->here));
+$this->Title->addCrumbs(array(
+	$this->here
+));
 ?>
 <div itemscope itemtype="http://schema.org/EducationalOrganization">
-<h1 itemprop="name"><?=h($this->Title->getTopSegment())?></h1>
+<h1 itemprop="name"><?=h($this->Title->getPageTitle())?></h1>
 <img itemprop="logo" src="<?=$school['School']['logo']?>" width="300px" />
 
     <div itemprop="department" itemscope itemtype="http://schema.org/EducationalOrganization">
