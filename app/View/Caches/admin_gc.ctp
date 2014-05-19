@@ -6,7 +6,7 @@ $this->Html->addCrumb(__('Clear caches'),
 ?>
 <h1><?php echo h(__('Garbage collect cache')) ?></h1>
 <?php
-echo $this->Form->create('Cache', array(
+echo $this->Form->create(false, array(
 	'inputDefaults' => array(
 		'div'       => 'form-group',
 		'label'     => array(
