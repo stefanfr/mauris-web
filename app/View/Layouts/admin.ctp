@@ -88,6 +88,7 @@
 				<?= $this->Menu->item($this->Html->link(__('Organizations'), array('plugin' => false, 'controller' => 'organizations', 'action' => 'index', 'admin' => true))); ?>
 				<?= $this->Menu->item($this->Html->link(__('Users'), array('plugin' => false, 'controller' => 'users', 'action' => 'index', 'admin' => true))); ?>
 				<?= $this->Menu->item($this->Html->link(__('Styles'), array('plugin' => false, 'controller' => 'styles', 'action' => 'index', 'admin' => true))); ?>
+				<?= $this->Menu->item($this->Html->link(__('Caches'), array('plugin' => false, 'controller' => 'caches', 'action' => 'index', 'admin' => true))); ?>
 			</ul>
 			<?= $this->startIfEmpty('rightMenu'); ?>
 			<? if (AuthComponent::user('id')): ?>
