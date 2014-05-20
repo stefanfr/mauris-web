@@ -40,6 +40,7 @@ class AppController extends Controller {
         'Session',
         'Html' => array('className' => 'SchemaOrgHtml'),
         'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+	    'ModelForm',
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
         'Menu',
         'Naming',
