@@ -6,8 +6,9 @@ $this->Title->addCrumbs(array(
 	null,
 	$this->here
 ));
+
+echo $this->element('page_header');
 ?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <div class="users form">
 <?php echo $this->Form->create('User'); ?>
     <fieldset>

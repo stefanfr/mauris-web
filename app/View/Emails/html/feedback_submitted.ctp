@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <th>Body</th>
-            <td><?=$data['FeedbackEntry']['body']?></td>
+            <td><?=$data['Feedback']['body']?></td>
         </tr>
     </table>
 </div>

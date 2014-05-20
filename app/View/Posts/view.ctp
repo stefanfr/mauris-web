@@ -14,13 +14,13 @@ else:
 endif;
 ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h2 class="blog-post-title" itemprop="name"><?=h($this->Title->getPageTitle())?></h2>
+	<h1 class="blog-post-title" itemprop="name"><?=h($this->Title->getPageTitle())?></h1>
   <div class="pull-right">
     <?=$this->Gravatar->gravatar($post['PostedBy']['system_email'], array('s' => 64, 'd' => 'identicon'))?>
   <p class="blog-post-meta"><?=h(__('Posted by:'))?> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><?=h($this->App->buildName($post['PostedBy']))?></span></span></p>
   </div>
   <span itemprop="articleBody">
-<?=nl2br(h($post['Post']['body']))?>
+<?php echo $this->Text->autoParagraph(h($post['Post']['body'])) ?>
 </span>    
   
   <br><br>

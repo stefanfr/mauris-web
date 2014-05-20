@@ -6,20 +6,11 @@ $this->Title->addCrumbs(array(
 	array('action' => 'index'),
 	array('action' => 'add'),
 ));
-?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
-<?
-echo $this->Form->create('Post', array(
-    'inputDefaults' => array(
-        'div' => 'form-group',
-        'label' => array(
-            'class' => 'col col-md-3 control-label'
-        ),
-        'wrapInput' => 'col col-md-9',
-        'class' => 'form-control'
-    ),
-    'class' => 'form-horizontal'
-));
+
+echo $this->element('page_header');
+
+echo $this->ModelForm->create('Post');
+
 $scopes = array();
 if (in_array('system', $allowed_scopes)) :
     $scopes['system'] = __('System wide');

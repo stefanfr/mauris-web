@@ -10,14 +10,9 @@ $this->Title->addCrumbs(array(
 ));
 
 $this->set('title_for_layout', $this->Title->getPageTitle());
-?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
-<?php
-echo $this->Html->link(
-	__('%1$s Add', '<span class="fa fa-plus"></span>'),
-	array('action' => 'add'),
-	array('class' => 'btn btn-default', 'escape' => false)
-)
+
+echo $this->element('page_header');
+echo $this->element('button/add');
 ?>
 <table class="table">
 	<thead>
@@ -31,29 +26,11 @@ echo $this->Html->link(
 	<? foreach ($organizations as $organization): ?>
 		<tr>
 			<td><?php echo $organization['School']['name'] ?></td>
-			<td>
-				<?php
-				echo $this->Html->link(
-					'<span class="glyphicon glyphicon-pencil"></span>',
-					array('action' => 'edit', $organization['School']['id']),
-					array('class' => 'btn btn-default', 'escape' => false)
-				)
-				?>
-			</td>
-			<td>
-				<?php
-				echo $this->Html->link(
-					'<span class="glyphicon glyphicon-remove"></span>',
-					array('action' => 'delete', $organization['School']['id']),
-					array('class' => 'btn btn-danger', 'escape' => false)
-				)
-				?>
-			</td>
+			<td><?php echo $this->element('button/edit', array('id' => $organization['School']['id'])) ?></td>
+			<td><?php echo $this->element('button/delete', array('id' => $organization['School']['id'])) ?></td>
 		</tr>
 	<? endforeach ?>
 	</tbody>
 </table>
 
-<ul class="pagination">
-	<?php echo $this->Paginator->numbers(array('first' => 2, 'last' => 2, 'currentClass' => 'active', 'currentTag' => 'span')) ?>
-</ul>
+<?php echo $this->element('pagination') ?>

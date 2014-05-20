@@ -10,5 +10,5 @@ $this->Title->addCrumbs(array(
 	array('action' => 'index'),
 	array($user['User']['id'])
 ));
-?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
+
+echo $this->element('page_header');

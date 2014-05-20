@@ -7,8 +7,9 @@ $this->Title->setPageTitle(__('Schedule'));
 $this->Title->addCrumbs(array(
 	array('action' => 'index'),
 ));
+
+echo $this->element('page_header');
 ?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <table class="table">
 	<thead>
 		<tr>
@@ -29,29 +30,11 @@ $this->Title->addCrumbs(array(
 			<td><?php echo $schedule_entry['GivenToClass']['name'] ?></td>
 			<td><?php echo $schedule_entry['GivenSubject']['abbreviation'] ?></td>
 			<td><?php echo $schedule_entry['GivenByTeacher']['name'] ?></td>
-			<td>
-				<?php
-				echo $this->Html->link(
-					'<span class="glyphicon glyphicon-pencil"></span>',
-					array('action' => 'edit', $schedule_entry['ScheduleEntry']['id']),
-					array('class' => 'btn btn-default', 'escape' => false)
-				)
-				?>
-			</td>
-			<td>
-				<?php
-				echo $this->Html->link(
-					'<span class="glyphicon glyphicon-remove"></span>',
-					array('action' => 'delete', $schedule_entry['ScheduleEntry']['id']),
-					array('class' => 'btn btn-danger', 'escape' => false)
-				)
-				?>
-			</td>
+			<td><?php echo $this->element('button/edit', array('id' => $schedule_entry['ScheduleEntry']['id'])) ?></td>
+			<td><?php echo $this->element('button/delete', array('id' => $schedule_entry['ScheduleEntry']['id'])) ?></td>
 		</tr>
 	<?php endforeach; ?>
 	</tbody>
 </table>
 
-<ul class="pagination">
-	<?php echo $this->Paginator->numbers(array('first' => 2, 'last' => 2, 'currentClass' => 'active', 'currentTag' => 'span')) ?>
-</ul>
+<?php echo $this->element('pagination') ?>
