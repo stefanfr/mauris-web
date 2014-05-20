@@ -15,21 +15,9 @@ $this->Title->addCrumbs(array(
 $this->set('title_for_layout', $this->Title->getPageTitle());
 
 echo $this->element('page_header');
-?>
-<?php
-echo $this->Form->create('School', array(
-	'inputDefaults' => array(
-		'div'       => 'form-group',
-		'label'     => array(
-			'class' => 'col col-md-3 control-label'
-		),
-		'wrapInput' => 'col col-md-9',
-		'class'     => 'form-control'
-	),
-	'class'         => 'form-horizontal'
-));
-?>
-<?php
+
+echo $this->ModelForm->create('School');
+
 echo $this->Form->input('name');
 echo $this->Form->input('website');
 ?>

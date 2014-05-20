@@ -9,17 +9,8 @@ $this->Title->addCrumbs(array(
 
 echo $this->element('page_header');
 
-echo $this->Form->create('Post', array(
-    'inputDefaults' => array(
-        'div' => 'form-group',
-        'label' => array(
-            'class' => 'col col-md-3 control-label'
-        ),
-        'wrapInput' => 'col col-md-9',
-        'class' => 'form-control'
-    ),
-    'class' => 'form-horizontal'
-));
+echo $this->ModelForm->create('Post');
+
 $scopes = array();
 if (in_array('system', $allowed_scopes)) :
     $scopes['system'] = __('System wide');

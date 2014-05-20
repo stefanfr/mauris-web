@@ -15,17 +15,8 @@ $this->set('title_for_layout', $this->Title->getPageTitle());
 
 echo $this->element('page_header');
 
-echo $this->Form->create('ScheduleEntry', array(
-	'inputDefaults' => array(
-		'div'       => 'form-group',
-		'label'     => array(
-			'class' => 'col col-md-3 control-label'
-		),
-		'wrapInput' => 'col col-md-9',
-		'class'     => 'form-control'
-	),
-	'class'         => 'form-horizontal'
-));
+echo $this->ModelForm->create('ScheduleEntry');
+
 echo $this->Form->input('date');
 echo $this->Form->input('period');
 ?>

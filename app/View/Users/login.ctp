@@ -13,17 +13,7 @@ echo $this->element('page_header');
 	<?php
 	echo $this->Session->flash('auth');
 
-	echo $this->Form->create('User', array(
-		'inputDefaults' => array(
-			'div'       => 'form-group',
-			'label'     => array(
-				'class' => 'col col-md-3 control-label'
-			),
-			'wrapInput' => 'col col-md-9',
-			'class'     => 'form-control'
-		),
-		'class'         => 'form-horizontal'
-	));
+	echo $this->ModelForm->create('User');
 	?>
     <fieldset>
 	    <legend><?php echo h(__('Please enter your username and password')) ?></legend>

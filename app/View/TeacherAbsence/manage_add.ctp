@@ -9,17 +9,8 @@ $this->Title->addCrumbs(array(
 
 echo $this->element('page_header');
 
-echo $this->Form->create('TeacherAbsenceReport', array(
-	'inputDefaults' => array(
-		'div'       => 'form-group',
-		'label'     => array(
-			'class' => 'col col-md-3 control-label'
-		),
-		'wrapInput' => 'col col-md-9',
-		'class'     => 'form-control'
-	),
-	'class'         => 'form-horizontal'
-));
+echo $this->ModelForm->create('TeacherAbsenceReport');
+
 $teacherOptions = array();
 foreach ($teachers as $teacher) {
 	$teacherOptions[$teacher['id']] = ($teacher['name']) ? $teacher['name'] . ' - ' . $teacher['abbreviation'] : $teacher['abbreviation'];
