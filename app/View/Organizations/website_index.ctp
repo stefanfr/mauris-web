@@ -14,7 +14,9 @@ $this->Title->addCrumbs(array(
 		width: 400px;
 	}
 </style>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
+<?php
+echo $this->element('page_header');
+?>
 <div class="row">
 	<?php
 	foreach ($organizations as $organization):

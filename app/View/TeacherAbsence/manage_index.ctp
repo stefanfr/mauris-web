@@ -4,11 +4,11 @@ $this->Title->setPageTitle(__('Teacher absence'));
 $this->Title->addCrumbs(array(
 	array('action' => 'index')
 ));
+
+echo $this->element('page_header');
+
+echo $this->element('button/add');
 ?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
-<a class="btn btn-default" href="<?= Router::url(array('action' => 'add')) ?>">
-	<span class="glyphicon glyphicon-plus"></span> <?= h(__('Add')) ?>
-</a>
 <table class="table">
 	<thead>
 	<tr>
@@ -34,23 +34,11 @@ $this->Title->addCrumbs(array(
 				)
 				?>
 			</td>
-			<td>
-				<a class="btn btn-default"
-				   href="<?= Router::url(array('action' => 'edit', $absence_report['TeacherAbsenceReport']['id'])) ?>">
-					<span class="glyphicon glyphicon-pencil"></span>
-				</a>
-			</td>
-			<td>
-				<a class="btn btn-default"
-				   href="<?= Router::url(array('action' => 'remove', $absence_report['TeacherAbsenceReport']['id'])) ?>">
-					<span class="glyphicon glyphicon-remove"></span>
-				</a>
-			</td>
+			<td><?php echo $this->element('button/edit', array('id' => $absence_report['TeacherAbsenceReport']['id'])) ?></td>
+			<td><?php echo $this->element('button/delete', array('id' => $absence_report['TeacherAbsenceReport']['id'])) ?></td>
 		</tr>
 	<? endforeach; ?>
 	</tbody>
 </table>
 
-<ul class="pagination">
-	<?= $this->Paginator->numbers(array('first' => 2, 'last' => 2, 'currentClass' => 'active', 'currentTag' => 'span')) ?>
-</ul>
+<?php echo $this->element('pagination') ?>

@@ -1,4 +1,9 @@
-<h1><?php echo h(__('Welcome to %1$s', 'Mauris')) ?></h1>
+<?php
+
+$this->Title->setPageTitle(__('Welcome to %1$s', 'Mauris'));
+
+echo $this->element('page_header');
+?>
 <div class="row">
 	<div class="col-lg-3">
 		<div class="panel panel-primary">

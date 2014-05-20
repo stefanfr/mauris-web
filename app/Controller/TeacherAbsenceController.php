@@ -237,7 +237,7 @@ class TeacherAbsenceController extends AppController {
 		}
 	}
 
-	public function manage_remove($id) {
+	public function manage_delete($id) {
 		if ($this->Auth->user()) {
 			$requester = 'user::' . $this->Auth->user('id');
 		} else {

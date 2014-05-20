@@ -4,9 +4,9 @@ $this->Title->setPageTitle(__('The latest news'));
 $this->Title->addCrumbs(array(
 	array('action' => 'index')
 ));
-?>
-<div class="page-header"><h1><?=h($this->Title->getPageTitle())?></h1></div>
-<?
+
+echo $this->element('page_header');
+
 if ($can_post):
     echo $this->Html->link(
         __('Create post'),
@@ -42,6 +42,4 @@ endif;
 </div>
 <? endforeach; ?>
 
-<ul class="pagination">
-<?=$this->Paginator->numbers(array('first' => 2, 'last' => 2, 'currentClass' => 'active', 'currentTag' => 'span'))?>
-</ul>
+<?php echo $this->element('pagination') ?>

@@ -6,9 +6,9 @@ $this->Title->addCrumbs(array(
 	array('action' => 'index'),
 	array('action' => 'add'),
 ));
-?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
-<?
+
+echo $this->element('page_header');
+
 echo $this->Form->create('Post', array(
     'inputDefaults' => array(
         'div' => 'form-group',
