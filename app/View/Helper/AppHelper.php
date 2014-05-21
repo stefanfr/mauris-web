@@ -31,7 +31,7 @@ App::uses('Helper', 'View');
  */
 class AppHelper extends Helper {
     
-    public function buildName($user) {
+    public function buildName($user, $addNickname = true) {
         $fullname = implode(
             ' ', array(
                 @$user['firstname'],
@@ -39,7 +39,7 @@ class AppHelper extends Helper {
                 @$user['surname'],
             )
         );
-        $nickname = $user['nickname'];
+        $nickname = (($addNickname) ? $user['nickname'] : '');
         
         if (trim($fullname)) {
             return $fullname . ((!empty($nickname)) ? ' (' . $nickname . ')' : '');

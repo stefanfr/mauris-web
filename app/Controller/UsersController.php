@@ -82,8 +82,6 @@ class UsersController extends AppController {
     }
 
     public function delete($id = null) {
-        $this->request->onlyAllow('post');
-
         $this->User->id = $id;
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));
@@ -165,30 +163,22 @@ class UsersController extends AppController {
 			throw new NotFoundException();
 		}
 
-		if (!$this->request->data) {
-			$this->request->data = $user;
-		}
+		$this->User->id = $id;
+		if ($this->User->delete()) {
+			Cache::clearGroup('users');
 
-		if ($this->request->is(array('post', 'delete'))) {
-			$this->User->id = $id;
-			if ($this->User->delete()) {
-				Cache::clearGroup('users');
-
-				$this->Session->setFlash(__('The user has been removed.'), 'alert', array(
-					'plugin' => 'BoostCake',
-					'class'  => 'alert-success'
-				));
-
-				return $this->redirect(array('action' => 'index'));
-			}
-
-			$this->Session->setFlash(__('Could not remove the user'), 'alert', array(
+			$this->Session->setFlash(__('The user has been removed.'), 'alert', array(
 				'plugin' => 'BoostCake',
-				'class'  => 'alert-danger'
+				'class'  => 'alert-success'
 			));
+
+			return $this->redirect(array('action' => 'index'));
 		}
 
-		$this->set(compact('user'));
+		$this->Session->setFlash(__('Could not remove the user'), 'alert', array(
+			'plugin' => 'BoostCake',
+			'class'  => 'alert-danger'
+		));
 	}
 
     public function install(){     

@@ -15,6 +15,13 @@ class CachesController extends AppController {
 		)
 	);
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+
+		$this->Security->requirePost('admin_clear');
+		$this->Security->requirePost('admin_gc');
+	}
+
 	public function admin_index() {
 		$this->set('can_delete', $this->PermissionCheck->checkPermission(
 			'cache', 'delete', 'system'
@@ -35,44 +42,40 @@ class CachesController extends AppController {
 	}
 
 	public function admin_clear($configuration = null) {
-		if ($this->request->is('post')) {
-			if ($configuration) {
-				$result = Cache::clear(false, $configuration);
-			} else {
-				$result = Cache::clear(false);
-			}
-			
-            if ($result) {
-                    $this->Session->setFlash(__('The caches have been cleared'), 'alert', array(
-                        'plugin' => 'BoostCake',
-                        'class' => 'alert-success'
-                    ));
+		if ($configuration) {
+			$result = Cache::clear(false, $configuration);
+		} else {
+			$result = Cache::clear(false);
+		}
 
-                    return $this->redirect(array('action' => 'index'));
-            }
+        if ($result) {
+                $this->Session->setFlash(__('The caches have been cleared'), 'alert', array(
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-success'
+                ));
+
+                return $this->redirect(array('action' => 'index'));
         }
     }
 
 	public function admin_gc($configuration = null) {
-		if ($this->request->is('post')) {
-			if ($configuration) {
-				Cache::gc($configuration);
-			} else {
-				Cache::gc();
-			}
-			
-			$this->Session->setFlash(__('The garbage collector has run successfully'), 'alert', array(
-				'plugin' => 'BoostCake',
-				'class' => 'alert-success'
-			));
+		if ($configuration) {
+			Cache::gc($configuration);
+		} else {
+			Cache::gc();
+		}
 
-			if ($configuration) {
-				$route = array('action' => 'view', $configuration);
-			} else {
-				$route = array('action' => 'index');
-			}
-			return $this->redirect($route);
-        }
+		$this->Session->setFlash(__('The garbage collector has run successfully'), 'alert', array(
+			'plugin' => 'BoostCake',
+			'class' => 'alert-success'
+		));
+
+		if ($configuration) {
+			$route = array('action' => 'view', $configuration);
+		} else {
+			$route = array('action' => 'index');
+		}
+		return $this->redirect($route);
     }
     
 }

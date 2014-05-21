@@ -195,10 +195,6 @@ class PostsController extends AppController {
 	}
 	
 	public function delete($id) {
-		if ($this->request->is('get')) {
-			throw new MethodNotAllowedException();
-		}
-
 		if ($this->Post->delete($id)) {
 			$this->Session->setFlash(__('Your post has been removed'), 'alert', array(
 				'plugin' => 'BoostCake',

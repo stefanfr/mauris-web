@@ -234,31 +234,21 @@ class OrganizationsController extends AppController {
 			throw new NotFoundException();
 		}
 
-		$this->set(compact('organization'));
+		if ($this->School->delete()) {
+			Cache::clearGroup('organization');
 
-		if ($this->request->is(array('post', 'delete'))) {
-			if ($this->School->delete()) {
-				Cache::clearGroup('organization');
-
-				$this->Session->setFlash(__('The organization has been removed'), 'alert', array(
-					'plugin' => 'BoostCake',
-					'class'  => 'alert-success'
-				));
-
-				/*
-				 * The organization has been removed so its no longer possible to go the the organization's edit page.
-				 * This is to make sure the user gets redirected to the index.
-				 */
-				$this->redirect(array('action' => 'index'));
-
-				return;
-			}
-
-			$this->Session->setFlash(__('Could not remove the organization'), 'alert', array(
+			$this->Session->setFlash(__('The organization has been removed'), 'alert', array(
 				'plugin' => 'BoostCake',
-				'class'  => 'alert-danger'
+				'class'  => 'alert-success'
 			));
+
+			return $this->redirect(array('action' => 'index'));
 		}
+
+		$this->Session->setFlash(__('Could not remove the organization'), 'alert', array(
+			'plugin' => 'BoostCake',
+			'class'  => 'alert-danger'
+		));
 	}
 
 }
