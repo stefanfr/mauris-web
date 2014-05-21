@@ -47,15 +47,7 @@ echo $this->Html->link(
 				)
 				?>
 			</td>
-			<td>
-				<?php
-				echo $this->Html->link(
-					'<span class="glyphicon glyphicon-remove"></span>',
-					array('action' => 'delete', $style['Style']['id']),
-					array('class' => 'btn btn-danger', 'escape' => false)
-				)
-				?>
-			</td>
+			<td><?php echo $this->element('button/delete', array('id' => $style['Style']['id'])) ?></td>
 		</tr>
 	<?php endforeach; ?>
 	</tbody>

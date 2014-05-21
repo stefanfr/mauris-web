@@ -290,21 +290,19 @@ class TeacherAbsenceController extends AppController {
 
 		$this->TeacherAbsenceReport->id = $id;
 		if (!isset($teachers[$this->TeacherAbsenceReport->field('teacher_id')])) {
-			throw new ForbiddenException();
+			throw new NotFoundException();
 		}
 
-		$this->set('id', $id);
+		if ($this->TeacherAbsenceReport->delete($id)) {
+			$this->Session->setFlash(__('The absence report has been removed'), 'alert', array(
+				'plugin' => 'BoostCake',
+				'class'  => 'alert-success'
+			));
 
-		if ($this->request->is('post')) {
-			if ($this->TeacherAbsenceReport->delete($id)) {
-				$this->Session->setFlash(__('The absence report has been removed'), 'alert', array(
-					'plugin' => 'BoostCake',
-					'class'  => 'alert-success'
-				));
-
-				return $this->redirect(array('action' => 'index'));
-			}
+			return $this->redirect(array('action' => 'index'));
 		}
+
+		throw new ForbiddenException();
 	}
 
 }

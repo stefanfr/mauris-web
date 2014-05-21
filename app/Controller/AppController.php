@@ -81,7 +81,8 @@ class AppController extends Controller {
 		'SchoolInformation',
 		'Styling',
 		'LanguageAware',
-		'PermissionCheck'
+		'PermissionCheck',
+		'Security'
 	);
         
     function beforeFilter() {
@@ -94,6 +95,10 @@ class AppController extends Controller {
         );
         
         $this->set('can_manage', $this->PermissionCheck->checkPermission('manage', 'read'));
+
+	    $this->Security->requirePost('manage_delete');
+	    $this->Security->requirePost('admin_delete');
+	    $this->Security->requirePost('delete');
 
 	    if (isset($this->params['prefix'])) {
 		    switch ($this->params['prefix']) {
