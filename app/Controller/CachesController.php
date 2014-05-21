@@ -6,6 +6,15 @@ class CachesController extends AppController {
 		'DynList.DynList'
 	);
 
+	public $components = array(
+		'AutoPermission' => array(
+			'mappings' => array(
+				'update' => array('gc'),
+				'delete' => array('clear'),
+			)
+		)
+	);
+
 	public function admin_index() {
 		$this->set('can_delete', $this->PermissionCheck->checkPermission(
 			'cache', 'delete', 'system'
@@ -17,10 +26,6 @@ class CachesController extends AppController {
     }
 
 	public function admin_view($configuration) {
-		if (!$this->PermissionCheck->checkPermission('cache', 'read', 'system')) {
-			throw new ForbiddenException();
-		}
-		
 		if ($this->request->query('dynlist')) {
 			$this->layout = false;
 		}
@@ -30,9 +35,6 @@ class CachesController extends AppController {
 	}
 
 	public function admin_clear($configuration = null) {
-		if (!$this->PermissionCheck->checkPermission('cache', 'delete', 'system')) {
-			throw new ForbiddenException();
-		}
 		if ($this->request->is('post')) {
 			if ($configuration) {
 				$result = Cache::clear(false, $configuration);
@@ -52,9 +54,6 @@ class CachesController extends AppController {
     }
 
 	public function admin_gc($configuration = null) {
-		if (!$this->PermissionCheck->checkPermission('cache', 'update', 'system')) {
-			throw new ForbiddenException();
-		}
 		if ($this->request->is('post')) {
 			if ($configuration) {
 				Cache::gc($configuration);

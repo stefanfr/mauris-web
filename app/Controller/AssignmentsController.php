@@ -9,7 +9,10 @@ class AssignmentsController extends AppController {
 
 	public $uses = array('Assignment');
 
-	public $components = array('Paginator');
+	public $components = array(
+		'Paginator',
+		'AutoPermission'
+	);
 
 	public $paginate = array(
 		'limit' => 5,

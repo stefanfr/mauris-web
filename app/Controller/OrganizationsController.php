@@ -18,7 +18,12 @@ class OrganizationsController extends AppController {
 				)
 			)
 		),
-		'Security'
+		'Security',
+		'AutoPermission' => array(
+			'ignore' => array(
+				'prefix' => array('website')
+			)
+		)
 	);
 	public $uses       = array('School');
 
@@ -122,18 +127,10 @@ class OrganizationsController extends AppController {
 	}
 
 	public function admin_index() {
-		if (!$this->PermissionCheck->checkPermission('organization', 'read', 'system')) {
-			throw new ForbiddenException();
-		}
-
 		$this->set('organizations', $this->Paginator->paginate('School'));
 	}
 
 	public function admin_add() {
-		if (!$this->PermissionCheck->checkPermission('organization', 'create', 'system')) {
-			throw new ForbiddenException();
-		}
-
 		$styles = $this->School->UsesStyle->find('list', array(
 			'fields'     => array('id', 'title'),
 			'recursive'  => 2,
@@ -169,10 +166,6 @@ class OrganizationsController extends AppController {
 
 	public function admin_edit($id) {
 		$this->School->id = $id;
-
-		if (!$this->PermissionCheck->checkPermission('organization', 'update', 'system')) {
-			throw new ForbiddenException();
-		}
 
 		$organization = $this->School->read();
 		if (empty($organization)) {
@@ -235,10 +228,6 @@ class OrganizationsController extends AppController {
 
 	public function admin_delete($id) {
 		$this->School->id = $id;
-
-		if (!$this->PermissionCheck->checkPermission('organization', 'delete', 'system')) {
-			throw new ForbiddenException();
-		}
 
 		$organization = $this->School->read();
 		if (empty($organization)) {

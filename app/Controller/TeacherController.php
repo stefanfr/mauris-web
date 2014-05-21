@@ -2,6 +2,10 @@
 
 class TeacherController extends AppController {
 
+	public $components = array(
+		'AutoPermission'
+	);
+
     public function view($id) {
         $this->Teacher->id = $id;
         $this->Teacher->recursive = 2;

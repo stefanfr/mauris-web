@@ -19,23 +19,16 @@ class StylesController extends AppController {
 				)
 			)
 		),
-		'Security'
+		'Security',
+		'AutoPermission'
 	);
 
 	public function admin_index() {
-		if (!$this->PermissionCheck->checkPermission('style', 'read', 'system')) {
-			throw new ForbiddenException();
-		}
-
 		$this->set('styles', $this->Paginator->paginate('Style'));
 	}
 
 	public function admin_view($id) {
 		$this->Style->id = $id;
-
-		if (!$this->PermissionCheck->checkPermission('style', 'read', 'system')) {
-			throw new ForbiddenException();
-		}
 
 		$style = $this->Style->read();
 		if (empty($style)) {
@@ -47,10 +40,6 @@ class StylesController extends AppController {
 
 	public function admin_edit($id) {
 		$this->Style->id = $id;
-
-		if (!$this->PermissionCheck->checkPermission('style', 'update', 'system')) {
-			throw new ForbiddenException();
-		}
 
 		$style = $this->Style->read();
 		if (empty($style)) {

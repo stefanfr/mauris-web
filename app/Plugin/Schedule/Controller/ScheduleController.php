@@ -15,7 +15,8 @@ class ScheduleController extends AppController {
             'custom' => array(
                 'class', 'classroom', 'teacher', 'cancelled', 'view'
             )
-        )
+        ),
+	    'AutoPermission'
     );
 
     public $paginate = array(

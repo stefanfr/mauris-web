@@ -40,6 +40,18 @@ class PermissionsController extends AppController {
 				'system_alias' => 'event',
 				'title'        => 'Event'
 			)
+		),
+		array(
+			'Permission' => array(
+				'system_alias' => 'assignment',
+				'title'        => 'Assignment'
+			)
+		),
+		array(
+			'Permission' => array(
+				'system_alias' => 'teacher',
+				'title'        => 'Teacher'
+			)
 		)
 	);
 

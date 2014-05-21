@@ -19,6 +19,7 @@ class FeedbackController extends AppController {
 				)
 			)
 		),
+		'AutoPermission'
 	);
 
     public function beforeFilter() {
@@ -81,10 +82,6 @@ class FeedbackController extends AppController {
     }
 
 	public function admin_index() {
-		if (!$this->PermissionCheck->checkPermission('feedback', 'read', 'system')) {
-			throw new ForbiddenException();
-		}
-
 		$this->set('feedback', $this->Paginator->paginate('Feedback'));
 	}
 
@@ -94,10 +91,6 @@ class FeedbackController extends AppController {
 		$feedback = $this->Feedback->read();
 		if (!$feedback) {
 			throw new NotFoundException();
-		}
-
-		if (!$this->PermissionCheck->checkPermission('feedback', 'read', 'system')) {
-			throw new ForbiddenException();
 		}
 
 		$this->set(compact('feedback'));
