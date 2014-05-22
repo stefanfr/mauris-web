@@ -2,7 +2,7 @@
 
 class TeacherAbsenceController extends AppController {
 
-	public $components = array('Paginator', 'AutoPermission');
+	public $components = array('Paginator');
 
 	public $uses = array('TeacherAbsenceReport', 'UserTeacherMapping', 'Teacher');
 
