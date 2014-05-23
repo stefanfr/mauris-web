@@ -23,7 +23,10 @@ class Teacher extends AppModel {
         $rawClasses = $this->find('all', array(
             'conditions' => array(
                 'department_id' => $departmentId
-            )
+            ),
+            'order' => array(
+            		'Teacher.name' => 'ASC'
+		)
         ));
 
         $classes = array();
