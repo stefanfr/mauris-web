@@ -69,10 +69,6 @@ class AutoPermissionComponent extends Component {
 
 		$permission = $controller->modelKey;
 
-		debug($controller->modelKey);
-		debug($permissionAction);
-		debug($scope);
-
 		if (!$this->PermissionCheck->checkPermission($permission, $permissionAction, $scope)) {
 			throw new ForbiddenException();
 		}
