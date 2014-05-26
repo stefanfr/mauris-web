@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-05-26 12:37+0000\n"
+"POT-Creation-Date: 2014-05-26 21:10+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -407,8 +407,8 @@ msgstr ""
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:21
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:25
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:22
-#: Plugin/VendingMachine/View/CreditAccounts/admin_edit.ctp:21
-#: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:22
+#: Plugin/VendingMachine/View/UserBalances/admin_edit.ctp:21
+#: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:22
 #: View/Assignments/manage_index.ctp:14 View/Comment/edit.ctp:18
 #: View/Events/manage_edit.ctp:30 View/Events/manage_index.ctp:17
 #: View/Feedback/admin_index.ctp:19 View/Organizations/admin_edit.ctp:39
@@ -423,8 +423,8 @@ msgstr ""
 #: Plugin/Billboard/View/Billboards/manage_index.ctp:13
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:22
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:23
-#: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:23
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:23
+#: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:23
 #: View/Assignments/manage_index.ctp:15 View/Events/manage_delete.ctp:13
 #: View/Events/manage_index.ctp:18 View/Feedback/admin_index.ctp:20
 #: View/Organizations/admin_index.ctp:22 View/Styles/admin_index.ctp:23
@@ -609,72 +609,73 @@ msgstr ""
 msgid "Assignments"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/CardsController.php:40
+#: Plugin/VendingMachine/Controller/CardsController.php:50
 msgid "The card has been added"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/CardsController.php:48
+#: Plugin/VendingMachine/Controller/CardsController.php:58
 msgid "Could not add the card"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/CardsController.php:76
+#: Plugin/VendingMachine/Controller/CardsController.php:86
 msgid "The card has been changed"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/CardsController.php:84
+#: Plugin/VendingMachine/Controller/CardsController.php:94
 msgid "Could not change the card"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/CreditAccountsController.php:31
-msgid "The credit account has been added"
-msgstr ""
-
-#: Plugin/VendingMachine/Controller/CreditAccountsController.php:39
-msgid "Could not add the credit account"
-msgstr ""
-
-#: Plugin/VendingMachine/Controller/CreditAccountsController.php:59
-msgid "The credit account has been changed."
-msgstr ""
-
-#: Plugin/VendingMachine/Controller/CreditAccountsController.php:67
-msgid "Could not change the credit account"
-msgstr ""
-
-#: Plugin/VendingMachine/Controller/TransactionsController.php:52
+#: Plugin/VendingMachine/Controller/TransactionsController.php:75
 msgid "The transaction has been added"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/TransactionsController.php:62
+#: Plugin/VendingMachine/Controller/TransactionsController.php:85
 msgid "Could not add the transaction"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/TransactionsController.php:80
+#: Plugin/VendingMachine/Controller/TransactionsController.php:103
 msgid "The transaction has been removed"
 msgstr ""
 
-#: Plugin/VendingMachine/Controller/TransactionsController.php:90
+#: Plugin/VendingMachine/Controller/TransactionsController.php:113
 msgid "Could not remove the transaction"
+msgstr ""
+
+#: Plugin/VendingMachine/Controller/UserBalancesController.php:42
+msgid "The balance account has been added"
+msgstr ""
+
+#: Plugin/VendingMachine/Controller/UserBalancesController.php:50
+msgid "Could not add the balance account"
+msgstr ""
+
+#: Plugin/VendingMachine/Controller/UserBalancesController.php:70
+msgid "The balance account has been changed."
+msgstr ""
+
+#: Plugin/VendingMachine/Controller/UserBalancesController.php:78
+msgid "Could not change the balance account"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:2
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:6
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:5
-#: Plugin/VendingMachine/View/CreditAccounts/admin_add.ctp:2
-#: Plugin/VendingMachine/View/CreditAccounts/admin_edit.ctp:5
-#: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:5
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:2
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:5
+#: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:2
+#: Plugin/VendingMachine/View/UserBalances/admin_edit.ctp:5
+#: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:5
+#: Plugin/VendingMachine/View/UserBalances/balance.ctp:6
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:2
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:2
 msgid "Vending machine"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:3
-#: Plugin/VendingMachine/View/CreditAccounts/admin_add.ctp:3
-#: Plugin/VendingMachine/View/CreditAccounts/admin_edit.ctp:6
-#: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:6
-#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:9
-msgid "Credit accounts"
+#: Plugin/VendingMachine/View/Cards/admin_edit.ctp:7
+#: Plugin/VendingMachine/View/Cards/admin_index.ctp:6
+#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:12
+msgid "Cards"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:4
@@ -682,18 +683,12 @@ msgid "Add card"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:19
-#: Plugin/VendingMachine/View/CreditAccounts/admin_add.ctp:19
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:20
+#: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:19
 #: View/Events/manage_add.ctp:30 View/Organizations/admin_add.ctp:39
 #: View/Pages/home.ctp:120 View/Posts/add.ctp:42
 #: View/TeacherAbsence/manage_add.ctp:27
 msgid "Add"
-msgstr ""
-
-#: Plugin/VendingMachine/View/Cards/admin_edit.ctp:7
-#: Plugin/VendingMachine/View/Cards/admin_index.ctp:6
-#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:10
-msgid "Cards"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:8
@@ -703,7 +698,7 @@ msgid "Change %1$s"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:20
-#: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:20
+#: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:20
 #: View/Feedback/admin_index.ctp:17 View/Feedback/admin_view.ctp:14
 msgid "User"
 msgstr ""
@@ -713,21 +708,10 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
-#: Plugin/VendingMachine/View/CreditAccounts/admin_add.ctp:4
-msgid "Add credit account"
-msgstr ""
-
-#: Plugin/VendingMachine/View/CreditAccounts/admin_edit.ctp:7
-msgid "Change credit account of %1$s"
-msgstr ""
-
-#: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:21
-msgid "Credit"
-msgstr ""
-
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:3
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:6
-#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:11
+#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:13
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:14
 msgid "Transactions"
 msgstr ""
 
@@ -736,6 +720,7 @@ msgid "Add transaction"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:17
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:35
 #: View/Elements/emails/text/organization_details.ctp:9
 #: View/Organizations/admin_add.ctp:28 View/Organizations/admin_edit.ctp:28
 #: View/Organizations/manage_edit.ctp:20
@@ -743,11 +728,74 @@ msgid "None"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:21
+#: Plugin/VendingMachine/View/UserBalances/balance.ctp:7
 msgid "Credit account"
 msgstr ""
 
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:22
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:24
 msgid "Amount"
+msgstr ""
+
+#: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:3
+#: Plugin/VendingMachine/View/UserBalances/admin_edit.ctp:6
+#: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:6
+#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:11
+msgid "User balances"
+msgstr ""
+
+#: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:4
+msgid "Add balance account"
+msgstr ""
+
+#: Plugin/VendingMachine/View/UserBalances/admin_edit.ctp:7
+msgid "Change balance account of %1$s"
+msgstr ""
+
+#: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:21
+msgid "Credit"
+msgstr ""
+
+#: Plugin/VendingMachine/View/UserBalances/balance.ctp:23
+msgid "Balance:"
+msgstr ""
+
+#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:29
+msgid "View cards"
+msgstr ""
+
+#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:48
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:48
+msgid "View transactions"
+msgstr ""
+
+#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:25
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:23
+msgid "Card"
+msgid_plural "Cards"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:44
+msgid "Transaction"
+msgid_plural "Transactions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:17
+msgid "Your latest transactions"
+msgstr ""
+
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:22
+msgid "Timestamp"
+msgstr ""
+
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:67
+msgid "Balance"
+msgstr ""
+
+#: Plugin/VendingMachine/View/VendingMachine/index.ctp:71
+msgid "View balance"
 msgstr ""
 
 #: Plugin/Website/View/Contributions/contribute.ctp:2
