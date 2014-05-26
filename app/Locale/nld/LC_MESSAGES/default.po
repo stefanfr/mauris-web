@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-05-26 21:10+0000\n"
-"PO-Revision-Date: 2014-05-26 23:16+0200\n"
+"PO-Revision-Date: 2014-05-26 23:18+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/mauris/mauris-website/nld/>\n"
@@ -804,11 +804,11 @@ msgstr ""
 
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:67
 msgid "Balance"
-msgstr "Balans"
+msgstr "Saldo"
 
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:71
 msgid "View balance"
-msgstr "Bekijk balans"
+msgstr "Bekijk saldo"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:2
 #: Plugin/Website/View/Contributions/index.ctp:2
