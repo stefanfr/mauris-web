@@ -13,7 +13,7 @@ echo $this->element('page_header');
 
 echo $this->ModelForm->create('Transaction');
 
-echo $this->Form->input('credit_account_id', array('options' => $credit_accounts));
+echo $this->Form->input('user_balance_id', array('options' => $user_balances));
 echo $this->Form->input('card_id', array('empty' => __('None')));
 echo $this->Form->input('amount');
 

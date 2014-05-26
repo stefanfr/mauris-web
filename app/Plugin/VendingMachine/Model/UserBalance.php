@@ -2,7 +2,7 @@
 
 App::uses('VendingMachineAppModel', 'VendingMachine.Model');
 
-class CreditAccount extends VendingMachineAppModel {
+class UserBalance extends VendingMachineAppModel {
 
 	public $primaryKey = 'user_id';
 
@@ -16,16 +16,16 @@ class CreditAccount extends VendingMachineAppModel {
 	public $hasMany = array(
 		'Card' => array(
 			'className' => 'VendingMachine.Card',
-			'foreignKey' => 'credit_account_id'
+			'foreignKey' => 'user_balance_id'
 		)
 	);
 
 	public function applyTransaction($transaction) {
-		$this->id = $transaction['Transaction']['credit_account_id'];
+		$this->id = $transaction['Transaction']['user_balance_id'];
 
-		$creditAccount = $this->read();
-		$creditAccount['CreditAccount']['credit'] += $transaction['Transaction']['amount'];
-		$this->save($creditAccount);
+		$UserBalance = $this->read();
+		$UserBalance['UserBalance']['balance'] += $transaction['Transaction']['amount'];
+		$this->save($UserBalance);
 	}
 
 }

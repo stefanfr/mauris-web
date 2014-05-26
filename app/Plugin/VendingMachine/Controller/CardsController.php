@@ -33,15 +33,15 @@ class CardsController extends AppController {
 	}
 
 	public function admin_add() {
-		$credit_accounts = $this->Card->CreditAccount->find('list', array(
+		$user_balances = $this->Card->UserBalance->find('list', array(
 			'fields' => array(
-				'CreditAccount.user_id',
+				'UserBalance.user_id',
 				'User.username'
 			),
 			'recursive' => 2
 		));
 
-		$this->set(compact('credit_accounts'));
+		$this->set(compact('user_balances'));
 
 		if ($this->request->is(array('post', 'put'))) {
 			$this->Card->create();
@@ -70,15 +70,15 @@ class CardsController extends AppController {
 			throw new NotFoundException();
 		}
 
-		$credit_accounts = $this->Card->CreditAccount->find('list', array(
+		$user_balances = $this->Card->UserBalance->find('list', array(
 			'fields' => array(
-				'CreditAccount.user_id',
+				'UserBalance.user_id',
 				'User.username'
 			),
 			'recursive' => 2
 		));
 
-		$this->set(compact('card', 'credit_accounts'));
+		$this->set(compact('card', 'user_balances'));
 
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Card->save($this->request->data)) {

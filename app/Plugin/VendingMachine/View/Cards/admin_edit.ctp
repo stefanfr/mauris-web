@@ -1,7 +1,7 @@
 <?php
 /**
  * @var $card array
- * @var $credit_accounts array
+ * @var $user_balances array
  */
 $this->Title->addSegment(__('Vending machine'));
 $this->Title->addSegment(__('Cards'));
@@ -13,13 +13,13 @@ $this->Title->addCrumbs(array(
 	array('action' => 'edit', $card['Card']['id']),
 ));
 
-debug($credit_accounts);
+debug($user_balances);
 
 echo $this->element('page_header');
 
 echo $this->ModelForm->create('Card');
 
-echo $this->Form->input('credit_account_id', array('options' => $credit_accounts));
+echo $this->Form->input('user_balance_id', array('options' => $user_balances));
 echo $this->Form->input('code');
 
 echo $this->Form->submit(__('Change'), array(

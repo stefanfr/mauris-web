@@ -18,7 +18,7 @@ class TransactionsController extends AppController {
 
 	public function index() {
 		$transactions = $this->Paginator->paginate('Transaction', array(
-			'Transaction.credit_account_id' => $this->Auth->user('id')
+			'Transaction.user_balance_id' => $this->Auth->user('id')
 		));
 
 		if (!empty($this->request->params['requested'])) {
@@ -43,28 +43,28 @@ class TransactionsController extends AppController {
 	}
 
 	public function admin_add() {
-		$credit_accounts = $this->Transaction->CreditAccount->find('list', array(
+		$user_balances = $this->Transaction->UserBalance->find('list', array(
 			'fields' => array(
-				'CreditAccount.user_id',
+				'UserBalance.user_id',
 				'User.username'
 			),
 			'recursive' => 2
 		));
 		$cards = $this->Transaction->UsedCard->find('list');
 
-		$this->set(compact('credit_accounts', 'cards'));
+		$this->set(compact('user_balances', 'cards'));
 
 		if ($this->request->is(array('post', 'put'))) {
 			$this->request->data['Transaction']['created'] = $this->Transaction->getDataSource()->expression('NOW()');
 
-			$this->Transaction->CreditAccount->id = $this->request->data['Transaction']['credit_account_id'];
-			$creditAccount = $this->Transaction->CreditAccount->read();
+			$this->Transaction->UserBalance->id = $this->request->data['Transaction']['user_balance_id'];
+			$UserBalance = $this->Transaction->UserBalance->read();
 
-			if (($creditAccount['CreditAccount']['credit'] + $this->request->data['Transaction']['amount']) < 0) {
+			if (($UserBalance['UserBalance']['balance'] + $this->request->data['Transaction']['amount']) < 0) {
 				throw new GoneException();
 			}
 
-			$this->Transaction->CreditAccount->applyTransaction($this->request->data);
+			$this->Transaction->UserBalance->applyTransaction($this->request->data);
 
 			$this->Transaction->create();
 			if ($this->Transaction->save($this->request->data)) {

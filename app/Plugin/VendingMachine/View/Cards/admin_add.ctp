@@ -1,6 +1,6 @@
 <?php
 $this->Title->addSegment(__('Vending machine'));
-$this->Title->addSegment(__('Credit accounts'));
+$this->Title->addSegment(__('Cards'));
 $this->Title->setPageTitle(__('Add card'));
 
 $this->Title->addCrumbs(array(
@@ -13,7 +13,7 @@ echo $this->element('page_header');
 
 echo $this->ModelForm->create('Card');
 
-echo $this->Form->input('credit_account_id', array('options' => $credit_accounts));
+echo $this->Form->input('user_balance_id', array('options' => $user_balances));
 echo $this->Form->input('code');
 
 echo $this->Form->submit(__('Add'), array(

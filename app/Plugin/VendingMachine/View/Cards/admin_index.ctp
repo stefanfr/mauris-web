@@ -26,10 +26,10 @@ echo $this->element('button/add');
 	<tbody>
 	<?php foreach ($cards as $card): ?>
 		<tr>
-			<td><?php echo $this->Html->link($card['CreditAccount']['User']['username'], array('plugin' => null, 'controller' => 'users', 'action' => 'view', $card['CreditAccount']['User']['id'])) ?></td>
-			<td><?php echo h($card['Card']['code']) ?></td>
-			<td><?php echo $this->element('button/edit', array('id' => $card['Card']['id'])) ?></td>
-			<td><?php echo $this->element('button/delete', array('id' => $card['Card']['id'])) ?></td>
+			<td><?php echo $this->Html->link($card['UserBalance']['User']['username'], array('plugin' => null, 'controller' => 'users', 'action' => 'view', $card['UserBalance']['User']['id'])); ?></td>
+			<td><?php echo h($card['Card']['code']); ?></td>
+			<td><?php echo $this->element('button/edit', array('id' => $card['Card']['id'])); ?></td>
+			<td><?php echo $this->element('button/delete', array('id' => $card['Card']['id'])); ?></td>
 		</tr>
 	<?php endforeach; ?>
 	</tbody>

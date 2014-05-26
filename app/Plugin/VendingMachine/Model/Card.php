@@ -7,9 +7,9 @@ class Card extends VendingMachineAppModel {
 	public $displayField = 'code';
 
 	public $belongsTo = array(
-		'CreditAccount' => array(
-			'className' => 'VendingMachine.CreditAccount',
-			'foreignKey' => 'credit_account_id'
+		'UserBalance' => array(
+			'className' => 'VendingMachine.UserBalance',
+			'foreignKey' => 'user_balance_id'
 		)
 	);
 
