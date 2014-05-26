@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-05-26 21:10+0000\n"
-"PO-Revision-Date: 2014-05-26 20:54+0200\n"
+"PO-Revision-Date: 2014-05-26 23:16+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -658,19 +658,16 @@ msgid "The balance account has been added"
 msgstr "Het saldo account is toegevoegt"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:50
-#, fuzzy
 msgid "Could not add the balance account"
-msgstr "Kon het saldo account niet toevoegen"
+msgstr "Kon het gebruiker saldo niet toevoegen"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:70
-#, fuzzy
 msgid "The balance account has been changed."
-msgstr "Het saldo account is aangepast."
+msgstr "Het gebruiker saldo is aangepast."
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:78
-#, fuzzy
 msgid "Could not change the balance account"
-msgstr "Kon het saldo account niet aanpassen"
+msgstr "Kon het gebruiker saldo niet aanpassen"
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:2
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:6
@@ -757,17 +754,15 @@ msgstr "Hoeveelheid"
 #: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:6
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:11
 msgid "User balances"
-msgstr ""
+msgstr "Gebruiker saldo's"
 
 #: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:4
-#, fuzzy
 msgid "Add balance account"
-msgstr "Voeg saldo account toe"
+msgstr "Voeg gebruiker saldo toe"
 
 #: Plugin/VendingMachine/View/UserBalances/admin_edit.ctp:7
-#, fuzzy
 msgid "Change balance account of %1$s"
-msgstr "Bewerk saldo account van %1$s"
+msgstr "Bewerk gebruiker saldo van %1$s"
 
 #: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:21
 msgid "Credit"
@@ -775,38 +770,33 @@ msgstr "Saldo"
 
 #: Plugin/VendingMachine/View/UserBalances/balance.ctp:23
 msgid "Balance:"
-msgstr ""
+msgstr "Saldo:"
 
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:29
-#, fuzzy
 msgid "View cards"
-msgstr "Bekijk %1$s"
+msgstr "Bekijk kaarten"
 
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:48
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:48
-#, fuzzy
 msgid "View transactions"
-msgstr "Transacties"
+msgstr "Bekijk transacties"
 
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:25
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:23
-#, fuzzy
 msgid "Card"
 msgid_plural "Cards"
-msgstr[0] "Kaarten"
+msgstr[0] "Kaart"
 msgstr[1] "Kaarten"
 
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:44
-#, fuzzy
 msgid "Transaction"
 msgid_plural "Transactions"
-msgstr[0] "Transacties"
+msgstr[0] "Transactie"
 msgstr[1] "Transacties"
 
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:17
-#, fuzzy
 msgid "Your latest transactions"
-msgstr "Draag vertalingen bij"
+msgstr "Je laatste transacties"
 
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:22
 msgid "Timestamp"
@@ -814,12 +804,11 @@ msgstr ""
 
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:67
 msgid "Balance"
-msgstr ""
+msgstr "Balans"
 
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:71
-#, fuzzy
 msgid "View balance"
-msgstr "Bekijk terugkoppeling"
+msgstr "Bekijk balans"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:2
 #: Plugin/Website/View/Contributions/index.ctp:2
