@@ -1,3 +1,0 @@
-User-Agent: *
-Disallow: /debug_kit/
-Sitemap: http://ictcollege.eu/sitemaps.xml
