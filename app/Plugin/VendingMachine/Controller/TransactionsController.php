@@ -12,6 +12,9 @@ class TransactionsController extends AppController {
 	public $components = array(
 		'AutoPermission',
 		'Paginator' => array(
+			'order' => array(
+				'Transaction.created' => 'DESC'
+			),
 			'recursive' => 2
 		)
 	);
