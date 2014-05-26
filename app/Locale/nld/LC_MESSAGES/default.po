@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-05-26 12:37+0000\n"
-"PO-Revision-Date: 2014-05-26 14:43+0200\n"
+"PO-Revision-Date: 2014-05-26 20:54+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/mauris/mauris-website/nld/>\n"
@@ -665,9 +665,8 @@ msgid "The transaction has been removed"
 msgstr "De transactie is verwijderd"
 
 #: Plugin/VendingMachine/Controller/TransactionsController.php:90
-#, fuzzy
 msgid "Could not remove the transaction"
-msgstr "Kon de organisatie niet verwijderen"
+msgstr "Kon de transactie niet verwijderen"
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:2
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:6
@@ -679,7 +678,7 @@ msgstr "Kon de organisatie niet verwijderen"
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:5
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:2
 msgid "Vending machine"
-msgstr ""
+msgstr "Automaat"
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:3
 #: Plugin/VendingMachine/View/CreditAccounts/admin_add.ctp:3
