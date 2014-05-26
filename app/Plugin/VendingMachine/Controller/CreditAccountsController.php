@@ -10,8 +10,19 @@ App::uses('AppController', 'Controller');
 class CreditAccountsController extends AppController {
 
 	public $components = array(
-		'AutoPermission', 'Paginator'
+		'AutoPermission', 'Paginator', 'RequestHandler'
 	);
+
+	public function balance() {
+		$this->CreditAccount->id = $this->Auth->user('id');
+		$balance = $this->CreditAccount->field('CreditAccount.credit');
+
+		if (!empty($this->request->params['requested'])) {
+			return $balance;
+		}
+
+		$this->set(compact('balance'));
+	}
 
 	public function admin_index() {
 		$credit_accounts = $this->Paginator->paginate('CreditAccount');

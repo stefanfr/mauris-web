@@ -8,4 +8,8 @@ class VendingMachineController extends AppController {
 
 	}
 
+	public function index() {
+
+	}
+
 }

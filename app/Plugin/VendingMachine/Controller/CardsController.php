@@ -16,6 +16,16 @@ class CardsController extends AppController {
 		)
 	);
 
+	public function admin_stats() {
+		$stats = array(
+			'amount' => $this->Card->find('count')
+		);
+
+		if (!empty($this->request->params['requested'])) {
+			return $stats;
+		}
+	}
+
 	public function admin_index() {
 		$cards = $this->Paginator->paginate('Card');
 

@@ -16,6 +16,26 @@ class TransactionsController extends AppController {
 		)
 	);
 
+	public function index() {
+		$transactions = $this->Paginator->paginate('Transaction', array(
+			'Transaction.credit_account_id' => $this->Auth->user('id')
+		));
+
+		if (!empty($this->request->params['requested'])) {
+			return $transactions;
+		}
+	}
+
+	public function admin_stats() {
+		$stats = array(
+			'amount' => $this->Transaction->find('count')
+		);
+
+		if (!empty($this->request->params['requested'])) {
+			return $stats;
+		}
+	}
+
 	public function admin_index() {
 		$transactions = $this->Paginator->paginate('Transaction');
 
