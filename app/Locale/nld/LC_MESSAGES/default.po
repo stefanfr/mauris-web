@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-05-26 12:37+0000\n"
-"PO-Revision-Date: 2014-05-22 11:07+0200\n"
-"Last-Translator: Stefan Fransen <stefanfransen16@gmail.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"PO-Revision-Date: 2014-05-26 14:43+0200\n"
+"Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,34 +128,28 @@ msgid "Unable to update your comment."
 msgstr "Commentaar kon niet worden aangepast."
 
 #: Controller/EventsController.php:91
-#, fuzzy
 msgid "The event has been added"
-msgstr "De gebruiker is opgeslagen"
+msgstr "Het evenement is toegevoegd"
 
 #: Controller/EventsController.php:101
-#, fuzzy
 msgid "Could not add the event"
-msgstr "Kon de afdeling niet aanmaken"
+msgstr "Kon het evenement niet toevoegen"
 
 #: Controller/EventsController.php:142
-#, fuzzy
 msgid "The event has been changed"
-msgstr "De stijl is aangepast"
+msgstr "Het evenement is aangepast"
 
 #: Controller/EventsController.php:152
-#, fuzzy
 msgid "Could not change the event"
-msgstr "Kon de gebruiker niet aanpassen"
+msgstr "Kon het evenement niet aanpassen"
 
 #: Controller/EventsController.php:183
-#, fuzzy
 msgid "The event has been deleted"
-msgstr "De afwezigheid is gemeld"
+msgstr "Het evenement is verwijderd"
 
 #: Controller/EventsController.php:193
-#, fuzzy
 msgid "Could not delete the event"
-msgstr "Kon de afdeling niet aanmaken"
+msgstr "Kon het evenement niet verwijderen"
 
 #: Controller/FeedbackController.php:69
 msgid "Thank you for your feedback!"
@@ -627,59 +621,48 @@ msgid "Assignments"
 msgstr "Opgaves"
 
 #: Plugin/VendingMachine/Controller/CardsController.php:40
-#, fuzzy
 msgid "The card has been added"
-msgstr "De gebruiker is opgeslagen"
+msgstr "De kaart is toegevoegd"
 
 #: Plugin/VendingMachine/Controller/CardsController.php:48
-#, fuzzy
 msgid "Could not add the card"
-msgstr "Kon de gebruiker niet aanpassen"
+msgstr "Kon de kaart niet toevoegen"
 
 #: Plugin/VendingMachine/Controller/CardsController.php:76
-#, fuzzy
 msgid "The card has been changed"
-msgstr "De gebruiker is aangepast."
+msgstr "De kaart is aangepast"
 
 #: Plugin/VendingMachine/Controller/CardsController.php:84
-#, fuzzy
 msgid "Could not change the card"
-msgstr "Kon de gebruiker niet aanpassen"
+msgstr "Kon de kaart niet aanpassen"
 
 #: Plugin/VendingMachine/Controller/CreditAccountsController.php:31
-#, fuzzy
 msgid "The credit account has been added"
-msgstr "Je commentaar is toegevoegt."
+msgstr "Het saldo account is toegevoegt"
 
 #: Plugin/VendingMachine/Controller/CreditAccountsController.php:39
-#, fuzzy
 msgid "Could not add the credit account"
-msgstr "Kon het rooster ding niet aanpassen"
+msgstr "Kon het saldo account niet toevoegen"
 
 #: Plugin/VendingMachine/Controller/CreditAccountsController.php:59
-#, fuzzy
 msgid "The credit account has been changed."
-msgstr "De organisatie is aangepast"
+msgstr "Het saldo account is aangepast."
 
 #: Plugin/VendingMachine/Controller/CreditAccountsController.php:67
-#, fuzzy
 msgid "Could not change the credit account"
-msgstr "Kon het rooster ding niet aanpassen"
+msgstr "Kon het saldo account niet aanpassen"
 
 #: Plugin/VendingMachine/Controller/TransactionsController.php:52
-#, fuzzy
 msgid "The transaction has been added"
-msgstr "De organisatie is aangepast"
+msgstr "De transactie is toegevoegd"
 
 #: Plugin/VendingMachine/Controller/TransactionsController.php:62
-#, fuzzy
 msgid "Could not add the transaction"
-msgstr "Kon de organisatie niet aanpassen"
+msgstr "Kon de transactie niet toevoegen"
 
 #: Plugin/VendingMachine/Controller/TransactionsController.php:80
-#, fuzzy
 msgid "The transaction has been removed"
-msgstr "De organisatie is verwijderd"
+msgstr "De transactie is verwijderd"
 
 #: Plugin/VendingMachine/Controller/TransactionsController.php:90
 #, fuzzy
@@ -704,12 +687,11 @@ msgstr ""
 #: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:6
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:9
 msgid "Credit accounts"
-msgstr ""
+msgstr "Saldo account"
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:4
-#, fuzzy
 msgid "Add card"
-msgstr "Gebruiker toevoegen"
+msgstr "Voeg kaart toe"
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:19
 #: Plugin/VendingMachine/View/CreditAccounts/admin_add.ctp:19
@@ -724,7 +706,7 @@ msgstr "Toevoegen"
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:6
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:10
 msgid "Cards"
-msgstr ""
+msgstr "Kaarten"
 
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:8
 #: View/Events/manage_edit.ctp:3 View/Organizations/admin_edit.ctp:7
@@ -735,9 +717,8 @@ msgstr "Bewerk %1$s"
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:20
 #: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:20
 #: View/Feedback/admin_index.ctp:17 View/Feedback/admin_view.ctp:14
-#, fuzzy
 msgid "User"
-msgstr "Gebruikers"
+msgstr "Gebruiker"
 
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:21
 #: Plugin/Website/View/Contributions/types/code.ctp:4
@@ -746,27 +727,25 @@ msgstr "Code"
 
 #: Plugin/VendingMachine/View/CreditAccounts/admin_add.ctp:4
 msgid "Add credit account"
-msgstr ""
+msgstr "Voeg saldo account toe"
 
 #: Plugin/VendingMachine/View/CreditAccounts/admin_edit.ctp:7
 msgid "Change credit account of %1$s"
-msgstr ""
+msgstr "Bewerk saldo account van %1$s"
 
 #: Plugin/VendingMachine/View/CreditAccounts/admin_index.ctp:21
 msgid "Credit"
-msgstr ""
+msgstr "Saldo"
 
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:3
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:6
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:11
-#, fuzzy
 msgid "Transactions"
-msgstr "Organisaties"
+msgstr "Transacties"
 
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:4
-#, fuzzy
 msgid "Add transaction"
-msgstr "Voeg organisatie toe"
+msgstr "Voeg transactie toe"
 
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:17
 #: View/Elements/emails/text/organization_details.ctp:9
@@ -777,12 +756,11 @@ msgstr "Geen"
 
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:21
 msgid "Credit account"
-msgstr ""
+msgstr "Saldo account"
 
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:22
-#, fuzzy
 msgid "Amount"
-msgstr "Account"
+msgstr "Hoeveelheid"
 
 #: Plugin/Website/View/Contributions/contribute.ctp:2
 #: Plugin/Website/View/Contributions/index.ctp:2
@@ -974,14 +952,12 @@ msgid "Propability"
 msgstr "Waarschijnlijkheid"
 
 #: View/Classrooms/available.ctp:5
-#, fuzzy
 msgid "Classrooms"
-msgstr "Klaslokaal"
+msgstr "Klaslokalen"
 
 #: View/Classrooms/available.ctp:6
-#, fuzzy
 msgid "Available classrooms"
-msgstr "Beschikbaar klaslokaal"
+msgstr "Beschikbare klaslokalen"
 
 #: View/Classrooms/available.ctp:19 View/Events/manage_index.ctp:15
 #: View/Pages/home.ctp:90
@@ -1020,7 +996,7 @@ msgstr "%1$s Toevoegen"
 
 #: View/Elements/button/delete.ctp:10
 msgid "Are you sure you want to remove this?"
-msgstr ""
+msgstr "Weet je zeker dat je dit wilt verwijderen?"
 
 #: View/Elements/emails/html/organization_details.ctp:7
 #: View/Elements/emails/text/organization_details.ctp:3
@@ -1074,13 +1050,12 @@ msgid "Current"
 msgstr "Actueel"
 
 #: View/Events/manage_add.ctp:3
-#, fuzzy
 msgid "Add event"
-msgstr "Commentaar toevoegen"
+msgstr "Voeg evenement toe"
 
 #: View/Events/manage_add.ctp:23 View/Events/manage_edit.ctp:23
 msgid "Holiday"
-msgstr ""
+msgstr "Vakantie"
 
 #: View/Events/manage_add.ctp:24 View/Events/manage_edit.ctp:24
 msgid "Other"
@@ -1101,11 +1076,11 @@ msgstr "Terugkoppeling"
 
 #: View/Feedback/admin_index.ctp:18
 msgid "Summary"
-msgstr ""
+msgstr "Omschrijving"
 
 #: View/Feedback/admin_view.ctp:18
 msgid "Body"
-msgstr ""
+msgstr "Inhoud"
 
 #: View/Home/admin_index.ctp:1
 msgid "Mauris admin"
