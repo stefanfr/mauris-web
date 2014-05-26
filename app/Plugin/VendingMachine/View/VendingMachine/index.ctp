@@ -32,7 +32,7 @@ echo $this->element('page_header');
 					?>
 					<tr class="<?php echo ($transaction['Transaction']['amount'] < 0) ? 'danger' : '' ?>">
 						<td><?php echo h($this->Time->i18nFormat($transaction['Transaction']['created'], '%c', null, 'Europe/Amsterdam')); ?></td>
-						<td><?php echo h(($transaction['UsedCard']['name']) ? $transaction['UsedCard']['name'] : __('None')); ?></td>
+						<td><?php echo ($transaction['UsedCard']['name']) ? $this->Html->link($transaction['UsedCard']['name'], array('controller' => 'cards', 'action' => 'view', $transaction['UsedCard']['id'])) : h(__('None')); ?></td>
 						<td><?php echo h($transaction['Transaction']['amount']); ?></td>
 					</tr>
 				<?php
