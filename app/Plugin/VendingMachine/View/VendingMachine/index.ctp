@@ -2,7 +2,7 @@
 $this->Title->setPageTitle(__('Vending machine'));
 
 $this->Title->addCrumbs(array(
-	array('controller' => 'home')
+	array('controller' => 'vending_machine')
 ));
 
 echo $this->element('page_header');

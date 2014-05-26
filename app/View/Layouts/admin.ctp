@@ -89,6 +89,7 @@
 				<?= $this->Menu->item($this->Html->link(__('Users'), array('plugin' => false, 'controller' => 'users', 'action' => 'index', 'admin' => true))); ?>
 				<?= $this->Menu->item($this->Html->link(__('Styles'), array('plugin' => false, 'controller' => 'styles', 'action' => 'index', 'admin' => true))); ?>
 				<?= $this->Menu->item($this->Html->link(__('Caches'), array('plugin' => false, 'controller' => 'caches', 'action' => 'index', 'admin' => true))); ?>
+				<?= $this->Menu->item($this->Html->link(__('Vending machine'), array('plugin' => 'vending_machine', 'controller' => 'vending_machine', 'action' => 'index', 'admin' => true))); ?>
 			</ul>
 			<?= $this->startIfEmpty('rightMenu'); ?>
 			<? if (AuthComponent::user('id')): ?>
@@ -136,7 +137,7 @@
 
 <div class="container">
 	<? if ((!isset($hideCrumb)) || (!$hideCrumb)): ?>
-		<? $this->Html->addCrumbToBeginning(__('Admin'), array('controller' => 'home', 'action' => 'index', 'admin' => true)); ?>
+		<? $this->Html->addCrumbToBeginning(__('Admin'), array('plugin' => null, 'controller' => 'home', 'action' => 'index', 'admin' => true)); ?>
 		<?= $this->Html->getCrumbList(array('class' => 'breadcrumb', 'firstClass' => false, 'lastClass' => 'active'), __('Home')); ?>
 	<? endif; ?>
 	<?= $this->Session->flash(); ?>
