@@ -110,6 +110,8 @@ CakePlugin::load('OvInfo');
 CakePlugin::load('DynList');
 CakePlugin::load('MaurisTheme');
 
+CakePlugin::load('VendingMachine');
+
 if ($_SERVER['HTTP_HOST'] == Configure::read('Website.hostname')) {
 	CakePlugin::load('Website', array('routes' => true));
 } else {
