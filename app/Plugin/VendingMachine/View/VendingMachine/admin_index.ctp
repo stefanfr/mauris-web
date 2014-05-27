@@ -52,3 +52,4 @@ $this->Title->addCrumbs(array(
 		?>
 	</div>
 </div>
+<?php echo $this->element('button/back', array('url' => array('plugin' => null, 'controller' => 'home'))); ?>

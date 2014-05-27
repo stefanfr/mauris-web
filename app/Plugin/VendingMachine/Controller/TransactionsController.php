@@ -64,7 +64,12 @@ class TransactionsController extends AppController {
 			$UserBalance = $this->Transaction->UserBalance->read();
 
 			if (($UserBalance['UserBalance']['balance'] + $this->request->data['Transaction']['amount']) < 0) {
-				throw new GoneException();
+				$this->Session->setFlash(__('The user\'s balance is not sufficient'), 'alert', array(
+					'plugin' => 'BoostCake',
+					'class'  => 'alert-danger'
+				));
+
+				$this->redirect(array('action' => 'index'));
 			}
 
 			$this->Transaction->UserBalance->applyTransaction($this->request->data);

@@ -34,4 +34,8 @@ echo $this->element('button/add');
 	<?php endforeach; ?>
 	</tbody>
 </table>
-<?php echo $this->element('pagination'); ?>
+<?php
+echo $this->element('pagination');
+
+echo $this->element('button/back', array('url' => array('controller' => 'vending_machine')));
+?>

@@ -30,6 +30,17 @@ class UserBalancesController extends AppController {
 		$this->set(compact('user_balances'));
 	}
 
+	public function admin_view($id) {
+		$this->UserBalance->id = $id;
+
+		$user_balance = $this->UserBalance->read();
+		if (!$user_balance) {
+			throw new NotFoundException();
+		}
+
+		$this->set(compact('user_balance'));
+	}
+
 	public function admin_add() {
 		$users = $this->UserBalance->User->find('list');
 
