@@ -20,6 +20,10 @@ class TransactionsController extends AppController {
 	);
 
 	public function index() {
+		if (!$this->PermissionCheck->checkPermission('transaction', 'read', 'own')) {
+			throw new ForbiddenException();
+		}
+
 		$transactions = $this->Paginator->paginate('Transaction', array(
 			'Transaction.user_balance_id' => $this->Auth->user('id')
 		));
@@ -60,22 +64,9 @@ class TransactionsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			$this->request->data['Transaction']['created'] = $this->Transaction->getDataSource()->expression('NOW()');
 
-			$this->Transaction->UserBalance->id = $this->request->data['Transaction']['user_balance_id'];
-			$UserBalance = $this->Transaction->UserBalance->read();
-
-			if (($UserBalance['UserBalance']['balance'] + $this->request->data['Transaction']['amount']) < 0) {
-				$this->Session->setFlash(__('The user\'s balance is not sufficient'), 'alert', array(
-					'plugin' => 'BoostCake',
-					'class'  => 'alert-danger'
-				));
-
-				$this->redirect(array('action' => 'index'));
-			}
-
-			$this->Transaction->UserBalance->applyTransaction($this->request->data);
-
 			$this->Transaction->create();
 			if ($this->Transaction->save($this->request->data)) {
+				$this->Transaction->UserBalance->applyTransaction($this->request->data);
 
 				$this->Session->setFlash(__('The transaction has been added'), 'alert', array(
 					'plugin' => 'BoostCake',

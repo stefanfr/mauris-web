@@ -14,6 +14,10 @@ class UserBalancesController extends AppController {
 	);
 
 	public function balance() {
+		if (!$this->PermissionCheck->checkPermission('user_balance', 'read', 'own')) {
+			throw new ForbiddenException();
+		}
+
 		$this->UserBalance->id = $this->Auth->user('id');
 		$balance = $this->UserBalance->field('UserBalance.balance');
 

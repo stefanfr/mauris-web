@@ -63,7 +63,7 @@ echo $this->element('page_header');
 			'announcement',
 			array(
 				'type'    => 'info',
-				'heading' => $amount = $balance,
+				'heading' => $this->Number->currency($balance, 'EUR', array('before' => false)),
 				'text'    => __('Balance'),
 				'icon'    => 'fa-eur',
 				'link'    => array(
