@@ -22,7 +22,9 @@ class AutoPermissionComponent extends Component {
 		),
 		'ignore'   => array(
 			'action' => array(),
-			'prefix' => array()
+			'prefix' => array(
+				null
+			)
 		)
 	);
 
