@@ -148,8 +148,6 @@ $this->end();
 			<? endforeach; ?>
 		</table>
 	</div>
-</div>
-<div class="row">
 	<div class="col-md-4">
 		<h2><?php echo h(__('Feedback')); ?></h2>
 		<?php
