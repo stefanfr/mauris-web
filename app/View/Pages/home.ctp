@@ -51,6 +51,27 @@ if (isset($department_name)) {
 
 <div class="row">
 	<div class="col-md-4">
+		<h2><?php echo h(__('Account')); ?></h2>
+		<?php
+		if ($logged_in):
+			?>
+			<p><?php echo h(__('You\'re logged in as %1$s', $current_user['username'])); ?></p>
+			<div class="row">
+				<div class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'profile'), array('class' => 'btn btn-primary')); ?></div>
+				<div class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-danger')); ?></div>
+			</div>
+			<?php
+		else:
+			?>
+			<div class="row">
+				<div class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login'), array('class' => 'btn btn-primary')); ?></div>
+				<div class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register'), array('class' => 'btn btn-primary')); ?></div>
+			</div>
+			<?php
+		endif;
+		?>
+	</div>
+	<div class="col-md-4">
 		<h2><?=__n('Absent teacher', 'Absent teachers', count($absent_teachers))?></h2>
                 <p><?=__('Absent teachers for the 7 following days')?></p>
 		<table class="table">
@@ -67,6 +88,7 @@ if (isset($department_name)) {
                 </table>
                 <p><?=__n('%d absent teacher report', '%d absent teachers reports', count($absent_teachers), count($absent_teachers))?></p>
 	</div>
+	<?php if ($logged_in): ?>
     <div class="col-md-4">
         <h2><?=__n('Class subscription', 'Class subscriptions', count($user_class_subscriptions))?></h2>
         <p><?=__('This table shows the classes you\'ve subscriped to')?></p>
@@ -81,6 +103,7 @@ if (isset($department_name)) {
             <? endforeach; ?>
         </table>
     </div>
+	<?php endif; ?>
 	<div class="col-md-4">
 		<h2><?=__n('Available classroom', 'Available classrooms', count($classrooms_available))?></h2>
                 <p><?=__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat($classrooms_available_timestamp, '%X', null, 'Europe/Amsterdam'))?></p>
