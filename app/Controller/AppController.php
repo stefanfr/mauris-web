@@ -99,6 +99,8 @@ class AppController extends Controller {
         );
         
         $this->set('can_manage', $this->PermissionCheck->checkPermission('manage', 'read'));
+	    $this->set('logged_in', $this->Auth->loggedIn());
+	    $this->set('current_user', $this->Auth->user());
 
 	    $this->Security->requirePost('manage_delete');
 	    $this->Security->requirePost('admin_delete');

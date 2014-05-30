@@ -85,8 +85,8 @@
 					<?= $this->Menu->item($this->Html->link(__('Teacher absence'), array('plugin' => false, 'controller' => 'teacher_absence', 'action' => 'index', 'manage' => true))); ?>
 				</ul>
 				<?=$this->startIfEmpty('rightMenu'); ?>
-                                <? if (AuthComponent::user('id')): ?>
-                                <p class="navbar-text navbar-right">Logged in as <?=$this->App->buildName(AuthComponent::user())?></p>
+                                <? if ($logged_in): ?>
+                                <p class="navbar-text navbar-right">Logged in as <?=$this->App->buildName($current_user)?></p>
                                 <? else: ?>
                                 <?
                                     echo $this->Form->create(

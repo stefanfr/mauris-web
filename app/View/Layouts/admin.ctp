@@ -92,8 +92,8 @@
 				<?= $this->Menu->item($this->Html->link(__('Vending machine'), array('plugin' => 'vending_machine', 'controller' => 'vending_machine', 'action' => 'index', 'admin' => true))); ?>
 			</ul>
 			<?= $this->startIfEmpty('rightMenu'); ?>
-			<? if (AuthComponent::user('id')): ?>
-				<p class="navbar-text navbar-right">Logged in as <?= $this->App->buildName(AuthComponent::user()) ?></p>
+			<? if ($logged_in): ?>
+				<p class="navbar-text navbar-right">Logged in as <?= $this->App->buildName($current_user) ?></p>
 			<? else: ?>
 				<?
 				echo $this->Form->create(

@@ -1,15 +1,13 @@
 <?php
 
-App::uses('AuthComponent', 'Controller/Component');
-
 $this->startIfEmpty('right_menu');
-if (AuthComponent::user('id')):
+if ($logged_in):
 ?>
 <p class="navbar-text navbar-right">
 	<?php
 	echo h(__(
 		'Logged in as %s',
-		$this->App->buildName(AuthComponent::user())
+		$this->App->buildName($current_user)
 	));
 	?>
 </p>
