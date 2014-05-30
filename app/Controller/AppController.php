@@ -60,8 +60,12 @@ class AppController extends Controller {
 				'admin'      => false
 			),
 			'loginRedirect'  => array(
-				'controller' => 'profile',
-				'action'     => 'view'
+				'plugin' => null,
+				'controller' => 'users',
+				'action'     => 'profile',
+				'website'    => false,
+				'manage'     => false,
+				'admin'      => false
 			),
 			'logoutRedirect' => array(
 				'controller' => 'pages',

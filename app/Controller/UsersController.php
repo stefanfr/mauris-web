@@ -36,6 +36,24 @@ class UsersController extends AppController {
         $this->set('user', $this->User->read(null, $id));
     }
 
+	public function profile($id = null) {
+		$this->User->recursive = 2;
+		$this->User->id = ($id) ? $id : $this->Auth->user('id');
+
+		$this->set(
+			'fullname',
+			implode(
+				' ', array(
+					$this->User->field('firstname'),
+					$this->User->field('middlename'),
+					$this->User->field('surname'),
+				)
+			)
+		);
+
+		$this->set('user_account', $this->User->read());
+	}
+
     public function register() {
         if ($this->request->is('post')) {
             $this->User->create();
