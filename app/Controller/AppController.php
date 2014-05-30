@@ -68,9 +68,12 @@ class AppController extends Controller {
 				'admin'      => false
 			),
 			'logoutRedirect' => array(
-				'controller' => 'pages',
-				'action'     => 'display',
-				'home'
+				'plugin'     => null,
+				'controller' => 'home',
+				'action'     => 'index',
+				'website'    => false,
+				'manage'     => false,
+				'admin'      => false
 			),
 			'flash'          => array(
 				'element' => 'alert',
@@ -97,7 +100,7 @@ class AppController extends Controller {
                 'passwordHasher' => 'Blowfish'
             )
         );
-        
+
         $this->set('can_manage', $this->PermissionCheck->checkPermission('manage', 'read'));
 	    $this->set('logged_in', $this->Auth->loggedIn());
 	    $this->set('current_user', $this->Auth->user());

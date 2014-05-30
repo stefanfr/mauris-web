@@ -178,12 +178,7 @@ $this->element('Parts/NavbarElements/right_menu');
 								'website' => true
 							);
 						else:
-							$homeRoute = array(
-								'plugin'     => null,
-								'controller' => 'pages',
-								'action'     => 'display',
-								'home'
-							);
+							$homeRoute = '/';
 						endif;
 						$this->append(
 							'left_menu',

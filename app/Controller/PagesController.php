@@ -51,16 +51,7 @@ class PagesController extends AppController {
  * @throws NotFoundException When the view file could not be found
  *	or MissingViewException in debug mode.
  */
-	public function display() {    
-            if ($this->Auth->user()) {
-                $requester = 'user::' . $this->Auth->user('id');
-            } else {
-                $requester = 'role::anonymous';
-            }
-            $allowedPostScopes = $this->Acl->check(
-                $requester, array('permission' => 'post', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
-            );
-
+	public function display() {
             $path = func_get_args();
 
             $count = count($path);
@@ -79,16 +70,9 @@ class PagesController extends AppController {
                     $title_for_layout = Inflector::humanize($path[$count - 1]);
             }
             $this->set(compact('page', 'subpage', 'title_for_layout'));
-            
-            $classroomAvailableData = $this->Classroom->getAvailableClassrooms(time(), $this->Department->id);
-            
-            $this->set('classrooms_available_timestamp', $classroomAvailableData['timestamp']);
-            $this->set('classrooms_available', $classroomAvailableData['data']);
-            $this->set('latest_post', $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id));
-            $this->set('absent_teachers', $this->TeacherAbsenceReport->getAbsentTeachers(time(), strtotime('+7 days', time()), $this->Department->id));
+
             $this->set('school', $this->School->read());
             $this->set('department', $this->Department->read());
-            $this->set('user_class_subscriptions', $this->UserClassMapping->getUserClassSubscriptions($this->Auth->user('id'), $this->Department->id));
 
             try {
                 $this->render(implode('/', $path));

@@ -31,7 +31,11 @@ if (isset($department_name)) {
 }
 <?=$this->end(); ?>
 <?=$this->start('beforeContainer'); ?>
-<? if ($latest_post): ?>
+<?php
+$latest_post = $this->requestAction(array('controller' => 'posts', 'action' => 'latest'));
+
+if ($latest_post):
+	?>
 <div class="jumbotron">
 	<div class="container">
 		<h1><?=__('Latest news')?></h1>
@@ -72,6 +76,9 @@ if (isset($department_name)) {
 		?>
 	</div>
 	<div class="col-md-4">
+		<?php
+		$absent_teachers = $this->requestAction(array('controller' => 'teacher', 'action' => 'absent'));
+		?>
 		<h2><?=__n('Absent teacher', 'Absent teachers', count($absent_teachers))?></h2>
                 <p><?=__('Absent teachers for the 7 following days')?></p>
 		<table class="table">
@@ -88,7 +95,10 @@ if (isset($department_name)) {
                 </table>
                 <p><?=__n('%d absent teacher report', '%d absent teachers reports', count($absent_teachers), count($absent_teachers))?></p>
 	</div>
-	<?php if ($logged_in): ?>
+	<?php
+	if ($logged_in):
+		$user_class_subscriptions = $this->requestAction(array('controller' => 'users', 'action' => 'class_subscriptions'));
+		?>
     <div class="col-md-4">
         <h2><?=__n('Class subscription', 'Class subscriptions', count($user_class_subscriptions))?></h2>
         <p><?=__('This table shows the classes you\'ve subscriped to')?></p>
@@ -105,20 +115,23 @@ if (isset($department_name)) {
     </div>
 	<?php endif; ?>
 	<div class="col-md-4">
-		<h2><?=__n('Available classroom', 'Available classrooms', count($classrooms_available))?></h2>
-                <p><?=__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat($classrooms_available_timestamp, '%X', null, 'Europe/Amsterdam'))?></p>
-                <table class="table">
-                    <tr>
-                        <th><?=__('Classroom')?></th>
-                        <th><?=__('Title')?></th>
-                    </tr>
-                    <? foreach ($classrooms_available as $classroom): ?>
-                    <tr>
-                        <th><?=$this->Html->link($classroom['Classroom']['code'], array('controller' => 'classroom', 'action' => 'view', $classroom['Classroom']['id']))?></th>
-                        <th><?=@$classroom['MappingInformation']['ClassroomDetails']['title']?></th>
-                    </tr>
-                    <? endforeach; ?>
-                </table>
+		<?php
+		$classrooms_available = $this->requestAction(array('controller' => 'classrooms', 'action' => 'available'));
+		?>
+		<h2><?php echo h(__n('Available classroom', 'Available classrooms', count($classrooms_available))) ?></h2>
+		<p><?php echo h(__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat(time(), '%X', null, 'Europe/Amsterdam'))) ?></p>
+            <table class="table">
+                <tr>
+                    <th><?=__('Classroom')?></th>
+                    <th><?=__('Title')?></th>
+                </tr>
+                <? foreach ($classrooms_available as $classroom): ?>
+                <tr>
+                    <th><?=$this->Html->link($classroom['Classroom']['code'], array('controller' => 'classroom', 'action' => 'view', $classroom['Classroom']['id']))?></th>
+                    <th><?=@$classroom['MappingInformation']['ClassroomDetails']['title']?></th>
+                </tr>
+                <? endforeach; ?>
+            </table>
 	</div>
 </div>
 <div class="row">

@@ -77,7 +77,7 @@
 			<div class="navbar-collapse collapse">
 				<?=$this->fetch('leftMenu'); ?>
 				<ul class="nav navbar-nav">
-					<?= $this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), array('plugin' => false, 'controller' => 'pages', 'action' => 'display', 'manage' => false, 'home'), array('escapeTitle' => false))); ?>
+					<?= $this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-home')), '/', array('escapeTitle' => false))); ?>
 					<?= $this->Menu->item($this->Html->link($this->Html->tag('span', '', array('class' => 'glyphicon glyphicon-cog')), array('plugin' => false, 'controller' => 'home', 'manage' => true), array('escapeTitle' => false))); ?>
 					<?= $this->Menu->item($this->Html->link(__('Organizations'), array('plugin' => false, 'controller' => 'organizations', 'action' => 'index', 'manage' => true))); ?>
 					<?= $this->Menu->item($this->Html->link(__('Posts'), array('plugin' => false, 'controller' => 'posts', 'action' => 'index', 'manage' => true))); ?>
