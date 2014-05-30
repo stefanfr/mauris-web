@@ -67,14 +67,7 @@ class AppController extends Controller {
 				'manage'     => false,
 				'admin'      => false
 			),
-			'logoutRedirect' => array(
-				'plugin'     => null,
-				'controller' => 'home',
-				'action'     => 'index',
-				'website'    => false,
-				'manage'     => false,
-				'admin'      => false
-			),
+			'logoutRedirect' => '/',
 			'flash'          => array(
 				'element' => 'alert',
 				'key'     => 'auth',
