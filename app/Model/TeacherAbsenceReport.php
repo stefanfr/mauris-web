@@ -27,14 +27,14 @@ class TeacherAbsenceReport extends AppModel {
         if ($data !== false) {
             return $data;
         }
-        
+
         $data = $this->find(
             'all',
             array(
                 'recursive' => 2,
                 'conditions' => array(
-                    'TeacherAbsenceReport.department_id' => $departmentId,
-                    'TeacherAbsenceReport.date BETWEEN ? and ?' => array(
+                    $this->alias . '.department_id' => $departmentId,
+                    $this->alias . '.date BETWEEN ? and ?' => array(
                         date('Y-m-d', $startTimestamp), date('Y-m-d', $endTimestamp)
                     )
                 )

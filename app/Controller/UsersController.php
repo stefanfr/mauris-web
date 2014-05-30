@@ -54,6 +54,16 @@ class UsersController extends AppController {
 		$this->set('user_account', $this->User->read());
 	}
 
+	public function class_subscriptions() {
+		$user_class_subscriptions = $this->User->SubscribedToClasses->getUserClassSubscriptions(
+			$this->Auth->user('id'), $this->Department->id
+		);
+
+		if (!empty($this->request->params['requested'])) {
+			return $user_class_subscriptions;
+		}
+	}
+
     public function register() {
         if ($this->request->is('post')) {
             $this->User->create();

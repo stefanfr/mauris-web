@@ -9,7 +9,11 @@ class Teacher extends AppModel {
         'UserMappings' => array(
             'className' => 'UserTeacherMapping',
             'foreignKey' => 'teacher_id'
-        )
+        ),
+	    'AbsenceReport' => array(
+			'className' => 'TeacherAbsenceReport',
+		    'foreignKey' => 'teacher_id'
+	    )
     );
 
     public $belongsTo = array(

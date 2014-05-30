@@ -1,12 +1,24 @@
 <?php
 
+/**
+ * Class TeacherController
+ *
+ * @property Teacher Teacher
+ */
 class TeacherController extends AppController {
 
 	public $components = array(
 		'AutoPermission'
 	);
 
-    public function view($id) {
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		$this->Auth->allow('absent');
+	}
+
+
+	public function view($id) {
         $this->Teacher->id = $id;
         $this->Teacher->recursive = 2;
         
@@ -21,5 +33,15 @@ class TeacherController extends AppController {
         );
         $this->set('teacher', $teacher);
     }
+
+	public function absent() {
+		$absent_teachers = $this->Teacher->AbsenceReport->getAbsentTeachers(
+			time(), strtotime('+7 days', time()), $this->Department->id
+		);
+
+		if (!empty($this->request->params['requested'])) {
+			return $absent_teachers;
+		}
+	}
     
 }

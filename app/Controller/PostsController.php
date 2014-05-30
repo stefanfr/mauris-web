@@ -14,8 +14,15 @@ class PostsController extends AppController {
             'Post.created' => 'DESC'
         )
     );
-    
-    public function index() {
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		$this->Auth->allow('latest');
+	}
+
+
+	public function index() {
         $allowedScopes = $this->PermissionCheck->getScopes('post', 'read');
 
         if (empty($allowedScopes)) {
@@ -121,6 +128,23 @@ class PostsController extends AppController {
 
         $this->set('title_for_layout', $post['Post']['title']);
     }
+
+	public function latest() {
+		if ($this->Auth->user()) {
+			$requester = 'user::' . $this->Auth->user('id');
+		} else {
+			$requester = 'role::anonymous';
+		}
+		$allowedPostScopes = $this->Acl->check(
+			$requester, array('permission' => 'post', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
+		);
+
+		$latest_post = $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id);
+
+		if (!empty($this->request->params['requested'])) {
+			return $latest_post;
+		}
+	}
 
     public function add() {
         $allowedScopes = $this->PermissionCheck->getScopes('post', 'create');
