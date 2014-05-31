@@ -52,7 +52,19 @@ class PermissionsController extends AppController {
 				'system_alias' => 'teacher',
 				'title'        => 'Teacher'
 			)
-		)
+		),
+		array(
+			'Permission' => array(
+				'system_alias' => 'student',
+				'title'        => 'Student'
+			)
+		),
+		array(
+			'Permission' => array(
+				'system_alias' => 'user_role_mapping',
+				'title'        => 'User assignment'
+			)
+		),
 	);
 
 	public $components = array(

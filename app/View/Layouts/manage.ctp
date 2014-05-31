@@ -82,6 +82,7 @@
 					<?= $this->Menu->item($this->Html->link(__('Organizations'), array('plugin' => false, 'controller' => 'organizations', 'action' => 'index', 'manage' => true))); ?>
 					<?= $this->Menu->item($this->Html->link(__('Posts'), array('plugin' => false, 'controller' => 'posts', 'action' => 'index', 'manage' => true))); ?>
 					<?= $this->Menu->item($this->Html->link(__('Schedule'), array('plugin' => false, 'controller' => 'schedule', 'action' => 'index', 'manage' => true))); ?>
+					<?= $this->Menu->item($this->Html->link(__('Students'), array('plugin' => false, 'controller' => 'students', 'action' => 'index', 'manage' => true))); ?>
 					<?= $this->Menu->item($this->Html->link(__('Teacher absence'), array('plugin' => false, 'controller' => 'teacher_absence', 'action' => 'index', 'manage' => true))); ?>
 				</ul>
 				<?=$this->startIfEmpty('rightMenu'); ?>

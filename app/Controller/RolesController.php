@@ -31,6 +31,13 @@ class RolesController extends AppController {
 				'title'        => 'School administrator',
 				'visibility'   => 'system'
 			)
+		),
+		array(
+			'Role' => array(
+				'system_alias' => 'student',
+				'title'        => 'Student',
+				'visibility'   => 'system,department,school'
+			)
 		)
 	);
 
