@@ -29,8 +29,9 @@ if ((isset($_SERVER['HTTP_HOST'])) && ($_SERVER['HTTP_HOST'] == 'api.ictcollege.
 	Router::connect('/', array('plugin' => 'api', 'controller' => 'index', 'action' => 'index'));
 	Router::connect('/:controller', array('plugin' => 'api', 'action' => 'index'));
 	Router::connect('/:controller/:action/*', array('plugin' => 'api'));
-} else {    
-    
+} else {
+
+	Router::mapResources('posts');
     Router::parseExtensions('json', 'xml', 'rss', 'css', 'html', 'txt');
 
 //Router::connect('/api/:controller/:action/*', array('plugin' => 'api'));
