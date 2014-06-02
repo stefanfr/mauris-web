@@ -9,7 +9,7 @@ $latest_comments = $this->requestAction(array('controller' => 'comment', 'action
 		<li class="media">
 			<a class="pull-left"
 			   href="<?php echo Router::url(array('controller' => 'posts', 'action' => 'view', $comment['CommentedOn']['id'])); ?>">
-				<?php echo $this->Gravatar->gravatar($comment['PostedBy']['system_email'], array('s' => 64, 'd' => 'identicon')); ?>
+				<?php echo $this->Gravatar->gravatar(($comment['PostedBy']['system_email']) ? $comment['PostedBy']['system_email'] : $comment['PostedBy']['username'], array('s' => 64, 'd' => 'identicon')); ?>
 			</a>
 			<?php echo $this->App->buildName($comment['PostedBy']); ?>
 			<div class="media-body">
