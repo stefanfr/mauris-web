@@ -38,7 +38,7 @@ endif;
 			);?>
 		</div>
 		<div class="col-md-3" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-			<?= $this->Gravatar->gravatar($post['PostedBy']['system_email'], array('s' => 64, 'd' => 'identicon')) ?>
+			<?= $this->Gravatar->gravatar(($post['PostedBy']['system_email']) ? $post['PostedBy']['system_email'] : $post['PostedBy']['username'], array('s' => 64, 'd' => 'identicon')) ?>
 			<br>
 			<?= h(__('Posted by')) ?> <a itemprop="url"
 			                              href="<?= Router::url(array('controller' => 'profile', 'action' => 'view', $post['PostedBy']['id'])) ?>">
