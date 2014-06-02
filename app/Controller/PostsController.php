@@ -2,18 +2,29 @@
 
 App::uses('AppController', 'Controller');
 
+/**
+ * Class PostsController
+ *
+ * @property Post Post
+ * @property Comment Comment
+ * @property User User
+ */
 class PostsController extends AppController {
-	
-    public $components = array('Session', 'Paginator', 'RequestHandler');
-    
-    public $uses = array('Post', 'Comment', 'User');
-    
-    public $paginate = array(
-        'limit' => 3,
-        'order' => array(
-            'Post.created' => 'DESC'
-        )
+
+    public $components = array(
+	    'Session',
+	    'Paginator' => array(
+		    'settings' => array(
+			    'limit' => 3,
+			    'order' => array(
+				    'Post.created' => 'DESC'
+			    )
+		    )
+	    ),
+	    'RequestHandler'
     );
+
+    public $uses = array('Post', 'Comment', 'User');
 
 	function beforeFilter() {
 		parent::beforeFilter();
@@ -28,13 +39,11 @@ class PostsController extends AppController {
         if (empty($allowedScopes)) {
             throw new ForbiddenException();
         }
-        
+
         $this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
 
-        $this->Paginator->settings = $this->paginate;
-
         $conditions = array();
-        $conditions['and']['Post.published'] = true; 
+        $conditions['and']['Post.published'] = true;
         if (in_array('system', $allowedScopes)) {
             $conditions['and']['or'][] = array(
                 'and' => array(
@@ -73,36 +82,27 @@ class PostsController extends AppController {
                 )
             );
         }
-        
-        $this->set(
-            'posts',
-            $this->Paginator->paginate(
-                'Post',
-                $conditions
-            )
-        );
 
-        $this->set('title_for_layout', __('News'));
+		$this->set(array(
+			'posts' => $this->Paginator->paginate('Post', $conditions),
+			'_serialize' => array('posts')
+		));
     }
 
     public function view($id = null, $slug = null) {
-        if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-
-        $this->Post->recursive = 2;
-        $this->Post->id = $id;
-        $post = $this->Post->read();
+	    $this->Post->recursive = 2;
+        $post = $this->Post->findById($id);
         if (!$post) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-        
-        if (Inflector::slug($post['Post']['title']) != $slug) {
-            return $this->redirect(array($id, Inflector::slug($post['Post']['title'])), 301);
-        }
+            throw new NotFoundException();
+        };
+
+	    if (!$this->request->is('rest')) {
+		    if (Inflector::slug($post['Post']['title']) != $slug) {
+			    return $this->redirect(array($id, Inflector::slug($post['Post']['title'])), 301);
+		    }
+	    }
 
         $scope = null;
-        //print_r($post);
         if ($post['PostedBy']['id'] == $this->Auth->user('id')) {
             $scope = 'own';
         } else {
@@ -115,33 +115,22 @@ class PostsController extends AppController {
                 $scope = 'system';
             }
         }
-        
-        debug($scope);
-        
-        //debug($this->User->getUserDetails($this->Auth->user('id')));
-        
-        $this->set('post', $post);
-        $this->set('comments', $this->Comment->getPostComments($id));
 
-        $this->set('can_comment', $this->PermissionCheck->checkPermission('comment', 'create', $scope));
-        $this->set('can_view_comments', $this->PermissionCheck->checkPermission('comment', 'read', $scope));
-
-        $this->set('title_for_layout', $post['Post']['title']);
+        $this->set(array(
+	        'post' => $post,
+	        'comments' => $this->Comment->getPostComments($id),
+	        'can_comment' => $this->PermissionCheck->checkPermission('comment', 'create', $scope),
+	        'can_view_comments' => $this->PermissionCheck->checkPermission('comment', 'read', $scope),
+	        '_serialize' => array('post')
+        ));
     }
 
 	public function latest() {
-		if ($this->Auth->user()) {
-			$requester = 'user::' . $this->Auth->user('id');
-		} else {
-			$requester = 'role::anonymous';
-		}
-		$allowedPostScopes = $this->Acl->check(
-			$requester, array('permission' => 'post', 'school_id' => $this->School->id, 'department_id' => $this->Department->id), 'read'
-		);
+		$allowedPostScopes = $this->PermissionCheck->getScopes('post', 'read');
 
 		$latest_post = $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id);
 
-		if (!empty($this->request->params['requested'])) {
+		if ($this->request->is('requested')) {
 			return $latest_post;
 		}
 	}
@@ -155,11 +144,11 @@ class PostsController extends AppController {
         if ($this->request->is('post')) {
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
             $this->request->data['Post']['created'] = date('Y-m-d H:i:s');
-            
+
             if (!in_array($this->request->data['Post']['scope'], $allowedScopes)) {
                 throw new ForbiddenException();
             }
-            
+
             if ($this->request->data['Post']['scope'] == 'school') {
                 $this->request->data['Post']['school_id'] = $this->School->id;
             }
@@ -167,24 +156,24 @@ class PostsController extends AppController {
                 $this->request->data['Post']['school_id'] = $this->School->id;
                 $this->request->data['Post']['department_id'] = $this->Department->id;
             }
-            
+
             $this->Post->create();
             if ($this->Post->save($this->request->data)) {
                 $this->Session->setFlash(__('Your post has been created'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
                 ));
-				
+
                 return $this->redirect(array('action' => 'index'));
             }
-            
+
             $this->Session->setFlash(__('Could not create your post'), 'alert', array(
                 'plugin' => 'BoostCake',
                 'class' => 'alert-danger'
             ));
         }
     }
-    
+
     public function edit($id = null) {
 		if (!$id) {
 			throw new NotFoundException();
@@ -198,15 +187,15 @@ class PostsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			$this->Post->id = $id;
 			if ($this->Post->save($this->request->data)) {
-				
+
 				$this->Session->setFlash(__('Your post has been changed'), 'alert', array(
 					'plugin' => 'BoostCake',
 					'class' => 'alert-success'
 				));
-					
+
 				return $this->redirect(array('action' => 'index'));
 			}
-            
+
             $this->Session->setFlash(__('Could not change your post'), 'alert', array(
 				'plugin' => 'BoostCake',
 				'class' => 'alert-danger'
@@ -217,7 +206,7 @@ class PostsController extends AppController {
 			$this->request->data = $post;
 		}
 	}
-	
+
 	public function delete($id) {
 		if ($this->Post->delete($id)) {
 			$this->Session->setFlash(__('Your post has been removed'), 'alert', array(
