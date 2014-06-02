@@ -20,8 +20,15 @@ class CommentController extends AppController {
 	);
 
     public $uses = array('Comment', 'Post', 'User');
-    
-    public function add() {
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		$this->Auth->allow('latest_comments');
+	}
+
+
+	public function add() {
         if (isset($this->passedArgs['comment'])) {
             $replyTo = $this->Comment->findById((int) $this->passedArgs['comment']);
             
