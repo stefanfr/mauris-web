@@ -109,6 +109,7 @@ CakePlugin::load('Billboard', array('routes' => true));
 CakePlugin::load('OvInfo');
 CakePlugin::load('DynList');
 CakePlugin::load('MaurisTheme');
+CakePlugin::load('Rest');
 
 CakePlugin::load('VendingMachine');
 
