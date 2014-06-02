@@ -1,5 +1,23 @@
 <?php
+
+App::uses('AppController', 'Controller');
+
+/**
+ * Class CommentController
+ *
+ * @property Comment Comment
+ */
 class CommentController extends AppController {
+
+	public $components = array(
+		'Paginator' => array(
+			'settings' => array(
+				'order' => array(
+					'Comment.created' => 'DESC'
+				)
+			)
+		)
+	);
 
     public $uses = array('Comment', 'Post', 'User');
     
@@ -129,5 +147,62 @@ class CommentController extends AppController {
             $this->request->data = $comment;
         }
     }
+
+	public function latest_comments() {
+		$allowedScopes = $this->PermissionCheck->getScopes('post', 'read');
+
+		if (empty($allowedScopes)) {
+			throw new ForbiddenException();
+		}
+
+		$this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
+
+		$conditions = array();
+		$conditions['and']['CommentedOn.published'] = true;
+		if (in_array('system', $allowedScopes)) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'CommentedOn.school_id IS NULL',
+					'CommentedOn.department_id IS NULL'
+				)
+			);
+		}
+		if (in_array('school', $allowedScopes)) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'CommentedOn.school_id' => $this->School->id,
+					'CommentedOn.department_id IS NULL'
+				)
+			);
+		}
+		if (in_array('department', $allowedScopes)) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'CommentedOn.school_id' => $this->School->id,
+					'CommentedOn.department_id' => $this->Department->id
+				)
+			);
+		}
+		if ((in_array('own', $allowedScopes)) && ($this->Auth->user())) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'CommentedOn.user_id' => $this->Auth->user('id'),
+					'CommentedOn.school_id' => $this->School->id,
+					array(
+						'or' => array(
+							'CommentedOn.department_id' => $this->Department->id,
+							'CommentedOn.department_id IS NULL'
+						)
+					)
+				)
+			);
+		}
+
+		$latest_comments = $this->Paginator->paginate('Comment', $conditions);
+
+		if ($this->request->is('requested')) {
+			return $latest_comments;
+		}
+	}
     
 }

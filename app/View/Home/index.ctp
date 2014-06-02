@@ -174,4 +174,5 @@ $this->end();
 		echo $this->Form->end()
 		?>
 	</div>
+	<div class="col-md-4"><?php echo $this->element('latest_comments'); ?></div>
 </div>
