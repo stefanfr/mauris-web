@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-02 18:31+0000\n"
-"PO-Revision-Date: 2014-05-26 23:18+0200\n"
+"PO-Revision-Date: 2014-06-02 20:37+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -240,24 +240,20 @@ msgid "News"
 msgstr "Nieuws"
 
 #: Controller/StudentsController.php:32
-#, fuzzy
 msgid "The student has been added"
-msgstr "Het evenement is toegevoegd"
+msgstr "De student is toegevoegd"
 
 #: Controller/StudentsController.php:40
-#, fuzzy
 msgid "Could not add the student"
-msgstr "Kon het evenement niet toevoegen"
+msgstr "Kon de student niet toevoegen"
 
 #: Controller/StudentsController.php:49
-#, fuzzy
 msgid "The student has been deleted"
-msgstr "Het evenement is verwijderd"
+msgstr "De student is verwijderd"
 
 #: Controller/StudentsController.php:57
-#, fuzzy
 msgid "Could not delete the student"
-msgstr "Kon het evenement niet verwijderen"
+msgstr "Kon de student niet verwijderen"
 
 #: Controller/StylesController.php:70
 msgid "The style has been changed"
@@ -541,21 +537,20 @@ msgid "Block '%1$s' is deprecated! Use right_menu instead."
 msgstr ""
 
 #: Plugin/Rest/Console/Command/ClientShell.php:21
-#, fuzzy
 msgid "Could not decode the response"
-msgstr "Kon de gebruiker niet verwijderen"
+msgstr "Kon het antwoord niet decoderen"
 
 #: Plugin/Rest/Console/Command/ClientShell.php:21
 msgid "The response is not valid JSON. Is the RequestHandler being used?"
-msgstr ""
+msgstr "Het antwoord is geen geldig JSON. Wordt de RequestHandler gebruikt?"
 
 #: Plugin/Rest/Console/Command/ClientShell.php:34
 msgid "The URL to request."
-msgstr ""
+msgstr "De URL om op te vragen."
 
 #: Plugin/Rest/Console/Command/ClientShell.php:39
 msgid "HTTP method to use"
-msgstr ""
+msgstr "Te gebruiken HTTP methode"
 
 #: Plugin/Schedule/Controller/ScheduleController.php:261
 msgid "The schedule entry has been change"
@@ -814,9 +809,8 @@ msgid "Credit"
 msgstr "Saldo"
 
 #: Plugin/VendingMachine/View/UserBalances/admin_view.ctp:7
-#, fuzzy
 msgid "View balance account of %1$s"
-msgstr "Bewerk gebruiker saldo van %1$s"
+msgstr "Bekijk saldo rekening van %1$s"
 
 #: Plugin/VendingMachine/View/UserBalances/admin_view.ctp:26
 #: Plugin/VendingMachine/View/UserBalances/balance.ctp:23
@@ -1075,9 +1069,8 @@ msgid "Change comment"
 msgstr "Pas commentaar aan"
 
 #: View/Elements/latest_comments.ctp:1
-#, fuzzy
 msgid "Latest comments"
-msgstr "Laatste nieuws"
+msgstr "Laatste reacties"
 
 #: View/Elements/reply.ctp:13 View/Posts/view.ctp:51
 msgid "Reply"
@@ -1200,9 +1193,8 @@ msgid "Student information for %s"
 msgstr "Student informatie voor %s"
 
 #: View/Home/index.ctp:12
-#, fuzzy
 msgid "Class schedule"
-msgstr "Kalender rooster"
+msgstr "Klassen rooster"
 
 #: View/Home/index.ctp:15
 msgid "Teacher information"
@@ -1236,19 +1228,16 @@ msgid "Account"
 msgstr "Account"
 
 #: View/Home/index.ctp:70
-#, fuzzy
 msgid "You're logged in as %1$s"
-msgstr "Ingelogd als %s"
+msgstr "Je bent ingelogd als %1$s"
 
 #: View/Home/index.ctp:73
-#, fuzzy
 msgid "Profile"
-msgstr "%s profiel"
+msgstr "Profiel"
 
 #: View/Home/index.ctp:75
-#, fuzzy
 msgid "Logout"
-msgstr "Logo"
+msgstr "Uitloggen"
 
 #: View/Home/index.ctp:82 View/Users/login.ctp:3;26
 msgid "Login"
@@ -1263,7 +1252,6 @@ msgid "Absent teachers for the 7 following days"
 msgstr "Afwezige docenten voor de komende 7 dagen"
 
 #: View/Home/index.ctp:118
-#, fuzzy
 msgid "This table shows the classes you've subscribed to"
 msgstr "Deze tabel laat de klassen zien waar je op geabonneerd bent"
 
@@ -1351,7 +1339,7 @@ msgstr "Berichten"
 #: View/Layouts/manage.ctp:85 View/Students/manage_add.ctp:4
 #: View/Students/manage_index.ctp:4 View/UserRoleMappings/manage_index.ctp:12
 msgid "Students"
-msgstr ""
+msgstr "Studenten"
 
 #: View/Layouts/Emails/html/default.ctp:27
 #: View/Layouts/Emails/text/default.ctp:22
@@ -1421,9 +1409,8 @@ msgid "Create post"
 msgstr "Maak bericht"
 
 #: View/Posts/index.ctp:43
-#, fuzzy
 msgid "Posted by"
-msgstr "Geplaatst door:"
+msgstr "Geplaatst door"
 
 #: View/Posts/index.ctp:30 View/Themed/Billboard/Post/index.ctp:15
 msgid "%d comment"
@@ -1458,9 +1445,8 @@ msgstr "Klik hier"
 #: View/Students/manage_add.ctp:3 View/Students/manage_index.ctp:3
 #: View/UserRoleMappings/manage_add.ctp:3
 #: View/UserRoleMappings/manage_index.ctp:3
-#, fuzzy
 msgid "Role assignments"
-msgstr "Opgaves"
+msgstr "Rol toewijzingen"
 
 #: View/Styles/admin_edit.ctp:16
 msgid "Menu"
@@ -1519,14 +1505,12 @@ msgid "No subjects have been cancelled"
 msgstr "Er zijn geen uitgevallen vakken"
 
 #: View/UserRoleMappings/manage_add.ctp:14
-#, fuzzy
 msgid "Add student"
-msgstr "Voeg evenement toe"
+msgstr "Voeg student toe"
 
 #: View/UserRoleMappings/manage_index.ctp:19
-#, fuzzy
 msgid "Role"
-msgstr "Rollen"
+msgstr "Rol"
 
 #: View/Users/add.ctp:4
 msgid "Add User"
