@@ -30,6 +30,10 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  * @property PermissionCheckComponent PermissionCheck
+ * @property SchoolInformationComponent SchoolInformation
+ * @property Department Department
+ * @property School School
+ * @property Style Style
  */
 class AppController extends Controller {
 	//public $components = array('DebugKit.Toolbar');
