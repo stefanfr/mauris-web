@@ -86,6 +86,9 @@ class AppController extends Controller {
 	);
         
     function beforeFilter() {
+	    $this->request->addDetector('rest', array('callback' => function (CakeRequest $request) {
+		    return isset($request->params['[method]']);
+	    }));
 	    $this->Auth->allow('index', 'view', 'display', 'install_check', 'install_load');
         $this->Auth->authenticate = array(
             'Form' => array(
