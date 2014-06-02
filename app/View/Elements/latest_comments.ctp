@@ -1,6 +1,6 @@
 <h2><?php echo h(__('Latest comments')); ?></h2>
 <?php
-$latest_comments = $this->requestAction(array('controller' => 'comment', 'action' => 'latest_comments'));
+$latest_comments = $this->requestAction(array('controller' => 'comment', 'action' => 'latest'));
 ?>
 <ul class="media-list">
 	<?php

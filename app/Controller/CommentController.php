@@ -14,7 +14,8 @@ class CommentController extends AppController {
 			'settings' => array(
 				'order' => array(
 					'Comment.created' => 'DESC'
-				)
+				),
+				'limit' => 5
 			)
 		)
 	);
@@ -24,7 +25,7 @@ class CommentController extends AppController {
 	function beforeFilter() {
 		parent::beforeFilter();
 
-		$this->Auth->allow('latest_comments');
+		$this->Auth->allow('latest');
 	}
 
 
@@ -155,7 +156,7 @@ class CommentController extends AppController {
         }
     }
 
-	public function latest_comments() {
+	public function latest() {
 		$allowedScopes = $this->PermissionCheck->getScopes('post', 'read');
 
 		if (empty($allowedScopes)) {
