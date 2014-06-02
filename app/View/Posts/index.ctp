@@ -41,7 +41,7 @@ endif;
 			<?= $this->Gravatar->gravatar(($post['PostedBy']['system_email']) ? $post['PostedBy']['system_email'] : $post['PostedBy']['username'], array('s' => 64, 'd' => 'identicon')) ?>
 			<br>
 			<?= h(__('Posted by')) ?> <a itemprop="url"
-			                              href="<?= Router::url(array('controller' => 'profile', 'action' => 'view', $post['PostedBy']['id'])) ?>">
+			                              href="<?= Router::url(array('controller' => 'users', 'action' => 'profile', $post['PostedBy']['id'])) ?>">
 				<span itemprop="name"><?= h($this->App->buildName($post['PostedBy'], false)) ?></span>
 			</a>
 		</div>

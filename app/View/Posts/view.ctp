@@ -37,7 +37,7 @@ endif;
     <ul class="media-list">
     <? foreach ($comments as $comment): ?>
         <li class="media" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
-            <a class="pull-left" href="<?=Router::url(array('controller' => 'profile', 'action' => 'view', $comment['PostedBy']['id']))?>">
+            <a class="pull-left" href="<?=Router::url(array('controller' => 'users', 'action' => 'view', $comment['PostedBy']['id']))?>">
               <?=$this->Gravatar->gravatar($comment['PostedBy']['system_email'], array('s' => 64, 'd' => 'identicon'))?>
             </a>
             <div class="media-body">

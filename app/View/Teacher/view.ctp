@@ -14,7 +14,7 @@ echo $this->element('page_header')
     <li class="list-group-item"><b><?=h(__('Account'))?>:</b>
         <ul class="list-group">
         <? foreach ($teacher['UserMappings'] as $userMapping): ?>
-        <li class="list-group-item"><?=$this->Html->link($userMapping['User']['username'], array('controller' => 'profile', 'action' => 'view', $userMapping['user_id']))?></li>
+        <li class="list-group-item"><?=$this->Html->link($userMapping['User']['username'], array('controller' => 'users', 'action' => 'profile', $userMapping['user_id']))?></li>
         <? endforeach; ?>
         </ul>
     </li>
