@@ -1,4 +1,3 @@
-
 <?php
 App::uses('Teacher', 'Model');
 App::uses('ClassroomDetails', 'Model');
