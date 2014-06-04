@@ -22,8 +22,10 @@ class StylingComponent extends Component {
                     )
                 )
             );
-            
-            $styleId = $school['UsesStyle']['id'];
+
+	        if ($school['UsesStyle']['id']) {
+		        $styleId = $school['UsesStyle']['id'];
+	        }
         }
         if ($controller->SchoolInformation->isDepartmentIdAvailable()) {
             $department = $controller->Department->find(
@@ -34,13 +36,15 @@ class StylingComponent extends Component {
                     )
                 )
             );
-            
-            $styleId = $department['UsesStyle']['id'];
+
+	        if ($department['UsesStyle']['id']) {
+		        $styleId = $department['UsesStyle']['id'];
+	        }
         }
         
         if ($styleId) {
             $this->_style = $controller->Style->getStyle($styleId);
-            
+
             $controller->set(
                 array(
                     'style' => $this->getStyle()

@@ -20,8 +20,22 @@ class StylesController extends AppController {
 			)
 		),
 		'Security',
-		'AutoPermission'
+		'AutoPermission',
+		'RequestHandler', 'TimeAware', 'SchoolInformation', 'Styling'
 	);
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		$this->Auth->allow('current');
+	}
+
+
+	public function current() {
+		$this->set(array(
+			'_serialize' => array('style')
+		));
+	}
 
 	public function admin_index() {
 		$this->set('styles', $this->Paginator->paginate('Style'));

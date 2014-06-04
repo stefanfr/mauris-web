@@ -51,13 +51,12 @@ $this->element('Parts/NavbarElements/right_menu');
 		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('custom.bootstrap');
 		echo $this->Html->css('font-awesome.min');
-		echo $this->Html->css(Router::url(
-			array(
-				'plugin'     => 'api',
-				'controller' => 'style',
-				'ext'        => 'css'
-			)
-		));
+		echo $this->Html->css(Router::url(array(
+			'plugin'     => null,
+			'controller' => 'styles',
+			'action'     => 'current',
+			'ext'        => 'css'
+		), true));
 
 		echo $this->fetch('css');
 		?>
