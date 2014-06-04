@@ -23,16 +23,18 @@ class Style extends AppModel {
         ),
         'UsesBaseStyle' => array(
             'className' => 'Style',
-            'foreignKey' => 'base_style_id'
+            'foreignKey' => 'parent_id'
         )
     );
 
     public $hasMany = array(
         'UsedInStyles' => array(
             'className' => 'Style',
-            'foreignKey' => 'base_style_id'
+            'foreignKey' => 'parent_id'
         )    
     );
+
+	public $actsAs = array('Tree');
     
     public function getStyle($id) {
         $style = array();

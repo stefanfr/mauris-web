@@ -67,7 +67,7 @@ echo $this->Form->create('Style', array(
 <?php
 echo $this->Form->input('title');
 echo $this->Form->input('school_id', array('empty' => 'None'));
-echo $this->Form->input('base_style_id', array('empty' => 'None', 'options' => $styles));
+echo $this->Form->input('parent_id', array('empty' => 'None', 'options' => $styles));
 
 foreach ($fieldsets as $fieldset):
 	?>
