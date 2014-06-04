@@ -15,7 +15,7 @@
         );?>
         <? endif; ?>
       <!-- Nested media object -->
-      <? foreach ($reply['Replies'] as $subReply): ?>
+      <?php foreach ($reply['children'] as $subReply): ?>
       <?=$this->element('reply', array('reply' => $subReply)); ?>
       <? endforeach; ?>
     </div>

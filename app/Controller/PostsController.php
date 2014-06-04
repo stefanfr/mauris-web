@@ -24,6 +24,13 @@ class PostsController extends AppController {
 	    'RequestHandler'
     );
 
+	public $hasMany = array(
+		'Comment' => array(
+			'className' => 'Comment',
+			'foreignKey' => 'post_id'
+		)
+	);
+
     public $uses = array('Post', 'Comment', 'User');
 
 	function beforeFilter() {
@@ -118,7 +125,11 @@ class PostsController extends AppController {
 
         $this->set(array(
 	        'post' => $post,
-	        'comments' => $this->Comment->getPostComments($id),
+	        'comments' => $this->Post->Comment->find('threaded', array(
+		        'conditions' => array(
+			        'Comment.post_id' => $id
+		        )
+	        )),
 	        'can_comment' => $this->PermissionCheck->checkPermission('comment', 'create', $scope),
 	        'can_view_comments' => $this->PermissionCheck->checkPermission('comment', 'read', $scope),
 	        '_serialize' => array('post')

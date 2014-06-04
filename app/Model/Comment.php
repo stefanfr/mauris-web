@@ -1,4 +1,7 @@
 <?php
+
+App::uses('AppModel', 'Model');
+
 class Comment extends AppModel {
     
     public $validate = array(
@@ -8,7 +11,7 @@ class Comment extends AppModel {
         'user_id' => array(
             'rule' => array('decimal'),
         ),
-        'replyTo' => array(
+        'parent_id' => array(
             'rule' => array('decimal'),
             'required' => false
         ),
@@ -16,13 +19,8 @@ class Comment extends AppModel {
             'rule' => 'notEmpty'
         )
     );
-    
-    public $hasMany = array(
-        'Replies' => array(
-            'className' => 'Comment',
-            'foreignKey' => 'id'
-        )
-    );
+
+	public $actAs = array('Tree');
     
     public $belongsTo = array(
         'PostedBy' => array(
@@ -35,37 +33,8 @@ class Comment extends AppModel {
         ),
         'InReplyTo' => array(
             'className' => 'Comment',
-            'foreignKey' => 'reply_to'
+            'foreignKey' => 'parent_id'
         ),  
     );
-    
-    public function getPostComments($postId) {
-        $comments = $this->find('all', array(
-            'recursive' => 0,
-            'conditions' => array(
-                'Comment.post_id' => $postId,
-                'Comment.reply_to IS NULL'
-            )
-        ));
-        foreach ($comments as &$comment) {
-            $this->addCommentReplies($comment);
-        }
-        
-        return $comments;
-    }
-    
-    public function addCommentReplies(&$comment, $recursive = true) {
-        $replies = $this->find('all', array(
-            'conditions' => array(
-                'Comment.reply_to' => $comment['Comment']['id']
-            )
-        ));
-        if ($recursive) {
-            foreach ($replies as &$reply) {
-                $this->addCommentReplies($reply);
-            }
-        }
-        $comment['Replies'] = $replies;
-    }
     
 }

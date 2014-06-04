@@ -55,7 +55,7 @@ endif;
     <? else: ?>
         <?=$this->Html->meta(array('itemprop' => 'replyToUrl', 'content' => Router::url(array('controller' => 'comment', 'action' => 'add', 'comment' => $comment['Comment']['id']), true)))?>
         <? endif; ?>
-              <? foreach ($comment['Replies'] as $reply): ?>
+              <?php foreach ($comment['children'] as $reply): ?>
                 <?=$this->element('reply', array('reply' => $reply)); ?>
             <? endforeach; ?>
             </div>

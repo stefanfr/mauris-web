@@ -46,7 +46,7 @@ class CommentController extends AppController {
         
         $this->request->data['Comment']['post_id'] = $this->Post->id;
         if (isset($this->passedArgs['comment'])) {
-            $this->request->data['Comment']['reply_to'] = $this->passedArgs['comment'];
+            $this->request->data['Comment']['parent_id'] = $this->passedArgs['comment'];
         }
         
         $post = $this->Post->read();

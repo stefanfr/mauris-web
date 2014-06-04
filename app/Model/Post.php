@@ -20,7 +20,7 @@ class Post extends AppModel {
 	);
     
     public $hasMany = array(
-        'Comments' => array(
+        'Comment' => array(
             'className' => 'Comment',
             'foreignKey' => 'post_id'
         )
