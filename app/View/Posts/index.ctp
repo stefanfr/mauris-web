@@ -27,9 +27,9 @@ endif;
 			<? endif; ?>
 			<br><br>
 
-			<?= __n('%d comment', '%d comments', count($post['Comments']), count($post['Comments'])) ?>
+			<?= __n('%d comment', '%d comments', count($post['Comment']), count($post['Comment'])) ?>
 			<br><br>
-			<meta itemprop="interactionCount" content="UserComments:<?= count($post['Comments']) ?>"/>
+			<meta itemprop="interactionCount" content="UserComments:<?= count($post['Comment']) ?>"/>
 			<?=
 			$this->Html->link(
 				__('Read more'),
