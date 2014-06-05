@@ -19,6 +19,17 @@ class User extends AppModel {
                 'message' => 'A password is required'
             )
         ),
+        'email' => array(
+	        array(
+		        'rule' => 'email',
+		        'message' => 'Enter a correct email address',
+		        'require' => true
+	        ),
+	        array(
+		        'rule' => 'notEmpty',
+		        'require' => true
+	        )
+        ),
     );
 
     public $hasMany = array(

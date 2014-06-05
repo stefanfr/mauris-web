@@ -65,15 +65,30 @@ class UsersController extends AppController {
 	}
 
     public function register() {
+	    if ($this->Auth->loggedIn()) {
+		    $this->Session->setFlash(__('You already have an account'), 'alert', array(
+			    'plugin' => 'BoostCake',
+			    'class'  => 'alert-info'
+		    ));
+
+		    $this->redirect(array('controller' => 'users', 'action' => 'profile'));
+	    }
+
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
-                return $this->redirect(array('controller' => 'users', 'action' => 'profile'));
+	            $this->Session->setFlash(__('You\'re account has been created'), 'alert', array(
+		            'plugin' => 'BoostCake',
+		            'class'  => 'alert-success'
+	            ));
+
+	            $this->redirect(array('controller' => 'users', 'action' => 'login'));
             }
-            $this->Session->setFlash(
-                __('The user could not be saved. Please, try again.')
-            );
+
+	        $this->Session->setFlash(__('Could not create your account'), 'alert', array(
+		        'plugin' => 'BoostCake',
+		        'class'  => 'alert-success'
+	        ));
         }
     }
     

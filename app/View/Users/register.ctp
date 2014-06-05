@@ -14,9 +14,20 @@ echo $this->element('page_header');
 	<fieldset>
 		<legend><?php echo h(__('Credentials')); ?></legend>
 		<?php
-		echo $this->Form->input('username');
-		echo $this->Form->input('password');
+		echo $this->Form->input('username', array('label' => __('Username')));
+		echo $this->Form->input('password', array('label' => __('Password')));
 		?>
+	</fieldset>
+	<fieldset>
+		<legend><?php echo h(__('Contact')); ?></legend>
+		<?php echo $this->Form->input('email', array('label' => 'Email')); ?>
+	</fieldset>
+	<fieldset>
+		<legend><?php echo h(__('Personal details')); ?></legend>
+		<?php echo $this->Form->input('firstname', array('label' => __('Firstname'))); ?>
+		<?php echo $this->Form->input('middlename', array('label' => __('Middlename'))); ?>
+		<?php echo $this->Form->input('surname', array('label' => __('Surname'))); ?>
+		<?php echo $this->Form->input('nickname', array('label' => __('Nickname'))); ?>
 	</fieldset>
 	<?php
 	echo $this->Form->submit(__('Register'), array(
