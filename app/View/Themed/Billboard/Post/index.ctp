@@ -12,6 +12,6 @@
   <? endif; ?>
   <br><br>
 
-  <?=__n('%d comment', '%d comments', count($post['Comments']), count($post['Comments']))?> - <?=__('You can reply at: %1$s', Router::url(array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home'), true))?>
+  <?=__n('%d comment', '%d comments', count($post['Comment']), count($post['Comment']))?> - <?=__('You can reply at: %1$s', Router::url(array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home'), true))?>
 </div>
 <? endforeach; ?>
