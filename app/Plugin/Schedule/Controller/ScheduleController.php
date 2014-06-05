@@ -27,8 +27,15 @@ class ScheduleController extends AppController {
             'ScheduleEntry.period' => 'asc'
         )
     );
-    
-    public function index() {
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		$this->Auth->allow('cancelled');
+	}
+
+
+	public function index() {
         if (!$this->PermissionCheck->checkPermission('schedule', 'read')) {
             throw new ForbiddenException();
         }
