@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-02 18:31+0000\n"
-"PO-Revision-Date: 2014-06-07 19:14+0200\n"
-"Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
+"PO-Revision-Date: 2014-06-07 19:16+0200\n"
+"Last-Translator: Martijn Vriessen <m.vriessen@mms-projects.net>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
@@ -22,7 +22,7 @@ msgstr "<info>Welkom bij de Mauris Systems web app Console</info>"
 
 #: Console/Command/DepartmentShell.php:44
 msgid "Main information"
-msgstr "Hoofd informatie"
+msgstr "Algemene informatie"
 
 #: Console/Command/DepartmentShell.php:46
 msgid "Enter the department name"
@@ -226,7 +226,7 @@ msgstr "Kon je bericht niet verwijderen"
 #: Controller/SitemapsController.php:99 View/Home/index.ctp:2
 #: View/Layouts/admin.ctp:141 View/Layouts/manage.ctp:135
 msgid "Home"
-msgstr "Home"
+msgstr "Hoofdpagina"
 
 #: Controller/SitemapsController.php:103
 #: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:236
