@@ -42,26 +42,25 @@ $this->Title->addCrumbs(array(
 		<?php if ($contributers): ?>
 		<div class="row">
 			<div class="col col-sm-12">
-				<div class="well">
-					<ul class="media-list">
-						<?php foreach ($contributers as $contributer): ?>
-						<li class="media" itemprop="comment" itemscope="" itemtype="http://schema.org/UserComments">
-							<div class="media-body">
-								<a class="pull-left" href="<?php echo $contributer['profile']?>" target="_blank">
-									<header class="media-heading" itemprop="creator" itemscope="" itemtype="http://schema.org/Person">
-										<div class="thumbnail"><?php echo $this->Gravatar->gravatar($contributer['gravatar_id'])?></div>
-										<span itemprop="name"><?php echo $contributer['username']?></span>
-									</header>
-								</a>
-								<span style="font-size: 3em;"><?php echo __n('%1$d contribution', '%1$d contributions', $contributer['contributions'], $contributer['contributions'])?></span>
-								<div class="pull-right">
-									<span class="fa fa-<?php echo $contributer['source']?> fa-5x"></span>
-								</div>
+				<ul class="media-list">
+					<?php foreach ($contributers as $contributer): ?>
+					<li class="media" itemprop="comment" itemscope="" itemtype="http://schema.org/UserComments">
+						<div class="media-body">
+							<a class="pull-left" href="<?php echo $contributer['profile']?>" target="_blank">
+								<header class="media-heading" itemprop="creator" itemscope="" itemtype="http://schema.org/Person">
+									<div class="thumbnail"><?php echo $this->Gravatar->gravatar($contributer['gravatar_id'])?></div>
+									<span itemprop="name"><?php echo $contributer['username']?></span>
+								</header>
+							</a>
+							<span style="font-size: 3em;"><?php echo __n('%1$d contribution', '%1$d contributions', $contributer['contributions'], $contributer['contributions'])?></span>
+							<div class="pull-right">
+								<span class="fa fa-<?php echo $contributer['source']?> fa-5x"></span>
 							</div>
-						</li>
-						<?php endforeach; ?>
-					</ul>
-				</div>
+						</div>
+					</li>
+					<?php endforeach; ?>
+				</ul>
+				<?php echo $this->element('pagination'); ?>
 			</div>
 		</div>
 		<?php endif; ?>
