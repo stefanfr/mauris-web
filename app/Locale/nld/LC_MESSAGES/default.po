@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-02 18:31+0000\n"
-"PO-Revision-Date: 2014-06-07 19:10+0200\n"
-"Last-Translator: Martijn Vriessen <m.vriessen@mms-projects.net>\n"
+"PO-Revision-Date: 2014-06-07 19:14+0200\n"
+"Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
@@ -680,19 +680,19 @@ msgstr "Kon de transactie niet verwijderen"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:57
 msgid "The balance account has been added"
-msgstr "Het saldo is toegevoegd aan uw account"
+msgstr "Het saldo account is toegevoegd"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:65
 msgid "Could not add the balance account"
-msgstr "Kon het gebruiker saldo niet toevoegen"
+msgstr "Kon het saldo account niet toevoegen"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:85
 msgid "The balance account has been changed."
-msgstr "Het gebruiker saldo is aangepast."
+msgstr "Het saldo account is aangepast."
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:93
 msgid "Could not change the balance account"
-msgstr "Kon het gebruiker saldo niet aanpassen"
+msgstr "Kon het saldo acount niet aanpassen"
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:2
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:6
