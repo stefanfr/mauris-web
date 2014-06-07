@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-02 18:31+0000\n"
-"PO-Revision-Date: 2014-06-02 20:37+0200\n"
+"PO-Revision-Date: 2014-06-07 19:19+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
 "projects.net/projects/mauris/mauris-website/nld/>\n"
@@ -22,11 +22,11 @@ msgstr "<info>Welkom bij de Mauris Systems web app Console</info>"
 
 #: Console/Command/DepartmentShell.php:44
 msgid "Main information"
-msgstr "Hoofd informatie"
+msgstr "Algemene informatie"
 
 #: Console/Command/DepartmentShell.php:46
 msgid "Enter the department name"
-msgstr "Vul de afdeling naam in"
+msgstr "Vul de naam van de afdeling in"
 
 #: Console/Command/DepartmentShell.php:48
 msgid "Enter the school name:"
@@ -34,7 +34,7 @@ msgstr "Vul de school naam in:"
 
 #: Console/Command/DepartmentShell.php:52
 msgid "Optional information"
-msgstr "Optionele information"
+msgstr "Optionele informatie"
 
 #: Console/Command/DepartmentShell.php:56
 msgid "What style is the department supposed to use?"
@@ -105,7 +105,7 @@ msgstr "Het commentaar waarop je wilt reageren bestaat niet"
 
 #: Controller/CommentController.php:55
 msgid "Could not find that post"
-msgstr "Kon dat bericht niet vinden"
+msgstr "Kon het bericht niet vinden"
 
 #: Controller/CommentController.php:83
 msgid "Your comment has been created"
@@ -153,7 +153,7 @@ msgstr "Kon het evenement niet verwijderen"
 
 #: Controller/FeedbackController.php:69
 msgid "Thank you for your feedback!"
-msgstr "Dank je voor je feedback!"
+msgstr "Danku voor je feedback!"
 
 #: Controller/FeedbackController.php:77
 msgid "Could not add your feedback"
@@ -197,7 +197,7 @@ msgstr "Kon de organisatie niet verwijderen"
 
 #: Controller/PostsController.php:162
 msgid "Your post has been created"
-msgstr "Je bericht is aangepast"
+msgstr "Je bericht is aangemaakt"
 
 #: Controller/PostsController.php:170
 msgid "Could not create your post"
@@ -226,7 +226,7 @@ msgstr "Kon je bericht niet verwijderen"
 #: Controller/SitemapsController.php:99 View/Home/index.ctp:2
 #: View/Layouts/admin.ctp:141 View/Layouts/manage.ctp:135
 msgid "Home"
-msgstr "Home"
+msgstr "Hoofdpagina"
 
 #: Controller/SitemapsController.php:103
 #: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:236
@@ -459,14 +459,12 @@ msgstr "Een instelling bij foutenanalyse staat niet toe deze link te openen."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:27
 #: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:6
-#, fuzzy
 msgid "Alert notice message testing..."
 msgstr "Alarm melding bericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:30;41
 #: Plugin/BoostCake/View/Elements/bootstrap2/alerts.ctp:10
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:6
-#, fuzzy
 msgid "Alert success message testing..."
 msgstr "Alarm succes bericht testen..."
 
@@ -477,19 +475,16 @@ msgstr "Alarm fout bericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:45
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:11
-#, fuzzy
 msgid "Alert info message testing..."
 msgstr "Alarm informatie bericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:49
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:16
-#, fuzzy
 msgid "Alert warning message testing..."
 msgstr "Alarm waarschuwingsbericht testen..."
 
 #: Plugin/BoostCake/Controller/BoostCakeController.php:53
 #: Plugin/BoostCake/View/Elements/bootstrap3/alerts.ctp:21
-#, fuzzy
 msgid "Alert danger message testing..."
 msgstr "Alarm gevaar bericht testen..."
 
@@ -534,7 +529,7 @@ msgstr "Beheer"
 #: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:252
 #: View/Layouts/install.ctp:120
 msgid "Block '%1$s' is deprecated! Use right_menu instead."
-msgstr ""
+msgstr "Blok '%1$s' is oud! Gebruik right_menu."
 
 #: Plugin/Rest/Console/Command/ClientShell.php:21
 msgid "Could not decode the response"
@@ -684,21 +679,20 @@ msgid "Could not remove the transaction"
 msgstr "Kon de transactie niet verwijderen"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:57
-#, fuzzy
 msgid "The balance account has been added"
-msgstr "Het saldo account is toegevoegt"
+msgstr "Het saldo account is toegevoegd"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:65
 msgid "Could not add the balance account"
-msgstr "Kon het gebruiker saldo niet toevoegen"
+msgstr "Kon het saldo account niet toevoegen"
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:85
 msgid "The balance account has been changed."
-msgstr "Het gebruiker saldo is aangepast."
+msgstr "Het saldo account is aangepast."
 
 #: Plugin/VendingMachine/Controller/UserBalancesController.php:93
 msgid "Could not change the balance account"
-msgstr "Kon het gebruiker saldo niet aanpassen"
+msgstr "Kon het saldo acount niet aanpassen"
 
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:2
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:6
@@ -1165,7 +1159,7 @@ msgstr "Verwijder %1$s"
 
 #: View/Events/manage_index.ctp:16
 msgid "Begin"
-msgstr ""
+msgstr "Begin"
 
 #: View/Feedback/admin_index.ctp:5 View/Feedback/admin_view.ctp:2
 #: View/Home/index.ctp:152
