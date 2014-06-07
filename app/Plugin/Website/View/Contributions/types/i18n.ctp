@@ -30,7 +30,19 @@ $this->Title->addCrumbs(array(
 					</div>
 				</header>
 				<div class="panel-body">
-					<p><?php echo h(__('Go to %2$s to help translate %1$s easiliy without having work on the code directly', 'Mauris', 'Weblate'))?></p>
+					<p><?php echo h(__('Go to %2$s to help translate %1$s easily without having work on the code directly', 'Mauris', 'Weblate'))?></p>
+					<a href="http://weblate.cvo-technologies.com/engage/mauris/?utm_source=widget" target="_blank">
+						<?php
+						echo $this->Html->image(
+							'http://weblate.cvo-technologies.com/widgets/mauris-287x66-white.png',
+							array(
+								'width' => '287px',
+								'height' => '66px',
+								'alt' => __('Mauris translation status')
+							)
+						);
+						?>
+					</a>
 				</div>
 				<footer class="panel-footer announcement-bottom">
 					<a href="http://weblate.cvo-technologies.com/engage/mauris/" target="_blank">
