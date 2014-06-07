@@ -119,6 +119,7 @@ CakePlugin::load('OvInfo');
 CakePlugin::load('DynList');
 CakePlugin::load('MaurisTheme');
 CakePlugin::load('Rest');
+CakePlugin::load('GitHub');
 
 CakePlugin::load('VendingMachine');
 
