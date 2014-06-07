@@ -1,8 +1,17 @@
 <?php
 
+/**
+ * Class ContributionsController
+ *
+ * @property RepositoryContributor RepositoryContributor
+ */
 class ContributionsController extends WebsiteAppController {
 	
 	public $repo = 'MMS-Projects/mauris-web';
+
+	public $uses = array('GitHub.RepositoryContributor');
+
+	public $components = array('Paginator');
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -15,6 +24,8 @@ class ContributionsController extends WebsiteAppController {
 	}
 
 	private function _getContributers() {
+		$this->RepositoryContributor->setDataSource('maurisWebRepository');
+
 		$contributors = array();
 
 		if (!function_exists('curl_init')) {
@@ -25,35 +36,27 @@ class ContributionsController extends WebsiteAppController {
 			return false;
 		}
 
-		// create a new cURL resource
-		$ch = curl_init();
+		$this->Paginator->settings = array(
+			$this->RepositoryContributor->alias => array(
+				'order' => array(
+					'RepositoryContributor.contributions' => 'ASC'
+				),
+				'limit' => 5
+			)
+		);
 
-		// set URL and other appropriate options
-		curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/' . $this->repo . '/stats/contributors');
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'Mauris Systems');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$gitHubContributors = $this->Paginator->paginate('RepositoryContributor');
 
-		// grab URL and pass it to the browser
-		$json = json_decode(curl_exec($ch));
-		foreach ($json as $jsonContributor) {
+		foreach ($gitHubContributors as $gitHubContributor) {
 			$contributor = array();
-			$contributor['contributions'] = $jsonContributor->total;
-			$contributor['username'] = $jsonContributor->author->login;
-			$contributor['gravatar_id'] = $jsonContributor->author->gravatar_id;
-			$contributor['profile'] = $jsonContributor->author->html_url;
+			$contributor['contributions'] = $gitHubContributor['RepositoryContributor']['contributions'];
+			$contributor['username'] = $gitHubContributor['RepositoryContributor']['login'];
+			$contributor['gravatar_id'] = $gitHubContributor['RepositoryContributor']['gravatar_id'];
+			$contributor['profile'] = $gitHubContributor['RepositoryContributor']['html_url'];
 			$contributor['source'] = 'github';
 
 			$contributors[] = $contributor;
 		}
-
-		usort($contributors, function ($a, $b) {
-			if ($a['contributions'] == $b['contributions']) {
-				return 0;
-			}
-
-			return ($a['contributions'] < $b['contributions']) ? 1 : 0;
-		});
 
 		return $contributors;
 	}
