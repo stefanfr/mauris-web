@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-06-02 18:31+0000\n"
+"POT-Creation-Date: 2014-06-08 06:45+0000\n"
 "PO-Revision-Date: 2014-03-01 22:46+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -192,46 +192,47 @@ msgstr ""
 msgid "Could not remove the organization"
 msgstr ""
 
-#: Controller/PostsController.php:162
+#: Controller/PostsController.php:173
 msgid "Your post has been created"
 msgstr ""
 
-#: Controller/PostsController.php:170
+#: Controller/PostsController.php:181
 msgid "Could not create your post"
 msgstr ""
 
-#: Controller/PostsController.php:184
+#: Controller/PostsController.php:195
 msgid "Could not find this post"
 msgstr ""
 
-#: Controller/PostsController.php:191
+#: Controller/PostsController.php:202
 msgid "Your post has been changed"
 msgstr ""
 
-#: Controller/PostsController.php:199
+#: Controller/PostsController.php:210
 msgid "Could not change your post"
 msgstr ""
 
-#: Controller/PostsController.php:212
+#: Controller/PostsController.php:223
 msgid "Your post has been removed"
 msgstr ""
 
-#: Controller/PostsController.php:220
+#: Controller/PostsController.php:231
 msgid "Could not remove your post"
 msgstr ""
 
 #: Controller/SitemapsController.php:99 View/Home/index.ctp:2
-#: View/Layouts/admin.ctp:141 View/Layouts/manage.ctp:135
+#: View/Layouts/admin.ctp:140 View/Layouts/error.ctp:215
+#: View/Layouts/manage.ctp:134
 msgid "Home"
 msgstr ""
 
 #: Controller/SitemapsController.php:103
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:236
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:235
 msgid "Organization"
 msgstr ""
 
 #: Controller/SitemapsController.php:107
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:196 View/Posts/add.ctp:2
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:195 View/Posts/add.ctp:2
 #: View/Posts/edit.ctp:2
 msgid "News"
 msgstr ""
@@ -252,11 +253,11 @@ msgstr ""
 msgid "Could not delete the student"
 msgstr ""
 
-#: Controller/StylesController.php:70
+#: Controller/StylesController.php:84
 msgid "The style has been changed"
 msgstr ""
 
-#: Controller/StylesController.php:78
+#: Controller/StylesController.php:92
 msgid "Could not change the style"
 msgstr ""
 
@@ -292,43 +293,55 @@ msgstr ""
 msgid "Could not find this user"
 msgstr ""
 
-#: Controller/UsersController.php:71;84;100
+#: Controller/UsersController.php:69
+msgid "You already have an account"
+msgstr ""
+
+#: Controller/UsersController.php:80
+msgid "You're account has been created"
+msgstr ""
+
+#: Controller/UsersController.php:88
+msgid "Could not create your account"
+msgstr ""
+
+#: Controller/UsersController.php:99;115
 msgid "The user has been saved"
 msgstr ""
 
-#: Controller/UsersController.php:75;88;104
+#: Controller/UsersController.php:103;119
 msgid "The user could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/UsersController.php:96;115
+#: Controller/UsersController.php:111;130
 msgid "Invalid user"
 msgstr ""
 
-#: Controller/UsersController.php:118
+#: Controller/UsersController.php:133
 msgid "User deleted"
 msgstr ""
 
-#: Controller/UsersController.php:121
+#: Controller/UsersController.php:136
 msgid "User was not deleted"
 msgstr ""
 
-#: Controller/UsersController.php:133
+#: Controller/UsersController.php:148
 msgid "Invalid username or password, try again"
 msgstr ""
 
-#: Controller/UsersController.php:170
+#: Controller/UsersController.php:185
 msgid "The user has been changed."
 msgstr ""
 
-#: Controller/UsersController.php:178
+#: Controller/UsersController.php:193
 msgid "Could not change the user"
 msgstr ""
 
-#: Controller/UsersController.php:198
+#: Controller/UsersController.php:213
 msgid "The user has been removed."
 msgstr ""
 
-#: Controller/UsersController.php:206
+#: Controller/UsersController.php:221
 msgid "Could not remove the user"
 msgstr ""
 
@@ -483,6 +496,10 @@ msgstr ""
 msgid "Alert danger message testing..."
 msgstr ""
 
+#: Plugin/GitHub/Lib/GitHubSource.php:97
+msgid "GitHub datasource error: %1$s"
+msgstr ""
+
 #: Plugin/Intermediary/View/Intermediary/check.ctp:17;38
 msgid "Go to the website"
 msgstr ""
@@ -505,21 +522,21 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:112;210
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:111;209
 #: Plugin/Schedule/View/Schedule/calendar.ctp:10
 #: Plugin/Schedule/View/Schedule/manage_edit.ctp:6
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:5 View/Home/index.ctp:13
-#: View/Layouts/manage.ctp:84
+#: View/Layouts/error.ctp:102 View/Layouts/manage.ctp:83
 msgid "Schedule"
 msgstr ""
 
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:222
-#: View/Layouts/manage.ctp:75
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:221
+#: View/Layouts/manage.ctp:74
 msgid "Manage"
 msgstr ""
 
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:252
-#: View/Layouts/install.ctp:120
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:251
+#: View/Layouts/error.ctp:188 View/Layouts/install.ctp:120
 msgid "Block '%1$s' is deprecated! Use right_menu instead."
 msgstr ""
 
@@ -539,11 +556,11 @@ msgstr ""
 msgid "HTTP method to use"
 msgstr ""
 
-#: Plugin/Schedule/Controller/ScheduleController.php:261
+#: Plugin/Schedule/Controller/ScheduleController.php:268
 msgid "The schedule entry has been change"
 msgstr ""
 
-#: Plugin/Schedule/Controller/ScheduleController.php:269
+#: Plugin/Schedule/Controller/ScheduleController.php:276
 msgid "Could not change the schedule entry"
 msgstr ""
 
@@ -698,7 +715,7 @@ msgstr ""
 #: Plugin/VendingMachine/View/UserBalances/balance.ctp:6
 #: Plugin/VendingMachine/View/VendingMachine/admin_index.ctp:2
 #: Plugin/VendingMachine/View/VendingMachine/index.ctp:2
-#: View/Layouts/admin.ctp:92
+#: View/Layouts/admin.ctp:91
 msgid "Vending machine"
 msgstr ""
 
@@ -865,7 +882,7 @@ msgid ""
 msgstr ""
 
 #: Plugin/Website/View/Contributions/contribute.ctp:38;67
-#: Plugin/Website/View/Contributions/index.ctp:25;31;86;112
+#: Plugin/Website/View/Contributions/index.ctp:25;31;85;111
 #: View/Home/website_index.ctp:27
 msgid "Learn more"
 msgstr ""
@@ -882,15 +899,15 @@ msgstr ""
 msgid "Want to contribute to %1$s? Click on '%2$s' for more information."
 msgstr ""
 
-#: Plugin/Website/View/Contributions/index.ctp:78
+#: Plugin/Website/View/Contributions/index.ctp:77
 msgid "Contribute code"
 msgstr ""
 
-#: Plugin/Website/View/Contributions/index.ctp:104
+#: Plugin/Website/View/Contributions/index.ctp:103
 msgid "Contribute translations"
 msgstr ""
 
-#: Plugin/Website/View/Contributions/index.ctp:56
+#: Plugin/Website/View/Contributions/index.ctp:55
 msgid "%1$d contribution"
 msgid_plural "%1$d contributions"
 msgstr[0] ""
@@ -911,7 +928,7 @@ msgid "Contribute to %1$s by helping with translations, code and other things"
 msgstr ""
 
 #: Plugin/Website/View/Contributions/types/code.ctp:42;71
-#: Plugin/Website/View/Contributions/types/i18n.ctp:39
+#: Plugin/Website/View/Contributions/types/i18n.ctp:51
 #: View/Organizations/website_index.ctp:47;58;71
 msgid "Go to"
 msgstr ""
@@ -926,8 +943,12 @@ msgstr ""
 
 #: Plugin/Website/View/Contributions/types/i18n.ctp:33
 msgid ""
-"Go to %2$s to help translate %1$s easiliy without having work on the code "
+"Go to %2$s to help translate %1$s easily without having work on the code "
 "directly"
+msgstr ""
+
+#: Plugin/Website/View/Contributions/types/i18n.ctp:41
+msgid "Mauris translation status"
 msgstr ""
 
 #: Plugin/Website/View/Elements/Contributions/types/code/techniques.ctp:1
@@ -950,7 +971,7 @@ msgstr ""
 
 #: View/Caches/admin_clear.ctp:2 View/Caches/admin_gc.ctp:2
 #: View/Caches/admin_index.ctp:2 View/Caches/admin_view.ctp:4
-#: View/Layouts/admin.ctp:91
+#: View/Layouts/admin.ctp:90
 msgid "Caches"
 msgstr ""
 
@@ -1062,6 +1083,7 @@ msgid "Logged in as %s"
 msgstr ""
 
 #: View/Elements/Parts/NavbarElements/right_menu.ctp:32
+#: View/Users/register.ctp:17
 msgid "Username"
 msgstr ""
 
@@ -1128,6 +1150,14 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
+#: View/Errors/error500.ctp:3
+msgid "It appears something bad has happened :-("
+msgstr ""
+
+#: View/Errors/error500.ctp:9
+msgid "Apparently our database is having trouble?"
+msgstr ""
+
 #: View/Events/manage_add.ctp:3
 msgid "Add event"
 msgstr ""
@@ -1181,7 +1211,7 @@ msgstr ""
 msgid "Teacher information"
 msgstr ""
 
-#: View/Home/index.ctp:16 View/Layouts/manage.ctp:86
+#: View/Home/index.ctp:16 View/Layouts/manage.ctp:85
 msgid "Teacher absence"
 msgstr ""
 
@@ -1223,7 +1253,7 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: View/Home/index.ctp:84 View/Users/register.ctp:3;22
+#: View/Home/index.ctp:84 View/Users/register.ctp:3;33
 msgid "Register"
 msgstr ""
 
@@ -1283,23 +1313,23 @@ msgstr ""
 msgid "Welcome to %1$s"
 msgstr ""
 
-#: View/Layouts/admin.ctp:81
+#: View/Layouts/admin.ctp:80
 msgid "Admin"
 msgstr ""
 
-#: View/Layouts/admin.ctp:88 View/Layouts/manage.ctp:82
+#: View/Layouts/admin.ctp:87 View/Layouts/manage.ctp:81
 #: View/Organizations/admin_add.ctp:6 View/Organizations/admin_edit.ctp:6
 #: View/Organizations/admin_index.ctp:6 View/Organizations/website_index.ctp:3
 msgid "Organizations"
 msgstr ""
 
-#: View/Layouts/admin.ctp:89 View/Users/admin_edit.ctp:6
+#: View/Layouts/admin.ctp:88 View/Users/admin_edit.ctp:6
 #: View/Users/admin_index.ctp:6 View/Users/login.ctp:2
 #: View/Users/register.ctp:2
 msgid "Users"
 msgstr ""
 
-#: View/Layouts/admin.ctp:90 View/Styles/admin_edit.ctp:6
+#: View/Layouts/admin.ctp:89 View/Styles/admin_edit.ctp:6
 #: View/Styles/admin_index.ctp:5 View/Styles/admin_view.ctp:6
 msgid "Styles"
 msgstr ""
@@ -1312,11 +1342,11 @@ msgstr ""
 msgid "Installer"
 msgstr ""
 
-#: View/Layouts/manage.ctp:83
+#: View/Layouts/manage.ctp:82
 msgid "Posts"
 msgstr ""
 
-#: View/Layouts/manage.ctp:85 View/Students/manage_add.ctp:4
+#: View/Layouts/manage.ctp:84 View/Students/manage_add.ctp:4
 #: View/Students/manage_index.ctp:4 View/UserRoleMappings/manage_index.ctp:12
 msgid "Students"
 msgstr ""
@@ -1497,7 +1527,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: View/Users/admin_edit.ctp:33
+#: View/Users/admin_edit.ctp:33 View/Users/register.ctp:26
 msgid "Personal details"
 msgstr ""
 
@@ -1527,4 +1557,28 @@ msgstr ""
 
 #: View/Users/register.ctp:15
 msgid "Credentials"
+msgstr ""
+
+#: View/Users/register.ctp:18
+msgid "Password"
+msgstr ""
+
+#: View/Users/register.ctp:22
+msgid "Contact"
+msgstr ""
+
+#: View/Users/register.ctp:27
+msgid "Firstname"
+msgstr ""
+
+#: View/Users/register.ctp:28
+msgid "Middlename"
+msgstr ""
+
+#: View/Users/register.ctp:29
+msgid "Surname"
+msgstr ""
+
+#: View/Users/register.ctp:30
+msgid "Nickname"
 msgstr ""
