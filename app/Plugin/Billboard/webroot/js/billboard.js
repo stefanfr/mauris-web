@@ -20,7 +20,7 @@ var billboard = {
 		{
 			id:        'news',
 			container: 'main',
-			url:       App.fullBaseUrl + '/api/post?theme=Billboard',
+			url:       App.fullBaseUrl + '/posts/overview',
 		},
 		{
 			id:        'event',
