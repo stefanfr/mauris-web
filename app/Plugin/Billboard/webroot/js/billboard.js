@@ -31,7 +31,7 @@ var billboard = {
 		{
 			id:        'absent-teacher',
 			container: 'sidebar',
-			url:        App.fullBaseUrl + '/api/absent_teacher?theme=Billboard',
+			url:        App.fullBaseUrl + '/teachers/absent',
 		},
 		{
 			id:        'cancelled',

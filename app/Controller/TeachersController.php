@@ -8,7 +8,7 @@
 class TeachersController extends AppController {
 
 	public $components = array(
-		'AutoPermission'
+		'RequestHandler', 'AutoPermission'
 	);
 
 	function beforeFilter() {
@@ -42,6 +42,8 @@ class TeachersController extends AppController {
 		if (!empty($this->request->params['requested'])) {
 			return $absent_teachers;
 		}
+
+		$this->set(compact('absent_teachers'));
 	}
     
 }
