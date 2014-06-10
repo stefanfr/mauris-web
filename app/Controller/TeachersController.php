@@ -5,7 +5,7 @@
  *
  * @property Teacher Teacher
  */
-class TeacherController extends AppController {
+class TeachersController extends AppController {
 
 	public $components = array(
 		'AutoPermission'

@@ -89,7 +89,7 @@ $this->end();
 	</div>
 	<div class="col-md-4">
 		<?php
-		$absent_teachers = $this->requestAction(array('controller' => 'teacher', 'action' => 'absent'));
+		$absent_teachers = $this->requestAction(array('controller' => 'teachers', 'action' => 'absent'));
 		?>
 		<h2><?php echo h(__n('Absent teacher', 'Absent teachers', count($absent_teachers))); ?></h2>
 
@@ -102,7 +102,7 @@ $this->end();
 			<? foreach ($absent_teachers as $report): ?>
 				<tr>
 					<th><?php echo h($this->Time->i18nFormat($report['AbsenceReport']['date'], '%A', 'Europe/Amsterdam')); ?></th>
-					<th><?php echo $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teacher', 'action' => 'view', $report['AbsenceReport']['teacher_id'])); ?></th>
+					<th><?php echo $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teachers', 'action' => 'view', $report['AbsenceReport']['teacher_id'])); ?></th>
 				</tr>
 			<? endforeach; ?>
 		</table>
