@@ -101,8 +101,8 @@ $this->end();
 			</tr>
 			<? foreach ($absent_teachers as $report): ?>
 				<tr>
-					<th><?php h($this->Time->i18nFormat($report['TeacherAbsenceReport']['date'], '%A', 'Europe/Amsterdam')); ?></th>
-					<th><?php $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teacher', 'action' => 'view', $report['TeacherAbsenceReport']['teacher_id'])); ?></th>
+					<th><?php echo h($this->Time->i18nFormat($report['AbsenceReport']['date'], '%A', 'Europe/Amsterdam')); ?></th>
+					<th><?php echo $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teacher', 'action' => 'view', $report['AbsenceReport']['teacher_id'])); ?></th>
 				</tr>
 			<? endforeach; ?>
 		</table>
