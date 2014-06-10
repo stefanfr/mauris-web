@@ -3,7 +3,8 @@
 	"description": "The Mauris website",
 	"license"    : "proprietary",
 	"require"    : {
-		"cakephp/cakephp": "2.4.5"
+		"cakephp/cakephp": "2.4.5",
+		"cakephp/localized": "2.1.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "3.7.*"

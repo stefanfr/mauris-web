@@ -95,6 +95,7 @@ Inflector::rules('plural', array('uninflected' => array(
 CakePlugin::load('DebugKit');
 CakePlugin::load('BoostCake');
 CakePlugin::load('Linkable');
+CakePlugin::load('Localized');
 
 /**
  * Load our local configuration
