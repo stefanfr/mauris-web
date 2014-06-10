@@ -5,10 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-08 06:45+0000\n"
-"PO-Revision-Date: 2014-06-07 19:19+0200\n"
+"PO-Revision-Date: 2014-06-08 08:53+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
-"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
-"mauris/mauris-website/nld/>\n"
+"Language-Team: Dutch (ISO 639-2) <http://weblate.mms-"
+"projects.net/projects/mauris/mauris-website/nld/>\n"
 "Language: nld\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -297,22 +297,19 @@ msgid "Could not find this user"
 msgstr "Kon die gebruiker niet vinden"
 
 #: Controller/UsersController.php:69
-#, fuzzy
 #| msgid "Could not add the balance account"
 msgid "You already have an account"
-msgstr "Kon het saldo account niet toevoegen"
+msgstr "Je hebt al een account"
 
 #: Controller/UsersController.php:80
-#, fuzzy
 #| msgid "Your comment has been created"
 msgid "You're account has been created"
-msgstr "Je commentaar is aangemaakt"
+msgstr "Je account is aangemaakt"
 
 #: Controller/UsersController.php:88
-#, fuzzy
 #| msgid "Could not create your comment"
 msgid "Could not create your account"
-msgstr "Kon je commentaar niet aanmaken"
+msgstr "Kon je account niet aanmaken"
 
 #: Controller/UsersController.php:99;115
 msgid "The user has been saved"
@@ -509,7 +506,7 @@ msgstr "Alarm gevaar bericht testen..."
 
 #: Plugin/GitHub/Lib/GitHubSource.php:97
 msgid "GitHub datasource error: %1$s"
-msgstr ""
+msgstr "GitHub databron fout: %1$s"
 
 #: Plugin/Intermediary/View/Intermediary/check.ctp:17;38
 msgid "Go to the website"
@@ -959,7 +956,6 @@ msgid "I18n"
 msgstr "I18n"
 
 #: Plugin/Website/View/Contributions/types/i18n.ctp:33
-#, fuzzy
 #| msgid ""
 #| "Go to %2$s to help translate %1$s easiliy without having work on the code "
 #| "directly"
@@ -967,14 +963,13 @@ msgid ""
 "Go to %2$s to help translate %1$s easily without having work on the code "
 "directly"
 msgstr ""
-"Ga naar %2$s om te helpen %1$s te vertalen zonder rechtstreeks aan de code "
-"te hoeven werken"
+"Ga naar %2$s om te helpen %1$s makkelijk te vertalen zonder rechtstreeks aan "
+"de code te hoeven werken"
 
 #: Plugin/Website/View/Contributions/types/i18n.ctp:41
-#, fuzzy
 #| msgid "Contribute translations"
 msgid "Mauris translation status"
-msgstr "Draag vertalingen bij"
+msgstr "Mauris vertaling status"
 
 #: Plugin/Website/View/Elements/Contributions/types/code/techniques.ctp:1
 msgid "Techniques"
@@ -1177,11 +1172,11 @@ msgstr "Actueel"
 
 #: View/Errors/error500.ctp:3
 msgid "It appears something bad has happened :-("
-msgstr ""
+msgstr "Het lijkt erop dat er iets slecht is gebeurt :-("
 
 #: View/Errors/error500.ctp:9
 msgid "Apparently our database is having trouble?"
-msgstr ""
+msgstr "Blijkbaar heeft onze database problemen?"
 
 #: View/Events/manage_add.ctp:3
 msgid "Add event"
@@ -1590,31 +1585,29 @@ msgstr ""
 
 #: View/Users/register.ctp:18
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: View/Users/register.ctp:22
-#, fuzzy
 #| msgid "Content"
 msgid "Contact"
-msgstr "Inhoud"
+msgstr "Contact"
 
 #: View/Users/register.ctp:27
 msgid "Firstname"
-msgstr ""
+msgstr "Voornaam"
 
 #: View/Users/register.ctp:28
 msgid "Middlename"
 msgstr ""
 
 #: View/Users/register.ctp:29
-#, fuzzy
 #| msgid "Username"
 msgid "Surname"
-msgstr "Gebruikersnaam"
+msgstr "Achternaam"
 
 #: View/Users/register.ctp:30
 msgid "Nickname"
-msgstr ""
+msgstr "Bijnaam"
 
 #~ msgid "Invalid post"
 #~ msgstr "Ongeldige post"
