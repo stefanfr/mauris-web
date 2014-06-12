@@ -46,42 +46,18 @@ class Post extends AppModel {
     );
     
     public function getLatestPost($scopes, $schoolId, $departmentId) {
-        $conditions = array();
-        $conditions['and']['Post.published'] = true; 
-        if (in_array('system', $scopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id IS NULL',
-                    'Post.department_id IS NULL'
-                )
-            );
-        }
-        if (in_array('school', $scopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $schoolId,
-                    'Post.department_id IS NULL'
-                )
-            );
-        }
-        if (in_array('department', $scopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $schoolId,
-                    'Post.department_id' => $departmentId
-                )
-            );
-        }
-        
-        return $this->find(
-            'first', array(
-                'recursive' => -1,
-                'conditions' => $conditions,
-                'order' => array(
-                    'Post.created' => 'DESC'
-                ),
-            )
-        );
+	    return $this->find('first', array(
+		    'recursive'    => -1,
+		    'conditions'   => array(
+			    $this->alias . '.published' => true
+		    ),
+		    'order'        => array(
+			    $this->alias . '.created' => 'DESC'
+		    ),
+		    'scopes'       => $scopes,
+		    'organization' => $schoolId,
+		    'department'   => $departmentId
+	    ));
     }
     
 }
