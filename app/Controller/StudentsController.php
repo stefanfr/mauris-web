@@ -11,21 +11,19 @@ class StudentsController extends UserRoleMappingsController {
 		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
 		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
 
-		$students = $this->Paginator->paginate('UserRoleMapping', $this->_buildConditions());
+		$students = $this->Paginator->paginate('UserRoleMapping', array(
+			'Role.id' => $this->UserRoleMapping->Role->getRoleId('student')
+		));
 
 		$this->set(compact('students'));
 	}
 
 	public function manage_add() {
-		$this->request->data['UserRoleMapping']['role_id'] = $this->_getRoleId('student');
+		$this->request->data['UserRoleMapping']['role_id'] = $this->UserRoleMapping->Role->getRoleId('student');
 		$this->request->data['UserRoleMapping']['department_id'] = $this->SchoolInformation->getDepartmentId();
 
 		$users = $this->UserRoleMapping->User->find('list', array('conditions' => array('NOT' => array(
-			'User.id' => array_keys($this->UserRoleMapping->find('list', array(
-				'conditions' => $this->_buildConditions(),
-				'fields' => array('User.id', 'User.id'),
-				'recursive' => 2
-			)))
+			'User.id' => array_keys($this->UserRoleMapping->listUsersWithRole('student', $this->SchoolInformation->getDepartmentId()))
 		))));
 
 		$this->set(compact('users'));
@@ -62,13 +60,6 @@ class StudentsController extends UserRoleMappingsController {
 			'plugin' => 'BoostCake',
 			'class'  => 'alert-danger'
 		));
-	}
-
-	private function _buildConditions() {
-		return array(
-			'UserRoleMapping.role_id' => $this->UserRoleMapping->Role->getRoleId('student'),
-			'UserRoleMapping.department_id' => $this->SchoolInformation->getDepartmentId()
-		);
 	}
 
 }
