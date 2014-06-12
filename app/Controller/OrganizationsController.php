@@ -75,15 +75,12 @@ class OrganizationsController extends AppController {
 			$this->request->data = $organization;
 		}
 
-		$conditions = array();
-		$conditions['or']['UsesStyle.school_id'][] = $this->SchoolInformation->getSchoolId();
-		$conditions['or'][] = 'UsesStyle.school_id IS NULL';
-
 		$styles = $this->School->UsesStyle->find(
 			'list', array(
-				'fields'     => array('id', 'title', 'UsedBySchool.name'),
-				'recursive'  => 2,
-				'conditions' => $conditions,
+				'fields'       => array('id', 'title', 'UsedBySchool.name'),
+				'recursive'    => 2,
+				'organization' => $this->SchoolInformation->getSchoolId(),
+				'scopes'       => array('system', 'organization')
 			)
 		);
 		$languages = $this->School->UsesLanguage->find('list');
@@ -177,14 +174,10 @@ class OrganizationsController extends AppController {
 		}
 
 		$styles = $this->School->UsesStyle->find('list', array(
-			'fields'     => array('id', 'title', 'UsedBySchool.name'),
-			'recursive'  => 2,
-			'conditions' => array(
-				'or' => array(
-					'UsesStyle.school_id' => $organization['School']['id'],
-					'UsesStyle.school_id IS NULL'
-				)
-			),
+			'fields'       => array('id', 'title', 'UsedBySchool.name'),
+			'recursive'    => 2,
+			'organization' => $this->SchoolInformation->getSchoolId(),
+			'scopes'       => array('system', 'organization')
 		));
 		$languages = $this->School->UsesLanguage->find('list');
 

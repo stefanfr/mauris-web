@@ -2,6 +2,10 @@
 
 class Post extends AppModel {
 
+	public $actsAs = array(
+		'OrganizationOwned'
+	);
+
 	public $validate = array(
 		'scope'     => array(
 			'rule'     => array('inList', array('system', 'school', 'department')),

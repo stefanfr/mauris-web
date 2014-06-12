@@ -75,13 +75,15 @@ class Classroom extends AppModel {
             $this->ScheduleEntry
         );
         $conditions[] = $db->expression('NOT EXISTS(' . $usedClassroomsQuery . ')');
-        $conditions['Classroom.department_id'] = $departmentId; 
-        
-        $recursive = 2;
-        
+
         $data = array(
             'timestamp' => $timestamp,
-            'data' => $this->find('all', compact('conditions', 'recursive'))
+            'data' => $this->find('all', array(
+				'conditions' => $conditions,
+				'recursive'  => 2,
+				'department' => $departmentId,
+				'scopes'     => array('department')
+            ))
         );
         
         Cache::set(array('duration' => '+1 hour'));

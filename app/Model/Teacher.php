@@ -5,6 +5,10 @@ class Teacher extends AppModel {
 
     public $order = "Teacher.name";
 
+	public $actsAs = array(
+		'OrganizationOwned'
+	);
+
     public $hasMany = array(
         'UserMappings' => array(
             'className' => 'UserTeacherMapping',

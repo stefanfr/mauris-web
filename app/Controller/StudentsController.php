@@ -7,6 +7,10 @@ class StudentsController extends UserRoleMappingsController {
 	public $components = array('Paginator', 'AutoPermission');
 
 	public function manage_index() {
+		$this->Paginator->settings['scopes'] = array('organization', 'department');
+		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
+		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
+
 		$students = $this->Paginator->paginate('UserRoleMapping', $this->_buildConditions());
 
 		$this->set(compact('students'));

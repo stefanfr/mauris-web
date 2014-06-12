@@ -34,7 +34,7 @@ class Style extends AppModel {
         )    
     );
 
-	public $actsAs = array('Tree');
+	public $actsAs = array('Tree', 'OrganizationOwned');
     
     public function getStyle($id) {
         $style = array();

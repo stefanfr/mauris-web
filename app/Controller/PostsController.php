@@ -49,32 +49,8 @@ class PostsController extends AppController {
 
         $this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
 
-        $conditions = array();
-        $conditions['and']['Post.published'] = true;
-        if (in_array('system', $allowedScopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id IS NULL',
-                    'Post.department_id IS NULL'
-                )
-            );
-        }
-        if (in_array('school', $allowedScopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $this->School->id,
-                    'Post.department_id IS NULL'
-                )
-            );
-        }
-        if (in_array('department', $allowedScopes)) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.school_id' => $this->School->id,
-                    'Post.department_id' => $this->Department->id
-                )
-            );
-        }
+		$conditions = array();
+		$conditions['and']['Post.published'] = true;
         if ((in_array('own', $allowedScopes)) && ($this->Auth->user())) {
             $conditions['and']['or'][] = array(
                 'and' => array(
@@ -90,6 +66,10 @@ class PostsController extends AppController {
             );
         }
 
+		$this->Paginator->settings['scopes'] = $allowedScopes;
+		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
+		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
+
 		$this->set(array(
 			'posts' => $this->Paginator->paginate('Post', $conditions),
 			'_serialize' => array('posts')
@@ -102,34 +82,17 @@ class PostsController extends AppController {
 		}
 		$conditions = array();
 		$conditions['and']['Post.published'] = true;
-		$conditions['and']['or'][] = array(
-			'and' => array(
-				'Post.school_id IS NULL',
-				'Post.department_id IS NULL'
-			)
-		);
-		if ($this->SchoolInformation->isSchoolIdAvailable()) {
-			$conditions['and']['or'][] = array(
-				'and' => array(
-					'Post.school_id' => $this->SchoolInformation->isSchoolIdAvailable(),
-					'Post.department_id IS NULL'
-				)
-			);
-		}
-		if ($this->SchoolInformation->isDepartmentIdAvailable()) {
-			$conditions['and']['or'][] = array(
-				'and' => array(
-					'Post.school_id' => $this->SchoolInformation->isSchoolIdAvailable(),
-					'Post.department_id' => $this->SchoolInformation->isDepartmentIdAvailable(),
-				)
-			);
-		}
 		$findParameters = array(
-			'recursive' => 2,
-			'conditions' => $conditions,
+			'recursive' => 1,
+			'conditions' => array(
+				'Post.published' => true
+			),
 			'order' => array(
 				'Post.created DESC'
-			)
+			),
+			'department' => $this->SchoolInformation->getDepartmentId(),
+			'organization' => $this->SchoolInformation->getSchoolId(),
+			'scopes' => array('system', 'organization', 'department')
 		);
 		if ($this->DataFilter->hasLimit()) {
 			$findParameters['limit'] = $this->DataFilter->getLimit();

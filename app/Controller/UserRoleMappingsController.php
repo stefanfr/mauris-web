@@ -14,8 +14,11 @@ class UserRoleMappingsController extends AppController {
 	public $components = array('Paginator', 'AutoPermission');
 
 	public function manage_index() {
+		$this->Paginator->settings['scopes'] = array('organization', 'department');
+		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
+		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
+
 		$user_role_mappings = $this->Paginator->paginate(array(
-			'UserRoleMapping.department_id' => $this->SchoolInformation->getDepartmentId(),
 			'FIND_IN_SET("department", Role.visibility)'
 		));
 
