@@ -9,17 +9,6 @@ App::uses('AppController', 'Controller');
  */
 class CommentController extends AppController {
 
-	public $components = array(
-		'Paginator' => array(
-			'settings' => array(
-				'order' => array(
-					'Comment.created' => 'DESC'
-				),
-				'limit' => 5
-			)
-		)
-	);
-
     public $uses = array('Comment', 'Post', 'User');
 
 	function beforeFilter() {
@@ -165,48 +154,9 @@ class CommentController extends AppController {
 
 		$this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
 
-		$conditions = array();
-		$conditions['and']['CommentedOn.published'] = true;
-		if (in_array('system', $allowedScopes)) {
-			$conditions['and']['or'][] = array(
-				'and' => array(
-					'CommentedOn.school_id IS NULL',
-					'CommentedOn.department_id IS NULL'
-				)
-			);
-		}
-		if (in_array('school', $allowedScopes)) {
-			$conditions['and']['or'][] = array(
-				'and' => array(
-					'CommentedOn.school_id' => $this->School->id,
-					'CommentedOn.department_id IS NULL'
-				)
-			);
-		}
-		if (in_array('department', $allowedScopes)) {
-			$conditions['and']['or'][] = array(
-				'and' => array(
-					'CommentedOn.school_id' => $this->School->id,
-					'CommentedOn.department_id' => $this->Department->id
-				)
-			);
-		}
-		if ((in_array('own', $allowedScopes)) && ($this->Auth->user())) {
-			$conditions['and']['or'][] = array(
-				'and' => array(
-					'CommentedOn.user_id' => $this->Auth->user('id'),
-					'CommentedOn.school_id' => $this->School->id,
-					array(
-						'or' => array(
-							'CommentedOn.department_id' => $this->Department->id,
-							'CommentedOn.department_id IS NULL'
-						)
-					)
-				)
-			);
-		}
-
-		$latest_comments = $this->Paginator->paginate('Comment', $conditions);
+		$latest_comments = $this->Comment->getLatestComments(
+			$allowedScopes, $this->SchoolInformation->getSchoolId(), $this->SchoolInformation->getDepartmentId(), 5
+		);
 
 		if ($this->request->is('requested')) {
 			return $latest_comments;
