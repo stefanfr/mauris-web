@@ -41,31 +41,12 @@ class FeedbackController extends AppController {
             throw new ForbiddenException();
         }
         if ($this->request->is('post')) {
-            $this->request->data['Feedback']['user_id'] = $this->Auth->user('id');
-            $this->request->data['Feedback']['school_id'] = $this->School->id;
-            $this->request->data['Feedback']['department_id'] = $this->Department->id;
-            $this->request->data['Feedback']['created'] = date('Y-m-d H:i:s');
-
-            $this->Feedback->create();
-            if ($this->Feedback->save($this->request->data)) {
-
-                $email = new CakeEmail();
-                $email->emailFormat('both');
-                $email->from(array('website@ictcollege.eu' => 'Feedback ICTCollege'));
-                $email->to('m.cremers@cvo-technologies.com');
-                $email->subject('Feedback');
-                $email->template('feedback_submitted');
-                $email->viewVars(
-                    array(
-                        'data' => $this->request->data,
-                        'id' => $this->Feedback->id,
-                        'user' => $this->Auth->user(),
-                        'school_name' => $this->School->field('name'),
-                        'department_name' => $this->Department->field('name')
-                    )
-                );
-                $email->send();
-
+	        $success = $this->Feedback->addFeedback(
+		        $this->request->data, $this->Auth->user(),
+		        $this->SchoolInformation->getSchoolId(),
+		        $this->SchoolInformation->getDepartmentId()
+	        );
+            if ($success) {
                 $this->Session->setFlash(__('Thank you for your feedback!'), 'alert', array(
                     'plugin' => 'BoostCake',
                     'class' => 'alert-success'
