@@ -29,13 +29,4 @@ class UserRoleMappingsController extends AppController {
 
 	}
 
-	protected function _getRoleId($systemAlias) {
-		$role = $this->UserRoleMapping->Role->find('first', array(
-			'conditions' => array('system_alias' => $systemAlias),
-			'recursive' => -1
-		));
-
-		return $role['Role']['id'];
-	}
-
 }

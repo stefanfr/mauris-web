@@ -66,7 +66,7 @@ class StudentsController extends UserRoleMappingsController {
 
 	private function _buildConditions() {
 		return array(
-			'UserRoleMapping.role_id' => $this->_getRoleId('student'),
+			'UserRoleMapping.role_id' => $this->UserRoleMapping->Role->getRoleId('student'),
 			'UserRoleMapping.department_id' => $this->SchoolInformation->getDepartmentId()
 		);
 	}
