@@ -17,8 +17,162 @@ class EventsController extends AppController {
 					'Event.start' => 'DESC'
 				)
 			)
-		)
+		),
+		'TimeAware' => array(
+			'end' => false,
+		),
+		'RequestHandler'
 	);
+
+	function beforeFilter() {
+		parent::beforeFilter();
+
+		$this->Auth->allow('overview');
+	}
+
+
+	public function index() {
+		$timezone = new DateTimeZone('Europe/Amsterdam');
+
+		$conditions = array();
+		if ($this->TimeAware->hasEnd()) {
+			$conditions = array(
+				'or' => array(
+					array (
+						'Event.start BETWEEN ? AND ?' => array(
+							date('Y-m-d', $this->TimeAware->getStart()),
+							date('Y-m-d', $this->TimeAware->getEnd())
+						)
+					),
+					array(
+						'Event.end BETWEEN ? AND ?' => array(
+							date('Y-m-d', $this->TimeAware->getStart()),
+							date('Y-m-d', $this->TimeAware->getEnd())
+						)
+					)
+				)
+			);
+		} else {
+			$conditions['? < Event.start'] = date('Y-m-d', $this->TimeAware->getStart());
+		}
+		$conditions['and']['or'][] = array(
+			'and' => array(
+				'Event.school_id IS NULL',
+				'Event.department_id IS NULL'
+			)
+		);
+		if ($this->SchoolInformation->isSchoolIdAvailable()) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'Event.school_id' => $this->SchoolInformation->getSchoolId(),
+					'Event.department_id IS NULL'
+				)
+			);
+		}
+		if ($this->SchoolInformation->isDepartmentIdAvailable()) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'Event.school_id' => $this->SchoolInformation->getSchoolId(),
+					'Event.department_id' => $this->SchoolInformation->getDepartmentId()
+				)
+			);
+		}
+
+
+
+		//debug($conditions);
+
+		$events = $this->Event->find(
+			'all',
+			array(
+				'conditions' => $conditions,
+				'order' => 'Event.start ASC'
+			)
+		);
+
+		$calendarEvents = array();
+		foreach ($events as $entry) {
+			$startDate = new DateTime($entry['Event']['start']);
+			$endDate = new DateTime($entry['Event']['end']);
+
+			$startDate->setTimezone($timezone);
+			$endDate->setTimezone($timezone);
+
+			$event = array(
+				'id' => $entry['Event']['id'],
+				'title' => $entry['Event']['title'],
+				'description' => $entry['Event']['description'],
+				'start' => $startDate->format('c'),
+				'end' => $endDate->format('c'),
+				'allDay' => (bool) $entry['Event']['all_day'],
+				'type' => $entry['Event']['type'],
+			);
+
+			$calendarEvents[] = $event;
+		}
+
+		$this->set(array(
+			'events' => $calendarEvents,
+			'_serialize' => array('events')
+		));
+	}
+
+	public function overview() {
+		$conditions = array();
+		if ($this->TimeAware->hasEnd()) {
+			$conditions = array(
+				'or' => array(
+					array (
+						'Event.start BETWEEN ? AND ?' => array(
+							date('Y-m-d', $this->TimeAware->getStart()),
+							date('Y-m-d', $this->TimeAware->getEnd())
+						)
+					),
+					array(
+						'Event.end BETWEEN ? AND ?' => array(
+							date('Y-m-d', $this->TimeAware->getStart()),
+							date('Y-m-d', $this->TimeAware->getEnd())
+						)
+					)
+				)
+			);
+		} else {
+			$conditions['? < Event.start'] = date('Y-m-d', $this->TimeAware->getStart());
+		}
+		$conditions['and']['or'][] = array(
+			'and' => array(
+				'Event.school_id IS NULL',
+				'Event.department_id IS NULL'
+			)
+		);
+		if ($this->SchoolInformation->isSchoolIdAvailable()) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'Event.school_id' => $this->SchoolInformation->getSchoolId(),
+					'Event.department_id IS NULL'
+				)
+			);
+		}
+		if ($this->SchoolInformation->isDepartmentIdAvailable()) {
+			$conditions['and']['or'][] = array(
+				'and' => array(
+					'Event.school_id' => $this->SchoolInformation->getSchoolId(),
+					'Event.department_id' => $this->SchoolInformation->getDepartmentId()
+				)
+			);
+		}
+
+		$events = $this->Event->find(
+			'all',
+			array(
+				'conditions' => $conditions,
+				'order' => 'Event.start ASC'
+			)
+		);
+
+		$this->set(compact('events'));
+		$this->set('_serialize', array('events'));
+	}
 
 	public function manage_index() {
 		$readAccessScopes = $this->PermissionCheck->getScopes('event', 'read');

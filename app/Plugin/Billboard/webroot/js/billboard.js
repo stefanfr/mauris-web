@@ -25,7 +25,7 @@ var billboard = {
 		{
 			id:        'event',
 			container: 'sidebar',
-			url:       App.fullBaseUrl + '/api/event?theme=Billboard',
+			url:       App.fullBaseUrl + '/events/overview',
 			//date:      'month'
 		},
 		{

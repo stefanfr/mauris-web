@@ -110,7 +110,7 @@ $(function () {
 				return returnArray;
 			}
 		}, {
-			url: "/api/event.json",
+			url: App.fullBaseUrl + '/events.json',
 			data: function () {
 				var returnArray = {};
 
