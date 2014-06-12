@@ -6,6 +6,7 @@ App::uses('AppController', 'Controller');
  * Class ClassroomsController
  *
  * @property ScheduleEntry ScheduleEntry
+ * @property Classroom Classroom
  */
 class ClassroomsController extends AppController {
 
@@ -25,9 +26,8 @@ class ClassroomsController extends AppController {
 
 
 	public function available() {
-		$classroomAvailableData = $this->Classroom->getAvailableClassrooms(time(), $this->Department->id);
+		$available_classrooms = $this->Classroom->getAvailableClassrooms($this->Department->id);
 
-		$available_classrooms = $classroomAvailableData['data'];
 		if (!empty($this->request->params['requested'])) {
 			return $available_classrooms;
 		}

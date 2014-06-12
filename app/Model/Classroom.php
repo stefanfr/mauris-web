@@ -25,8 +25,16 @@ class Classroom extends AppModel {
         
         $this->ScheduleEntry = new ScheduleEntry();
     }
-        
-    public function getAvailableClassrooms($timestamp, $departmentId) {
+
+	/**
+	 * Get all of the available classrooms for a department
+	 *
+	 * @param $departmentId int ID of the department
+	 * @return array
+	 */
+	public function getAvailableClassrooms($departmentId) {
+		$timestamp = time();
+
         $identifier = implode(
             '|',
             array(
@@ -76,15 +84,12 @@ class Classroom extends AppModel {
         );
         $conditions[] = $db->expression('NOT EXISTS(' . $usedClassroomsQuery . ')');
 
-        $data = array(
-            'timestamp' => $timestamp,
-            'data' => $this->find('all', array(
-				'conditions' => $conditions,
-				'recursive'  => 2,
-				'department' => $departmentId,
-				'scopes'     => array('department')
-            ))
-        );
+        $data = $this->find('all', array(
+			'conditions' => $conditions,
+			'recursive'  => 2,
+			'department' => $departmentId,
+			'scopes'     => array('department')
+        ));
         
         Cache::set(array('duration' => '+1 hour'));
         Cache::write($key, $data);
