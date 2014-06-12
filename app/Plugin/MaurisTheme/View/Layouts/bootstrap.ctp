@@ -275,7 +275,7 @@ $this->element('Parts/NavbarElements/right_menu');
 						'firstClass' => false,
 						'lastClass'  => 'active'
 					),
-					'Home'
+					__('Home')
 				);
 			endif;
 
