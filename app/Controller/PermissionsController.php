@@ -65,6 +65,12 @@ class PermissionsController extends AppController {
 				'title'        => 'User assignment'
 			)
 		),
+		array(
+			'Permission' => array(
+				'system_alias' => 'user_teacher_mapping',
+				'title'        => 'Teacher assignment'
+			)
+		),
 	);
 
 	public $components = array(
