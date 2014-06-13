@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-13 10:06+0000\n"
-"PO-Revision-Date: 2014-06-08 08:53+0200\n"
+"PO-Revision-Date: 2014-06-13 12:11+0100\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
 "mauris/mauris-website/nld/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.9-dev\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: Console/Command/AppShell.php:34
 msgid "<info>Welcome to Mauris Systems web app Console</info>"
@@ -294,28 +294,24 @@ msgid "Could not find this teacher"
 msgstr "Kon die docent niet vinden"
 
 #: Controller/UserTeacherMappingsController.php:38
-#, fuzzy
 #| msgid "The organization has been created"
 msgid "The teacher assignment has been created"
-msgstr "De organisatie is aangemaakt"
+msgstr "De docent toewijzing is aangemaakt"
 
 #: Controller/UserTeacherMappingsController.php:58
-#, fuzzy
 #| msgid "Could not create the department"
 msgid "Could not create teacher assignment"
-msgstr "Kon de afdeling niet aanmaken"
+msgstr "Kon de docent toewijzing niet aanmaken"
 
 #: Controller/UserTeacherMappingsController.php:72
-#, fuzzy
 #| msgid "The transaction has been removed"
 msgid "The teacher assignment has been removed"
-msgstr "De transactie is verwijderd"
+msgstr "De docent toewijzing is verwijderd"
 
 #: Controller/UserTeacherMappingsController.php:80
-#, fuzzy
 #| msgid "Could not remove the transaction"
 msgid "Could not remove the teacher assignment"
-msgstr "Kon de transactie niet verwijderen"
+msgstr "Kon de docent toewijzing niet verwijderen"
 
 #: Controller/UsersController.php:34
 msgid "Could not find this user"
@@ -1356,7 +1352,7 @@ msgstr "Meld docent afwezigheid"
 
 #: View/Home/manage_index.ctp:5
 msgid "Assign a teacher to a user"
-msgstr ""
+msgstr "Wijs een docent toe aan een gebruiker"
 
 #: View/Home/website_index.ctp:3
 msgid "Welcome to %1$s"
@@ -1479,7 +1475,7 @@ msgstr[1] "%d reacties"
 
 #: View/Posts/overview.ctp:3
 msgid "Overview"
-msgstr ""
+msgstr "Overzicht"
 
 #: View/Posts/overview.ctp:15 View/Posts/view.ctp:20
 msgid "Posted by:"
@@ -1573,10 +1569,9 @@ msgstr "Rol"
 
 #: View/UserTeacherMappings/manage_add.ctp:3
 #: View/UserTeacherMappings/manage_index.ctp:3
-#, fuzzy
 #| msgid "Role assignments"
 msgid "Teacher assignments"
-msgstr "Rol toewijzingen"
+msgstr "Docent toewijzingen"
 
 #: View/UserTeacherMappings/manage_add.ctp:18
 msgid "Note:"
@@ -1584,7 +1579,7 @@ msgstr ""
 
 #: View/UserTeacherMappings/manage_add.ctp:18
 msgid "The user will automatically receive the teacher role"
-msgstr ""
+msgstr "De gebruiker zal automatisch de docent rol krijgen"
 
 #: View/Users/add.ctp:4
 msgid "Add User"
