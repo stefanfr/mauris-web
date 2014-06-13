@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-06-08 06:45+0000\n"
+"POT-Creation-Date: 2014-06-13 10:06+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -98,63 +98,63 @@ msgstr ""
 msgid "The garbage collector has run successfully"
 msgstr ""
 
-#: Controller/CommentController.php:37
+#: Controller/CommentController.php:26
 msgid "The comment you want to reply to doesn't exist"
 msgstr ""
 
-#: Controller/CommentController.php:55
+#: Controller/CommentController.php:44
 msgid "Could not find that post"
 msgstr ""
 
-#: Controller/CommentController.php:83
+#: Controller/CommentController.php:72
 msgid "Your comment has been created"
 msgstr ""
 
-#: Controller/CommentController.php:95
+#: Controller/CommentController.php:84
 msgid "Could not create your comment"
 msgstr ""
 
-#: Controller/CommentController.php:104;109
+#: Controller/CommentController.php:93;98
 msgid "Invalid comment"
 msgstr ""
 
-#: Controller/CommentController.php:140
+#: Controller/CommentController.php:129
 msgid "Your comment has been updated."
 msgstr ""
 
-#: Controller/CommentController.php:148
+#: Controller/CommentController.php:137
 msgid "Unable to update your comment."
 msgstr ""
 
-#: Controller/EventsController.php:91
+#: Controller/EventsController.php:245
 msgid "The event has been added"
 msgstr ""
 
-#: Controller/EventsController.php:101
+#: Controller/EventsController.php:255
 msgid "Could not add the event"
 msgstr ""
 
-#: Controller/EventsController.php:142
+#: Controller/EventsController.php:296
 msgid "The event has been changed"
 msgstr ""
 
-#: Controller/EventsController.php:152
+#: Controller/EventsController.php:306
 msgid "Could not change the event"
 msgstr ""
 
-#: Controller/EventsController.php:183
+#: Controller/EventsController.php:337
 msgid "The event has been deleted"
 msgstr ""
 
-#: Controller/EventsController.php:193
+#: Controller/EventsController.php:347
 msgid "Could not delete the event"
 msgstr ""
 
-#: Controller/FeedbackController.php:69
+#: Controller/FeedbackController.php:50
 msgid "Thank you for your feedback!"
 msgstr ""
 
-#: Controller/FeedbackController.php:77
+#: Controller/FeedbackController.php:58
 msgid "Could not add your feedback"
 msgstr ""
 
@@ -170,59 +170,60 @@ msgstr ""
 msgid "Could not find that organization"
 msgstr ""
 
-#: Controller/OrganizationsController.php:95;197
+#: Controller/OrganizationsController.php:92;190
 msgid "The organization has been changed"
 msgstr ""
 
-#: Controller/OrganizationsController.php:121;222
+#: Controller/OrganizationsController.php:118;215
 msgid "Could not change the organization"
 msgstr ""
 
-#: Controller/OrganizationsController.php:150
+#: Controller/OrganizationsController.php:147
 msgid "The organization has been created"
 msgstr ""
 
-#: Controller/OrganizationsController.php:160
+#: Controller/OrganizationsController.php:157
 msgid "Could not create the organization"
 msgstr ""
 
-#: Controller/OrganizationsController.php:240
+#: Controller/OrganizationsController.php:233
 msgid "The organization has been removed"
 msgstr ""
 
-#: Controller/OrganizationsController.php:248
+#: Controller/OrganizationsController.php:241
 msgid "Could not remove the organization"
 msgstr ""
 
-#: Controller/PostsController.php:173
+#: Controller/PostsController.php:187
 msgid "Your post has been created"
 msgstr ""
 
-#: Controller/PostsController.php:181
+#: Controller/PostsController.php:195
 msgid "Could not create your post"
 msgstr ""
 
-#: Controller/PostsController.php:195
+#: Controller/PostsController.php:209
 msgid "Could not find this post"
 msgstr ""
 
-#: Controller/PostsController.php:202
+#: Controller/PostsController.php:216
 msgid "Your post has been changed"
 msgstr ""
 
-#: Controller/PostsController.php:210
+#: Controller/PostsController.php:224
 msgid "Could not change your post"
 msgstr ""
 
-#: Controller/PostsController.php:223
+#: Controller/PostsController.php:237
 msgid "Your post has been removed"
 msgstr ""
 
-#: Controller/PostsController.php:231
+#: Controller/PostsController.php:245
 msgid "Could not remove your post"
 msgstr ""
 
-#: Controller/SitemapsController.php:99 View/Home/index.ctp:2
+#: Controller/SitemapsController.php:99
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:278 View/Home/index.ctp:2
 #: View/Layouts/admin.ctp:140 View/Layouts/error.ctp:215
 #: View/Layouts/manage.ctp:134
 msgid "Home"
@@ -235,23 +236,23 @@ msgstr ""
 
 #: Controller/SitemapsController.php:107
 #: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:195 View/Posts/add.ctp:2
-#: View/Posts/edit.ctp:2
+#: View/Posts/edit.ctp:2 View/Posts/overview.ctp:2
 msgid "News"
 msgstr "Nuujs"
 
-#: Controller/StudentsController.php:32
+#: Controller/StudentsController.php:34
 msgid "The student has been added"
 msgstr ""
 
-#: Controller/StudentsController.php:40
+#: Controller/StudentsController.php:42
 msgid "Could not add the student"
 msgstr ""
 
-#: Controller/StudentsController.php:49
+#: Controller/StudentsController.php:51
 msgid "The student has been deleted"
 msgstr ""
 
-#: Controller/StudentsController.php:57
+#: Controller/StudentsController.php:59
 msgid "Could not delete the student"
 msgstr ""
 
@@ -287,8 +288,24 @@ msgstr ""
 msgid "The absence report has been removed"
 msgstr ""
 
-#: Controller/TeacherController.php:27
+#: Controller/TeachersController.php:27
 msgid "Could not find this teacher"
+msgstr ""
+
+#: Controller/UserTeacherMappingsController.php:38
+msgid "The teacher assignment has been created"
+msgstr ""
+
+#: Controller/UserTeacherMappingsController.php:58
+msgid "Could not create teacher assignment"
+msgstr ""
+
+#: Controller/UserTeacherMappingsController.php:72
+msgid "The teacher assignment has been removed"
+msgstr ""
+
+#: Controller/UserTeacherMappingsController.php:80
+msgid "Could not remove the teacher assignment"
 msgstr ""
 
 #: Controller/UsersController.php:34
@@ -454,7 +471,8 @@ msgstr ""
 #: View/Events/manage_index.ctp:18 View/Feedback/admin_index.ctp:20
 #: View/Organizations/admin_index.ctp:22 View/Students/manage_index.ctp:19
 #: View/Styles/admin_index.ctp:23 View/TeacherAbsence/manage_index.ctp:18
-#: View/UserRoleMappings/manage_index.ctp:20 View/Users/admin_index.ctp:19
+#: View/UserRoleMappings/manage_index.ctp:20
+#: View/UserTeacherMappings/manage_index.ctp:18 View/Users/admin_index.ctp:19
 msgid "Remove"
 msgstr ""
 
@@ -588,8 +606,8 @@ msgstr ""
 #: Plugin/Schedule/View/Schedule/view.ctp:23 View/Home/index.ctp:14;100
 #: View/TeacherAbsence/manage_add.ctp:23
 #: View/TeacherAbsence/manage_edit.ctp:23
-#: View/TeacherAbsence/manage_index.ctp:16
-#: View/Themed/Billboard/AbsentTeacher/index.ctp:5
+#: View/TeacherAbsence/manage_index.ctp:16 View/Teachers/absent.ctp:5
+#: View/UserTeacherMappings/manage_index.ctp:16
 msgid "Teacher"
 msgstr ""
 
@@ -624,8 +642,7 @@ msgstr ""
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:16
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:20
 #: View/Feedback/admin_index.ctp:16 View/Home/index.ctp:99
-#: View/TeacherAbsence/manage_index.ctp:15
-#: View/Themed/Billboard/AbsentTeacher/index.ctp:4
+#: View/TeacherAbsence/manage_index.ctp:15 View/Teachers/absent.ctp:4
 msgid "Date"
 msgstr ""
 
@@ -739,6 +756,7 @@ msgstr ""
 #: View/Organizations/admin_add.ctp:39 View/Posts/add.ctp:42
 #: View/Students/manage_add.ctp:5;19 View/TeacherAbsence/manage_add.ctp:27
 #: View/UserRoleMappings/manage_add.ctp:4
+#: View/UserTeacherMappings/manage_add.ctp:4;27
 msgid "Add"
 msgstr ""
 
@@ -751,6 +769,7 @@ msgstr ""
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:20
 #: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:21
 #: View/Feedback/admin_index.ctp:17 View/Feedback/admin_view.ctp:14
+#: View/UserTeacherMappings/manage_index.ctp:17
 msgid "User"
 msgstr ""
 
@@ -962,7 +981,7 @@ msgstr ""
 #: View/Elements/emails/html/organization_details.ctp:3
 #: View/Elements/emails/text/organization_details.ctp:1
 #: View/Organizations/admin_index.ctp:20 View/Students/manage_index.ctp:18
-#: View/Styles/admin_index.ctp:21 View/Teacher/view.ctp:13
+#: View/Styles/admin_index.ctp:21 View/Teachers/view.ctp:13
 #: View/UserRoleMappings/manage_index.ctp:18 View/Users/admin_index.ctp:17
 #: View/Users/profile.ctp:14
 msgid "Name"
@@ -1182,6 +1201,10 @@ msgstr ""
 msgid "Begin"
 msgstr ""
 
+#: View/Events/overview.ctp:8
+msgid "No events in the near future"
+msgstr ""
+
 #: View/Feedback/admin_index.ctp:5 View/Feedback/admin_view.ctp:2
 #: View/Home/index.ctp:152
 msgid "Feedback"
@@ -1237,7 +1260,7 @@ msgstr ""
 msgid "Read more"
 msgstr "Laes mier"
 
-#: View/Home/index.ctp:66 View/Teacher/view.ctp:14
+#: View/Home/index.ctp:66 View/Teachers/view.ctp:14
 msgid "Account"
 msgstr ""
 
@@ -1311,6 +1334,10 @@ msgstr ""
 
 #: View/Home/manage_index.ctp:4
 msgid "Report teacher absence"
+msgstr ""
+
+#: View/Home/manage_index.ctp:5
+msgid "Assign a teacher to a user"
 msgstr ""
 
 #: View/Home/website_index.ctp:3
@@ -1423,14 +1450,22 @@ msgstr ""
 msgid "Posted by"
 msgstr ""
 
-#: View/Posts/index.ctp:30 View/Themed/Billboard/Post/index.ctp:15
+#: View/Posts/index.ctp:30 View/Posts/overview.ctp:27
 msgid "%d comment"
 msgid_plural "%d comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Posts/view.ctp:20 View/Themed/Billboard/Post/index.ctp:5
+#: View/Posts/overview.ctp:3
+msgid "Overview"
+msgstr ""
+
+#: View/Posts/overview.ctp:15 View/Posts/view.ctp:20
 msgid "Posted by:"
+msgstr ""
+
+#: View/Posts/overview.ctp:27
+msgid "You can reply at: %1$s"
 msgstr ""
 
 #: View/Posts/view.ctp:27
@@ -1483,16 +1518,8 @@ msgstr ""
 msgid "%1$s Edit"
 msgstr ""
 
-#: View/Themed/Billboard/AbsentTeacher/index.ctp:15
+#: View/Teachers/absent.ctp:15
 msgid "No teachers are reported as absent at the moment"
-msgstr ""
-
-#: View/Themed/Billboard/Event/index.ctp:8
-msgid "No events in the near future"
-msgstr ""
-
-#: View/Themed/Billboard/Post/index.ctp:15
-msgid "You can reply at: %1$s"
 msgstr ""
 
 #: View/Themed/Billboard/PublicTransit/index.ctp:15
@@ -1521,6 +1548,19 @@ msgstr ""
 
 #: View/UserRoleMappings/manage_index.ctp:19
 msgid "Role"
+msgstr ""
+
+#: View/UserTeacherMappings/manage_add.ctp:3
+#: View/UserTeacherMappings/manage_index.ctp:3
+msgid "Teacher assignments"
+msgstr ""
+
+#: View/UserTeacherMappings/manage_add.ctp:18
+msgid "Note:"
+msgstr ""
+
+#: View/UserTeacherMappings/manage_add.ctp:18
+msgid "The user will automatically receive the teacher role"
 msgstr ""
 
 #: View/Users/add.ctp:4
