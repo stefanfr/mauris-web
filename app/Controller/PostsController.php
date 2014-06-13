@@ -49,29 +49,14 @@ class PostsController extends AppController {
 
         $this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
 
-		$conditions = array();
-		$conditions['and']['Post.published'] = true;
-        if ((in_array('own', $allowedScopes)) && ($this->Auth->user())) {
-            $conditions['and']['or'][] = array(
-                'and' => array(
-                    'Post.user_id' => $this->Auth->user('id'),
-                    'Post.school_id' => $this->School->id,
-                    array(
-                        'or' => array(
-                            'Post.department_id' => $this->Department->id,
-                            'Post.department_id IS NULL'
-                        )
-                    )
-                )
-            );
-        }
-
 		$this->Paginator->settings['scopes'] = $allowedScopes;
 		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
 		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
 
 		$this->set(array(
-			'posts' => $this->Paginator->paginate('Post', $conditions),
+			'posts' => $this->Paginator->paginate('Post', array(
+				'Post.published' => true
+			)),
 			'_serialize' => array('posts')
 		));
     }
