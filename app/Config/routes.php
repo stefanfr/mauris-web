@@ -133,6 +133,18 @@ if ((isset($_SERVER['HTTP_HOST'])) && ($_SERVER['HTTP_HOST'] == 'api.ictcollege.
 Router::connect('/pages/custom/*', array('controller' => 'pages', 'action' => 'show'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
+App::uses('UserRoute', 'Routing/Route');
+
+Router::connect(
+	'/profile',
+	array('controller' => 'users', 'action' => 'profile')
+);
+Router::connect(
+	'/user/:username',
+	array('controller' => 'users', 'action' => 'profile'),
+	array('routeClass' => 'UserRoute')
+);
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
