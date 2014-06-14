@@ -7,7 +7,7 @@ $this->Title->addCrumbs(array(
 	$this->here,
 ));
 
-$this->set('schema_type_for_layout', 'ProfilePage');
+$this->Seo->setPageType('profile');
 ?>
 <h1><?php echo $this->Title->getPageTitle() ?></h1>
 <div itemprop="about" itemscope itemtype="http://schema.org/Person">

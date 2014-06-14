@@ -7,6 +7,8 @@ $this->Title->addCrumbs(array(
 	$this->here
 ));
 
+$this->Seo->setPageType('post');
+
 if ($post['Post']['summary']):
     $this->set('description_for_layout', $post['Post']['summary']);
 else:
