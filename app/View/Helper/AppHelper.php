@@ -33,11 +33,11 @@ class AppHelper extends Helper {
     
     public function buildName($user, $addNickname = true) {
         $fullname = implode(
-            ' ', array(
+            ' ', array_filter(array(
                 @$user['firstname'],
                 @$user['middlename'],
                 @$user['surname'],
-            )
+            ))
         );
         $nickname = (($addNickname) ? $user['nickname'] : '');
         
