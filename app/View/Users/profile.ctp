@@ -1,11 +1,13 @@
 <?
 $this->Title->addSegment(__('Users'));
-$this->Title->setPageTitle(__('Profile'));
+$this->Title->setPageTitle($this->App->buildName($user_account['User']));
 
 $this->Title->addCrumbs(array(
 	null,
 	$this->here,
 ));
+
+$this->Seo->setDescription(__('%1$s\'s %2$s profile', $this->App->buildName($user_account['User']), 'Mauris'));
 
 $this->Seo->setPageType('profile');
 $this->Seo->setImage($this->Gravatar->avatarUrl(($user_account['User']['email']) ? $user_account['User']['email'] : $user_account['User']['username'], array('s' => 250)), 'twitter');
