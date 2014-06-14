@@ -8,7 +8,7 @@ $this->element('Parts/NavbarElements/brand');
 $this->element('Parts/NavbarElements/right_menu');
 ?>
 <!DOCTYPE html>
-<html lang="en" itemscope="" itemtype="http://schema.org/<?php echo (isset($schema_type_for_layout)) ? $schema_type_for_layout : 'WebPage'?>">
+<html lang="en" itemscope="" itemtype="<?php echo $this->SchemaOrg->getPageItemType(); ?>">
 	<head>
 		<?php
 		echo $this->Html->charset();
@@ -25,19 +25,6 @@ $this->element('Parts/NavbarElements/right_menu');
 			'name'    => 'viewport',
 			'content' => 'width=device-width, initial-scale=1'
 		));
-		if (isset($description_for_layout)):
-			$this->Html->meta(array(
-				'name'     => 'description',
-				'content'  => $description_for_layout,
-				'itemprop' => 'description'
-			));
-		endif;
-		if (isset($keywords_for_layout)):
-			$this->Html->meta(
-				'keywords',
-				implode(', ', $keywords_for_layout)
-			);
-		endif;
 		echo $this->Html->meta(array(
 			'name'    => 'author',
 			'content' => 'CVO-Technologies - 0100Dev'
@@ -45,6 +32,20 @@ $this->element('Parts/NavbarElements/right_menu');
 
 		echo $this->fetch('meta');
 		?>
+
+		<!-- SEO data -->
+		<?php echo $this->Seo->fetch(); ?>
+
+		<!-- Facebook data -->
+		<?php
+		echo $this->Html->meta(array('property' => 'fb:app_id', 'content' => 601791596574768));
+		?>
+
+		<!-- Open Graph data -->
+		<?php echo $this->OpenGraph->fetch(); ?>
+
+		<!-- Twitter Card data -->
+		<?php echo $this->TwitterCard->fetch(); ?>
 
 		<!-- styles -->
 		<?php
@@ -110,22 +111,6 @@ $this->element('Parts/NavbarElements/right_menu');
 			'name'    => 'msapplication-task',
 			'content' => 'name=' . __('Schedule') . ';action-uri=' . Router::url(array('controller' => 'schedule'))
 		));
-		?>
-
-		<!-- Open Graph stuff -->
-		<?php
-		echo $this->Html->meta(array('property' => 'og:title', 'content' => $this->Title->getPageTitle()));
-		echo $this->Html->meta(array('property' => 'og:site_name', 'content' => $this->Title->getSiteTitle()));
-		echo $this->Html->meta(array('property' => 'og:type', 'content' => 'website'));
-		if (isset($description_for_layout)):
-			echo $this->Html->meta(array('property' => 'og:description', 'content' => $description_for_layout));
-		endif;
-		echo $this->Html->meta(array('property' => 'og:url', 'content' => Router::url(null, true)));
-		?>
-
-		<!-- Facebook stuff -->
-		<?php
-		echo $this->Html->meta(array('property' => 'fb:app_id', 'content' => 601791596574768));
 		?>
 
 		<?php

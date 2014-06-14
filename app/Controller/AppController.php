@@ -48,7 +48,11 @@ class AppController extends Controller {
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
         'Menu',
         'Naming',
-		'SocialSeo.Title'
+		'SocialSeo.Title',
+		'SocialSeo.Seo',
+	    'SocialSeo.OpenGraph',
+	    'SocialSeo.TwitterCard',
+	    'SocialSeo.SchemaOrg'
     );
 
 	public $components = array(
