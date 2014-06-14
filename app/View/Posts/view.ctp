@@ -10,16 +10,16 @@ $this->Title->addCrumbs(array(
 $this->Seo->setPageType('post');
 
 if ($post['Post']['summary']):
-    $this->set('description_for_layout', $post['Post']['summary']);
+    $this->Seo->setDescription($post['Post']['summary']);
 else:
-    $this->set('description_for_layout', $this->Text->truncate($post['Post']['body'], 200));
+	$this->Seo->setDescription($this->Text->truncate($post['Post']['body'], 200));
 endif;
 ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
 	<h1 class="blog-post-title" itemprop="name"><?=h($this->Title->getPageTitle())?></h1>
   <div class="pull-right">
     <?=$this->Gravatar->gravatar($post['PostedBy']['email'], array('s' => 64, 'd' => 'identicon'))?>
-  <p class="blog-post-meta"><?=h(__('Posted by:'))?> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><?=h($this->App->buildName($post['PostedBy']))?></span></span></p>
+  <p class="blog-post-meta"><?=h(__('By '))?> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><?=h($this->App->buildName($post['PostedBy'], false))?></span></span></p>
   </div>
   <span itemprop="articleBody">
 <?php echo $this->Text->autoParagraph(h($post['Post']['body'])) ?>
