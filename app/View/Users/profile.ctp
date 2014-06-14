@@ -8,6 +8,8 @@ $this->Title->addCrumbs(array(
 ));
 
 $this->Seo->setPageType('profile');
+$this->Seo->setImage($this->Gravatar->avatarUrl(($user_account['User']['email']) ? $user_account['User']['email'] : $user_account['User']['username'], array('s' => 250)), 'twitter');
+$this->Seo->setImage($this->Gravatar->avatarUrl(($user_account['User']['email']) ? $user_account['User']['email'] : $user_account['User']['username'], array('s' => 1200)), 'open_graph');
 ?>
 <h1><?php echo $this->Title->getPageTitle() ?></h1>
 <div itemprop="about" itemscope itemtype="http://schema.org/Person">
