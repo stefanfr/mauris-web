@@ -121,6 +121,7 @@ CakePlugin::load('DynList');
 CakePlugin::load('MaurisTheme');
 CakePlugin::load('Rest');
 CakePlugin::load('GitHub');
+CakePlugin::load('SocialSeo');
 
 CakePlugin::load('VendingMachine');
 
