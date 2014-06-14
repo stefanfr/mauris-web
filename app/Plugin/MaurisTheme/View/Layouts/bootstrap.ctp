@@ -112,6 +112,22 @@ $this->element('Parts/NavbarElements/right_menu');
 		));
 		?>
 
+		<!-- Open Graph stuff -->
+		<?php
+		echo $this->Html->meta(array('property' => 'og:title', 'content' => $this->Title->getPageTitle()));
+		echo $this->Html->meta(array('property' => 'og:site_name', 'content' => $this->Title->getSiteTitle()));
+		echo $this->Html->meta(array('property' => 'og:type', 'content' => 'website'));
+		if (isset($description_for_layout)):
+			echo $this->Html->meta(array('property' => 'og:description', 'content' => $description_for_layout));
+		endif;
+		echo $this->Html->meta(array('property' => 'og:url', 'content' => Router::url(null, true)));
+		?>
+
+		<!-- Facebook stuff -->
+		<?php
+		echo $this->Html->meta(array('property' => 'fb:app_id', 'content' => 601791596574768));
+		?>
+
 		<?php
 		if ($this->fetch('additionalStyle') != ''):
 		?>
