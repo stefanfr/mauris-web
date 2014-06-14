@@ -41,7 +41,7 @@ echo $this->Form->input('nickname');
 	<legend><?php echo h(__('Contact details')) ?></legend>
 	<?php
 	echo $this->Form->input('email', array('placeholder' => __('Bla')));
-	echo $this->Form->input('system_email', array('placeholder' => __('Email address for system emails for developers and administrators')));
+	echo $this->Form->input('email', array('placeholder' => __('Email address for system emails for developers and administrators')));
 	?>
 </fieldset>
 <fieldset>

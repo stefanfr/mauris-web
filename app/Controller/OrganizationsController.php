@@ -94,12 +94,12 @@ class OrganizationsController extends AppController {
 					'class'  => 'alert-success'
 				));
 
-				if ($this->Auth->user('system_email') != '') {
+				if ($this->Auth->user('email') != '') {
 					$email = new CakeEmail();
 					//$email->config('debug');
 					$email->config('default');
 					$email->emailFormat('both');
-					$email->addTo($this->Auth->user('system_email'));
+					$email->addTo($this->Auth->user('email'));
 					$email->template('Manage.organization_change');
 					$email->viewVars(array_merge(
 						array(
@@ -192,11 +192,11 @@ class OrganizationsController extends AppController {
 					'class'  => 'alert-success'
 				));
 
-				if ($this->Auth->user('system_email') != '') {
+				if ($this->Auth->user('email') != '') {
 					$email = new CakeEmail();
 					$email->config('default');
 					$email->emailFormat('both');
-					$email->addTo($this->Auth->user('system_email'));
+					$email->addTo($this->Auth->user('email'));
 					$email->template('organization_change');
 					$email->viewVars(array_merge(
 						array(
