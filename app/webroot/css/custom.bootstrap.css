@@ -39,3 +39,22 @@ button, input, optgroup, select, textarea {
 	content: " *";
 	color:   red;
 }
+
+ul.event-listings {
+	padding-left: 5px;
+}
+
+li.event {
+	list-style: none;
+}
+
+.event .name {
+	text-decoration: overline;
+}
+
+.event time {
+	font-weight: bold;
+}
+.event time {
+	font-weight: bold;
+}
