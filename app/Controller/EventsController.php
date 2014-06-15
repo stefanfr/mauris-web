@@ -32,8 +32,6 @@ class EventsController extends AppController {
 
 
 	public function index() {
-		$timezone = new DateTimeZone('Europe/Amsterdam');
-
 		$conditions = array();
 		if ($this->TimeAware->hasEnd()) {
 			$conditions = array(
@@ -78,10 +76,6 @@ class EventsController extends AppController {
 			);
 		}
 
-
-
-		//debug($conditions);
-
 		$events = $this->Event->find(
 			'all',
 			array(
@@ -90,31 +84,7 @@ class EventsController extends AppController {
 			)
 		);
 
-		$calendarEvents = array();
-		foreach ($events as $entry) {
-			$startDate = new DateTime($entry['Event']['start']);
-			$endDate = new DateTime($entry['Event']['end']);
-
-			$startDate->setTimezone($timezone);
-			$endDate->setTimezone($timezone);
-
-			$event = array(
-				'id' => $entry['Event']['id'],
-				'title' => $entry['Event']['title'],
-				'description' => $entry['Event']['description'],
-				'start' => $startDate->format('c'),
-				'end' => $endDate->format('c'),
-				'allDay' => (bool) $entry['Event']['all_day'],
-				'type' => $entry['Event']['type'],
-			);
-
-			$calendarEvents[] = $event;
-		}
-
-		$this->set(array(
-			'events' => $calendarEvents,
-			'_serialize' => array('events')
-		));
+		$this->set(compact('events'));
 	}
 
 	public function overview() {
