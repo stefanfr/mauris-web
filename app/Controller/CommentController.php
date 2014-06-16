@@ -11,6 +11,8 @@ class CommentController extends AppController {
 
     public $uses = array('Comment', 'Post', 'User');
 
+	public $components = array('RequestHandler');
+
 	function beforeFilter() {
 		parent::beforeFilter();
 
