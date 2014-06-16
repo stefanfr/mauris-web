@@ -84,6 +84,10 @@ class EventsController extends AppController {
 			)
 		);
 
+		if ($this->request->is('requested')) {
+			return $events;
+		}
+
 		$this->set(compact('events'));
 	}
 

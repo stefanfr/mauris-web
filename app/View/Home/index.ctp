@@ -89,6 +89,25 @@ $this->end();
 	</div>
 	<div class="col-md-4">
 		<?php
+		$upcoming_events = $this->requestAction(array('controller' => 'events', 'action' => 'index'));
+		?>
+		<h2><?php echo h(__n('Upcoming event', 'Upcoming events', count($upcoming_events))); ?></h2>
+		<table class="table">
+			<tr>
+				<th><?php echo h(__('Event')); ?></th>
+				<th><?php echo h(__('When')); ?></th>
+			</tr>
+			<? foreach ($upcoming_events as $event): ?>
+				<tr>
+					<th><?php echo $this->Html->link($event['Event']['title'], array('controller' => 'events', 'action' => 'view', $event['Event']['id'])); ?></th>
+					<th><?php echo h($this->Time->niceShort($event['Event']['start'], 'Europe/Amsterdam')); ?></th>
+				</tr>
+			<? endforeach; ?>
+		</table>
+		<a href="<?php echo $this->App->url(array('controller' => 'events', 'action' => 'index')); ?>" role="button" class="btn btn-default"><?php echo h(__('List')); ?></a>
+	</div>
+	<div class="col-md-4">
+		<?php
 		$absent_teachers = $this->requestAction(array('controller' => 'teachers', 'action' => 'absent'));
 		?>
 		<h2><?php echo h(__n('Absent teacher', 'Absent teachers', count($absent_teachers))); ?></h2>
