@@ -125,10 +125,12 @@ CakePlugin::load('SocialSeo');
 
 CakePlugin::load('VendingMachine');
 
-if ($_SERVER['HTTP_HOST'] == Configure::read('Website.hostname')) {
-	CakePlugin::load('Website', array('routes' => true));
-} else {
-	CakePlugin::load('Schedule', array('routes' => true));
+if (isset($_SERVER['HTTP_HOST'])) {
+	if ($_SERVER['HTTP_HOST'] == Configure::read('Website.hostname')) {
+		CakePlugin::load('Website', array('routes' => true));
+	} else {
+		CakePlugin::load('Schedule', array('routes' => true));
+	}
 }
 
 /**
