@@ -15,6 +15,9 @@ class ClassroomsController extends AppController {
 			'mappings' => array(
 				'read'   => array('available')
 			),
+		),
+		'Paginator' => array(
+			'limit' => 5
 		)
 	);
 
@@ -26,7 +29,10 @@ class ClassroomsController extends AppController {
 
 
 	public function available() {
-		$available_classrooms = $this->Classroom->getAvailableClassrooms($this->Department->id);
+		$this->Paginator->settings['departmnet'] = $this->SchoolInformation->getDepartmentId();
+		$this->Paginator->settings['scopes'] = array('department');
+		$this->Paginator->settings['recursive'] = 2;
+		$available_classrooms = $this->Paginator->paginate('Classroom', $this->Classroom->availableClassroomConditions($this->SchoolInformation->getDepartmentId()));
 
 		if (!empty($this->request->params['requested'])) {
 			return $available_classrooms;

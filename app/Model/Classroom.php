@@ -26,77 +26,39 @@ class Classroom extends AppModel {
         $this->ScheduleEntry = new ScheduleEntry();
     }
 
-	/**
-	 * Get all of the available classrooms for a department
-	 *
-	 * @param $departmentId int ID of the department
-	 * @return array
-	 */
-	public function getAvailableClassrooms($departmentId) {
-		$timestamp = time();
+	public function availableClassroomConditions($department) {
+		$db = $this->getDataSource();
 
-        $identifier = implode(
-            '|',
-            array(
-                round($timestamp / 600),
-                $departmentId
-            )
-        );
-        $hash = md5($identifier);
-        $key = 'available-classrooms-' . $hash;
-        
-        Cache::set(array('duration' => '+1 hour'));
-        $data = Cache::read($key);
-        if ($data !== false) {
-            $this->log('Available classrooms for \'' . $identifier . '\' from cache', LOG_INFO, 'classrooms');
-            
-            return $data;
-        }
-        
-        $db = $this->getDataSource();
-        
-        $conditions = array();
-        
-        $usedClassroomsQuery = $db->buildStatement(array(
-                'fields'     => array('DISTINCT ScheduleEntry.classroom_id'),
-                'table'      => $db->fullTableName($this->ScheduleEntry),
-                'alias'      => 'ScheduleEntry',
-                'limit'      => null,
-                'offset'     => null,
-                'joins'      => array(
-                    array(
-                        'table' => 'periods',
-                        'alias' => 'Period',
-                        'type'  => 'left',
-                        'conditions' => 'Period.id = ScheduleEntry.period'
-                    )
-                ),
-                'conditions' => array(
-                    '? BETWEEN CONCAT(ScheduleEntry.date, \' \', Period.start) AND CONCAT(ScheduleEntry.date, \' \', Period.end)' => date('Y-m-d H:i:s', $timestamp),
-                    'ScheduleEntry.department_id' => $departmentId,
-                    'ScheduleEntry.cancelled' => 0,
-                    'ScheduleEntry.classroom_id = Classroom.id',
-                ),
-                'order'      => null,
-                'group'      => null
-            ),
-            $this->ScheduleEntry
-        );
-        $conditions[] = $db->expression('NOT EXISTS(' . $usedClassroomsQuery . ')');
+		$conditions = array();
 
-        $data = $this->find('all', array(
-			'conditions' => $conditions,
-			'recursive'  => 2,
-			'department' => $departmentId,
-			'scopes'     => array('department')
-        ));
-        
-        Cache::set(array('duration' => '+1 hour'));
-        Cache::write($key, $data);
-        
-        $this->log('Available classrooms for \'' . $identifier . '\' stored in the cache', LOG_INFO, 'classrooms');
-        
-        return $data;
-    }
+		$usedClassroomsQuery = $db->buildStatement(array(
+				'fields'     => array('DISTINCT ScheduleEntry.classroom_id'),
+				'table'      => $db->fullTableName($this->ScheduleEntry),
+				'alias'      => 'ScheduleEntry',
+				'limit'      => null,
+				'offset'     => null,
+				'joins'      => array(
+					array(
+						'table' => 'periods',
+						'alias' => 'Period',
+						'type'  => 'left',
+						'conditions' => 'Period.id = ScheduleEntry.period'
+					)
+				),
+				'conditions' => array(
+					'? BETWEEN CONCAT(ScheduleEntry.date, \' \', Period.start) AND CONCAT(ScheduleEntry.date, \' \', Period.end)' => date('Y-m-d H:i:s', time()),
+					'ScheduleEntry.department_id' => $department,
+					'ScheduleEntry.cancelled' => 0,
+					'ScheduleEntry.classroom_id = Classroom.id',
+				),
+				'order'      => null,
+				'group'      => null
+			),
+			$this->ScheduleEntry
+		);
+		$conditions[] = $db->expression('NOT EXISTS(' . $usedClassroomsQuery . ')');
+
+		return $conditions;
+	}
 
 }

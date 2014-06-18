@@ -149,9 +149,9 @@ $this->end();
 	<?php endif; ?>
 	<div class="col-md-4">
 		<?php
-		$classrooms_available = $this->requestAction(array('controller' => 'classrooms', 'action' => 'available'));
+		$classrooms_available = $this->requestAction(array('controller' => 'classrooms', 'action' => 'available', 'limit' => 5));
 		?>
-		<h2><?php echo h(__n('Available classroom', 'Available classrooms', count($classrooms_available))) ?></h2>
+		<h2><?php echo h(__n('Available classroom', 'Available classrooms', count($classrooms_available))); ?></h2>
 
 		<p><?php echo h(__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat(time(), '%X', null, 'Europe/Amsterdam'))) ?></p>
 		<table class="table">
@@ -166,6 +166,7 @@ $this->end();
 				</tr>
 			<? endforeach; ?>
 		</table>
+		<a href="<?php echo $this->App->url(array('controller' => 'classrooms', 'action' => 'available')); ?>" role="button" class="btn btn-default"><?php echo h(__('Go to complete list')); ?></a>
 	</div>
 	<div class="col-md-4">
 		<h2><?php echo h(__('Feedback')); ?></h2>
