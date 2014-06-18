@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-06-13 10:06+0000\n"
+"POT-Creation-Date: 2014-06-18 14:27+0000\n"
 "PO-Revision-Date: 2014-06-13 12:11+0100\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: Console/Command/AppShell.php:34
+#: Console/Command/AppShell.php:39
 msgid "<info>Welcome to Mauris Systems web app Console</info>"
 msgstr "<info>Welkom bij de Mauris Systems web app Console</info>"
 
@@ -76,6 +76,7 @@ msgid "List the departments"
 msgstr "Lijst van afdelingen"
 
 #: Console/Command/DepartmentShell.php:121
+#: Console/Command/EventReservationsShell.php:49
 msgid "Add a departments"
 msgstr "Voeg een afdeling toe"
 
@@ -91,6 +92,46 @@ msgstr "Gebruik dit commando om een afdeling te verwijderen uit de database."
 msgid "The id of the department to delete"
 msgstr "De id van de afdeling om te verwijderen"
 
+#: Console/Command/EventReservationsShell.php:46
+msgid "Send reminders"
+msgstr ""
+
+#: Controller/AssignmentsController.php:38
+#, fuzzy
+#| msgid "The teacher assignment has been created"
+msgid "The assignment has been changed added"
+msgstr "De docent toewijzing is aangemaakt"
+
+#: Controller/AssignmentsController.php:43
+#, fuzzy
+#| msgid "The teacher assignment has been created"
+msgid "The could assignment not be added"
+msgstr "De docent toewijzing is aangemaakt"
+
+#: Controller/AssignmentsController.php:63
+#, fuzzy
+#| msgid "The event has been changed"
+msgid "The assignment has been changed successfully"
+msgstr "Het evenement is aangepast"
+
+#: Controller/AssignmentsController.php:68
+#, fuzzy
+#| msgid "The teacher assignment has been created"
+msgid "The could assignment not be changed"
+msgstr "De docent toewijzing is aangemaakt"
+
+#: Controller/AssignmentsController.php:97
+#, fuzzy
+#| msgid "The teacher assignment has been removed"
+msgid "The assignment has been changed removed"
+msgstr "De docent toewijzing is verwijderd"
+
+#: Controller/AssignmentsController.php:102
+#, fuzzy
+#| msgid "The teacher assignment has been removed"
+msgid "The could assignment not be removed"
+msgstr "De docent toewijzing is verwijderd"
+
 #: Controller/CachesController.php:52
 msgid "The caches have been cleared"
 msgstr "De caches zijn leeggemaakt"
@@ -99,55 +140,55 @@ msgstr "De caches zijn leeggemaakt"
 msgid "The garbage collector has run successfully"
 msgstr "De garbage collector is succesvol uitgevoerd"
 
-#: Controller/CommentController.php:26
+#: Controller/CommentController.php:28
 msgid "The comment you want to reply to doesn't exist"
 msgstr "Het commentaar waarop je wilt reageren bestaat niet"
 
-#: Controller/CommentController.php:44
+#: Controller/CommentController.php:46
 msgid "Could not find that post"
 msgstr "Kon het bericht niet vinden"
 
-#: Controller/CommentController.php:72
+#: Controller/CommentController.php:74
 msgid "Your comment has been created"
 msgstr "Je commentaar is aangemaakt"
 
-#: Controller/CommentController.php:84
+#: Controller/CommentController.php:86
 msgid "Could not create your comment"
 msgstr "Kon je commentaar niet aanmaken"
 
-#: Controller/CommentController.php:93;98
+#: Controller/CommentController.php:95;100
 msgid "Invalid comment"
 msgstr "Ongeldig commentaar"
 
-#: Controller/CommentController.php:129
+#: Controller/CommentController.php:131
 msgid "Your comment has been updated."
 msgstr "Je commentaar is toegevoegd."
 
-#: Controller/CommentController.php:137
+#: Controller/CommentController.php:139
 msgid "Unable to update your comment."
 msgstr "Commentaar kon niet worden aangepast."
 
-#: Controller/EventsController.php:245
+#: Controller/EventsController.php:219
 msgid "The event has been added"
 msgstr "Het evenement is toegevoegd"
 
-#: Controller/EventsController.php:255
+#: Controller/EventsController.php:229
 msgid "Could not add the event"
 msgstr "Kon het evenement niet toevoegen"
 
-#: Controller/EventsController.php:296
+#: Controller/EventsController.php:270
 msgid "The event has been changed"
 msgstr "Het evenement is aangepast"
 
-#: Controller/EventsController.php:306
+#: Controller/EventsController.php:280
 msgid "Could not change the event"
 msgstr "Kon het evenement niet aanpassen"
 
-#: Controller/EventsController.php:337
+#: Controller/EventsController.php:311
 msgid "The event has been deleted"
 msgstr "Het evenement is verwijderd"
 
-#: Controller/EventsController.php:347
+#: Controller/EventsController.php:321
 msgid "Could not delete the event"
 msgstr "Kon het evenement niet verwijderen"
 
@@ -195,49 +236,49 @@ msgstr "De organisatie is verwijderd"
 msgid "Could not remove the organization"
 msgstr "Kon de organisatie niet verwijderen"
 
-#: Controller/PostsController.php:187
+#: Controller/PostsController.php:200
 msgid "Your post has been created"
 msgstr "Je bericht is aangemaakt"
 
-#: Controller/PostsController.php:195
+#: Controller/PostsController.php:208
 msgid "Could not create your post"
 msgstr "Kon de je bericht niet aanmaken"
 
-#: Controller/PostsController.php:209
+#: Controller/PostsController.php:222
 msgid "Could not find this post"
 msgstr "Kon dit bericht niet vinden"
 
-#: Controller/PostsController.php:216
+#: Controller/PostsController.php:229
 msgid "Your post has been changed"
 msgstr "Je bericht is aangepast"
 
-#: Controller/PostsController.php:224
+#: Controller/PostsController.php:237
 msgid "Could not change your post"
 msgstr "Kon je bericht niet aanpassen"
 
-#: Controller/PostsController.php:237
+#: Controller/PostsController.php:250
 msgid "Your post has been removed"
 msgstr "Je bericht is verwijderd"
 
-#: Controller/PostsController.php:245
+#: Controller/PostsController.php:258
 msgid "Could not remove your post"
 msgstr "Kon je bericht niet verwijderen"
 
 #: Controller/SitemapsController.php:99
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:278 View/Home/index.ctp:2
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:280 View/Home/index.ctp:2
 #: View/Layouts/admin.ctp:140 View/Layouts/error.ctp:215
 #: View/Layouts/manage.ctp:134
 msgid "Home"
 msgstr "Hoofdpagina"
 
 #: Controller/SitemapsController.php:103
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:235
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:236
 msgid "Organization"
 msgstr "Organisatie"
 
 #: Controller/SitemapsController.php:107
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:195 View/Posts/add.ctp:2
-#: View/Posts/edit.ctp:2 View/Posts/overview.ctp:2
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:196 View/Comment/add.ctp:2
+#: View/Posts/add.ctp:2 View/Posts/edit.ctp:2 View/Posts/overview.ctp:2
 msgid "News"
 msgstr "Nieuws"
 
@@ -294,22 +335,18 @@ msgid "Could not find this teacher"
 msgstr "Kon die docent niet vinden"
 
 #: Controller/UserTeacherMappingsController.php:38
-#| msgid "The organization has been created"
 msgid "The teacher assignment has been created"
 msgstr "De docent toewijzing is aangemaakt"
 
 #: Controller/UserTeacherMappingsController.php:58
-#| msgid "Could not create the department"
 msgid "Could not create teacher assignment"
 msgstr "Kon de docent toewijzing niet aanmaken"
 
 #: Controller/UserTeacherMappingsController.php:72
-#| msgid "The transaction has been removed"
 msgid "The teacher assignment has been removed"
 msgstr "De docent toewijzing is verwijderd"
 
 #: Controller/UserTeacherMappingsController.php:80
-#| msgid "Could not remove the transaction"
 msgid "Could not remove the teacher assignment"
 msgstr "Kon de docent toewijzing niet verwijderen"
 
@@ -419,7 +456,7 @@ msgstr "Geannuleerde lessen"
 msgid "Absent teachers"
 msgstr "Afwezige docenten"
 
-#: Plugin/Billboard/View/Billboards/display.ctp:51
+#: Plugin/Billboard/View/Billboards/display.ctp:51 View/Events/index.ctp:2
 #: View/Events/manage_add.ctp:2 View/Events/manage_delete.ctp:2
 #: View/Events/manage_edit.ctp:2 View/Events/manage_index.ctp:2
 msgid "Events"
@@ -458,12 +495,13 @@ msgstr "Locatie"
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:22
 #: Plugin/VendingMachine/View/UserBalances/admin_edit.ctp:21
 #: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:23
-#: View/Assignments/manage_index.ctp:14 View/Comment/edit.ctp:18
-#: View/Events/manage_edit.ctp:30 View/Events/manage_index.ctp:17
-#: View/Feedback/admin_index.ctp:19 View/Organizations/admin_edit.ctp:39
-#: View/Organizations/admin_index.ctp:21 View/Organizations/manage_edit.ctp:26
-#: View/Posts/edit.ctp:19 View/Styles/admin_edit.ctp:89
-#: View/Styles/admin_index.ctp:22 View/TeacherAbsence/manage_edit.ctp:27
+#: View/Assignments/manage_edit.ctp:19 View/Assignments/manage_index.ctp:17
+#: View/Comment/edit.ctp:18 View/Events/manage_edit.ctp:30
+#: View/Events/manage_index.ctp:17 View/Feedback/admin_index.ctp:19
+#: View/Organizations/admin_edit.ctp:39 View/Organizations/admin_index.ctp:21
+#: View/Organizations/manage_edit.ctp:26 View/Posts/edit.ctp:19
+#: View/Styles/admin_edit.ctp:89 View/Styles/admin_index.ctp:22
+#: View/TeacherAbsence/manage_edit.ctp:27
 #: View/TeacherAbsence/manage_index.ctp:17 View/Users/admin_edit.ctp:55
 #: View/Users/admin_index.ctp:18
 msgid "Change"
@@ -474,7 +512,7 @@ msgstr "Bewerk"
 #: Plugin/VendingMachine/View/Cards/admin_index.ctp:23
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:23
 #: Plugin/VendingMachine/View/UserBalances/admin_index.ctp:24
-#: View/Assignments/manage_index.ctp:15 View/Events/manage_delete.ctp:13
+#: View/Assignments/manage_index.ctp:18 View/Events/manage_delete.ctp:13
 #: View/Events/manage_index.ctp:18 View/Feedback/admin_index.ctp:20
 #: View/Organizations/admin_index.ctp:22 View/Students/manage_index.ctp:19
 #: View/Styles/admin_index.ctp:23 View/TeacherAbsence/manage_index.ctp:18
@@ -552,7 +590,7 @@ msgstr ""
 msgid "Link"
 msgstr "Link"
 
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:111;209
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:112;210
 #: Plugin/Schedule/View/Schedule/calendar.ctp:10
 #: Plugin/Schedule/View/Schedule/manage_edit.ctp:6
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:5 View/Home/index.ctp:13
@@ -560,12 +598,12 @@ msgstr "Link"
 msgid "Schedule"
 msgstr "Rooster"
 
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:221
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:222
 #: View/Layouts/manage.ctp:74
 msgid "Manage"
 msgstr "Beheer"
 
-#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:251
+#: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:252
 #: View/Layouts/error.ctp:188 View/Layouts/install.ctp:120
 msgid "Block '%1$s' is deprecated! Use right_menu instead."
 msgstr "Blok '%1$s' is oud! Gebruik right_menu."
@@ -613,7 +651,7 @@ msgstr "School rooster"
 #: Plugin/Schedule/View/Schedule/calendar.ctp:32
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:20
 #: Plugin/Schedule/View/Schedule/simple.ctp:13;43
-#: Plugin/Schedule/View/Schedule/view.ctp:23 View/Home/index.ctp:14;100
+#: Plugin/Schedule/View/Schedule/view.ctp:23 View/Home/index.ctp:14;119
 #: View/TeacherAbsence/manage_add.ctp:23
 #: View/TeacherAbsence/manage_edit.ctp:23
 #: View/TeacherAbsence/manage_index.ctp:16 View/Teachers/absent.ctp:5
@@ -624,7 +662,7 @@ msgstr "Docent"
 #: Plugin/Schedule/View/Schedule/calendar.ctp:38
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:18
 #: Plugin/Schedule/View/Schedule/simple.ctp:19;37
-#: Plugin/Schedule/View/Schedule/view.ctp:17 View/Home/index.ctp:121
+#: Plugin/Schedule/View/Schedule/view.ctp:17 View/Home/index.ctp:140
 #: View/Themed/Billboard/Schedule/cancelled.ctp:4
 msgid "Class"
 msgstr "Klas"
@@ -651,7 +689,7 @@ msgstr "Omvang"
 
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:16
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:20
-#: View/Feedback/admin_index.ctp:16 View/Home/index.ctp:99
+#: View/Feedback/admin_index.ctp:16 View/Home/index.ctp:118
 #: View/TeacherAbsence/manage_index.ctp:15 View/Teachers/absent.ctp:4
 msgid "Date"
 msgstr "Datum"
@@ -674,13 +712,13 @@ msgstr "Kalender rooster"
 
 #: Plugin/Schedule/View/Schedule/simple.ctp:50
 #: Plugin/Schedule/View/Schedule/view.ctp:30 View/Classrooms/available.ctp:18
-#: View/Home/index.ctp:140
+#: View/Home/index.ctp:159
 msgid "Classroom"
 msgstr "Klaslokaal"
 
-#: Plugin/Schedule/View/Schedule/view.ctp:37
-#: View/Assignments/manage_index.ctp:3 View/Assignments/manage_view.ctp:6
-#: View/Home/index.ctp:17
+#: Plugin/Schedule/View/Schedule/view.ctp:37 View/Assignments/manage_add.ctp:2
+#: View/Assignments/manage_edit.ctp:2 View/Assignments/manage_index.ctp:3
+#: View/Assignments/manage_view.ctp:6 View/Home/index.ctp:17
 msgid "Assignments"
 msgstr "Opgaves"
 
@@ -762,17 +800,19 @@ msgstr "Voeg kaart toe"
 #: Plugin/VendingMachine/View/Cards/admin_add.ctp:20
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:20
 #: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:19
-#: View/Events/manage_add.ctp:30 View/Home/index.ctp:169
-#: View/Organizations/admin_add.ctp:39 View/Posts/add.ctp:42
-#: View/Students/manage_add.ctp:5;19 View/TeacherAbsence/manage_add.ctp:27
+#: View/Assignments/manage_add.ctp:19 View/Events/manage_add.ctp:30
+#: View/Home/index.ctp:188 View/Organizations/admin_add.ctp:39
+#: View/Posts/add.ctp:42 View/Students/manage_add.ctp:5;19
+#: View/TeacherAbsence/manage_add.ctp:27
 #: View/UserRoleMappings/manage_add.ctp:4
 #: View/UserTeacherMappings/manage_add.ctp:4;27
 msgid "Add"
 msgstr "Toevoegen"
 
 #: Plugin/VendingMachine/View/Cards/admin_edit.ctp:8
-#: View/Events/manage_edit.ctp:3 View/Organizations/admin_edit.ctp:7
-#: View/Styles/admin_edit.ctp:7 View/Users/admin_edit.ctp:7
+#: View/Assignments/manage_edit.ctp:3 View/Events/manage_edit.ctp:3
+#: View/Organizations/admin_edit.ctp:7 View/Styles/admin_edit.ctp:7
+#: View/Users/admin_edit.ctp:7
 msgid "Change %1$s"
 msgstr "Bewerk %1$s"
 
@@ -991,13 +1031,19 @@ msgstr "Mauris vertaling status"
 msgid "Techniques"
 msgstr "Technieken"
 
-#: View/Assignments/manage_index.ctp:13 View/Caches/admin_index.ctp:12
+#: View/Assignments/manage_add.ctp:3
+#, fuzzy
+#| msgid "Assignments"
+msgid "Add assignment"
+msgstr "Opgaves"
+
+#: View/Assignments/manage_index.ctp:16 View/Caches/admin_index.ctp:12
 #: View/Elements/emails/html/organization_details.ctp:3
 #: View/Elements/emails/text/organization_details.ctp:1
-#: View/Organizations/admin_index.ctp:20 View/Students/manage_index.ctp:18
-#: View/Styles/admin_index.ctp:21 View/Teachers/view.ctp:13
-#: View/UserRoleMappings/manage_index.ctp:18 View/Users/admin_index.ctp:17
-#: View/Users/profile.ctp:14
+#: View/Emails/html/event_reminder.ctp:9 View/Organizations/admin_index.ctp:20
+#: View/Students/manage_index.ctp:18 View/Styles/admin_index.ctp:21
+#: View/Teachers/view.ctp:13 View/UserRoleMappings/manage_index.ctp:18
+#: View/Users/admin_index.ctp:17 View/Users/profile.ctp:24
 msgid "Name"
 msgstr "Naam"
 
@@ -1088,17 +1134,17 @@ msgid "Available classrooms"
 msgstr "Beschikbare klaslokalen"
 
 #: View/Classrooms/available.ctp:19 View/Events/manage_index.ctp:15
-#: View/Home/index.ctp:141
+#: View/Home/index.ctp:160
 msgid "Title"
 msgstr "Titel"
 
-#: View/Classrooms/available.ctp:15 View/Home/index.ctp:137
+#: View/Classrooms/available.ctp:15 View/Home/index.ctp:156
 msgid "Classroom available at: %s"
 msgid_plural "Classrooms available at: %s"
 msgstr[0] "Lokaal beschikbaar om: %s"
 msgstr[1] "Lokalen beschikbaar om: %s"
 
-#: View/Comment/add.ctp:8;13
+#: View/Comment/add.ctp:4;21
 msgid "Add comment"
 msgstr "Commentaar toevoegen"
 
@@ -1106,19 +1152,20 @@ msgstr "Commentaar toevoegen"
 msgid "Change comment"
 msgstr "Pas commentaar aan"
 
+#: View/Elements/comment.ctp:14 View/Elements/reply.ctp:14
+#: View/Posts/view.ctp:33;96
+msgid "Comment"
+msgstr "Reageer"
+
 #: View/Elements/latest_comments.ctp:1
 msgid "Latest comments"
 msgstr "Laatste reacties"
-
-#: View/Elements/reply.ctp:13 View/Posts/view.ctp:51
-msgid "Reply"
-msgstr "Reageer"
 
 #: View/Elements/Parts/NavbarElements/right_menu.ctp:8
 msgid "Logged in as %s"
 msgstr "Ingelogd als %s"
 
-#: View/Elements/Parts/NavbarElements/right_menu.ctp:32
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:33
 #: View/Users/register.ctp:17
 msgid "Username"
 msgstr "Gebruikersnaam"
@@ -1163,6 +1210,26 @@ msgstr "Stijl"
 msgid "Logo"
 msgstr "Logo"
 
+#: View/Emails/html/event_reminder.ctp:5
+#, fuzzy
+#| msgid "Remove %1$s"
+msgid "Reminder for %1$s"
+msgstr "Verwijder %1$s"
+
+#: View/Emails/html/event_reminder.ctp:6
+msgid "Reservation number"
+msgstr ""
+
+#: View/Emails/html/event_reminder.ctp:13 View/Home/index.ctp:97
+#, fuzzy
+#| msgid "Events"
+msgid "Event"
+msgstr "Evenementen"
+
+#: View/Emails/html/event_reminder.ctp:16
+msgid "Time"
+msgstr ""
+
 #: View/Emails/html/feedback_submitted.ctp:4
 msgid "View the feedback at the system"
 msgstr "Bekijk de terugkoppeling in het systeem"
@@ -1194,6 +1261,12 @@ msgstr "Het lijkt erop dat er iets slecht is gebeurt :-("
 msgid "Apparently our database is having trouble?"
 msgstr "Blijkbaar heeft onze database problemen?"
 
+#: View/Events/index.ctp:8
+msgid ""
+"List of events happening in and around the organization within the coming "
+"months"
+msgstr ""
+
 #: View/Events/manage_add.ctp:3
 msgid "Add event"
 msgstr "Voeg evenement toe"
@@ -1219,7 +1292,7 @@ msgid "No events in the near future"
 msgstr "Geen evenementen in de nabije toekomst"
 
 #: View/Feedback/admin_index.ctp:5 View/Feedback/admin_view.ctp:2
-#: View/Home/index.ctp:152
+#: View/Home/index.ctp:171
 msgid "Feedback"
 msgstr "Terugkoppeling"
 
@@ -1270,7 +1343,7 @@ msgstr ""
 msgid "%1$s school information for teachers, students and parents"
 msgstr "%1$s school informatie voor docenten, studenten en ouders"
 
-#: View/Home/index.ctp:56 View/Posts/index.ctp:35
+#: View/Home/index.ctp:56 View/Posts/index.ctp:35 View/Users/profile.ctp:62
 msgid "Read more"
 msgstr "Lees meer"
 
@@ -1298,33 +1371,47 @@ msgstr "Inloggen"
 msgid "Register"
 msgstr "Registreren"
 
-#: View/Home/index.ctp:96
+#: View/Home/index.ctp:98
+msgid "When"
+msgstr ""
+
+#: View/Home/index.ctp:107
+msgid "List"
+msgstr ""
+
+#: View/Home/index.ctp:115
 msgid "Absent teachers for the 7 following days"
 msgstr "Afwezige docenten voor de komende 7 dagen"
 
-#: View/Home/index.ctp:118
+#: View/Home/index.ctp:137
 msgid "This table shows the classes you've subscribed to"
 msgstr "Deze tabel laat de klassen zien waar je op geabonneerd bent"
 
 #: View/Home/index.ctp:94
+msgid "Upcoming event"
+msgid_plural "Upcoming events"
+msgstr[0] ""
+msgstr[1] ""
+
+#: View/Home/index.ctp:113
 msgid "Absent teacher"
 msgid_plural "Absent teachers"
 msgstr[0] "Afwezige docent"
 msgstr[1] "Afwezige docenten"
 
-#: View/Home/index.ctp:109
+#: View/Home/index.ctp:128
 msgid "%d absent teacher report"
 msgid_plural "%d absent teachers reports"
 msgstr[0] "%d melding van èèn afwezige docent"
 msgstr[1] "%d meldingen van afwezige docenten"
 
-#: View/Home/index.ctp:116
+#: View/Home/index.ctp:135
 msgid "Class subscription"
 msgid_plural "Class subscriptions"
 msgstr[0] "Klasse abbonnement"
 msgstr[1] "Klasse abonnementen"
 
-#: View/Home/index.ctp:135
+#: View/Home/index.ctp:154
 msgid "Available classroom"
 msgid_plural "Available classrooms"
 msgstr[0] "Beschikbaar klaslokaal"
@@ -1353,6 +1440,12 @@ msgstr "Meld docent afwezigheid"
 #: View/Home/manage_index.ctp:5
 msgid "Assign a teacher to a user"
 msgstr "Wijs een docent toe aan een gebruiker"
+
+#: View/Home/manage_index.ctp:6
+#, fuzzy
+#| msgid "Role assignments"
+msgid "Edit assignments"
+msgstr "Rol toewijzingen"
 
 #: View/Home/website_index.ctp:3
 msgid "Welcome to %1$s"
@@ -1477,7 +1570,7 @@ msgstr[1] "%d reacties"
 msgid "Overview"
 msgstr "Overzicht"
 
-#: View/Posts/overview.ctp:15 View/Posts/view.ctp:20
+#: View/Posts/overview.ctp:15
 msgid "Posted by:"
 msgstr "Geplaatst door:"
 
@@ -1485,13 +1578,15 @@ msgstr "Geplaatst door:"
 msgid "You can reply at: %1$s"
 msgstr "Je kan reageren op: %1$s"
 
-#: View/Posts/view.ctp:27
+#: View/Posts/view.ctp:22
+#, fuzzy
+#| msgid "Body"
+msgid "By"
+msgstr "Inhoud"
+
+#: View/Posts/view.ctp:29
 msgid "%s profile"
 msgstr "%s profiel"
-
-#: View/Posts/view.ctp:31
-msgid "Comment"
-msgstr "Reageer"
 
 #: View/Sitemaps/index.ctp:9
 msgid "The following sitemaps are available:"
@@ -1569,7 +1664,6 @@ msgstr "Rol"
 
 #: View/UserTeacherMappings/manage_add.ctp:3
 #: View/UserTeacherMappings/manage_index.ctp:3
-#| msgid "Role assignments"
 msgid "Teacher assignments"
 msgstr "Docent toewijzingen"
 
@@ -1613,9 +1707,23 @@ msgstr "Authenticatie details"
 msgid "Please enter your username and password"
 msgstr "Vul alstublieft uw gebruikersnaam en wachtwoord in"
 
-#: View/Users/profile.ctp:16
-msgid "Email address"
-msgstr "Email adres"
+#: View/Users/profile.ctp:26 View/Users/register.ctp:27
+msgid "Firstname"
+msgstr "Voornaam"
+
+#: View/Users/profile.ctp:31 View/Users/register.ctp:28
+msgid "Middlename"
+msgstr ""
+
+#: View/Users/profile.ctp:36 View/Users/register.ctp:29
+msgid "Surname"
+msgstr "Achternaam"
+
+#: View/Users/profile.ctp:43
+msgid "Latest post by this user"
+msgid_plural "Latest posts by this user"
+msgstr[0] ""
+msgstr[1] ""
 
 #: View/Users/register.ctp:15
 msgid "Credentials"
@@ -1629,21 +1737,15 @@ msgstr "Wachtwoord"
 msgid "Contact"
 msgstr "Contact"
 
-#: View/Users/register.ctp:27
-msgid "Firstname"
-msgstr "Voornaam"
-
-#: View/Users/register.ctp:28
-msgid "Middlename"
-msgstr ""
-
-#: View/Users/register.ctp:29
-msgid "Surname"
-msgstr "Achternaam"
-
 #: View/Users/register.ctp:30
 msgid "Nickname"
 msgstr "Bijnaam"
+
+#~ msgid "Reply"
+#~ msgstr "Reageer"
+
+#~ msgid "Email address"
+#~ msgstr "Email adres"
 
 #~ msgid "Invalid post"
 #~ msgstr "Ongeldige post"
