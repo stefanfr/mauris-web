@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-18 14:27+0000\n"
-"PO-Revision-Date: 2014-06-13 12:11+0100\n"
+"PO-Revision-Date: 2014-06-18 16:56+0100\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
 "mauris/mauris-website/nld/>\n"
@@ -94,43 +94,37 @@ msgstr "De id van de afdeling om te verwijderen"
 
 #: Console/Command/EventReservationsShell.php:46
 msgid "Send reminders"
-msgstr ""
+msgstr "Verstuur herinneringen"
 
 #: Controller/AssignmentsController.php:38
-#, fuzzy
 #| msgid "The teacher assignment has been created"
 msgid "The assignment has been changed added"
-msgstr "De docent toewijzing is aangemaakt"
+msgstr "De opgave is aangemaakt"
 
 #: Controller/AssignmentsController.php:43
-#, fuzzy
 #| msgid "The teacher assignment has been created"
 msgid "The could assignment not be added"
-msgstr "De docent toewijzing is aangemaakt"
+msgstr "De opgave kon niet worden aangemaakt"
 
 #: Controller/AssignmentsController.php:63
-#, fuzzy
 #| msgid "The event has been changed"
 msgid "The assignment has been changed successfully"
-msgstr "Het evenement is aangepast"
+msgstr "De opgave is succesvol aangepast"
 
 #: Controller/AssignmentsController.php:68
-#, fuzzy
 #| msgid "The teacher assignment has been created"
 msgid "The could assignment not be changed"
-msgstr "De docent toewijzing is aangemaakt"
+msgstr "De opgave kon niet worden aangepast"
 
 #: Controller/AssignmentsController.php:97
-#, fuzzy
 #| msgid "The teacher assignment has been removed"
 msgid "The assignment has been changed removed"
-msgstr "De docent toewijzing is verwijderd"
+msgstr "De opgave is verwijderd"
 
 #: Controller/AssignmentsController.php:102
-#, fuzzy
 #| msgid "The teacher assignment has been removed"
 msgid "The could assignment not be removed"
-msgstr "De docent toewijzing is verwijderd"
+msgstr "De opgave kon niet worden verwijderd"
 
 #: Controller/CachesController.php:52
 msgid "The caches have been cleared"
@@ -1032,10 +1026,9 @@ msgid "Techniques"
 msgstr "Technieken"
 
 #: View/Assignments/manage_add.ctp:3
-#, fuzzy
 #| msgid "Assignments"
 msgid "Add assignment"
-msgstr "Opgaves"
+msgstr "Voeg opgave toe"
 
 #: View/Assignments/manage_index.ctp:16 View/Caches/admin_index.ctp:12
 #: View/Elements/emails/html/organization_details.ctp:3
@@ -1211,24 +1204,22 @@ msgid "Logo"
 msgstr "Logo"
 
 #: View/Emails/html/event_reminder.ctp:5
-#, fuzzy
 #| msgid "Remove %1$s"
 msgid "Reminder for %1$s"
-msgstr "Verwijder %1$s"
+msgstr "Herinnering voor %1$s"
 
 #: View/Emails/html/event_reminder.ctp:6
 msgid "Reservation number"
-msgstr ""
+msgstr "Reserveer nummer"
 
 #: View/Emails/html/event_reminder.ctp:13 View/Home/index.ctp:97
-#, fuzzy
 #| msgid "Events"
 msgid "Event"
-msgstr "Evenementen"
+msgstr "Evenement"
 
 #: View/Emails/html/event_reminder.ctp:16
 msgid "Time"
-msgstr ""
+msgstr "Tijd"
 
 #: View/Emails/html/feedback_submitted.ctp:4
 msgid "View the feedback at the system"
@@ -1266,6 +1257,8 @@ msgid ""
 "List of events happening in and around the organization within the coming "
 "months"
 msgstr ""
+"Lijst van evenementen die in en rondom de organisatie binnen de komende "
+"maanden"
 
 #: View/Events/manage_add.ctp:3
 msgid "Add event"
@@ -1373,11 +1366,11 @@ msgstr "Registreren"
 
 #: View/Home/index.ctp:98
 msgid "When"
-msgstr ""
+msgstr "Wanneer"
 
 #: View/Home/index.ctp:107
 msgid "List"
-msgstr ""
+msgstr "Lijst"
 
 #: View/Home/index.ctp:115
 msgid "Absent teachers for the 7 following days"
@@ -1390,8 +1383,8 @@ msgstr "Deze tabel laat de klassen zien waar je op geabonneerd bent"
 #: View/Home/index.ctp:94
 msgid "Upcoming event"
 msgid_plural "Upcoming events"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Opkomende evenement"
+msgstr[1] "Opkomende evenementen"
 
 #: View/Home/index.ctp:113
 msgid "Absent teacher"
@@ -1442,10 +1435,9 @@ msgid "Assign a teacher to a user"
 msgstr "Wijs een docent toe aan een gebruiker"
 
 #: View/Home/manage_index.ctp:6
-#, fuzzy
 #| msgid "Role assignments"
 msgid "Edit assignments"
-msgstr "Rol toewijzingen"
+msgstr "Bewerk opgaves"
 
 #: View/Home/website_index.ctp:3
 msgid "Welcome to %1$s"
@@ -1579,10 +1571,9 @@ msgid "You can reply at: %1$s"
 msgstr "Je kan reageren op: %1$s"
 
 #: View/Posts/view.ctp:22
-#, fuzzy
 #| msgid "Body"
 msgid "By"
-msgstr "Inhoud"
+msgstr "Door"
 
 #: View/Posts/view.ctp:29
 msgid "%s profile"
@@ -1713,7 +1704,7 @@ msgstr "Voornaam"
 
 #: View/Users/profile.ctp:31 View/Users/register.ctp:28
 msgid "Middlename"
-msgstr ""
+msgstr "Tussenvoegsel"
 
 #: View/Users/profile.ctp:36 View/Users/register.ctp:29
 msgid "Surname"
@@ -1722,8 +1713,8 @@ msgstr "Achternaam"
 #: View/Users/profile.ctp:43
 msgid "Latest post by this user"
 msgid_plural "Latest posts by this user"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Laatste nieuws bericht van deze gebruiker"
+msgstr[1] "Laatste nieuws berichten van deze gebruiker"
 
 #: View/Users/register.ctp:15
 msgid "Credentials"
