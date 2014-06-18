@@ -2,6 +2,11 @@
 
 App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
+/**
+ * Class User
+ *
+ * @property VerificationToken VerificationToken
+ */
 class User extends AppModel {
     
     public $displayField = 'username';
@@ -40,7 +45,11 @@ class User extends AppModel {
         'RepresentsTeachers' => array(
             'className' => 'UserTeacherMapping',
             'id'
-        )
+        ),
+	    'VerificationToken' => array(
+		    'className' => 'VerificationToken',
+		    'foreignKey' => 'id'
+	    )
     );
     
     public function beforeSave($options = array()) {
@@ -56,5 +65,9 @@ class User extends AppModel {
     public function getUserDetails($userId) {
         return $this->findById($userId);
     }
+
+	public function activate() {
+		$this->saveField('active', 1);
+	}
         
 }

@@ -14,13 +14,14 @@ class UsersController extends AppController {
 			'settings' => array(
 				'limit' => 5
 			)
-		)
+		),
+		'ModelFlash'
 	);
 
     public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
-        $this->Auth->allow('logout', 'register', 'install');    
+        $this->Auth->allow('logout', 'register', 'install', 'verify');
     }
 
     public function index() {
@@ -77,7 +78,8 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-	            $this->Session->setFlash(__('You\'re account has been created'), 'alert', array(
+	            $this->User->VerificationToken->createRegistrationToken($this->User->id);
+	            $this->Session->setFlash(__('Please activate your new account using the link you received on your email address'), 'alert', array(
 		            'plugin' => 'BoostCake',
 		            'class'  => 'alert-success'
 	            ));
@@ -91,6 +93,24 @@ class UsersController extends AppController {
 	        ));
         }
     }
+
+	public function verify($token) {
+		if ($this->User->VerificationToken->checkRegistrationToken($token)) {
+			$verificationToken = $this->User->VerificationToken->find('first', array(
+				$this->User->VerificationToken->alias . 'token' => $token
+			));
+
+			$this->User->id = $verificationToken['User']['id'];
+			$this->User->activate();
+
+			$this->User->VerificationToken->delete($verificationToken['VerificationToken']['id']);
+
+			$this->ModelFlash->success(__('Your user account has been activated successfully'));
+
+			$this->redirect(array('controller' => 'home', 'action' => 'index'));
+		}
+		$this->ModelFlash->danger(__('The verification token is invalid'));
+	}
     
     public function add() {
         if ($this->request->is('post')) {

@@ -1,0 +1,1 @@
+<?php echo $this->Html->link(__('Verify your account'), array('controller' => 'users', 'action' => 'verify', $verification_token['VerificationToken']['token'], 'full_base' => true)); ?>
