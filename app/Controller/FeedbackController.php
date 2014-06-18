@@ -52,7 +52,7 @@ class FeedbackController extends AppController {
                     'class' => 'alert-success'
                 ));
 				
-                return $this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+                $this->redirect(array('controller' => 'home', 'action' => 'index'));
             }
             
             $this->Session->setFlash(__('Could not add your feedback'), 'alert', array(
