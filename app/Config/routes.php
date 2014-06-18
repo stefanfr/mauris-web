@@ -116,16 +116,17 @@ if ((isset($_SERVER['HTTP_HOST'])) && ($_SERVER['HTTP_HOST'] == 'api.ictcollege.
             )
     );*/
 
-	Router::connect('/manage', array('controller' => 'home', 'prefix' => 'manage'));
-	Router::connect('/admin', array('controller' => 'home', 'admin' => true));
-
-	/**
+/**
  * Here, we are connecting '/' (base path) to controller called 'Pages',
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-	Router::connect('/', array('controller' => 'home', 'action' => 'index'));
-	Router::connect('/home', array('controller' => 'home', 'action' => 'index'));
+Router::connect('/', array('controller' => 'home', 'action' => 'index'));
+Router::connect('/home', array('controller' => 'home', 'action' => 'index'));
+
+Router::connect('/manage', array('controller' => 'home', 'prefix' => 'manage'));
+Router::connect('/admin', array('controller' => 'home', 'admin' => true));
+
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
