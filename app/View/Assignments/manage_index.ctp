@@ -5,8 +5,11 @@ $this->Title->setPageTitle(__('Assignments'));
 $this->Title->addCrumbs(array(
 	array('action' => 'index'),
 ));
+
+echo $this->element('page_header');
+
+echo $this->element('button/add');
 ?>
-<h1><?php echo h($this->Title->getPageTitle()) ?></h1>
 <table class="table">
 	<thead>
 		<tr>
@@ -30,24 +33,8 @@ $this->Title->addCrumbs(array(
 				)
 				?>
 			</td>
-			<td>
-				<?php
-				echo $this->Form->postButton(
-					'<span class="glyphicon glyphicon-pencil"></span>',
-					array('action' => 'edit', $assignment['Assignment']['id']),
-					array('class' => 'btn btn-default')
-				)
-				?>
-			</td>
-			<td>
-				<?php
-				echo $this->Form->postButton(
-					'<span class="glyphicon glyphicon-remove"></span>',
-					array('action' => 'delete', $assignment['Assignment']['id']),
-					array('class' => 'btn btn-danger')
-				)
-				?>
-			</td>
+			<td><?php echo $this->element('button/edit', array('id' => $assignment['Assignment']['id'])); ?></td>
+			<td><?php echo $this->element('button/delete', array('id' => $assignment['Assignment']['id'])); ?></td>
 		</tr>
 	<?php endforeach; ?>
 	</tbody>
