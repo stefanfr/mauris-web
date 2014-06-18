@@ -92,6 +92,34 @@ class PostsController extends AppController {
 		));
 	}
 
+	public function by_author($authorId) {
+		$allowedScopes = $this->PermissionCheck->getScopes('post', 'read');
+
+		if (empty($allowedScopes)) {
+			throw new ForbiddenException();
+		}
+
+		$this->set('can_post', $this->PermissionCheck->checkPermission('post', 'create'));
+
+		$this->Paginator->settings['scopes'] = $allowedScopes;
+		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
+		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
+
+		$posts = $this->Paginator->paginate('Post', array(
+			'Post.published' => true,
+			'Post.user_id' => $authorId
+		));
+
+		if ($this->request->is('requested')) {
+			return $posts;
+		}
+
+		$this->set(array(
+			'posts' => $posts,
+			'_serialize' => array('posts')
+		));
+	}
+
     public function view($id = null, $slug = null) {
 	    $this->Post->recursive = 2;
         $post = $this->Post->findById($id);
