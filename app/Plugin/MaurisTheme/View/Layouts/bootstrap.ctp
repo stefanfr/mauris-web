@@ -268,26 +268,29 @@ $this->element('Parts/NavbarElements/right_menu');
 		?>
 
 		<div class="container">
-			<?php
-			if (!(isset($hideCrumb) && $hideCrumb)):
-				echo $this->Html->getCrumbList(
-					array(
-						'class'      => 'breadcrumb',
-						'firstClass' => false,
-						'lastClass'  => 'active'
-					),
-					__('Home')
-				);
-			endif;
+			<div class="row">
+				<?php
+				if (!(isset($hideCrumb) && $hideCrumb)):
+					echo $this->Html->getCrumbList(
+						array(
+							'class'      => 'breadcrumb',
+							'firstClass' => false,
+							'lastClass'  => 'active'
+						),
+						__('Home')
+					);
+				endif;
 
-			echo $this->Session->flash();
-			echo $this->fetch('content');
-			?>
-
-			<!-- Footer -->
-			<?php
-			echo $this->element('Parts/footer');
-			?>
+				echo $this->Session->flash();
+				echo $this->fetch('content');
+				?>
+			</div>
+			<div class="row">
+				<!-- Footer -->
+				<?php
+				echo $this->element('Parts/footer');
+				?>
+			</div>
 		</div>
 		<?php
 		if ((isset($loadingModal) && $loadingModal)):
