@@ -99,8 +99,8 @@ $this->end();
 			</tr>
 			<? foreach ($upcoming_events as $event): ?>
 				<tr>
-					<th><?php echo $this->Html->link($event['Event']['title'], array('controller' => 'events', 'action' => 'view', $event['Event']['id'])); ?></th>
-					<th><?php echo h($this->Time->niceShort($event['Event']['start'], 'Europe/Amsterdam')); ?></th>
+					<td><?php echo $this->Html->link($event['Event']['title'], array('controller' => 'events', 'action' => 'view', $event['Event']['id'])); ?></td>
+					<td><?php echo h($this->Time->niceShort($event['Event']['start'], 'Europe/Amsterdam')); ?></td>
 				</tr>
 			<? endforeach; ?>
 		</table>
@@ -120,8 +120,8 @@ $this->end();
 			</tr>
 			<? foreach ($absent_teachers as $report): ?>
 				<tr>
-					<th><?php echo h($this->Time->i18nFormat($report['AbsenceReport']['date'], '%A', 'Europe/Amsterdam')); ?></th>
-					<th><?php echo $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teachers', 'action' => 'view', $report['AbsenceReport']['teacher_id'])); ?></th>
+					<td><?php echo h($this->Time->i18nFormat($report['AbsenceReport']['date'], '%A', 'Europe/Amsterdam')); ?></td>
+					<td><?php echo $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teachers', 'action' => 'view', $report['AbsenceReport']['teacher_id'])); ?></td>
 				</tr>
 			<? endforeach; ?>
 		</table>
@@ -141,7 +141,7 @@ $this->end();
 				</tr>
 				<? foreach ($user_class_subscriptions as $classroomSubscription): ?>
 					<tr>
-						<th><?php echo $this->Html->link($classroomSubscription['Class']['name'], array('controller' => 'schedule', 'action' => 'index', 'class' => $classroomSubscription['Class']['id'])); ?></th>
+						<td><?php echo $this->Html->link($classroomSubscription['Class']['name'], array('controller' => 'schedule', 'action' => 'index', 'class' => $classroomSubscription['Class']['id'])); ?></td>
 					</tr>
 				<? endforeach; ?>
 			</table>
@@ -161,8 +161,8 @@ $this->end();
 			</tr>
 			<? foreach ($classrooms_available as $classroom): ?>
 				<tr>
-					<th><?php echo $this->Html->link($classroom['Classroom']['code'], array('controller' => 'classroom', 'action' => 'view', $classroom['Classroom']['id'])) ?></th>
-					<th><?php echo h(@$classroom['MappingInformation']['ClassroomDetails']['title']); ?></th>
+					<td><?php echo $this->Html->link($classroom['Classroom']['code'], array('controller' => 'classroom', 'action' => 'view', $classroom['Classroom']['id'])) ?></td>
+					<td><?php echo h(@$classroom['MappingInformation']['ClassroomDetails']['title']); ?></td>
 				</tr>
 			<? endforeach; ?>
 		</table>

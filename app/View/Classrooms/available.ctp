@@ -20,8 +20,8 @@ echo $this->element('page_header');
 	</tr>
 	<?php foreach ($available_classrooms as $classroom): ?>
 		<tr>
-			<th><?php echo $this->Html->link($classroom['Classroom']['code'], array('controller' => 'classrooms', 'action' => 'view', $classroom['Classroom']['id'])) ?></th>
-			<th><?php echo((isset($classroom['Classroom']['title'])) ? h($classroom['Classroom']['title']) : '&nbsp;') ?></th>
+			<td><?php echo $this->Html->link($classroom['Classroom']['code'], array('controller' => 'classrooms', 'action' => 'view', $classroom['Classroom']['id'])) ?></td>
+			<td><?php echo((isset($classroom['Classroom']['title'])) ? h($classroom['Classroom']['title']) : '&nbsp;') ?></td>
 		</tr>
 	<?php endforeach; ?>
 </table>
