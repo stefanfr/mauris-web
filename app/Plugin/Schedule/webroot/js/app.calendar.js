@@ -58,10 +58,10 @@ $(function () {
 			history.pushState({}, '', '/schedule/' + currentDisplay + ':' + currentDisplayId);
 
 			var pushData = {
-				'event': 'schedule-selector-change',
+				'event'               : 'schedule-selector-change',
 				'scheduleSelectorType': currentDisplay,
-				'selectedValue': currentDisplayId,
-				'selectedText': $('#selector-' + type + ' option:selected').text(),
+				'selectedValue'       : currentDisplayId,
+				'selectedText'        : $('#selector-' + type + ' option:selected').text()
 			};
 
 			//dataLayer.push(pushData);
@@ -75,75 +75,87 @@ $(function () {
 	});
 
 	$('#calendar').fullCalendar({
-		header: {
-			left: 'prev,next today',
+		header            : {
+			left  : 'prev,next today',
 			center: 'title',
-			right: 'month,agendaWeek,agendaDay'
+			right : 'month,agendaWeek,agendaDay'
 		},
-		editable: false,
-		weekends: false,
-		weekNumbers: true,
-		defaultView: 'agendaWeek',
-		minTime: '8',
-		maxTime: '17',
-		weekMode: 'liquid',
-		year: targetData.dateDate.getFullYear(),
-		month: targetData.dateDate.getMonth(),
-		date: targetData.dateDate.getDate(),
-		titleFormat: {
+		editable          : false,
+		weekends          : false,
+		weekNumbers       : true,
+		defaultView       : 'agendaWeek',
+		minTime           : '08:00:00',
+		maxTime           : '17:00:00',
+		weekMode          : 'liquid',
+		defaultDate       : targetData.dateDate,
+		titleFormat       : {
 			month: 'MMMM',
-			week: "MMM d{ '&#8212;'[ MMM] d}",
-			day: 'dddd, MMM d'
+			week : "MMMM D",
+			day  : 'dddd, MMMM d'
 		},
-		ignoreTimezone: false,
-		eventSources: [{
-			url: App.fullBaseUrl + '/api/schedule/view.json',
-			data: function () {
-				var returnArray = {};
+		ignoreTimezone    : false,
+		eventSources      : [
+			{
+				url : App.fullBaseUrl + '/api/schedule/view.json',
+				success: function() {
+					console.log(arguments);
+				},
+				data: function () {
+					var returnArray = {};
 
-				if (availableDisplays.indexOf(currentDisplay) == -1) {
-					returnArray['class'] = -1; //dummy
-				} else {
-					returnArray[currentDisplay] = currentDisplayId;
+					if (availableDisplays.indexOf(currentDisplay) == -1) {
+						returnArray['class'] = -1; //dummy
+					} else {
+						returnArray[currentDisplay] = currentDisplayId;
+					}
+
+					return returnArray;
+				},
+				'responseTransform': function(events) {
+					return events.events;
 				}
+			},
+			{
+				url : App.fullBaseUrl + '/events.json',
+				data: function () {
+					var returnArray = {};
 
-				return returnArray;
+					returnArray['school'] = targetData.schoolId;
+					returnArray['department'] = targetData.departmentId;
+
+					return returnArray;
+				},
+				'responseTransform': function(events) {
+					return events.events;
+				}
 			}
-		}, {
-			url: App.fullBaseUrl + '/events.json',
-			data: function () {
-				var returnArray = {};
-
-				returnArray['school'] = targetData.schoolId;
-				returnArray['department'] = targetData.departmentId;
-
-				return returnArray;
-			}
-		}, ],
-		timeFormat: 'HH:mm{ - HH:mm}',
-		axisFormat: 'HH:mm',
+		],
+		timeFormat        : 'HH:mm',
+		axisFormat        : 'HH:mm',
 		eventDataTransform: function (eventData) {
+			console.log('eventDataTransform');
 			return eventData;
 		},
-		loading: function (bool) {
+		loading           : function (bool) {
 			if (bool) {
 				$('#loading-modal').modal('show').modal('lock');
 			} else {
 				$('#loading-modal').modal('unlock').modal('hide');
 			}
 		},
-		monthNames: ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'],
-		monthNamesShort: ['Jan', 'Feb', 'Maa', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
-		dayNames: ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'],
-		dayNamesShort: ['Zo', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za'],
-		allDayText: '',
-		buttonText: {
+		monthNames        : ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'],
+		monthNamesShort   : ['Jan', 'Feb', 'Maa', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'],
+		dayNames          : ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'],
+		dayNamesShort     : ['Zo', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za'],
+		allDayText        : '',
+		buttonText        : {
 			today: 'vandaag',
 			month: 'maand',
-			week: 'week',
-			day: 'dag'
+			week : 'week',
+			day  : 'dag'
 		},
-		viewDisplay: function (view) {
+		viewRender        : function (view) {
+			console.log('viewRender called');
 			if (first) {
 				first = false;
 			} else {
@@ -154,8 +166,8 @@ $(function () {
 
 			setTimeline();
 		},
-		eventAfterRender: function (event, element, view) {
-
+		eventAfterRender  : function (event, element, view) {
+			console.log('EventAfterRender called');
 			var content = '';
 
 			if (currentDisplay == 'class') {
@@ -217,53 +229,43 @@ $(function () {
 			console.log(content);
 			$(element)
 				.popover({
-					html: true,
-					content: content,
-					placement: function(tip, element) {
+					html     : true,
+					content  : content,
+					placement: function (tip, element) {
 						var event = $(element);
 						var position = event.position();
-						
-						if(event.width() > 500){
+
+						if (event.width() > 500) {
 							return 'top';
 						}
-						
+
 						if (position.left > 515) {
 							return 'left';
 						}
-						
+
 						if (position.left < 515) {
 							return 'right';
 						}
-						
-						if (position.top < 110){
+
+						if (position.top < 110) {
 							return 'bottom';
 						}
-						
+
 						return 'top';
 					},
-					trigger: 'hover',
+					trigger  : 'hover',
 					container: 'body',
-					title: title
+					title    : title
 				});
 		},
-		eventRender: function (event, element, view) {
+		eventRender       : function (event, element, view) {
 			if (event.cancelled) {
 				$(element).addClass('eventCancelled');
 			}
 
-			if (event.start.getMonth() !== view.start.getMonth() && view.name == 'month') {
+			if (event.start.get('month') !== view.start.get('month') && view.name == 'month') {
 				$(element).css('opacity', '0.3');
 			}
-		},
-		viewRender: function (view, element) {
-			var pushData = {
-				'event': 'schedule-view-change',
-				'viewName': view.name,
-			};
-
-			//dataLayer.push(pushData);
-
-			console.log(pushData);
 		}
 	});
 });
@@ -300,7 +302,7 @@ function readCookie(name) {
 }
 
 
-function setTimeline(view) {
+function setTimeline() {
 	var parentDiv = $('.fc-agenda-slots:visible').parent();
 	var timeline = parentDiv.children('.timeline');
 
@@ -313,15 +315,18 @@ function setTimeline(view) {
 
 	var curCalView = $('#calendar').fullCalendar('getView');
 
-	if (curCalView.visStart < curTime && curCalView.visEnd > curTime) {
+	if (curCalView.start < curTime && curCalView.end > curTime) {
 		timeline.show();
 	} else {
 		timeline.hide();
 		return;
 	}
 
-	var curSeconds = ((curTime.getHours() - curCalView.opt('minTime')) * 60 * 60) + (curTime.getMinutes() * 60) + curTime.getSeconds();
-	var percentOfDay = curSeconds / ((curCalView.opt('maxTime') - curCalView.opt('minTime')) * 3600);
+	var minHourTime = parseInt(curCalView.opt('minTime').split(':')[0]);
+	var maxHourTime = parseInt(curCalView.opt('maxTime').split(':')[0]);
+
+	var curSeconds = ((curTime.getHours() - minHourTime) * 60 * 60) + (curTime.getMinutes() * 60) + curTime.getSeconds();
+	var percentOfDay = curSeconds / ((maxHourTime - minHourTime) * 3600);
 	var topLoc = Math.floor(parentDiv.height() * percentOfDay);
 
 	timeline.css('top', topLoc + 'px');
@@ -332,7 +337,7 @@ function setTimeline(view) {
 		var width = dayCol.width() - 2;
 
 		timeline.css({
-			left: left + 'px',
+			left : left + 'px',
 			width: width + 'px'
 		});
 	}
@@ -342,15 +347,38 @@ function setTimeline(view) {
 var _hide = $.fn.modal.Constructor.prototype.hide;
 
 $.extend($.fn.modal.Constructor.prototype, {
-	lock: function () {
+	lock  : function () {
 		this.options.locked = true;
 	},
 	unlock: function () {
 		this.options.locked = false;
 	},
-	hide: function () {
+	hide  : function () {
 		if (this.options.locked) return;
 
 		_hide.apply(this, arguments);
 	}
 });
+
+/*
+EventManager.fetchEventSource = function (source, fetchID) {
+	_fetchEventSource(source, function(events) {
+		if (fetchID == currentFetchID) {
+
+			if (events) {
+				for (var i=0; i<events.length; i++) {
+					var event = buildEvent(events[i], source);
+					if (event) {
+						cache.push(event);
+					}
+				}
+			}
+
+			pendingSourceCnt--;
+			if (!pendingSourceCnt) {
+				reportEvents(cache);
+			}
+		}
+	});
+}
+*/
