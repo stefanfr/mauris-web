@@ -96,11 +96,11 @@ $(function () {
 		ignoreTimezone    : false,
 		eventSources      : [
 			{
-				url : App.fullBaseUrl + '/api/schedule/view.json',
-				success: function() {
+				url                : App.fullBaseUrl + '/api/schedule/view.json',
+				success            : function () {
 					console.log(arguments);
 				},
-				data: function () {
+				data               : function () {
 					var returnArray = {};
 
 					if (availableDisplays.indexOf(currentDisplay) == -1) {
@@ -111,13 +111,13 @@ $(function () {
 
 					return returnArray;
 				},
-				'responseTransform': function(events) {
+				'responseTransform': function (events) {
 					return events.events;
 				}
 			},
 			{
-				url : App.fullBaseUrl + '/events.json',
-				data: function () {
+				url                : App.fullBaseUrl + '/events.json',
+				data               : function () {
 					var returnArray = {};
 
 					returnArray['school'] = targetData.schoolId;
@@ -125,7 +125,7 @@ $(function () {
 
 					return returnArray;
 				},
-				'responseTransform': function(events) {
+				'responseTransform': function (events) {
 					return events.events;
 				}
 			}
@@ -359,26 +359,3 @@ $.extend($.fn.modal.Constructor.prototype, {
 		_hide.apply(this, arguments);
 	}
 });
-
-/*
-EventManager.fetchEventSource = function (source, fetchID) {
-	_fetchEventSource(source, function(events) {
-		if (fetchID == currentFetchID) {
-
-			if (events) {
-				for (var i=0; i<events.length; i++) {
-					var event = buildEvent(events[i], source);
-					if (event) {
-						cache.push(event);
-					}
-				}
-			}
-
-			pendingSourceCnt--;
-			if (!pendingSourceCnt) {
-				reportEvents(cache);
-			}
-		}
-	});
-}
-*/
