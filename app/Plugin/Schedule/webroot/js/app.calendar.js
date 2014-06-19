@@ -93,7 +93,7 @@ $(function () {
 			week : "MMMM D",
 			day  : 'dddd, MMMM d'
 		},
-		ignoreTimezone    : false,
+		timezone          : 'local',
 		eventSources      : [
 			{
 				url                : App.fullBaseUrl + '/api/schedule/view.json',
