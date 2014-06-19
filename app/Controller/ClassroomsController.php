@@ -17,7 +17,7 @@ class ClassroomsController extends AppController {
 			),
 		),
 		'Paginator' => array(
-			'limit' => 5
+			'limit' => 15
 		)
 	);
 
