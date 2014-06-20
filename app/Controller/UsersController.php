@@ -52,6 +52,8 @@ class UsersController extends AppController {
 			)
 		);
 
+		$this->set('is_current_user', $this->User->id == $this->Auth->user('id'));
+
 		$this->set('user_account', $this->User->read());
 	}
 
@@ -113,6 +115,32 @@ class UsersController extends AppController {
 		}
 		$this->ModelFlash->danger(__('The verification token is invalid'));
 	}
+
+	public function verify_delete($token) {
+		if ($this->User->VerificationToken->checkDeleteToken($token)) {
+			$verificationToken = $this->User->VerificationToken->find('first', array(
+				'conditions' => array(
+					$this->User->VerificationToken->alias . '.token' => $token
+				)
+			));
+
+			$this->User->id = $verificationToken['User']['id'];
+			if (!$this->User->delete()) {
+				$this->ModelFlash->danger(__('Could not remove your user account'));
+
+				$this->redirect(array('controller' => 'home', 'action' => 'index'));
+			}
+
+			$this->Auth->logout();
+
+			$this->User->VerificationToken->delete($verificationToken['VerificationToken']['id']);
+
+			$this->ModelFlash->success(__('Your user account has been removed successfully'));
+
+			$this->redirect(array('controller' => 'home', 'action' => 'index'));
+		}
+		$this->ModelFlash->danger(__('The verification token is invalid'));
+	}
     
     public function add() {
         if ($this->request->is('post')) {
@@ -146,21 +174,16 @@ class UsersController extends AppController {
         }
     }
 
-    public function delete($id = null) {
-        $this->User->id = $id;
-        if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
-        }
-        if ($this->User->delete()) {
-            $this->Session->setFlash(__('User deleted'));
-            return $this->redirect(array('action' => 'index'));
-        }
-        $this->Session->setFlash(__('User was not deleted'));
-        return $this->redirect(array('action' => 'index'));
-    }
+    public function delete() {
+	    $this->User->id = $this->Auth->user('id');
+	    $this->User->VerificationToken->createDeleteToken($this->User->id);
+	    $this->ModelFlash->info(__('Please verify your account removal using the link you received on your email address'));
 
-    public function login() {
-        if ($this->request->is('post')) {
+	    $this->redirect(array('controller' => 'home', 'action' => 'index'));
+	}
+
+	public function login() {
+		if ($this->request->is('post')) {
             if ($this->Auth->login()) {
 	            $this->redirect($this->Auth->redirectUrl());
 

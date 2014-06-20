@@ -34,7 +34,13 @@ $posts = $this->requestAction(array('controller' => 'posts', 'action' => 'by_aut
 	if ($user_account['User']['surname']):
 	?>
 	<strong><?php echo h(__('Surname')); ?>:</strong> <span itemprop="familyName"><?php echo h($user_account['User']['surname']); ?></span><br>
-	<?php endif; ?>
+	<?php
+	endif;
+
+	if ($is_current_user):
+		echo $this->element('button/delete', array('text' => __('Delete my account')));
+	endif;
+	?>
 </div>
 
 <?php

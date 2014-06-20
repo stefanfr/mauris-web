@@ -47,7 +47,6 @@ class VerificationToken extends AppModel {
 
 		if ($verification_token) {
 			$email = new CakeEmail();
-			//$email->config('debug');
 			$email->emailFormat('html');
 			$email->from(array('noreply@mauris.systems' => 'Mauris'));
 			$email->to($user['User']['email']);
@@ -65,6 +64,46 @@ class VerificationToken extends AppModel {
 			'conditions' => array(
 				$this->alias . '.token' => $token,
 				$this->alias . '.type' => 'registration'
+			)
+		));
+	}
+
+	public function createDeleteToken($userId) {
+		$user = $this->User->read(null, $userId);
+		if (empty($user)) {
+			return false;
+		}
+
+		$uuid = String::uuid();
+
+		$this->create();
+		$verification_token = $this->save(array(
+			$this->alias => array(
+				'user_id' => $userId,
+				'type'    => 'delete',
+				'token'   => $uuid
+			)
+		));
+
+		if ($verification_token) {
+			$email = new CakeEmail();
+			$email->emailFormat('html');
+			$email->from(array('noreply@mauris.systems' => 'Mauris'));
+			$email->to($user['User']['email']);
+			$email->subject(__('Verify your account removal'));
+			$email->template('user_delete');
+			$email->viewVars(compact('verification_token'));
+			$email->send();
+		}
+
+		return $verification_token;
+	}
+
+	public function checkDeleteToken($token) {
+		return (bool) $this->find('count', array(
+			'conditions' => array(
+				$this->alias . '.token' => $token,
+				$this->alias . '.type' => 'delete'
 			)
 		));
 	}
