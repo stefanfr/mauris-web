@@ -63,113 +63,142 @@ $this->end();
 
 <div class="row">
 	<div class="col-md-4">
-		<h2><?php echo h(__('Account')); ?></h2>
-		<?php
-		if ($logged_in):
-			?>
-			<p><?php echo h(__('You\'re logged in as %1$s', $current_user['username'])); ?></p>
-			<div class="row">
-				<div
-					class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'profile'), array('class' => 'btn btn-primary')); ?></div>
-				<div
-					class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-danger')); ?></div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2><?php echo h(__('Account')); ?></h2>
 			</div>
-		<?php
-		else:
-			?>
-			<div class="row">
-				<div
-					class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login'), array('class' => 'btn btn-primary')); ?></div>
-				<div
-					class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register'), array('class' => 'btn btn-primary')); ?></div>
+			<?php if ($logged_in): ?>
+				<div class="panel-body">
+					<p><?php echo h(__('You\'re logged in as %1$s', $current_user['username'])); ?></p>
+				</div>
+			<?php endif; ?>
+			<div class="panel-footer">
+				<?php if ($logged_in): ?>
+					<div class="row">
+						<div
+							class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'profile'), array('class' => 'btn btn-primary')); ?></div>
+						<div
+							class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-danger')); ?></div>
+					</div>
+				<?php else: ?>
+					<div class="row">
+						<div
+							class="col-sm-6"><?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login'), array('class' => 'btn btn-primary')); ?></div>
+						<div
+							class="col-sm-6"><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register'), array('class' => 'btn btn-primary')); ?></div>
+					</div>
+				<?php endif; ?>
 			</div>
-		<?php
-		endif;
-		?>
+		</div>
 	</div>
 	<div class="col-md-4">
 		<?php
 		$upcoming_events = $this->requestAction(array('controller' => 'events', 'action' => 'index'));
 		?>
-		<h2><?php echo h(__n('Upcoming event', 'Upcoming events', count($upcoming_events))); ?></h2>
-		<table class="table">
-			<tr>
-				<th><?php echo h(__('Event')); ?></th>
-				<th><?php echo h(__('When')); ?></th>
-			</tr>
-			<? foreach ($upcoming_events as $event): ?>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2><?php echo h(__n('Upcoming event', 'Upcoming events', count($upcoming_events))); ?></h2>
+			</div>
+			<table class="table">
 				<tr>
-					<td><?php echo $this->Html->link($event['Event']['title'], array('controller' => 'events', 'action' => 'view', $event['Event']['id'])); ?></td>
-					<td><?php echo h($this->Time->niceShort($event['Event']['start'], 'Europe/Amsterdam')); ?></td>
+					<th><?php echo h(__('Event')); ?></th>
+					<th><?php echo h(__('When')); ?></th>
 				</tr>
-			<? endforeach; ?>
-		</table>
-		<a href="<?php echo $this->App->url(array('controller' => 'events', 'action' => 'index')); ?>" role="button" class="btn btn-default"><?php echo h(__('List')); ?></a>
+				<? foreach ($upcoming_events as $event): ?>
+					<tr>
+						<td><?php echo $this->Html->link($event['Event']['title'], array('controller' => 'events', 'action' => 'view', $event['Event']['id'])); ?></td>
+						<td><?php echo h($this->Time->niceShort($event['Event']['start'], 'Europe/Amsterdam')); ?></td>
+					</tr>
+				<? endforeach; ?>
+			</table>
+			<div class="panel-footer">
+				<a href="<?php echo $this->App->url(array('controller' => 'events', 'action' => 'index')); ?>" role="button" class="btn btn-default"><?php echo h(__('List')); ?></a>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-4">
 		<?php
 		$absent_teachers = $this->requestAction(array('controller' => 'teachers', 'action' => 'absent'));
 		?>
-		<h2><?php echo h(__n('Absent teacher', 'Absent teachers', count($absent_teachers))); ?></h2>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2><?php echo h(__n('Absent teacher', 'Absent teachers', count($absent_teachers))); ?></h2>
+			</div>
 
-		<p><?php h(__('Absent teachers for the 7 following days')); ?></p>
-		<table class="table">
-			<tr>
-				<th><?php echo h(__('Date')); ?></th>
-				<th><?php echo h(__('Teacher')); ?></th>
-			</tr>
-			<? foreach ($absent_teachers as $report): ?>
+			<div class="panel-body">
+				<p><?php echo h(__('Absent teachers for the 7 following days')); ?></p>
+			</div>
+			<table class="table">
 				<tr>
-					<td><?php echo h($this->Time->i18nFormat($report['AbsenceReport']['date'], '%A', 'Europe/Amsterdam')); ?></td>
-					<td><?php echo $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teachers', 'action' => 'view', $report['AbsenceReport']['teacher_id'])); ?></td>
+					<th><?php echo h(__('Date')); ?></th>
+					<th><?php echo h(__('Teacher')); ?></th>
 				</tr>
-			<? endforeach; ?>
-		</table>
-		<p><?php h(__n('%d absent teacher report', '%d absent teachers reports', count($absent_teachers), count($absent_teachers))); ?></p>
+				<? foreach ($absent_teachers as $report): ?>
+					<tr>
+						<td><?php echo h($this->Time->i18nFormat($report['AbsenceReport']['date'], '%A', 'Europe/Amsterdam')); ?></td>
+						<td><?php echo $this->Html->link(($report['AffectedTeacher']['name']) ? $report['AffectedTeacher']['name'] : $report['AffectedTeacher']['abbreviation'], array('controller' => 'teachers', 'action' => 'view', $report['AbsenceReport']['teacher_id'])); ?></td>
+					</tr>
+				<? endforeach; ?>
+			</table>
+			<div class="panel-footer">
+				<p><?php echo h(__n('%d absent teacher report', '%d absent teachers reports', count($absent_teachers), count($absent_teachers))); ?></p>
+			</div>
+		</div>
 	</div>
 	<?php
 	if ($logged_in):
 		$user_class_subscriptions = $this->requestAction(array('controller' => 'users', 'action' => 'class_subscriptions'));
 		?>
 		<div class="col-md-4">
-			<h2><?php echo(__n('Class subscription', 'Class subscriptions', count($user_class_subscriptions))); ?></h2>
-
-			<p><?php echo(__('This table shows the classes you\'ve subscribed to')); ?></p>
-			<table class="table">
-				<tr>
-					<th><?php echo h(__('Class')); ?></th>
-				</tr>
-				<? foreach ($user_class_subscriptions as $classroomSubscription): ?>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2><?php echo(__n('Class subscription', 'Class subscriptions', count($user_class_subscriptions))); ?></h2>
+				</div>
+				<div class="panel-body">
+					<p><?php echo(__('This table shows the classes you\'ve subscribed to')); ?></p>
+				</div>
+				<table class="table">
 					<tr>
-						<td><?php echo $this->Html->link($classroomSubscription['Class']['name'], array('controller' => 'schedule', 'action' => 'index', 'class' => $classroomSubscription['Class']['id'])); ?></td>
+						<th><?php echo h(__('Class')); ?></th>
 					</tr>
-				<? endforeach; ?>
-			</table>
+					<? foreach ($user_class_subscriptions as $classroomSubscription): ?>
+						<tr>
+							<td><?php echo $this->Html->link($classroomSubscription['Class']['name'], array('controller' => 'schedule', 'action' => 'index', 'class' => $classroomSubscription['Class']['id'])); ?></td>
+						</tr>
+					<? endforeach; ?>
+				</table>
+			</div>
 		</div>
 	<?php endif; ?>
 	<div class="col-md-4">
 		<?php
 		$classrooms_available = $this->requestAction(array('controller' => 'classrooms', 'action' => 'available', 'limit' => 5));
 		?>
-		<h2><?php echo h(__n('Available classroom', 'Available classrooms', count($classrooms_available))); ?></h2>
-
-		<p><?php echo h(__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat(time(), '%X', null, 'Europe/Amsterdam'))) ?></p>
-		<table class="table">
-			<tr>
-				<th><?php echo h(__('Classroom')); ?></th>
-				<th><?php echo h(__('Title')); ?></th>
-			</tr>
-			<? foreach ($classrooms_available as $classroom): ?>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2><?php echo h(__n('Available classroom', 'Available classrooms', count($classrooms_available))); ?></h2>
+			</div>
+			<div class="panel-body">
+				<p><?php echo h(__n('Classroom available at: %s', 'Classrooms available at: %s', count($classrooms_available), $this->Time->i18nFormat(time(), '%X', null, 'Europe/Amsterdam'))) ?></p>
+			</div>
+			<table class="table">
 				<tr>
-					<td><?php echo $this->Html->link($classroom['Classroom']['code'], array('controller' => 'classroom', 'action' => 'view', $classroom['Classroom']['id'])) ?></td>
-					<td><?php echo h(@$classroom['MappingInformation']['ClassroomDetails']['title']); ?></td>
+					<th><?php echo h(__('Classroom')); ?></th>
+					<th><?php echo h(__('Title')); ?></th>
 				</tr>
-			<? endforeach; ?>
-		</table>
-		<a href="<?php echo $this->App->url(array('controller' => 'classrooms', 'action' => 'available')); ?>" role="button" class="btn btn-default"><?php echo h(__('Go to complete list')); ?></a>
+				<? foreach ($classrooms_available as $classroom): ?>
+					<tr>
+						<td><?php echo $this->Html->link($classroom['Classroom']['code'], array('controller' => 'classroom', 'action' => 'view', $classroom['Classroom']['id'])) ?></td>
+						<td><?php echo h(@$classroom['MappingInformation']['ClassroomDetails']['title']); ?></td>
+					</tr>
+				<? endforeach; ?>
+			</table>
+			<div class="panel-footer">
+				<a href="<?php echo $this->App->url(array('controller' => 'classrooms', 'action' => 'available')); ?>" role="button" class="btn btn-default"><?php echo h(__('Go to complete list')); ?></a>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-4">
-		<h2><?php echo h(__('Feedback')); ?></h2>
 		<?php
 		echo $this->Form->create('Feedback', array(
 			'inputDefaults' => array(
@@ -183,16 +212,25 @@ $this->end();
 				'action'     => 'add'
 			),
 		));
-
-		echo $this->Form->input('body', array('rows' => '5'));
-
-		echo $this->Form->submit(__('Add'), array(
-			//'div' => 'col col-md-9 col-md-offset-3',
-			'class' => 'btn btn-default'
-		));
-
-		echo $this->Form->end()
 		?>
+		<div class="panel panel-default">
+			<div class="panel-footer">
+				<h2><?php echo h(__('Feedback')); ?></h2>
+			</div>
+			<div class="panel-body">
+				<?php echo $this->Form->input('body', array('rows' => '5')); ?>
+			</div>
+
+			<div class="panel-footer">
+				<?php
+				echo $this->Form->submit(__('Add'), array(
+					//'div' => 'col col-md-9 col-md-offset-3',
+					'class' => 'btn btn-default'
+				));
+				?>
+			</div>
+		</div>
+		<?php echo $this->Form->end(); ?>
 	</div>
 	<div class="col-md-4"><?php echo $this->element('latest_comments'); ?></div>
 </div>
