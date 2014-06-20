@@ -83,7 +83,7 @@ class UsersController extends AppController {
 	            $this->User->VerificationToken->createRegistrationToken($this->User->id);
 	            $this->Session->setFlash(__('Please activate your new account using the link you received on your email address'), 'alert', array(
 		            'plugin' => 'BoostCake',
-		            'class'  => 'alert-success'
+		            'class'  => 'alert-info'
 	            ));
 
 	            $this->redirect(array('controller' => 'users', 'action' => 'login'));
@@ -91,7 +91,7 @@ class UsersController extends AppController {
 
 	        $this->Session->setFlash(__('Could not create your account'), 'alert', array(
 		        'plugin' => 'BoostCake',
-		        'class'  => 'alert-success'
+		        'class'  => 'alert-danger'
 	        ));
         }
     }
