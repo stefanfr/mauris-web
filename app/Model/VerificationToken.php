@@ -37,15 +37,15 @@ class VerificationToken extends AppModel {
 		$uuid = String::uuid();
 
 		$this->create();
-		$success = $this->save(array(
+		$verification_token = $this->save(array(
 			$this->alias => array(
 				'user_id' => $userId,
 				'type'    => 'registration',
 				'token'   => $uuid
 			)
 		));
-		$verification_token = $this->read();
-		if ($success) {
+
+		if ($verification_token) {
 			$email = new CakeEmail();
 			//$email->config('debug');
 			$email->emailFormat('html');
@@ -54,10 +54,10 @@ class VerificationToken extends AppModel {
 			$email->subject(__('Verify your account'));
 			$email->template('user_verification');
 			$email->viewVars(compact('verification_token'));
-			debug($email->send());
+			$email->send();
 		}
 
-		return $success;
+		return $verification_token;
 	}
 
 	public function checkRegistrationToken($token) {

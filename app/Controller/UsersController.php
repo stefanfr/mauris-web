@@ -97,7 +97,9 @@ class UsersController extends AppController {
 	public function verify($token) {
 		if ($this->User->VerificationToken->checkRegistrationToken($token)) {
 			$verificationToken = $this->User->VerificationToken->find('first', array(
-				$this->User->VerificationToken->alias . 'token' => $token
+				'conditions' => array(
+					$this->User->VerificationToken->alias . '.token' => $token
+				)
 			));
 
 			$this->User->id = $verificationToken['User']['id'];
