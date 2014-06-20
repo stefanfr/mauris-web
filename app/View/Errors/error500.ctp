@@ -5,16 +5,18 @@
 	<div class="panel-body">
 		<?php
 		if (Configure::read('debug') == 0):
-			if (stristr($message, 'database')):
+			if ((isset($message)) && (stristr($message, 'database'))):
 				$name = __('Apparently our database is having trouble?');
 			endif;
 		endif;
 		?>
 		<h2><?php echo $name; ?></h2>
-		<p>
-			<?php echo $message; ?>
-		</p>
-		<?php if (Configure::read('debug') > 0): ?>
+		<?php
+		if (isset($message)):
+			echo $message;
+		endif;
+
+		if (Configure::read('debug') > 0): ?>
 			<p>
 				<?php echo $this->element('exception_stack_trace'); ?>
 			</p>
