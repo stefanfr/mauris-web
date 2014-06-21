@@ -43,6 +43,7 @@ $this->set(compact('description_for_layout', 'keywords_for_layout'));
 </form>
 <?=$this->end(); ?>
 <?php
+$this->Html->script('Schedule.moment.min', array ('inline' => false));
 $this->Html->script('Schedule.fullcalendar.min', array ('inline' => false));
 $this->Html->css('Schedule.fullcalendar', array('inline' => false));
 $this->Html->script('Schedule.app.calendar', array('inline' => false));
