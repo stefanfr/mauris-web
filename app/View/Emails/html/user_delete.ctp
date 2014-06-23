@@ -1,0 +1,1 @@
+<?php echo $this->Html->link(__('Verify your account removal'), array('controller' => 'users', 'action' => 'verify_delete', $verification_token['VerificationToken']['token'], 'full_base' => true)); ?>
