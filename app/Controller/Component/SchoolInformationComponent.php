@@ -21,19 +21,16 @@ class SchoolInformationComponent extends Component {
         $controller->DataFilter->addCustomFilter('department');
         
         $hostname = $controller->request->host();
-        
+
         $department = $controller->Department->findByHostname($hostname);
-        $school = $controller->School->find('first', array(
-            'recursive' => 2,
-            'conditions' => array(
-                'hostname' => $hostname 
-            )
-        ));
-        
-        if (!empty($school)) {
-            $controller->DataFilter->setCustomFilter('school', (int) $school['School']['id']);
-        }
-        
+	    if (empty($department)) {
+		    $school = $controller->School->findByHostname($hostname);
+
+		    if (!empty($school)) {
+			    $controller->DataFilter->setCustomFilter('school', (int) $school['School']['id']);
+		    }
+	    }
+
         if (!empty($department)) {
             $controller->DataFilter->setCustomFilter('school', (int) $department['BelongingToSchool']['id']);
             $controller->DataFilter->setCustomFilter('department', (int) $department['Department']['id']);
@@ -61,30 +58,14 @@ class SchoolInformationComponent extends Component {
         DebugTimer::start('component-school-information-before-render', __('Render preparation with school information '));
         
         if ($this->isSchoolIdAvailable()) {
-            $school = $controller->School->find(
-                'first',
-                array(
-                    'conditions' => array(
-                        'School.id' => $this->getSchoolId()
-                    ),
-                    'recursive' => 0
-                )
-            );
+	        $school = $controller->School->getSchoolInfo($this->getSchoolId());
             
             $controller->set('school_id', $this->getSchoolId());
             $controller->set('school_name', $school['School']['name']);
         }
         
         if ($this->isDepartmentIdAvailable()) {
-            $department = $controller->Department->find(
-                'first',
-                array(
-                    'conditions' => array(
-                        'Department.id' => $this->getDepartmentId()
-                    ),
-                    'recursive' => 0
-                )
-            );
+            $department = $controller->Department->getDepartmentInfo($this->getDepartmentId());
             
             $controller->set('department_id', $this->getDepartmentId());
             $controller->set('department_name', $department['Department']['name']);

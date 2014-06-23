@@ -29,15 +29,30 @@ class Department extends AppModel {
         }
         
         $department = $this->find('first', array(
-            'recursive' => 2,
             'conditions' => array(
-                'Department.hostname' => $hostname 
-            )
+                $this->alias . '.hostname' => $hostname
+            ),
+	        'recursive'  => 0
         ));
         Cache::write($key, $department);
         
         return $department;
     }
+
+	public function getDepartmentInfo($id) {
+		$cacheKey = 'department-' . $id;
+
+		$department = Cache::read($cacheKey);
+		if ($department !== false) {
+			return $department;
+		}
+
+		$department = $this->read(null, $id);
+
+		Cache::write($cacheKey, $department);
+
+		return $department;
+	}
 
 	public function getStyleId($id) {
 		$cacheKey = 'department-' . $id . '-style';

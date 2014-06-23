@@ -37,6 +37,39 @@ class School extends AppModel {
         )
     );
 
+	public function findByHostname($hostname) {
+		$key = 'school-' . $hostname;
+		$school = Cache::read($key);
+		if ($school !== false) {
+			return $school;
+		}
+
+		$school = $this->find('first', array(
+			'conditions' => array(
+				$this->alias . '.hostname' => $hostname
+			),
+			'recursive'  => 0
+		));
+		Cache::write($key, $school);
+
+		return $school;
+	}
+
+	public function getSchoolInfo($id) {
+		$cacheKey = 'school-' . $id;
+
+		$department = Cache::read($cacheKey);
+		if ($department !== false) {
+			return $department;
+		}
+
+		$department = $this->read(null, $id);
+
+		Cache::write($cacheKey, $department);
+
+		return $department;
+	}
+
 	public function getStyleId($id) {
 		$cacheKey = 'school-' . $id . '-style';
 
