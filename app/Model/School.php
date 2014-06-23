@@ -87,21 +87,27 @@ class School extends AppModel {
 		return $style;
 	}
 
-	public function getLanguageId($id) {
+	public function getLanguageCode($id) {
 		$cacheKey = 'school-' . $id . '-language';
 
-		$style = Cache::read($cacheKey);
-		if ($style !== false) {
-			return $style;
+		$languageCode = Cache::read($cacheKey);
+		if ($languageCode !== false) {
+			return $languageCode;
 		}
 
-		$style = $this->field('language_id', array(
+		$languageId = $this->field('language_id', array(
 			$this->alias . '.id' => $id
 		));
 
-		Cache::write($cacheKey, $style);
+		if ($languageId !== null) {
+			$languageCode = $this->UsesLanguage->getCode($languageId);
+		} else {
+			$languageCode = null;
+		}
 
-		return $style;
+		Cache::write($cacheKey, $languageCode);
+
+		return $languageCode;
 	}
 	
 }

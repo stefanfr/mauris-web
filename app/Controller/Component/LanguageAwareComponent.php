@@ -12,7 +12,7 @@ class LanguageAwareComponent extends Component {
         
         if (!$language) {
             if ($controller->SchoolInformation->isSchoolIdAvailable()) {
-	            $schoolLanguage = $controller->School->getLanguageId(
+	            $schoolLanguage = $controller->School->getLanguageCode(
 		            $controller->SchoolInformation->getSchoolId()
 	            );
 
@@ -22,7 +22,7 @@ class LanguageAwareComponent extends Component {
             }
 
             if ($controller->SchoolInformation->isDepartmentIdAvailable()) {
-                $departmentLanguage = $controller->Department->getLanguageId(
+                $departmentLanguage = $controller->Department->getLanguageCode(
 	                $controller->SchoolInformation->getDepartmentId()
                 );
 
