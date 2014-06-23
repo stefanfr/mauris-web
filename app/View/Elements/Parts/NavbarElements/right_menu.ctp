@@ -1,44 +1,37 @@
 <?php
 
-$this->startIfEmpty('right_menu');
 if ($logged_in):
-?>
-<p class="navbar-text navbar-right">
-	<?php
-	echo h(__(
+	$dropdownText = h(__(
 		'Logged in as %s',
 		$this->App->buildName($current_user)
 	));
-	?>
-</p>
-<?php
 else:
-	echo $this->Form->create('User', array(
-		'inputDefaults' => array(
-			'label' => false,
-			'div'   => array(
-				'class' => 'form-group'
-			),
-			'class' => 'form-control'
-		),
-		'url'           => array(
-			'plugin'     => null,
-			'website'    => false,
-			'controller' => 'users',
-			'action'     => 'login'
-		),
-		'class'         => 'navbar-form navbar-right'
-	));
-	echo $this->Form->input('username', array(
-		'placeholder' => __('Username')
-	));
-	echo $this->Form->input('password', array(
-		'placeholder' => _('Password')
-	));
-	echo $this->Form->end(array(
-		'div'   => 'form-group',
-		'class' => 'btn btn-default'
-	));
+	$dropdownText = h(__('Not logged in'));
 endif;
+
+$this->startIfEmpty('right_menu');
+?>
+	<ul class="nav navbar-nav navbar-right">
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $dropdownText; ?> <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<?php
+				if ($logged_in):
+					?>
+					<li><?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'profile')); ?></li>
+					<li class="divider"></li>
+					<li><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout')); ?></li>
+					<?php
+				else:
+					?>
+					<li><?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login')); ?></li>
+					<li><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register')); ?></li>
+					<?php
+				endif;
+				?>
+			</ul>
+		</li>
+	</ul>
+<?php
 
 $this->end();
