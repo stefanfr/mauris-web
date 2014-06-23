@@ -19,7 +19,8 @@ class UserClassMapping extends AppModel {
                 'conditions' => array(
                     'User.id' => $userId,
                     'Class.department_id' => $departmentId
-                )
+                ),
+	            'recursive'  => 0
             )
         );
     }

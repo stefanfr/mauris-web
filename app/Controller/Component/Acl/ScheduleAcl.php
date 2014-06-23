@@ -159,7 +159,8 @@ class ScheduleAcl extends Object implements AclInterface {
             $userRoleMappings = $this->UserRoleMapping->find(
                 'all',
                 array(
-                    'conditions' => $conditions
+                    'conditions' => $conditions,
+	                'recursive' => 0
                 )
             );
             //print_r($userRoleMappings);
