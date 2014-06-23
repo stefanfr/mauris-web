@@ -50,7 +50,6 @@ $this->Html->script('Schedule.app.calendar', array('inline' => false));
 
 $this->set('loadingModal', true);
 ?>
-<?=$this->Html->link(__('Simple schedule'), array_merge(array('controller' => 'schedule', 'action' => 'index', 'type' => 'simple'), $target))?>
 <script>
 var targetData = <?=json_encode($target)?>;
 targetData.startDate = new Date(targetData.start * 1000);
