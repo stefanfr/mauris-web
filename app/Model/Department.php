@@ -39,4 +39,21 @@ class Department extends AppModel {
         return $department;
     }
 
+	public function getStyleId($id) {
+		$cacheKey = 'department-' . $id . '-style';
+
+		$style = Cache::read($cacheKey);
+		if ($style !== false) {
+			return $style;
+		}
+
+		$style = $this->field('style_id', array(
+			$this->alias . '.id' => $id
+		));
+
+		Cache::write($cacheKey, $style);
+
+		return $style;
+	}
+
 }

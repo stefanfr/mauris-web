@@ -14,33 +14,17 @@ class StylingComponent extends Component {
         DebugTimer::start('component-styling', __('Render preparation with organization style'));
         
         if ($controller->SchoolInformation->isSchoolIdAvailable()) {
-            $school = $controller->School->find(
-                'first',
-                array(
-                    'conditions' => array(
-                        'School.id' => $controller->SchoolInformation->getSchoolId()
-                    ),
-	                'recursive' => 0
-                )
-            );
+	        $schoolStyle = $controller->Department->getStyleId($controller->SchoolInformation->getDepartmentId());
 
-	        if ($school['UsesStyle']['id']) {
-		        $styleId = $school['UsesStyle']['id'];
+	        if ($schoolStyle) {
+		        $styleId = $schoolStyle;
 	        }
         }
         if ($controller->SchoolInformation->isDepartmentIdAvailable()) {
-            $department = $controller->Department->find(
-                'first',
-                array(
-                    'conditions' => array(
-                        'Department.id' => $controller->SchoolInformation->getDepartmentId()
-                    ),
-                    'recursive' => 0
-                )
-            );
+	        $departmentStyle = $controller->Department->getStyleId($controller->SchoolInformation->getDepartmentId());
 
-	        if ($department['UsesStyle']['id']) {
-		        $styleId = $department['UsesStyle']['id'];
+	        if ($departmentStyle) {
+		        $styleId = $departmentStyle;
 	        }
         }
         
