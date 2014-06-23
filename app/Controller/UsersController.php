@@ -6,6 +6,7 @@ App::uses('AppController', 'Controller');
  * Class UsersController
  *
  * @property User User
+ * @property UserRoleMapping UserRoleMapping
  */
 class UsersController extends AppController {
 
@@ -68,6 +69,8 @@ class UsersController extends AppController {
 	}
 
     public function register() {
+	    $this->loadModel('UserRoleMapping');
+
 	    if ($this->Auth->loggedIn()) {
 		    $this->Session->setFlash(__('You already have an account'), 'alert', array(
 			    'plugin' => 'BoostCake',
@@ -80,6 +83,9 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
+
+				$this->UserRoleMapping->assignRoleToUser($this->User->id, 'user');
+
 	            $this->User->VerificationToken->createRegistrationToken($this->User->id);
 	            $this->Session->setFlash(__('Please activate your new account using the link you received on your email address'), 'alert', array(
 		            'plugin' => 'BoostCake',
