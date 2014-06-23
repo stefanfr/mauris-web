@@ -149,7 +149,8 @@ class PostsController extends AppController {
 	        'comments' => $this->Post->Comment->find('threaded', array(
 		        'conditions' => array(
 			        'Comment.post_id' => $id
-		        )
+		        ),
+			    'recursive'  => 0
 	        )),
 	        'can_comment' => $this->PermissionCheck->checkPermission('comment', 'create', $scope),
 	        'can_view_comments' => $this->PermissionCheck->checkPermission('comment', 'read', $scope),
