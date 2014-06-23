@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2014-06-23 10:17+0000\n"
-"PO-Revision-Date: 2014-06-18 16:56+0100\n"
+"PO-Revision-Date: 2014-06-23 12:23+0100\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
 "mauris/mauris-website/nld/>\n"
@@ -351,32 +351,31 @@ msgid ""
 "Please activate your new account using the link you received on your email "
 "address"
 msgstr ""
+"Verifieer je nieuwe account met de link die je hebt ontvangen op je email "
+"adres"
 
 #: Controller/UsersController.php:98
 msgid "Could not create your account"
 msgstr "Kon je account niet aanmaken"
 
 #: Controller/UsersController.php:118
-#, fuzzy
 #| msgid "You're account has been created"
 msgid "Your user account has been activated successfully"
-msgstr "Je account is aangemaakt"
+msgstr "Je account is succesvol geactiveerd"
 
 #: Controller/UsersController.php:122;148
 msgid "The verification token is invalid"
-msgstr ""
+msgstr "De verificatie token is incorrect"
 
 #: Controller/UsersController.php:135
-#, fuzzy
 #| msgid "Could not create your account"
 msgid "Could not remove your user account"
-msgstr "Kon je account niet aanmaken"
+msgstr "Kon je account niet verwijderen"
 
 #: Controller/UsersController.php:144
-#, fuzzy
 #| msgid "You're account has been created"
 msgid "Your user account has been removed successfully"
-msgstr "Je account is aangemaakt"
+msgstr "Je account is succesvol verwijderd"
 
 #: Controller/UsersController.php:155;171
 msgid "The user has been saved"
@@ -396,6 +395,8 @@ msgid ""
 "Please verify your account removal using the link you received on your email "
 "address"
 msgstr ""
+"Verifieer je account verwijdering met de link die je hebt ontvangen op je "
+"email adres"
 
 #: Controller/UsersController.php:199
 msgid "Invalid username or password, try again"
@@ -446,14 +447,13 @@ msgid "Render preparation with organization style"
 msgstr ""
 
 #: Model/VerificationToken.php:53 View/Emails/html/user_verification.ctp:1
-#, fuzzy
 #| msgid "Credit account"
 msgid "Verify your account"
-msgstr "Saldo account"
+msgstr "Verifieer je account"
 
 #: Model/VerificationToken.php:93 View/Emails/html/user_delete.ctp:1
 msgid "Verify your account removal"
-msgstr ""
+msgstr "Verifieer je account verwijdering"
 
 #: Plugin/Billboard/View/Billboards/display.ctp:8
 #: View/Feedback/admin_index.ctp:27 View/Feedback/admin_view.ctp:15
@@ -1153,13 +1153,12 @@ msgid "Title"
 msgstr "Titel"
 
 #: View/Classrooms/available.ctp:15
-#, fuzzy
 #| msgid "Classroom available at: %s"
 #| msgid_plural "Classrooms available at: %s"
 msgid "There is one classroom available at: %1$ss"
 msgid_plural "There are %2$d classrooms available at: %1$s"
-msgstr[0] "Lokaal beschikbaar om: %s"
-msgstr[1] "Lokalen beschikbaar om: %s"
+msgstr[0] "Er is een klaslokaal beschikbaar om: %1$s"
+msgstr[1] "Er zijn %2$d klaslokalen beschikbaar om: %1$s"
 
 #: View/Comment/add.ctp:4;21
 msgid "Add comment"
@@ -1184,7 +1183,7 @@ msgstr "Ingelogd als %s"
 
 #: View/Elements/Parts/NavbarElements/right_menu.ctp:9
 msgid "Not logged in"
-msgstr ""
+msgstr "Niet ingelogd"
 
 #: View/Elements/Parts/NavbarElements/right_menu.ctp:21 View/Home/index.ctp:79
 msgid "Profile"
@@ -1404,10 +1403,9 @@ msgid "This table shows the classes you've subscribed to"
 msgstr "Deze tabel laat de klassen zien waar je op geabonneerd bent"
 
 #: View/Home/index.ctp:197
-#, fuzzy
 #| msgid "Go to the website"
 msgid "Go to complete list"
-msgstr "Ga naar de website"
+msgstr "Ga naar complete lijst"
 
 #: View/Home/index.ctp:100
 msgid "Upcoming event"
@@ -1740,10 +1738,9 @@ msgid "Surname"
 msgstr "Achternaam"
 
 #: View/Users/profile.ctp:41
-#, fuzzy
 #| msgid "Credit account"
 msgid "Delete my account"
-msgstr "Saldo account"
+msgstr "Verwijder mijn account"
 
 #: View/Users/profile.ctp:49
 msgid "Latest post by this user"
