@@ -12,32 +12,22 @@ class LanguageAwareComponent extends Component {
         
         if (!$language) {
             if ($controller->SchoolInformation->isSchoolIdAvailable()) {
-                $school = $controller->School->find(
-                    'first',
-                    array(
-                        'conditions' => array(
-                            'School.id' => $controller->SchoolInformation->getSchoolId()
-                        ),
-                        'recursive' => 0
-                    )
-                );
+	            $schoolLanguage = $controller->School->getLanguageId(
+		            $controller->SchoolInformation->getSchoolId()
+	            );
 
-                $language = $school['UsesLanguage']['code'];
+	            if ($schoolLanguage) {
+		            $language = $schoolLanguage;
+	            }
             }
 
             if ($controller->SchoolInformation->isDepartmentIdAvailable()) {
-                $department = $controller->Department->find(
-                    'first',
-                    array(
-                        'conditions' => array(
-                            'Department.id' => $controller->SchoolInformation->getDepartmentId()
-                        ),
-                        'recursive' => 0
-                    )
+                $departmentLanguage = $controller->Department->getLanguageId(
+	                $controller->SchoolInformation->getDepartmentId()
                 );
 
-                if ($department['UsesLanguage']['code']) {
-                    $language = $department['UsesLanguage']['code'];
+                if ($departmentLanguage) {
+                    $language = $departmentLanguage;
                 }
             }
         }

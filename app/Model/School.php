@@ -53,5 +53,22 @@ class School extends AppModel {
 
 		return $style;
 	}
+
+	public function getLanguageId($id) {
+		$cacheKey = 'school-' . $id . '-language';
+
+		$style = Cache::read($cacheKey);
+		if ($style !== false) {
+			return $style;
+		}
+
+		$style = $this->field('language_id', array(
+			$this->alias . '.id' => $id
+		));
+
+		Cache::write($cacheKey, $style);
+
+		return $style;
+	}
 	
 }
