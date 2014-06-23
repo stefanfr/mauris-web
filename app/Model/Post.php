@@ -59,5 +59,19 @@ class Post extends AppModel {
 		    'department'   => $departmentId
 	    ));
     }
+
+	public function getScope($post, $user, $organization, $department) {
+		if ($post['PostedBy']['id'] == $user) {
+			return 'own';
+		}
+		if ((!empty($post['Post']['department_id'])) && ($post['Post']['department_id'] == $department)) {
+			return 'department';
+		}
+		if ((!empty($post['Post']['school_id'])) && ($post['Post']['school_id'] == $organization)) {
+			return 'school';
+		}
+
+		return 'system';
+	}
     
 }

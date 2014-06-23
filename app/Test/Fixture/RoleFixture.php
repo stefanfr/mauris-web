@@ -13,7 +13,12 @@ class RoleFixture extends CakeTestFixture {
 			'id'           => 2,
 			'system_alias' => 'anonymous',
 			'title'        => 'Anonymous',
-		)
+		),
+		array(
+			'id'           => 3,
+			'system_alias' => 'user',
+			'title'        => 'User',
+		),
 	);
 
 }

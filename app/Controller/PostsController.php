@@ -18,10 +18,15 @@ class PostsController extends AppController {
 			    'limit' => 3,
 			    'order' => array(
 				    'Post.created' => 'DESC'
-			    )
+			    ),
+			    'recursive' => 1
 		    )
 	    ),
-	    'RequestHandler'
+	    'RequestHandler',
+	    'ModelFlash',
+	    'DataFilter' => array(
+		    'supported' => array('limit')
+	    )
     );
 
 	public $hasMany = array(
@@ -122,30 +127,22 @@ class PostsController extends AppController {
 
     public function view($id = null, $slug = null) {
 	    $this->Post->recursive = 2;
-        $post = $this->Post->findById($id);
-        if (!$post) {
+	    $this->Post->id = $id;
+        if (!$this->Post->exists()) {
             throw new NotFoundException();
         };
 
-	    if (!$this->request->is('rest')) {
-		    if (Inflector::slug($post['Post']['title']) != $slug) {
-			    return $this->redirect(array($id, Inflector::slug($post['Post']['title'])), 301);
-		    }
+	    $post = $this->Post->read();
+
+	    if ((!$this->request->is('rest')) && (Inflector::slug($post['Post']['title']) != $slug)) {
+		    $this->redirect(array($id, Inflector::slug($post['Post']['title'])), 301);
 	    }
 
-        $scope = null;
-        if ($post['PostedBy']['id'] == $this->Auth->user('id')) {
-            $scope = 'own';
-        } else {
-            if ((!empty($post['Post']['school_id'])) && ($post['Post']['school_id'] == $this->SchoolInformation->isSchoolIdAvailable())) {
-                $scope = 'school';
-                if ((!empty($post['Post']['department_id'])) && ($post['Post']['department_id'] == $this->SchoolInformation->isDepartmentIdAvailable())) {
-                    $scope = 'department';
-                }
-            } else {
-                $scope = 'system';
-            }
-        }
+	    $scope = $this->Post->getScope(
+		    $post, $this->Auth->user('id'),
+		    $this->SchoolInformation->getSchoolId(),
+		    $this->SchoolInformation->getDepartmentId()
+	    );
 
         $this->set(array(
 	        'post' => $post,
@@ -163,7 +160,11 @@ class PostsController extends AppController {
 	public function latest() {
 		$allowedPostScopes = $this->PermissionCheck->getScopes('post', 'read');
 
-		$latest_post = $this->Post->getLatestPost($allowedPostScopes, $this->School->id, $this->Department->id);
+		$latest_post = $this->Post->getLatestPost(
+			$allowedPostScopes,
+			$this->SchoolInformation->getSchoolId(),
+			$this->SchoolInformation->getDepartmentId()
+		);
 
 		if ($this->request->is('requested')) {
 			return $latest_post;
@@ -176,37 +177,37 @@ class PostsController extends AppController {
         if (empty($allowedScopes)) {
             throw new ForbiddenException();
         }
-        if ($this->request->is('post')) {
-            $this->request->data['Post']['user_id'] = $this->Auth->user('id');
-            $this->request->data['Post']['created'] = date('Y-m-d H:i:s');
-
-            if (!in_array($this->request->data['Post']['scope'], $allowedScopes)) {
-                throw new ForbiddenException();
-            }
-
-            if ($this->request->data['Post']['scope'] == 'school') {
-                $this->request->data['Post']['school_id'] = $this->School->id;
-            }
-            if ($this->request->data['Post']['scope'] == 'department') {
-                $this->request->data['Post']['school_id'] = $this->School->id;
-                $this->request->data['Post']['department_id'] = $this->Department->id;
-            }
-
-            $this->Post->create();
-            if ($this->Post->save($this->request->data)) {
-                $this->Session->setFlash(__('Your post has been created'), 'alert', array(
-                    'plugin' => 'BoostCake',
-                    'class' => 'alert-success'
-                ));
-
-                return $this->redirect(array('action' => 'index'));
-            }
-
-            $this->Session->setFlash(__('Could not create your post'), 'alert', array(
-                'plugin' => 'BoostCake',
-                'class' => 'alert-danger'
-            ));
+        if (!$this->request->is('post')) {
+	        return;
         }
+
+        $this->request->data['Post']['user_id'] = $this->Auth->user('id');
+        $this->request->data['Post']['created'] = date('Y-m-d H:i:s');
+
+        if (!in_array($this->request->data['Post']['scope'], $allowedScopes)) {
+            throw new ForbiddenException();
+        }
+
+        if ($this->request->data['Post']['scope'] == 'school') {
+            $this->request->data['Post']['school_id'] = $this->School->id;
+        }
+        if ($this->request->data['Post']['scope'] == 'department') {
+            $this->request->data['Post']['school_id'] = $this->School->id;
+            $this->request->data['Post']['department_id'] = $this->Department->id;
+        }
+
+        $this->Post->scope = $this->request->data['Post']['scope'];
+
+        $this->Post->create();
+        if (!$this->Post->save($this->request->data)) {
+	        $this->ModelFlash->danger(__('Could not create your post'));
+
+	        return;
+        }
+
+	    $this->ModelFlash->success(__('Your post has been created'));
+
+	    $this->redirect(array('action' => 'index'));
     }
 
     public function edit($id = null) {
@@ -243,18 +244,14 @@ class PostsController extends AppController {
 	}
 
 	public function delete($id) {
-		if ($this->Post->delete($id)) {
-			$this->Session->setFlash(__('Your post has been removed'), 'alert', array(
-				'plugin' => 'BoostCake',
-				'class' => 'alert-danger'
-			));
-					
-			return $this->redirect(array('action' => 'index'));
+		if (!$this->Post->delete($id)) {
+			$this->ModelFlash->danger(__('Could not remove your post'));
+
+			return;
 		}
 
-		$this->Session->setFlash(__('Could not remove your post'), 'alert', array(
-			'plugin' => 'BoostCake',
-			'class' => 'alert-danger'
-		));
+		$this->ModelFlash->success(__('Your post has been removed'));
+
+		$this->redirect(array('action' => 'index'));
 	}
 }
