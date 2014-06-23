@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-06-18 14:27+0000\n"
+"POT-Creation-Date: 2014-06-23 10:17+0000\n"
 "PO-Revision-Date: 2014-06-18 16:56+0100\n"
 "Last-Translator: Marlin Cremers <m.cremers@cvo-technologies.com>\n"
 "Language-Team: Dutch (ISO 639-2) <http://weblate.mms-projects.net/projects/"
@@ -97,32 +97,26 @@ msgid "Send reminders"
 msgstr "Verstuur herinneringen"
 
 #: Controller/AssignmentsController.php:38
-#| msgid "The teacher assignment has been created"
 msgid "The assignment has been changed added"
 msgstr "De opgave is aangemaakt"
 
 #: Controller/AssignmentsController.php:43
-#| msgid "The teacher assignment has been created"
 msgid "The could assignment not be added"
 msgstr "De opgave kon niet worden aangemaakt"
 
 #: Controller/AssignmentsController.php:63
-#| msgid "The event has been changed"
 msgid "The assignment has been changed successfully"
 msgstr "De opgave is succesvol aangepast"
 
 #: Controller/AssignmentsController.php:68
-#| msgid "The teacher assignment has been created"
 msgid "The could assignment not be changed"
 msgstr "De opgave kon niet worden aangepast"
 
 #: Controller/AssignmentsController.php:97
-#| msgid "The teacher assignment has been removed"
 msgid "The assignment has been changed removed"
 msgstr "De opgave is verwijderd"
 
 #: Controller/AssignmentsController.php:102
-#| msgid "The teacher assignment has been removed"
 msgid "The could assignment not be removed"
 msgstr "De opgave kon niet worden verwijderd"
 
@@ -230,33 +224,33 @@ msgstr "De organisatie is verwijderd"
 msgid "Could not remove the organization"
 msgstr "Kon de organisatie niet verwijderen"
 
-#: Controller/PostsController.php:200
-msgid "Your post has been created"
-msgstr "Je bericht is aangemaakt"
-
-#: Controller/PostsController.php:208
+#: Controller/PostsController.php:203
 msgid "Could not create your post"
 msgstr "Kon de je bericht niet aanmaken"
 
-#: Controller/PostsController.php:222
+#: Controller/PostsController.php:208
+msgid "Your post has been created"
+msgstr "Je bericht is aangemaakt"
+
+#: Controller/PostsController.php:220
 msgid "Could not find this post"
 msgstr "Kon dit bericht niet vinden"
 
-#: Controller/PostsController.php:229
+#: Controller/PostsController.php:227
 msgid "Your post has been changed"
 msgstr "Je bericht is aangepast"
 
-#: Controller/PostsController.php:237
+#: Controller/PostsController.php:235
 msgid "Could not change your post"
 msgstr "Kon je bericht niet aanpassen"
 
-#: Controller/PostsController.php:250
-msgid "Your post has been removed"
-msgstr "Je bericht is verwijderd"
-
-#: Controller/PostsController.php:258
+#: Controller/PostsController.php:248
 msgid "Could not remove your post"
 msgstr "Kon je bericht niet verwijderen"
+
+#: Controller/PostsController.php:253
+msgid "Your post has been removed"
+msgstr "Je bericht is verwijderd"
 
 #: Controller/SitemapsController.php:99
 #: Plugin/MaurisTheme/View/Layouts/bootstrap.ctp:280 View/Home/index.ctp:2
@@ -344,60 +338,82 @@ msgstr "De docent toewijzing is verwijderd"
 msgid "Could not remove the teacher assignment"
 msgstr "Kon de docent toewijzing niet verwijderen"
 
-#: Controller/UsersController.php:34
+#: Controller/UsersController.php:36
 msgid "Could not find this user"
 msgstr "Kon die gebruiker niet vinden"
 
-#: Controller/UsersController.php:69
+#: Controller/UsersController.php:75
 msgid "You already have an account"
 msgstr "Je hebt al een account"
 
-#: Controller/UsersController.php:80
-msgid "You're account has been created"
-msgstr "Je account is aangemaakt"
+#: Controller/UsersController.php:90
+msgid ""
+"Please activate your new account using the link you received on your email "
+"address"
+msgstr ""
 
-#: Controller/UsersController.php:88
+#: Controller/UsersController.php:98
 msgid "Could not create your account"
 msgstr "Kon je account niet aanmaken"
 
-#: Controller/UsersController.php:99;115
+#: Controller/UsersController.php:118
+#, fuzzy
+#| msgid "You're account has been created"
+msgid "Your user account has been activated successfully"
+msgstr "Je account is aangemaakt"
+
+#: Controller/UsersController.php:122;148
+msgid "The verification token is invalid"
+msgstr ""
+
+#: Controller/UsersController.php:135
+#, fuzzy
+#| msgid "Could not create your account"
+msgid "Could not remove your user account"
+msgstr "Kon je account niet aanmaken"
+
+#: Controller/UsersController.php:144
+#, fuzzy
+#| msgid "You're account has been created"
+msgid "Your user account has been removed successfully"
+msgstr "Je account is aangemaakt"
+
+#: Controller/UsersController.php:155;171
 msgid "The user has been saved"
 msgstr "De gebruiker is opgeslagen"
 
-#: Controller/UsersController.php:103;119
+#: Controller/UsersController.php:159;175
 msgid "The user could not be saved. Please, try again."
 msgstr ""
 "De gebruiker kon niet worden opgeslagen. Probeer het alstublieft opnieuw."
 
-#: Controller/UsersController.php:111;130
+#: Controller/UsersController.php:167
 msgid "Invalid user"
 msgstr "Ongeldige gebruiker"
 
-#: Controller/UsersController.php:133
-msgid "User deleted"
-msgstr "Gebruiker verwijderd"
+#: Controller/UsersController.php:186
+msgid ""
+"Please verify your account removal using the link you received on your email "
+"address"
+msgstr ""
 
-#: Controller/UsersController.php:136
-msgid "User was not deleted"
-msgstr "Gebruiker was niet verwijderd"
-
-#: Controller/UsersController.php:148
+#: Controller/UsersController.php:199
 msgid "Invalid username or password, try again"
 msgstr "Incorrecte gebruikersnaam of wachtwoord, probeer het opnieuw"
 
-#: Controller/UsersController.php:185
+#: Controller/UsersController.php:236
 msgid "The user has been changed."
 msgstr "De gebruiker is aangepast."
 
-#: Controller/UsersController.php:193
+#: Controller/UsersController.php:244
 msgid "Could not change the user"
 msgstr "Kon de gebruiker niet aanpassen"
 
-#: Controller/UsersController.php:213
+#: Controller/UsersController.php:264
 msgid "The user has been removed."
 msgstr "De gebruiker is verwijderd."
 
-#: Controller/UsersController.php:221
+#: Controller/UsersController.php:272
 msgid "Could not remove the user"
 msgstr "Kon de gebruiker niet verwijderen"
 
@@ -427,6 +443,16 @@ msgstr ""
 
 #: Controller/Component/StylingComponent.php:14
 msgid "Render preparation with organization style"
+msgstr ""
+
+#: Model/VerificationToken.php:53 View/Emails/html/user_verification.ctp:1
+#, fuzzy
+#| msgid "Credit account"
+msgid "Verify your account"
+msgstr "Saldo account"
+
+#: Model/VerificationToken.php:93 View/Emails/html/user_delete.ctp:1
+msgid "Verify your account removal"
 msgstr ""
 
 #: Plugin/Billboard/View/Billboards/display.ctp:8
@@ -645,7 +671,7 @@ msgstr "School rooster"
 #: Plugin/Schedule/View/Schedule/calendar.ctp:32
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:20
 #: Plugin/Schedule/View/Schedule/simple.ctp:13;43
-#: Plugin/Schedule/View/Schedule/view.ctp:23 View/Home/index.ctp:14;119
+#: Plugin/Schedule/View/Schedule/view.ctp:23 View/Home/index.ctp:14;134
 #: View/TeacherAbsence/manage_add.ctp:23
 #: View/TeacherAbsence/manage_edit.ctp:23
 #: View/TeacherAbsence/manage_index.ctp:16 View/Teachers/absent.ctp:5
@@ -656,14 +682,10 @@ msgstr "Docent"
 #: Plugin/Schedule/View/Schedule/calendar.ctp:38
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:18
 #: Plugin/Schedule/View/Schedule/simple.ctp:19;37
-#: Plugin/Schedule/View/Schedule/view.ctp:17 View/Home/index.ctp:140
+#: Plugin/Schedule/View/Schedule/view.ctp:17 View/Home/index.ctp:162
 #: View/Themed/Billboard/Schedule/cancelled.ctp:4
 msgid "Class"
 msgstr "Klas"
-
-#: Plugin/Schedule/View/Schedule/calendar.ctp:52
-msgid "Simple schedule"
-msgstr "Simpel rooster"
 
 #: Plugin/Schedule/View/Schedule/manage_edit.ctp:7
 msgid "Change schedule"
@@ -683,7 +705,7 @@ msgstr "Omvang"
 
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:16
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:20
-#: View/Feedback/admin_index.ctp:16 View/Home/index.ctp:118
+#: View/Feedback/admin_index.ctp:16 View/Home/index.ctp:133
 #: View/TeacherAbsence/manage_index.ctp:15 View/Teachers/absent.ctp:4
 msgid "Date"
 msgstr "Datum"
@@ -706,7 +728,7 @@ msgstr "Kalender rooster"
 
 #: Plugin/Schedule/View/Schedule/simple.ctp:50
 #: Plugin/Schedule/View/Schedule/view.ctp:30 View/Classrooms/available.ctp:18
-#: View/Home/index.ctp:159
+#: View/Home/index.ctp:186
 msgid "Classroom"
 msgstr "Klaslokaal"
 
@@ -795,7 +817,7 @@ msgstr "Voeg kaart toe"
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:20
 #: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:19
 #: View/Assignments/manage_add.ctp:19 View/Events/manage_add.ctp:30
-#: View/Home/index.ctp:188 View/Organizations/admin_add.ctp:39
+#: View/Home/index.ctp:226 View/Organizations/admin_add.ctp:39
 #: View/Posts/add.ctp:42 View/Students/manage_add.ctp:5;19
 #: View/TeacherAbsence/manage_add.ctp:27
 #: View/UserRoleMappings/manage_add.ctp:4
@@ -1026,7 +1048,6 @@ msgid "Techniques"
 msgstr "Technieken"
 
 #: View/Assignments/manage_add.ctp:3
-#| msgid "Assignments"
 msgid "Add assignment"
 msgstr "Voeg opgave toe"
 
@@ -1127,13 +1148,16 @@ msgid "Available classrooms"
 msgstr "Beschikbare klaslokalen"
 
 #: View/Classrooms/available.ctp:19 View/Events/manage_index.ctp:15
-#: View/Home/index.ctp:160
+#: View/Home/index.ctp:187
 msgid "Title"
 msgstr "Titel"
 
-#: View/Classrooms/available.ctp:15 View/Home/index.ctp:156
-msgid "Classroom available at: %s"
-msgid_plural "Classrooms available at: %s"
+#: View/Classrooms/available.ctp:15
+#, fuzzy
+#| msgid "Classroom available at: %s"
+#| msgid_plural "Classrooms available at: %s"
+msgid "There is one classroom available at: %1$ss"
+msgid_plural "There are %2$d classrooms available at: %1$s"
 msgstr[0] "Lokaal beschikbaar om: %s"
 msgstr[1] "Lokalen beschikbaar om: %s"
 
@@ -1150,18 +1174,35 @@ msgstr "Pas commentaar aan"
 msgid "Comment"
 msgstr "Reageer"
 
-#: View/Elements/latest_comments.ctp:1
+#: View/Elements/latest_comments.ctp:3
 msgid "Latest comments"
 msgstr "Laatste reacties"
 
-#: View/Elements/Parts/NavbarElements/right_menu.ctp:8
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:4
 msgid "Logged in as %s"
 msgstr "Ingelogd als %s"
 
-#: View/Elements/Parts/NavbarElements/right_menu.ctp:33
-#: View/Users/register.ctp:17
-msgid "Username"
-msgstr "Gebruikersnaam"
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:9
+msgid "Not logged in"
+msgstr ""
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:21 View/Home/index.ctp:79
+msgid "Profile"
+msgstr "Profiel"
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:23 View/Home/index.ctp:81
+msgid "Logout"
+msgstr "Uitloggen"
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:27 View/Home/index.ctp:86
+#: View/Users/login.ctp:3;21
+msgid "Login"
+msgstr "Inloggen"
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:28 View/Home/index.ctp:88
+#: View/Users/register.ctp:3;33
+msgid "Register"
+msgstr "Registreren"
 
 #: View/Elements/button/add.ctp:4 View/Styles/admin_index.ctp:12
 msgid "%1$s Add"
@@ -1171,7 +1212,7 @@ msgstr "%1$s Toevoegen"
 msgid "Back"
 msgstr "Terug"
 
-#: View/Elements/button/delete.ctp:10
+#: View/Elements/button/delete.ctp:15
 msgid "Are you sure you want to remove this?"
 msgstr "Weet je zeker dat je dit wilt verwijderen?"
 
@@ -1204,7 +1245,6 @@ msgid "Logo"
 msgstr "Logo"
 
 #: View/Emails/html/event_reminder.ctp:5
-#| msgid "Remove %1$s"
 msgid "Reminder for %1$s"
 msgstr "Herinnering voor %1$s"
 
@@ -1212,8 +1252,7 @@ msgstr "Herinnering voor %1$s"
 msgid "Reservation number"
 msgstr "Reserveer nummer"
 
-#: View/Emails/html/event_reminder.ctp:13 View/Home/index.ctp:97
-#| msgid "Events"
+#: View/Emails/html/event_reminder.ctp:13 View/Home/index.ctp:104
 msgid "Event"
 msgstr "Evenement"
 
@@ -1285,7 +1324,7 @@ msgid "No events in the near future"
 msgstr "Geen evenementen in de nabije toekomst"
 
 #: View/Feedback/admin_index.ctp:5 View/Feedback/admin_view.ctp:2
-#: View/Home/index.ctp:171
+#: View/Home/index.ctp:218
 msgid "Feedback"
 msgstr "Terugkoppeling"
 
@@ -1336,79 +1375,75 @@ msgstr ""
 msgid "%1$s school information for teachers, students and parents"
 msgstr "%1$s school informatie voor docenten, studenten en ouders"
 
-#: View/Home/index.ctp:56 View/Posts/index.ctp:35 View/Users/profile.ctp:62
+#: View/Home/index.ctp:56 View/Posts/index.ctp:35 View/Users/profile.ctp:68
 msgid "Read more"
 msgstr "Lees meer"
 
-#: View/Home/index.ctp:66 View/Teachers/view.ctp:14
+#: View/Home/index.ctp:68 View/Teachers/view.ctp:14
 msgid "Account"
 msgstr "Account"
 
-#: View/Home/index.ctp:70
+#: View/Home/index.ctp:72
 msgid "You're logged in as %1$s"
 msgstr "Je bent ingelogd als %1$s"
 
-#: View/Home/index.ctp:73
-msgid "Profile"
-msgstr "Profiel"
-
-#: View/Home/index.ctp:75
-msgid "Logout"
-msgstr "Uitloggen"
-
-#: View/Home/index.ctp:82 View/Users/login.ctp:3;26
-msgid "Login"
-msgstr "Inloggen"
-
-#: View/Home/index.ctp:84 View/Users/register.ctp:3;33
-msgid "Register"
-msgstr "Registreren"
-
-#: View/Home/index.ctp:98
+#: View/Home/index.ctp:105
 msgid "When"
 msgstr "Wanneer"
 
-#: View/Home/index.ctp:107
+#: View/Home/index.ctp:115
 msgid "List"
 msgstr "Lijst"
 
-#: View/Home/index.ctp:115
+#: View/Home/index.ctp:129
 msgid "Absent teachers for the 7 following days"
 msgstr "Afwezige docenten voor de komende 7 dagen"
 
-#: View/Home/index.ctp:137
+#: View/Home/index.ctp:158
 msgid "This table shows the classes you've subscribed to"
 msgstr "Deze tabel laat de klassen zien waar je op geabonneerd bent"
 
-#: View/Home/index.ctp:94
+#: View/Home/index.ctp:197
+#, fuzzy
+#| msgid "Go to the website"
+msgid "Go to complete list"
+msgstr "Ga naar de website"
+
+#: View/Home/index.ctp:100
 msgid "Upcoming event"
 msgid_plural "Upcoming events"
 msgstr[0] "Opkomende evenement"
 msgstr[1] "Opkomende evenementen"
 
-#: View/Home/index.ctp:113
+#: View/Home/index.ctp:125
 msgid "Absent teacher"
 msgid_plural "Absent teachers"
 msgstr[0] "Afwezige docent"
 msgstr[1] "Afwezige docenten"
 
-#: View/Home/index.ctp:128
+#: View/Home/index.ctp:144
 msgid "%d absent teacher report"
 msgid_plural "%d absent teachers reports"
 msgstr[0] "%d melding van èèn afwezige docent"
 msgstr[1] "%d meldingen van afwezige docenten"
 
-#: View/Home/index.ctp:135
+#: View/Home/index.ctp:155
 msgid "Class subscription"
 msgid_plural "Class subscriptions"
 msgstr[0] "Klasse abbonnement"
 msgstr[1] "Klasse abonnementen"
 
-#: View/Home/index.ctp:154
+#: View/Home/index.ctp:179
 msgid "Available classroom"
 msgid_plural "Available classrooms"
 msgstr[0] "Beschikbaar klaslokaal"
 msgstr[1] "Beschikbare klaslokalen"
+
+#: View/Home/index.ctp:182
+msgid "Classroom available at: %s"
+msgid_plural "Classrooms available at: %s"
+msgstr[0] "Lokaal beschikbaar om: %s"
+msgstr[1] "Lokalen beschikbaar om: %s"
 
 #: View/Home/install_index.ctp:1
 msgid "Mauris installer"
@@ -1435,7 +1470,6 @@ msgid "Assign a teacher to a user"
 msgstr "Wijs een docent toe aan een gebruiker"
 
 #: View/Home/manage_index.ctp:6
-#| msgid "Role assignments"
 msgid "Edit assignments"
 msgstr "Bewerk opgaves"
 
@@ -1571,7 +1605,6 @@ msgid "You can reply at: %1$s"
 msgstr "Je kan reageren op: %1$s"
 
 #: View/Posts/view.ctp:22
-#| msgid "Body"
 msgid "By"
 msgstr "Door"
 
@@ -1694,10 +1727,6 @@ msgstr "Email adres voor systeem emails voor ontwikkelaars en administrators"
 msgid "Authentication details"
 msgstr "Authenticatie details"
 
-#: View/Users/login.ctp:19
-msgid "Please enter your username and password"
-msgstr "Vul alstublieft uw gebruikersnaam en wachtwoord in"
-
 #: View/Users/profile.ctp:26 View/Users/register.ctp:27
 msgid "Firstname"
 msgstr "Voornaam"
@@ -1710,7 +1739,13 @@ msgstr "Tussenvoegsel"
 msgid "Surname"
 msgstr "Achternaam"
 
-#: View/Users/profile.ctp:43
+#: View/Users/profile.ctp:41
+#, fuzzy
+#| msgid "Credit account"
+msgid "Delete my account"
+msgstr "Saldo account"
+
+#: View/Users/profile.ctp:49
 msgid "Latest post by this user"
 msgid_plural "Latest posts by this user"
 msgstr[0] "Laatste nieuws bericht van deze gebruiker"
@@ -1719,6 +1754,10 @@ msgstr[1] "Laatste nieuws berichten van deze gebruiker"
 #: View/Users/register.ctp:15
 msgid "Credentials"
 msgstr ""
+
+#: View/Users/register.ctp:17
+msgid "Username"
+msgstr "Gebruikersnaam"
 
 #: View/Users/register.ctp:18
 msgid "Password"
@@ -1731,6 +1770,18 @@ msgstr "Contact"
 #: View/Users/register.ctp:30
 msgid "Nickname"
 msgstr "Bijnaam"
+
+#~ msgid "User deleted"
+#~ msgstr "Gebruiker verwijderd"
+
+#~ msgid "User was not deleted"
+#~ msgstr "Gebruiker was niet verwijderd"
+
+#~ msgid "Simple schedule"
+#~ msgstr "Simpel rooster"
+
+#~ msgid "Please enter your username and password"
+#~ msgstr "Vul alstublieft uw gebruikersnaam en wachtwoord in"
 
 #~ msgid "Reply"
 #~ msgstr "Reageer"

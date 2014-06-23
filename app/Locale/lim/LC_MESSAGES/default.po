@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-06-18 14:27+0000\n"
+"POT-Creation-Date: 2014-06-23 10:17+0000\n"
 "PO-Revision-Date: 2014-03-02 15:09+0200\n"
 "Last-Translator: Marlin Cremers <m.cremers@mms-projects.net>\n"
 "Language-Team: Limburgish (ISO 639-2) <http://weblate.mms-projects.net/"
@@ -223,32 +223,32 @@ msgstr ""
 msgid "Could not remove the organization"
 msgstr ""
 
-#: Controller/PostsController.php:200
-msgid "Your post has been created"
-msgstr ""
-
-#: Controller/PostsController.php:208
+#: Controller/PostsController.php:203
 msgid "Could not create your post"
 msgstr ""
 
-#: Controller/PostsController.php:222
+#: Controller/PostsController.php:208
+msgid "Your post has been created"
+msgstr ""
+
+#: Controller/PostsController.php:220
 msgid "Could not find this post"
 msgstr ""
 
-#: Controller/PostsController.php:229
+#: Controller/PostsController.php:227
 msgid "Your post has been changed"
 msgstr ""
 
-#: Controller/PostsController.php:237
+#: Controller/PostsController.php:235
 msgid "Could not change your post"
 msgstr ""
 
-#: Controller/PostsController.php:250
-msgid "Your post has been removed"
+#: Controller/PostsController.php:248
+msgid "Could not remove your post"
 msgstr ""
 
-#: Controller/PostsController.php:258
-msgid "Could not remove your post"
+#: Controller/PostsController.php:253
+msgid "Your post has been removed"
 msgstr ""
 
 #: Controller/SitemapsController.php:99
@@ -337,59 +337,75 @@ msgstr ""
 msgid "Could not remove the teacher assignment"
 msgstr ""
 
-#: Controller/UsersController.php:34
+#: Controller/UsersController.php:36
 msgid "Could not find this user"
 msgstr ""
 
-#: Controller/UsersController.php:69
+#: Controller/UsersController.php:75
 msgid "You already have an account"
 msgstr ""
 
-#: Controller/UsersController.php:80
-msgid "You're account has been created"
+#: Controller/UsersController.php:90
+msgid ""
+"Please activate your new account using the link you received on your email "
+"address"
 msgstr ""
 
-#: Controller/UsersController.php:88
+#: Controller/UsersController.php:98
 msgid "Could not create your account"
 msgstr ""
 
-#: Controller/UsersController.php:99;115
+#: Controller/UsersController.php:118
+msgid "Your user account has been activated successfully"
+msgstr ""
+
+#: Controller/UsersController.php:122;148
+msgid "The verification token is invalid"
+msgstr ""
+
+#: Controller/UsersController.php:135
+msgid "Could not remove your user account"
+msgstr ""
+
+#: Controller/UsersController.php:144
+msgid "Your user account has been removed successfully"
+msgstr ""
+
+#: Controller/UsersController.php:155;171
 msgid "The user has been saved"
 msgstr ""
 
-#: Controller/UsersController.php:103;119
+#: Controller/UsersController.php:159;175
 msgid "The user could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/UsersController.php:111;130
+#: Controller/UsersController.php:167
 msgid "Invalid user"
 msgstr ""
 
-#: Controller/UsersController.php:133
-msgid "User deleted"
+#: Controller/UsersController.php:186
+msgid ""
+"Please verify your account removal using the link you received on your email "
+"address"
 msgstr ""
 
-#: Controller/UsersController.php:136
-msgid "User was not deleted"
-msgstr ""
-
-#: Controller/UsersController.php:148
+#: Controller/UsersController.php:199
 msgid "Invalid username or password, try again"
 msgstr ""
 
-#: Controller/UsersController.php:185
+#: Controller/UsersController.php:236
 msgid "The user has been changed."
 msgstr ""
 
-#: Controller/UsersController.php:193
+#: Controller/UsersController.php:244
 msgid "Could not change the user"
 msgstr ""
 
-#: Controller/UsersController.php:213
+#: Controller/UsersController.php:264
 msgid "The user has been removed."
 msgstr ""
 
-#: Controller/UsersController.php:221
+#: Controller/UsersController.php:272
 msgid "Could not remove the user"
 msgstr ""
 
@@ -419,6 +435,14 @@ msgstr ""
 
 #: Controller/Component/StylingComponent.php:14
 msgid "Render preparation with organization style"
+msgstr ""
+
+#: Model/VerificationToken.php:53 View/Emails/html/user_verification.ctp:1
+msgid "Verify your account"
+msgstr ""
+
+#: Model/VerificationToken.php:93 View/Emails/html/user_delete.ctp:1
+msgid "Verify your account removal"
 msgstr ""
 
 #: Plugin/Billboard/View/Billboards/display.ctp:8
@@ -633,7 +657,7 @@ msgstr ""
 #: Plugin/Schedule/View/Schedule/calendar.ctp:32
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:20
 #: Plugin/Schedule/View/Schedule/simple.ctp:13;43
-#: Plugin/Schedule/View/Schedule/view.ctp:23 View/Home/index.ctp:14;119
+#: Plugin/Schedule/View/Schedule/view.ctp:23 View/Home/index.ctp:14;134
 #: View/TeacherAbsence/manage_add.ctp:23
 #: View/TeacherAbsence/manage_edit.ctp:23
 #: View/TeacherAbsence/manage_index.ctp:16 View/Teachers/absent.ctp:5
@@ -644,13 +668,9 @@ msgstr ""
 #: Plugin/Schedule/View/Schedule/calendar.ctp:38
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:18
 #: Plugin/Schedule/View/Schedule/simple.ctp:19;37
-#: Plugin/Schedule/View/Schedule/view.ctp:17 View/Home/index.ctp:140
+#: Plugin/Schedule/View/Schedule/view.ctp:17 View/Home/index.ctp:162
 #: View/Themed/Billboard/Schedule/cancelled.ctp:4
 msgid "Class"
-msgstr ""
-
-#: Plugin/Schedule/View/Schedule/calendar.ctp:52
-msgid "Simple schedule"
 msgstr ""
 
 #: Plugin/Schedule/View/Schedule/manage_edit.ctp:7
@@ -671,7 +691,7 @@ msgstr ""
 
 #: Plugin/Schedule/View/Schedule/manage_index.ctp:16
 #: Plugin/VendingMachine/View/Transactions/admin_index.ctp:20
-#: View/Feedback/admin_index.ctp:16 View/Home/index.ctp:118
+#: View/Feedback/admin_index.ctp:16 View/Home/index.ctp:133
 #: View/TeacherAbsence/manage_index.ctp:15 View/Teachers/absent.ctp:4
 msgid "Date"
 msgstr ""
@@ -694,7 +714,7 @@ msgstr ""
 
 #: Plugin/Schedule/View/Schedule/simple.ctp:50
 #: Plugin/Schedule/View/Schedule/view.ctp:30 View/Classrooms/available.ctp:18
-#: View/Home/index.ctp:159
+#: View/Home/index.ctp:186
 msgid "Classroom"
 msgstr ""
 
@@ -783,7 +803,7 @@ msgstr ""
 #: Plugin/VendingMachine/View/Transactions/admin_add.ctp:20
 #: Plugin/VendingMachine/View/UserBalances/admin_add.ctp:19
 #: View/Assignments/manage_add.ctp:19 View/Events/manage_add.ctp:30
-#: View/Home/index.ctp:188 View/Organizations/admin_add.ctp:39
+#: View/Home/index.ctp:226 View/Organizations/admin_add.ctp:39
 #: View/Posts/add.ctp:42 View/Students/manage_add.ctp:5;19
 #: View/TeacherAbsence/manage_add.ctp:27
 #: View/UserRoleMappings/manage_add.ctp:4
@@ -1110,13 +1130,13 @@ msgid "Available classrooms"
 msgstr ""
 
 #: View/Classrooms/available.ctp:19 View/Events/manage_index.ctp:15
-#: View/Home/index.ctp:160
+#: View/Home/index.ctp:187
 msgid "Title"
 msgstr ""
 
-#: View/Classrooms/available.ctp:15 View/Home/index.ctp:156
-msgid "Classroom available at: %s"
-msgid_plural "Classrooms available at: %s"
+#: View/Classrooms/available.ctp:15
+msgid "There is one classroom available at: %1$ss"
+msgid_plural "There are %2$d classrooms available at: %1$s"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -1133,18 +1153,35 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#: View/Elements/latest_comments.ctp:1
+#: View/Elements/latest_comments.ctp:3
 #, fuzzy
 msgid "Latest comments"
 msgstr "Lètste nuujs"
 
-#: View/Elements/Parts/NavbarElements/right_menu.ctp:8
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:4
 msgid "Logged in as %s"
 msgstr ""
 
-#: View/Elements/Parts/NavbarElements/right_menu.ctp:33
-#: View/Users/register.ctp:17
-msgid "Username"
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:9
+msgid "Not logged in"
+msgstr ""
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:21 View/Home/index.ctp:79
+msgid "Profile"
+msgstr ""
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:23 View/Home/index.ctp:81
+msgid "Logout"
+msgstr ""
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:27 View/Home/index.ctp:86
+#: View/Users/login.ctp:3;21
+msgid "Login"
+msgstr ""
+
+#: View/Elements/Parts/NavbarElements/right_menu.ctp:28 View/Home/index.ctp:88
+#: View/Users/register.ctp:3;33
+msgid "Register"
 msgstr ""
 
 #: View/Elements/button/add.ctp:4 View/Styles/admin_index.ctp:12
@@ -1155,7 +1192,7 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: View/Elements/button/delete.ctp:10
+#: View/Elements/button/delete.ctp:15
 msgid "Are you sure you want to remove this?"
 msgstr ""
 
@@ -1195,7 +1232,7 @@ msgstr ""
 msgid "Reservation number"
 msgstr ""
 
-#: View/Emails/html/event_reminder.ctp:13 View/Home/index.ctp:97
+#: View/Emails/html/event_reminder.ctp:13 View/Home/index.ctp:104
 msgid "Event"
 msgstr ""
 
@@ -1265,7 +1302,7 @@ msgid "No events in the near future"
 msgstr ""
 
 #: View/Feedback/admin_index.ctp:5 View/Feedback/admin_view.ctp:2
-#: View/Home/index.ctp:171
+#: View/Home/index.ctp:218
 msgid "Feedback"
 msgstr ""
 
@@ -1315,77 +1352,71 @@ msgstr ""
 msgid "%1$s school information for teachers, students and parents"
 msgstr ""
 
-#: View/Home/index.ctp:56 View/Posts/index.ctp:35 View/Users/profile.ctp:62
+#: View/Home/index.ctp:56 View/Posts/index.ctp:35 View/Users/profile.ctp:68
 msgid "Read more"
 msgstr "Laes mier"
 
-#: View/Home/index.ctp:66 View/Teachers/view.ctp:14
+#: View/Home/index.ctp:68 View/Teachers/view.ctp:14
 msgid "Account"
 msgstr ""
 
-#: View/Home/index.ctp:70
+#: View/Home/index.ctp:72
 msgid "You're logged in as %1$s"
 msgstr ""
 
-#: View/Home/index.ctp:73
-msgid "Profile"
-msgstr ""
-
-#: View/Home/index.ctp:75
-msgid "Logout"
-msgstr ""
-
-#: View/Home/index.ctp:82 View/Users/login.ctp:3;26
-msgid "Login"
-msgstr ""
-
-#: View/Home/index.ctp:84 View/Users/register.ctp:3;33
-msgid "Register"
-msgstr ""
-
-#: View/Home/index.ctp:98
+#: View/Home/index.ctp:105
 msgid "When"
 msgstr ""
 
-#: View/Home/index.ctp:107
+#: View/Home/index.ctp:115
 msgid "List"
 msgstr ""
 
-#: View/Home/index.ctp:115
+#: View/Home/index.ctp:129
 msgid "Absent teachers for the 7 following days"
 msgstr ""
 
-#: View/Home/index.ctp:137
+#: View/Home/index.ctp:158
 msgid "This table shows the classes you've subscribed to"
 msgstr ""
 
-#: View/Home/index.ctp:94
+#: View/Home/index.ctp:197
+msgid "Go to complete list"
+msgstr ""
+
+#: View/Home/index.ctp:100
 msgid "Upcoming event"
 msgid_plural "Upcoming events"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Home/index.ctp:113
+#: View/Home/index.ctp:125
 msgid "Absent teacher"
 msgid_plural "Absent teachers"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Home/index.ctp:128
+#: View/Home/index.ctp:144
 msgid "%d absent teacher report"
 msgid_plural "%d absent teachers reports"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Home/index.ctp:135
+#: View/Home/index.ctp:155
 msgid "Class subscription"
 msgid_plural "Class subscriptions"
 msgstr[0] ""
 msgstr[1] ""
 
-#: View/Home/index.ctp:154
+#: View/Home/index.ctp:179
 msgid "Available classroom"
 msgid_plural "Available classrooms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: View/Home/index.ctp:182
+msgid "Classroom available at: %s"
+msgid_plural "Classrooms available at: %s"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -1668,10 +1699,6 @@ msgstr ""
 msgid "Authentication details"
 msgstr ""
 
-#: View/Users/login.ctp:19
-msgid "Please enter your username and password"
-msgstr ""
-
 #: View/Users/profile.ctp:26 View/Users/register.ctp:27
 msgid "Firstname"
 msgstr ""
@@ -1684,7 +1711,11 @@ msgstr ""
 msgid "Surname"
 msgstr ""
 
-#: View/Users/profile.ctp:43
+#: View/Users/profile.ctp:41
+msgid "Delete my account"
+msgstr ""
+
+#: View/Users/profile.ctp:49
 msgid "Latest post by this user"
 msgid_plural "Latest posts by this user"
 msgstr[0] ""
@@ -1692,6 +1723,10 @@ msgstr[1] ""
 
 #: View/Users/register.ctp:15
 msgid "Credentials"
+msgstr ""
+
+#: View/Users/register.ctp:17
+msgid "Username"
 msgstr ""
 
 #: View/Users/register.ctp:18
