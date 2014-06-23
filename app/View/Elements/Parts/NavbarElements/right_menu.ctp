@@ -18,14 +18,14 @@ $this->startIfEmpty('right_menu');
 				<?php
 				if ($logged_in):
 					?>
-					<li><?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'profile')); ?></li>
+					<li><?php echo $this->Html->link(__('Profile'), array('plugin' => false, 'website' => false, 'controller' => 'users', 'action' => 'profile')); ?></li>
 					<li class="divider"></li>
-					<li><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout')); ?></li>
+					<li><?php echo $this->Html->link(__('Logout'), array('plugin' => false, 'website' => false, 'controller' => 'users', 'action' => 'logout')); ?></li>
 					<?php
 				else:
 					?>
-					<li><?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login')); ?></li>
-					<li><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register')); ?></li>
+					<li><?php echo $this->Html->link(__('Login'), array('plugin' => false, 'website' => false, 'controller' => 'users', 'action' => 'login')); ?></li>
+					<li><?php echo $this->Html->link(__('Register'), array('plugin' => false, 'website' => false, 'controller' => 'users', 'action' => 'register')); ?></li>
 					<?php
 				endif;
 				?>
