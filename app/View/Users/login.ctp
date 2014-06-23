@@ -14,15 +14,10 @@ echo $this->element('page_header');
 	echo $this->Session->flash('auth');
 
 	echo $this->ModelForm->create('User');
-	?>
-    <fieldset>
-	    <legend><?php echo h(__('Please enter your username and password')) ?></legend>
-	    <?php
-	    echo $this->Form->input('username');
-        echo $this->Form->input('password');
-	    ?>
-    </fieldset>
-	<?php
+
+    echo $this->Form->input('username');
+    echo $this->Form->input('password');
+
 	echo $this->Form->submit(__('Login'), array(
 		'div'   => 'col col-md-9 col-md-offset-3',
 		'class' => 'btn btn-default'
