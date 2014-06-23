@@ -32,7 +32,9 @@ App::uses('Model', 'Model');
 class AppModel extends Model {
            
     public $actsAs = array('Containable', 'Linkable.Linkable');
-        
+
+	public $recursive = -1;
+
     final protected function _getByIds($model, $detailModel, array $ids) {
         $dataCached = array();
         foreach ($ids as $id) {

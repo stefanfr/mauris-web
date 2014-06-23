@@ -17,7 +17,8 @@ class LanguageAwareComponent extends Component {
                     array(
                         'conditions' => array(
                             'School.id' => $controller->SchoolInformation->getSchoolId()
-                        )
+                        ),
+                        'recursive' => 0
                     )
                 );
 
@@ -30,7 +31,8 @@ class LanguageAwareComponent extends Component {
                     array(
                         'conditions' => array(
                             'Department.id' => $controller->SchoolInformation->getDepartmentId()
-                        )
+                        ),
+                        'recursive' => 0
                     )
                 );
 
