@@ -58,7 +58,8 @@ class AppModel extends Model {
                 'all', array(
                     'conditions' => array(
                         $detailModel . '.id' => $idsNotCached
-                    )
+                    ),
+		            'recursive'  => 2
                 )
             );
         }
