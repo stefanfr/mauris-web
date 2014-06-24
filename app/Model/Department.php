@@ -87,6 +87,10 @@ class Department extends AppModel {
 			$languageCode = $this->UsesLanguage->getCode($languageId);
 		} else {
 			$languageCode = null;
+		}if ($languageId !== null) {
+			$languageCode = $this->UsesLanguage->getCode($languageId);
+		} else {
+			$languageCode = null;
 		}
 
 		Cache::write($cacheKey, $languageCode);
