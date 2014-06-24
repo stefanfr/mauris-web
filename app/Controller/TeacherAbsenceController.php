@@ -10,7 +10,8 @@ class TeacherAbsenceController extends AppController {
 		'limit' => 5,
 		'order' => array(
 			'TeacherAbsenceReport.date' => 'DESC'
-		)
+		),
+		'recursive' => 0
 	);
 
 	public function manage_index() {

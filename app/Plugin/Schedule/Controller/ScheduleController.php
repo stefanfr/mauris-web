@@ -246,7 +246,10 @@ class ScheduleController extends AppController {
 		}
 
 		$conditions = array(
-			'department_id' => $schedule_entry['ScheduleEntry']['department_id']
+			'conditions' => array(
+				'department_id' => $schedule_entry['ScheduleEntry']['department_id']
+			),
+			'recursive'  => 0
 		);
 
 		$departments = $this->ScheduleEntry->GivenAtDeparment->find('list', ($scope == 'system') ? array() : $conditions);

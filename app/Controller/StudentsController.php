@@ -10,6 +10,7 @@ class StudentsController extends UserRoleMappingsController {
 		$this->Paginator->settings['scopes'] = array('organization', 'department');
 		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
 		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
+		$this->Paginator->settings['recursive'] = 0;
 
 		$students = $this->Paginator->paginate('UserRoleMapping', array(
 			'Role.id' => $this->UserRoleMapping->Role->getRoleId('student')

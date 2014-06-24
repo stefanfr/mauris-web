@@ -17,6 +17,7 @@ class UserRoleMappingsController extends AppController {
 		$this->Paginator->settings['scopes'] = array('organization', 'department');
 		$this->Paginator->settings['organization'] = $this->SchoolInformation->getSchoolId();
 		$this->Paginator->settings['department'] = $this->SchoolInformation->getDepartmentId();
+		$this->Paginator->settings['recursive'] = 2;
 
 		$user_role_mappings = $this->Paginator->paginate(array(
 			'FIND_IN_SET("department", Role.visibility)'

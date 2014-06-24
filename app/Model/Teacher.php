@@ -3,8 +3,6 @@ class Teacher extends AppModel {
 	
     public $displayField = 'name';
 
-    public $order = "Teacher.name";
-
 	public $actsAs = array(
 		'OrganizationOwned'
 	);

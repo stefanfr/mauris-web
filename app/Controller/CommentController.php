@@ -22,6 +22,7 @@ class CommentController extends AppController {
 
 	public function add() {
         if (isset($this->passedArgs['comment'])) {
+	        $this->Comment->recursive = 0;
             $replyTo = $this->Comment->findById((int) $this->passedArgs['comment']);
             
             if (!$replyTo) {
@@ -39,7 +40,8 @@ class CommentController extends AppController {
         if (isset($this->passedArgs['comment'])) {
             $this->request->data['Comment']['parent_id'] = $this->passedArgs['comment'];
         }
-        
+
+		$this->Post->recursive = 0;
         $post = $this->Post->read();
         $this->set('post', $post);
         if (!$post) {
