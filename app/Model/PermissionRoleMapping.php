@@ -49,12 +49,14 @@ class PermissionRoleMapping extends AppModel {
             
             return $data;
         }
+
+	    DebugTimer::start('permission-lookup', __('Looking up permissions'));
         
         $data = $this->find('all', array(
             'order' => array(
                 'preference'
             ),
-            'recursive' => 2,
+            'recursive' => 0,
             'conditions' => $conditions
         ));
         
@@ -62,7 +64,9 @@ class PermissionRoleMapping extends AppModel {
         Cache::write($key, $data);
         
         $this->log('Permission role mappings for \'' . $identifier . '\' stored in the cache', LOG_DEBUG, 'caching');
-        
+
+	    DebugTimer::stop('permission-lookup');
+
         //print_r($conditions);
         return $data;
     }

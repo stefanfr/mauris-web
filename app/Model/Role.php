@@ -19,5 +19,20 @@ class Role extends AppModel {
 			'system_alias' => $slug,
 		));
 	}
+
+	public function findBySystemAlias($systemAlias) {
+		$cacheKey = 'role-' . $systemAlias;
+
+		$role = Cache::read($cacheKey);
+		if ($role !== false) {
+			return $role;
+		}
+
+		$role = parent::findBySystemAlias($systemAlias);
+
+		Cache::write($cacheKey, $role);
+
+		return $role;
+	}
         
 }

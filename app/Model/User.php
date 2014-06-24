@@ -61,7 +61,22 @@ class User extends AppModel {
         }
         return true;
     }
-    
+
+	public function findByUsername($username) {
+		$cacheKey = 'username-' . $username;
+
+		$user = Cache::read($cacheKey);
+		if ($user !== false) {
+			return $user;
+		}
+
+		$user = parent::findByUsername($username);
+
+		Cache::write($cacheKey, $user);
+
+		return $user;
+	}
+
     public function getUserDetails($userId) {
         return $this->findById($userId);
     }

@@ -106,64 +106,46 @@ class ScheduleAcl extends Object implements AclInterface {
                 $roles[] = $target['id'];
             }
         } elseif ($target['type'] == 'user') {
-            $user = null;
-            if (ctype_digit($target['id'])) {
-                $user = (int) $target['id'];
-            } elseif (is_string($target['id'])) {
-                $userData = $this->User->findByUsername($target['id']);
-                $user = $userData['User']['id'];
+	        $user = null;
+	        if (ctype_digit($target['id'])) {
+		        $user = (int)$target['id'];
+	        } elseif (is_string($target['id'])) {
+		        $userData = $this->User->findByUsername($target['id']);
+		        $user = $userData['User']['id'];
+	        }
+
+	        $roleMappingQuery = array(
+		        'conditions' => array(
+			        'user_id' => $user
+		        ),
+		        'recursive'  => 0,
+		        'scopes'     => array('system')
+	        );
+	        $conditionScopes = array('system');
+	        if ((isset($aco['global_lookup'])) && (in_array($permission, $aco['global_lookup']))) {
+
+	        } else {
+		        if (isset($departmentId)) {
+			        $roleMappingQuery['scopes'][] = 'department';
+			        $roleMappingQuery['department'] = $departmentId;
+			        $roleMappingQuery['organization'] = $schoolId;
+		        } else {
+			        if (isset($schoolId)) {
+				        $roleMappingQuery['scopes'][] = 'organization';
+				        $roleMappingQuery['organization'] = $schoolId;;
+			        }
+		        }
+	        }
+
+	        $cacheKey = 'user-role-mappings-' . md5(serialize($roleMappingQuery));
+
+	        $userRoleMappings = Cache::read($cacheKey);
+	        if ($userRoleMappings === false) {
+	            $userRoleMappings = $this->UserRoleMapping->find('all', $roleMappingQuery);
+
+		        Cache::write($cacheKey, $userRoleMappings);
             }
-            
-            $conditions = array(
-                'user_id' => $user
-            );
-            /*if ((!isset($schoolId)) || (!isset($departmentId))) {
-                if (!isset($schoolId)) {
-                    $conditions[] = 'UserRoleMapping.school_id IS NULL';
-                }
-                if (!isset($departmentId)) {
-                    $conditions[] = 'UserRoleMapping.department_id IS NULL';
-                }
-            } else {*/
-                if ((isset($aco['global_lookup'])) && (in_array($permission, $aco['global_lookup']))) {
-                    
-                } else {
-                    $conditions['or'][] = array(
-                        'and' => array(
-                            'UserRoleMapping.school_id IS NULL',
-                            'UserRoleMapping.department_id IS NULL'
-                        ),
-                    );
-                    if (isset($departmentId)) {
-                        $conditions['or'][] = array(
-                            'and' => array(
-                                'UserRoleMapping.school_id' => $schoolId,
-                                'UserRoleMapping.department_id' => $departmentId
-                            )
-                        );
-                    } else {
-                        if (isset($schoolId)) {
-                            $conditions['or'][] = array(
-                                'and' => array(
-                                    'UserRoleMapping.school_id' => $schoolId,
-                                )
-                            );
-                        }
-                    }
-                }
-                
-            //}
-            
-            //print_r($conditions);
-            
-            $userRoleMappings = $this->UserRoleMapping->find(
-                'all',
-                array(
-                    'conditions' => $conditions,
-	                'recursive' => 0
-                )
-            );
-            //print_r($userRoleMappings);
+
             foreach ($userRoleMappings as $userRoleMapping) {
                 $roles[] = $userRoleMapping['Role']['id'];
             }
