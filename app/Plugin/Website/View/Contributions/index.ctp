@@ -42,6 +42,9 @@ $this->Title->addCrumbs(array(
 		<?php if ($contributers): ?>
 		<div class="row">
 			<div class="col col-sm-12">
+				<p class="well">
+					<?php echo h(__('These people already did their part in contributing to Mauris')); ?>
+				</p>
 				<ul class="media-list">
 					<?php foreach ($contributers as $contributer): ?>
 					<li class="media" itemprop="comment" itemscope="" itemtype="http://schema.org/UserComments">

@@ -1,7 +1,7 @@
 <?php
 $this->Title->addSegment(__('Contributions'));
 $this->Title->addSegment(__('Contribute'));
-$this->Title->setPageTitle(__('I18n'));
+$this->Title->setPageTitle(__('Contribute i18n'));
 
 $this->Title->addCrumbs(array(
 	array('action' => 'index'),
