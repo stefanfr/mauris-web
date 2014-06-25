@@ -6,7 +6,7 @@ if ($logged_in):
 		$this->App->buildName($current_user)
 	));
 else:
-	$dropdownText = h(__('Not logged in'));
+	$dropdownText = h(__('Account'));
 endif;
 
 $this->startIfEmpty('right_menu');
