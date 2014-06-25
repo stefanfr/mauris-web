@@ -67,25 +67,37 @@ $this->end();
 			<div class="panel-heading">
 				<h2><?php echo h(__('Account')); ?></h2>
 			</div>
-			<?php if ($logged_in): ?>
-				<div class="panel-body">
+			<div class="panel-body">
+				<?php if ($logged_in): ?>
 					<p><?php echo h(__('You\'re logged in as %1$s', $current_user['username'])); ?></p>
-				</div>
-			<?php endif; ?>
+				<?php else: ?>
+					<?php
+					echo $this->ModelForm->create('User');
+
+					echo $this->Form->input('username');
+					echo $this->Form->input('password');
+					?>
+				<?php endif; ?>
+			</div>
 			<div class="panel-footer">
 				<?php if ($logged_in): ?>
 					<div class="row">
 						<div
 							class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'profile'), array('class' => 'btn btn-primary')); ?></div>
 						<div
-							class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-danger')); ?></div>
+							class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-danger pull-right')); ?></div>
 					</div>
 				<?php else: ?>
 					<div class="row">
+						<?php
+						echo $this->Form->submit(__('Login'), array(
+							'div'   => 'col-sm-6',
+							'class' => 'btn btn-primary'
+						));
+						echo $this->Form->end();
+						?>
 						<div
-							class="col-sm-6"><?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login'), array('class' => 'btn btn-primary')); ?></div>
-						<div
-							class="col-sm-6"><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register'), array('class' => 'btn btn-primary')); ?></div>
+							class="col-sm-6"><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register'), array('class' => 'btn btn-primary pull-right')); ?></div>
 					</div>
 				<?php endif; ?>
 			</div>
