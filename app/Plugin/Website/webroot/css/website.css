@@ -1,0 +1,60 @@
+.navbar-default {
+	background-color: #ed1c24;
+
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+	color: #f5f5f5;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border-style: none;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+	color: #000000;
+	background-color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #000000;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	color: #000000;
+	background-color: #ffffff;
+}
+
+.panel-primary {
+	border-color: #646464;
+}
+
+.panel-primary>.panel-heading {
+	background-color: #ed1c24;
+}
+
+.breadcrumb {
+	background-color: #ed1c24;
+}
+
+.breadcrumb > li {
+	color: #ffffff;
+}
+
+.breadcrumb > li > a {
+	color: #f5f5f5;
+}
+
+.btn-primary {
+	color: #f5f5f5;
+	background-color: #ed1c24;
+	border-color: #646464;
+}
+
+/* Pagination */
+
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+	background-color: #ed1c24;
+	border-color: #646464;
+}

@@ -58,6 +58,9 @@ $this->element('Parts/NavbarElements/right_menu');
 			'action'     => 'current',
 			'ext'        => 'css'
 		), true));
+		if (CakePlugin::loaded('Website')):
+			echo $this->Html->css('Website.website');
+		endif;
 
 		echo $this->fetch('css');
 		?>
