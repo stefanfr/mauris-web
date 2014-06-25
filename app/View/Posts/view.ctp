@@ -25,16 +25,23 @@ endif;
 				<a href="<?php echo $this->App->url(array('controller' => 'users', 'action' => 'profile', $post['PostedBy']['id'])); ?>"><?php echo h(__('By')); ?>
 					<span itemprop="name"><?= h($this->App->buildName($post['PostedBy'], false)) ?></span>
 				</a>
+				<?php
+				if ($post['PostedBy']['google_profile'] != ''):
+					?>
+					<div class="btn-group">
+						<a type="button" class="btn btn-default"
+						   href="<?= $post['PostedBy']['google_profile'] ?>?rel=author"><?= __('%s profile', 'Google+') ?></a>
+					</div>
+				<?php
+				endif;
+				?>
 			</span>
 		</p>
 	</div>
 	<span itemprop="articleBody">
 		<?php echo $this->Text->autoParagraph(h($post['Post']['body'])) ?>
 	</span>
-	<div class="btn-toolbar" role="toolbar">z
-		<div class="btn-group">
-			<a type="button" class="btn btn-default" href="<?= $post['PostedBy']['google_profile'] ?>?rel=author"><?= __('%s profile', 'Google+') ?></a>
-		</div>
+	<div class="btn-toolbar" role="toolbar">
 		<div class="btn-group">
 			<?php if ($can_comment): ?>
 				<button type="button" id="comment-button" class="btn btn-primary comment-button" data-post-id="<?php echo h($post['Post']['id']); ?>"><?php echo h(__('Comment')); ?></button>
