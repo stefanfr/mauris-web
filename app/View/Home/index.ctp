@@ -78,14 +78,14 @@ $this->end();
 						<div
 							class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Profile'), array('controller' => 'users', 'action' => 'profile'), array('class' => 'btn btn-primary')); ?></div>
 						<div
-							class="col-sm-12 col-md-6 pull-right"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-danger')); ?></div>
+							class="col-sm-12 col-md-6"><?php echo $this->Html->link(__('Logout'), array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-danger')); ?></div>
 					</div>
 				<?php else: ?>
 					<div class="row">
 						<div
 							class="col-sm-6"><?php echo $this->Html->link(__('Login'), array('controller' => 'users', 'action' => 'login'), array('class' => 'btn btn-primary')); ?></div>
 						<div
-							class="col-sm-6 pull-right"><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register'), array('class' => 'btn btn-primary')); ?></div>
+							class="col-sm-6"><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'register'), array('class' => 'btn btn-primary')); ?></div>
 					</div>
 				<?php endif; ?>
 			</div>
