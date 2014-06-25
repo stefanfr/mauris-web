@@ -72,7 +72,15 @@ $this->end();
 					<p><?php echo h(__('You\'re logged in as %1$s', $current_user['username'])); ?></p>
 				<?php else: ?>
 					<?php
-					echo $this->ModelForm->create('User');
+					echo $this->Form->create('User', array(
+						'inputDefaults' => array(
+							'div'       => 'form-group',
+							'label'     => array(
+								'class' => 'control-label'
+							),
+							'class'     => 'form-control'
+						)
+					));
 
 					echo $this->Form->input('username');
 					echo $this->Form->input('password');
