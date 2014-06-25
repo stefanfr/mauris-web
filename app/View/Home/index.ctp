@@ -119,7 +119,7 @@ $this->end();
 		?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2><?php echo h(__n('Upcoming event', 'Upcoming events', count($upcoming_events))); ?></h2>
+				<h3><?php echo h(__n('Upcoming event', 'Upcoming events', count($upcoming_events))); ?></h3>
 			</div>
 			<table class="table">
 				<tr>
