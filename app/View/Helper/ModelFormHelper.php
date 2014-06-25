@@ -14,7 +14,7 @@ class ModelFormHelper extends FormHelper {
 	);
 
 	public function create($model = null, $options = array()) {
-		$options = array_merge($options, array(
+		$options = array_merge(array(
 			'inputDefaults' => array(
 				'div'       => 'form-group',
 				'label'     => array(
@@ -24,7 +24,7 @@ class ModelFormHelper extends FormHelper {
 				'class'     => 'form-control'
 			),
 			'class'         => 'form-horizontal'
-		));
+		), $options);
 
 		return $this->Form->create($model, $options);
 	}
