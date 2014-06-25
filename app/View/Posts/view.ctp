@@ -10,23 +10,30 @@ $this->Title->addCrumbs(array(
 $this->Seo->setPageType('post');
 
 if ($post['Post']['summary']):
-    $this->Seo->setDescription($post['Post']['summary']);
+	$this->Seo->setDescription($post['Post']['summary']);
 else:
 	$this->Seo->setDescription($this->Text->truncate($post['Post']['body'], 200));
 endif;
 ?>
 <div class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="blog-post-title" itemprop="name"><?=h($this->Title->getPageTitle())?></h1>
-  <div class="pull-right">
-    <?=$this->Gravatar->gravatar($post['PostedBy']['email'], array('s' => 64, 'd' => 'identicon'))?>
-  <p class="blog-post-meta"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="<?php echo $this->App->url(array('controller' => 'users', 'action' => 'profile', $post['PostedBy']['id'])); ?>"><?php echo h(__('By')); ?> <span itemprop="name"><?=h($this->App->buildName($post['PostedBy'], false))?></span></a></span></p>
-  </div>
-  <span itemprop="articleBody">
-<?php echo $this->Text->autoParagraph(h($post['Post']['body'])) ?>
-</span>
-	<div class="btn-toolbar" role="toolbar">
+	<h1 class="blog-post-title" itemprop="name"><?= h($this->Title->getPageTitle()) ?></h1>
+
+	<div class="pull-right">
+		<?= $this->Gravatar->gravatar($post['PostedBy']['email'], array('s' => 64, 'd' => 'identicon')) ?>
+		<p class="blog-post-meta">
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<a href="<?php echo $this->App->url(array('controller' => 'users', 'action' => 'profile', $post['PostedBy']['id'])); ?>"><?php echo h(__('By')); ?>
+					<span itemprop="name"><?= h($this->App->buildName($post['PostedBy'], false)) ?></span>
+				</a>
+			</span>
+		</p>
+	</div>
+	<span itemprop="articleBody">
+		<?php echo $this->Text->autoParagraph(h($post['Post']['body'])) ?>
+	</span>
+	<div class="btn-toolbar" role="toolbar">z
 		<div class="btn-group">
-			<a type="button" class="btn btn-default" href="<?=$post['PostedBy']['google_profile']?>?rel=author"><?=__('%s profile', 'Google+')?></a>
+			<a type="button" class="btn btn-default" href="<?= $post['PostedBy']['google_profile'] ?>?rel=author"><?= __('%s profile', 'Google+') ?></a>
 		</div>
 		<div class="btn-group">
 			<?php if ($can_comment): ?>
@@ -59,8 +66,8 @@ endif;
 					$(button).removeClass('active');
 				} else {
 					$.ajax({
-						url: url,
-						success: function (html) {
+						url     : url,
+						success : function (html) {
 							$(id).html(html);
 							$(id).show();
 							$(button).addClass('active');
@@ -85,7 +92,8 @@ endif;
 
 					<div class="media-body">
 						<h4 class="media-heading" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-							<span itemprop="name"><?= $this->App->buildName($comment['PostedBy']) ?></span> <small>- <?php echo $this->Time->timeAgoInWords($comment['Comment']['created']); ?></small>
+							<span itemprop="name"><?= $this->App->buildName($comment['PostedBy']) ?></span>
+							<small>- <?php echo $this->Time->timeAgoInWords($comment['Comment']['created']); ?></small>
 						</h4>
 						<span itemprop="commentText"><?= $comment['Comment']['body'] ?></span>
 						<br>
