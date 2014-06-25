@@ -1,11 +1,22 @@
 <?php
 
-$this->Title->setPageTitle(__('Welcome to %1$s', 'Mauris'));
+$this->Title->setPageTitle('Mauris Systems');
+
+$this->Seo->setDescription(__('Easy to use scheduling and information providing software for educational institutions'));
+$this->Seo->setKeywords(
+	array('Mauris', 'Mauris Systems', 'Schedules', 'information', 'education institutions')
+);
 
 echo $this->element('page_header');
 ?>
 <div class="row">
-	<div class="col-lg-3">
+	<div class="col-sm-12 col-lg-9">
+		<h1><?php echo h(__('What is Mauris?')); ?></h1>
+		<p>
+			<?php echo h(__('Mauris is scheduling and information spreading software for educational institutions looking to improve communications in their organization. Our software allows students, teachers and the staff of the institute to get the information they need for their job with ease in a timely fashion.')); ?>
+		</p>
+	</div>
+	<div class="col-sm-12 col-lg-3">
 		<div class="panel panel-primary">
 			<header class="panel-heading">
 				<div class="row">
