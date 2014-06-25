@@ -73,6 +73,8 @@ $this->end();
 				<?php else: ?>
 					<?php
 					echo $this->Form->create('User', array(
+						'controller'    => 'users',
+						'action'        => 'login',
 						'inputDefaults' => array(
 							'div'       => 'form-group',
 							'label'     => array(
